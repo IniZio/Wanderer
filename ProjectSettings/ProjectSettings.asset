@@ -627,9 +627,9 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 6277ae93-4f7c-4cd9-869d-37a81d7c419a
+  projectName: Fyp_2018-19_CECIDES1 (1)
+  organizationId: tamtungman
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
