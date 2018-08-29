@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33780365335440728}
   - component: {fileID: 23960542119650810}
   - component: {fileID: 136847461532478190}
+  - component: {fileID: 114708948956549688}
+  - component: {fileID: 114644859196956300}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -84,6 +86,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528283453865420}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114644859196956300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528283453865420}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf63060a30146d4198715dbe9e0f051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerUnitPrefab: {fileID: 1528283453865420}
+--- !u!114 &114708948956549688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528283453865420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 110
+    i1: 116
+    i2: 245
+    i3: 139
+    i4: 40
+    i5: 222
+    i6: 172
+    i7: 164
+    i8: 9
+    i9: 25
+    i10: 247
+    i11: 111
+    i12: 69
+    i13: 50
+    i14: 188
+    i15: 36
+  m_ServerOnly: 1
+  m_LocalPlayerAuthority: 0
 --- !u!136 &136847461532478190
 CapsuleCollider:
   m_ObjectHideFlags: 1
