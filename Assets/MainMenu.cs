@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
-{
+public class MainMenu : MonoBehaviour {
 
     public Button NewGameButton;
 
@@ -21,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(NewGameSceneName);
+        SceneManager.LoadScene("Waiting");
     }
 
     public void LoadGame()

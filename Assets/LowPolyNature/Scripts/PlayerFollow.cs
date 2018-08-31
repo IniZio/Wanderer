@@ -26,7 +26,7 @@ public class PlayerFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _cameraOffset = transform.position - PlayerTransform.position;
+        _cameraOffset = Vector3.zero;
     }
 
     private bool IsRotateActive
