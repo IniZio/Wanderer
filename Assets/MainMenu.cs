@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-
+    [Tooltip("The Ui Panel to let the user enter name, connect and play")]
     public Button NewGameButton;
 
     public Button LoadGameButton;
@@ -23,14 +23,12 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("Waiting");
     }
 
-    public void LoadGame()
-    {
-        LoadGameMenu.SetActive(true);
+    public void LoadGame() {
+        Debug.Log("load");
     }
 
-    public void JoinGame()
-    {
-
+    public void JoinGame() {
+        
     }
 
     public void ExitGame()
