@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class PlayerObj : NetworkBehaviour {
     public bool alive = true;
-    public string name;
+    public string playerName;
     public int life = 10;
 
 	// Use this for initialization
