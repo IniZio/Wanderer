@@ -1,7 +1,8 @@
 
 namespace Fyp.Game.PlayerCharacter {
     public class PlayerMainObj {
-        private string name;
+        public string name;
         // private PlayerBag bag = new PlayerBag();
+        public PlayerController controller;
     }
 }
