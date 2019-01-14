@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 namespace Fyp.Game.UI {
 	public class ChangeSence : MonoBehaviour {
-		public void MenuToWaitingRoom() {
+		public static void MenuToWaitingRoom() {
 			Debug.Log("MenuToWaitingRoom");
 			SceneManager.LoadScene("WaitingRoom");
 		}
 
-		public void WaitingRoomToMenu() {
+		public static void WaitingRoomToMenu() {
 			Debug.Log("WaitingRoomToMenu");
 			SceneManager.LoadScene("MainMenu");
 		}

@@ -4,7 +4,5 @@ namespace Fyp.Game.PlayerCharacter {
         private string name;
         private bool enable = false;
         // private PlayerBag bag = new PlayerBag();
-
-
     }
 }
