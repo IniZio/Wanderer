@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace FYP.Game.Carmera {
-	public class PlayerCamera : MonoBehaviour {
+	public class WaitingRoomCamera : MonoBehaviour {
 		public int speed = 10;
 
 		public Camera firstPersonViewCamera;
@@ -29,6 +29,10 @@ namespace FYP.Game.Carmera {
 		}
 
 		void switchCamera() {
+			Debug.Log("switch camera");
+			if(onMenuView) {
+				firstPersonViewCamera = GameObject.Find("PlayerCharacter").GetComponent<Camera>();
+			}
 			firstPersonViewCamera.enabled = !firstPersonViewCamera.enabled;
 			menuViewCamera.enabled = !menuViewCamera.enabled;
 			onMenuView = !onMenuView;

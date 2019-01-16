@@ -5,7 +5,7 @@ using Fyp.Constant;
 
 namespace Fyp.Game.Network {
     public class PhotonRoomConnection : Photon.PunBehaviour {
-        public GameObject playerPrefab;
+        public bool spawned = false;
         public void CreateRoom(string playerName) {
             Debug.Log("create room");
             if (PhotonNetwork.CreateRoom(playerName, new RoomOptions() { MaxPlayers = 2 }, null)) {
@@ -17,9 +17,8 @@ namespace Fyp.Game.Network {
         }
 
         public void JoinRoom(string targetName) {
-            if(PhotonNetwork.JoinRoom(targetName + " s Room")) {
+            if(PhotonNetwork.JoinRoom(targetName)) {
                 Debug.Log("join room success");
-                NetworkChangeScene.ChangeToScene((int) GameConstant.ScenceName.WaitingRoom);
             } else {
                 Debug.Log("join room fail");
             }
@@ -43,7 +42,15 @@ namespace Fyp.Game.Network {
 
         public override void OnJoinedRoom() {
             Debug.Log ("Joined Room");
-            PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(0f,5f,0f), Quaternion.identity, 0);
+            Debug.Log(PhotonNetwork.isMasterClient);
+            Debug.Log(PhotonNetwork.isNonMasterClientInRoom);
+            if(PhotonNetwork.isMasterClient && photonView.isMine) {
+                PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
+                spawned = true;
+            } else {
+                PhotonNetwork.Instantiate("Player2Character", new Vector3(1f,5f,0f), Quaternion.identity, 0);
+                spawned = true;
+            }
         }
 
         public void DisconnectFromServer() {
