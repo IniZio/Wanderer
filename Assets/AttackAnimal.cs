@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EscapeAnimal : MonoBehaviour {
-    public float minRange;
+public class AttackAnimal : MonoBehaviour {
+    public float maxRange;
+    public float attackRange;
     public int Speed;
 
     private NavMeshAgent agent;
@@ -20,16 +21,20 @@ public class EscapeAnimal : MonoBehaviour {
         int multiplier = 1;
         thisPos = transform.position;
 
-        Collider[] collis = Physics.OverlapSphere(transform.position, minRange);
+        Collider[] collis = Physics.OverlapSphere(transform.position, maxRange);
 
         foreach(Collider colli in collis)
         {
             if (colli && colli.tag == "Player")
             {
-                // transform.position += Vector3.Lerp(thisPos, -colli.transform.position, Time.deltaTime * Speed);
-                Vector3 runTo = transform.position + ((transform.position - colli.transform.position) * multiplier);
+                Vector3 runTo = transform.position + ((colli.transform.position - transform.position) * multiplier);
                 float distance = Vector3.Distance(transform.position, colli.transform.position);
-                if (distance < minRange) agent.SetDestination(runTo);
+
+                if (distance > attackRange)
+                {
+                    // TODO: switch to attack state
+                    return;
+                }
             }
         }
     }
