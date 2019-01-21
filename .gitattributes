@@ -2,9 +2,9 @@
 
 # Unity files
 *.meta -text -merge=unityamlmerge
-*.unity -text -merge=unityamlmerge
-*.asset -text -merge=unityamlmerge
-*.prefab -text -merge=unityamlmerge
+*.unity binary -merge=unityamlmerge
+*.asset binary -merge=unityamlmerge
+*.prefab binary -merge=unityamlmerge
 
 # Image formats
 *.psd filter=lfs diff=lfs merge=lfs -text
