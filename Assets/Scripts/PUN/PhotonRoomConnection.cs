@@ -6,6 +6,7 @@ using Fyp.Constant;
 namespace Fyp.Game.Network {
     public class PhotonRoomConnection : Photon.PunBehaviour {
         public bool spawned = false;
+
         public void CreateRoom(string playerName) {
             Debug.Log("create room");
             if (PhotonNetwork.CreateRoom(playerName, new RoomOptions() { MaxPlayers = 2 }, null)) {
@@ -16,8 +17,8 @@ namespace Fyp.Game.Network {
             }
         }
 
-        public void JoinRoom(string targetName) {
-            if(PhotonNetwork.JoinRoom(targetName)) {
+        public void JoinRoom(string roomName) {
+            if(PhotonNetwork.JoinRoom(roomName)) {
                 Debug.Log("join room success");
             } else {
                 Debug.Log("join room fail");
@@ -45,13 +46,18 @@ namespace Fyp.Game.Network {
             Debug.Log(PhotonNetwork.isMasterClient);
             Debug.Log(PhotonNetwork.isNonMasterClientInRoom);
             if(PhotonNetwork.isMasterClient && photonView.isMine) {
-                PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
+                GameObject temp = PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
+                Debug.Log(temp);
                 spawned = true;
             } else {
-                PhotonNetwork.Instantiate("Player2Character", new Vector3(1f,5f,0f), Quaternion.identity, 0);
+                PhotonNetwork.Instantiate("Player2Character", new Vector3(-1f,5f,2f), Quaternion.identity, 0);
                 spawned = true;
             }
         }
+
+        // public override void OnPhotonInstantiate(PhotonMessageInfo info) {
+        //     info.sender.TagObject = this.GameObject;
+        // }
 
         public void DisconnectFromServer() {
             Debug.Log("Disconnect");

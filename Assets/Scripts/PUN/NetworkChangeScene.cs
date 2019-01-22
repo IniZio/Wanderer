@@ -5,8 +5,8 @@ using Fyp.Constant;
 
 namespace Fyp.Game.Network {
 	public class NetworkChangeScene : Photon.MonoBehaviour {
-		public static void ChangeToScene(int sceneIndex) {
-			SceneManager.LoadScene(sceneIndex);
+		public static void ChangeToScene(string sceneName) {
+			SceneManager.LoadScene(sceneName);
 		}
 	}
 }
