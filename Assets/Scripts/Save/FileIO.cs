@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using Fyp.Game.PlayerCharacter;
 
 namespace Fyp.Game.Save {
 	public class FileIO {
-		public static void WriteSave(string path, string content) {
+		public static void WriteSave(PlayerData po) {
+			string path = Path.Combine(Application.persistentDataPath, po.getRoomName() + ".txt");
+
 			StreamWriter writer = new StreamWriter(path);
-			writer.Write(content);
+			writer.Write(po);
 
 			writer.Close();
 		}

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace Fyp.Game.Save {
@@ -18,11 +19,8 @@ namespace Fyp.Game.Save {
 		}
 		#endregion
 
-		public string mockPath = "/test.fyp";
-
 		void SaveTest() {
-			string path = Application.persistentDataPath + mockPath;
-			FileIO.WriteSave(path, "testing");
+			FileIO.WriteSave();
 		}
 	}
 }

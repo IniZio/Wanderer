@@ -4,42 +4,26 @@ using UnityEngine;
 using System;
 
 namespace Fyp.Game.PlayerCharacter {
-    [Serializable]
     public class PlayerMainObj {
-        private static PlayerMainObj singleton;
-        public static PlayerMainObj Singleton {
+        private static PlayerMainObj sInstance = null;
+        public static PlayerMainObj Instance {
             get {
-                    if (singleton == null) {
-                        singleton = new PlayerMainObj();
-                    }
-                    return singleton;
+                if (sInstance == null) {
+                    sInstance = new PlayerMainObj();
+                }
+                return sInstance;
             }
         }
 
-        private string masterPlayerName;
-        private string clientPlayerName;
+        private GameObject playerChac;
+        private PlayerData playerData;
+        private bool isMaster;
 
-        public GameObject masterPlayerChac;
-        public GameObject clientPlayerChac;
         private bool enable = false;
         // private PlayerBag bag = new PlayerBag();
 
-        public void setName(string name, bool isMaster) {
-            if (isMaster) {
-                this.masterPlayerName = name;
-            }
-            else {
-                this.clientPlayerName = name;
-            }
-        }
-
         public void setChac(GameObject chac, bool isMaster) {
-            if (isMaster) {
-                this.masterPlayerChac = chac;
-            }
-            else {
-                this.clientPlayerChac = chac;
-            }
+            playerChac = chac;
         }
     }
 }
