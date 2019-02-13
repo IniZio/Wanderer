@@ -1,7 +1,5 @@
-
-
 using UnityEngine;
-using System.Collections;
+//using System.Collections;
 
 public class ControlScript : MonoBehaviour {
 	
@@ -156,8 +154,8 @@ public class ControlScript : MonoBehaviour {
 	}
 	
 	//We've added some simple GUI labels for our controls to make it easier for you to test out.
-	
-	void OnGUI(){
+
+/*	void OnGUI(){
 		GUI.Label (new Rect(0, 0, 200, 25), "Forward: W");
         GUI.Label(new Rect(0, 25, 200, 25), "Backward: S");
         GUI.Label (new Rect(0, 50, 200, 25), "Strafe Left: A");
@@ -168,6 +166,7 @@ public class ControlScript : MonoBehaviour {
 		GUI.Label (new Rect(0, 175, 200, 25), "Toggle Kneeling: 2");
 		GUI.Label (new Rect(0, 200, 200, 25), "Wave (Layer): 3");
 	}
+ */
 }
 
 /*

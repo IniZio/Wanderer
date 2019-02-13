@@ -1,0 +1,13 @@
+////////////////////////////////////////////////////////////
+// Animancer //
+////////////////////////////////////////////////////////////
+
+Some demonstration scenes are located in the Demos folder.
+
+Documentation: https://animancer.github.io/
+You can also open the documentation via the [?] icon in the
+top right of the AnimancerController inspector.
+
+Support: AnimancerUnityPlugin@gmail.com
+
+////////////////////////////////////////////////////////////

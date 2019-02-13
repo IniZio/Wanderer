@@ -1,0 +1,2025 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Animancer</name>
+    </assembly>
+    <members>
+        <member name="T:Animancer.AnimancerLayer">
+            <summary>
+            A layer on which animations can play with their states managed independantly of other layers while blending the
+            output with those layers.
+            <para></para>
+            This class can be used as a custom yield instruction to wait until all animations finish playing.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.Root">
+            <summary>The <see cref="T:Animancer.AnimancerPlayable"/> at the root of the graph.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.Parent">
+            <summary>Returns null because layers connect directly to the root <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer._Playable">
+            <summary>The <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> responsible for blending animation states (particularly during fades).</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.BasePlayable">
+            <summary>The <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> responsible for the actual mixing.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer.LayerIndex">
+            <summary>The index of this layer in the root <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.CurrentState">
+            <summary>
+            The state of the animation currently being played.
+            <para></para>
+            Specifically, this is the state that was most recently started using the <see cref="M:Animancer.AnimancerLayer.Play(Animancer.AnimancerState)"/> or
+            <see cref="M:Animancer.AnimancerLayer.CrossFade(Animancer.AnimancerState,System.Single)"/> methods. States controlled individually will not register in this property.
+            </summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer.States">
+            <summary>All of the animation states connected to the Mixer.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer._SpareMixerPorts">
+            <summary>When a state is destroyed, its port is added to this list so it can be reused.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer._Weight">
+            <summary>The current blend weight of this layer. Accessed via <see cref="P:Animancer.AnimancerLayer.Weight"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer._IsWeightDirty">
+            <summary>Indicates whether the weight has changed and should be applied to the parent mixer.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.TargetWeight">
+            <summary>The target blend weight which this layer is fading towards.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.FadeSpeed">
+            <summary>The speed at which this layer is fading towards the <see cref="P:Animancer.AnimancerLayer.TargetWeight"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.Weight">
+            <summary>
+            The current blend weight of this layer. Setting this property will also set the <see cref="P:Animancer.AnimancerLayer.TargetWeight"/>
+            which cancels any fade currently in progress. If you don't wish to do this, use <see cref="M:Animancer.AnimancerLayer.SetWeight(System.Single)"/>
+            instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.SetWeight(System.Single)">
+            <summary>
+            Sets the current blend <see cref="P:Animancer.AnimancerLayer.Weight"/> of this layer.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.StartFade(System.Single,System.Single)">
+            <summary>[Pro-Only]
+            Sets the <see cref="P:Animancer.AnimancerLayer.TargetWeight"/> and calculates the <see cref="P:Animancer.AnimancerLayer.FadeSpeed"/> that will reach that weight
+            over the course of the 'fadeDuration'.
+            <para></para>
+            This method fades the layer itself. To fade a single animation use <see cref="M:Animancer.AnimancerLayer.CrossFade(Animancer.AnimancerState,System.Single)"/> instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.#ctor(Animancer.AnimancerPlayable,System.Int32)">
+            <summary>[Internal]
+            Constructs a new <see cref="T:Animancer.AnimancerLayer"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Initialise">
+            <summary>
+            Creates the <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> used to blend between the states attached to this layer.
+            <para></para>
+            This method is automatically called by the constructor so you only need to call it manually if you
+            previously called <see cref="M:Animancer.AnimancerLayer.Dispose"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.IsAdditive">
+            <summary>[Pro-Only]
+            Determines whether this layer is set to additive blending. Otherwise it will override any earlier layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.SetMask(UnityEngine.AvatarMask)">
+            <summary>[Pro-Only]
+            Sets an <see cref="T:UnityEngine.AvatarMask"/> to determine which bones this layer will affect.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Dispose">
+            <summary>
+            Destroys the <see cref="P:Animancer.AnimancerLayer.BasePlayable"/> and all states in this layer.
+            <para></para>
+            If you wish to use this layer again later, you will need to <see cref="M:Animancer.AnimancerLayer.Initialise"/> it.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Animancer#IAnimationMixer#ConnectState(Animancer.AnimancerState)">
+            <summary>Connects the 'state' to this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Animancer#IAnimationMixer#DisconnectState(Animancer.AnimancerState)">
+            <summary>Disconnects the 'state' from this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.ValidateState(Animancer.AnimancerState)">
+            <summary>
+            Throws an exception if the <see cref="P:Animancer.AnimancerState.Parent"/> is not this <see cref="T:Animancer.AnimancerLayer"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.GetEnumerator">
+            <summary>
+            Returns an enumerator that will iterate through all states connected directly to this layer (not inside
+            <see cref="T:Animancer.AnimationMixer"/>s).
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.GetRawEnumerator">
+            <summary>
+            Returns an enumerator that will iterate through all states connected directly to this layer (not inside
+            <see cref="T:Animancer.AnimationMixer"/>s). This method is more efficient than <see cref="M:Animancer.AnimancerLayer.GetEnumerator"/> but will
+            include null elements for any states that have been destroyed, so it requires additional checks to use
+            safely.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Play(Animancer.AnimancerState)">
+            <summary>
+            Stops all other animations, plays the 'state' from the start, and returns it.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.CrossFade(Animancer.AnimancerState,System.Single)">
+            <summary>[Pro-Only]
+            Starts fading all other animations to weight 0, starts fading the 'state' to weight 1, and returns it.
+            <para></para>
+            Note that if the 'state' is already playing and fading in with less time remaining than the
+            'fadeDuration', this method will do nothing and allow it to complete the existing fade.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.PauseAll">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Pause"/> on all animations to freeze them at their current time.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.ResumeAll">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Resume"/> on all animations with any weight to continue playing from their
+            current time.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.StopAll">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Stop"/> on all animations to stop them from playing and rewind them to the
+            start.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.IsPlayingClip(UnityEngine.AnimationClip)">
+            <summary>
+            Returns true if the 'clip' is currently being played by at least one state.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.IsPlaying">
+            <summary>
+            Returns true if at least one animation is being played.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.GetTotalWeight">
+            <summary>
+            Calculates the total <see cref="P:Animancer.AnimancerState.Weight"/> of all states in this layer.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.AverageVelocity">
+            <summary>
+            The average velocity of the root motion of all currently playing animations, taking their current
+            <see cref="P:Animancer.AnimancerState.Weight"/> into account.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.AddChild(Animancer.AnimancerState)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.SetParent(Animancer.IAnimationMixer,System.Int32)"/> to set this layer as the parent of the
+            'state' using a spare port index if there is one, otherwise by adding a new port first.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.UpdateTimes">
+            <summary>[Internal]
+            Updates the time of each state in order to trigger their <see cref="E:Animancer.AnimancerState.OnEnd"/> events.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.UpdatePlayables(System.Single)">
+            <summary>[Internal]
+            Applies any new values to the <see cref="T:Animancer.AnimancerState"/>'s <see cref="T:UnityEngine.Playables.Playable"/>
+            such as changes to <see cref="P:Animancer.AnimancerState.Weight"/> or <see cref="P:Animancer.AnimancerState.IsPlaying"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Animancer#IAnimationMixer#OnStateDisposed(Animancer.AnimancerState)">
+            <summary>[Internal]
+            Called by <see cref="M:Animancer.AnimancerState.Dispose"/> for any states connected to this mixer.
+            Adds the 'state's port to a list of spares to be reused by another state and notifies the root
+            <see cref="T:Animancer.AnimancerPlayable"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.System#Collections#IEnumerator#MoveNext">
+            <summary>Returns <see cref="M:Animancer.AnimancerLayer.IsPlaying"/> so this object can be used as a custom yield instruction to wait until all animations finish playing.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.System#Collections#IEnumerator#Current">
+            <summary>Returns null.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.System#Collections#IEnumerator#Reset">
+            <summary>Does nothing.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.GetDisplayKey(Animancer.AnimancerState)">
+            <summary>Gets a user-friendly key to identify the 'state' in the inspector.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.SetName(System.String)">
+            <summary>[Editor-Conditional]
+            Sets the inspector display name of this layer. Note that layer names are Editor-Only so any calls to this
+            method will automatically be compiled out of a runtime build.
+            </summary>
+        </member>
+        <member name="T:Animancer.AnimancerLayer.Info">
+            <summary>[Internal]
+            A wrapper for an <see cref="T:Animancer.AnimancerLayer"/> which sorts and exposes some of its internal values.
+            This class is used to optimise the drawing of layers in the inspector.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerLayer.Info.Layer">
+            <summary>The target layer. Set by <see cref="M:Animancer.AnimancerLayer.Info.Gather(Animancer.AnimancerLayer,System.Collections.Generic.Dictionary{Animancer.AnimancerState,System.Object})"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer.Info.ActiveKeys">
+            <summary>The keys which each of the <see cref="F:Animancer.AnimancerLayer.Info.ActiveStates"/> are registered with.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer.Info.ActiveStates">
+            <summary>The states in the target layer which have non-zero <see cref="P:Animancer.AnimancerState.Weight"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer.Info.InactiveKeys">
+            <summary>The keys which each of the <see cref="F:Animancer.AnimancerLayer.Info.InactiveStates"/> are registered with.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerLayer.Info.InactiveStates">
+            <summary>The states in the target layer which have zero <see cref="P:Animancer.AnimancerState.Weight"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Info.Gather(Animancer.AnimancerLayer,System.Collections.Generic.Dictionary{Animancer.AnimancerState,System.Object})">
+            <summary>
+            Sets the target 'layer' and sorts its states and their keys into the active/inactive lists.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerLayer.Info.Sort(System.Collections.Generic.List{System.Object},System.Collections.Generic.List{Animancer.AnimancerState})">
+            <summary>
+            Sorts any entries that use another state as their key to come right after that state.
+            See <see cref="M:Animancer.AnimancerPlayable.CrossFadeNew(System.Object,System.Single)"/>.
+            </summary>
+        </member>
+        <member name="T:Animancer.AnimancerPlayable">
+            <summary>
+            A <see cref="T:UnityEngine.Playables.PlayableBehaviour"/> which can be used as a substitute for the
+            <see cref="T:UnityEngine.RuntimeAnimatorController"/> normally used to control an <see cref="T:UnityEngine.Animator"/>.
+            This class can be used as a custom yield instruction to wait until all animations finish playing.
+            </summary>
+        </member>
+        <member name="F:Animancer.AnimancerPlayable.ProOnlyMessage">
+            <summary>
+            The message used for [Obsolete] attributes which indicate features that are only available in the Unity
+            Editor for trial purposes in Animancer Lite, but not at runtime.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.ValidateLayerIndex(System.Int32@)">
+            <summary>[Internal]
+            Ensures that only layer 0 is used at runtime in the Lite version.
+            </summary>
+        </member>
+        <member name="F:Animancer.AnimancerPlayable.DefaultFadeDuration">
+            <summary>
+            The fade duration for any of the CrossFade methods to use if the caller doesn't specify.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.Playable">
+            <summary>The underlying <see cref="T:UnityEngine.Playables.Playable"/> managed by this <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.Graph">
+            <summary>The underlying <see cref="T:UnityEngine.Playables.PlayableGraph"/> managed by this <see cref="T:Animancer.AnimancerPlayable"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.CurrentState">
+            <summary>
+            The state of the animation currently being played.
+            <para></para>
+            Specifically, this is the state that was most recently started using any of the
+            <see cref="T:Animancer.AnimancerPlayable"/> Play or CrossFade methods. States controlled individually will not register
+            in this property.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.DisconnectAnimationsOnStop">
+            <summary>
+            If this is set to true, animations will be disconnected from the graph when they stop so that the
+            <see cref="T:UnityEngine.Animator"/> stops writing the values of all their curves every frame.
+            This disconnection has a performance cost, so use with caution.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.IsGraphPlaying">
+            <summary>Indicates whether the <see cref="P:Animancer.AnimancerPlayable.Graph"/> is currently playing.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerPlayable._Layers">
+            <summary>The layers which each manage their own set of animations.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerPlayable._RegisteredStates">
+            <summary>All of the animation states in any of the root layers (not inside mixers) currently registered to unique keys.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.UpdateMode">
+            <summary>Determines what time source is used to update the <see cref="P:Animancer.AnimancerPlayable.Graph"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerPlayable.Template">
+            <summary>
+            Since <see cref="M:UnityEngine.Playables.ScriptPlayable`1.Create(UnityEngine.Playables.PlayableGraph,System.Int32)"/> needs to clone an existing instance, we
+            keep a static template to avoid allocating an extra garbage one every time.
+            This is why the fields are assigned in OnPlayableCreate rather than being readonly with field initialisers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CreatePlayable(UnityEngine.Playables.DirectorUpdateMode)">
+            <summary>
+            Creates a new <see cref="T:Animancer.AnimancerPlayable"/> and assigns it to the 'animator'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.OnPlayableCreate(UnityEngine.Playables.Playable)">
+            <summary>[Internal]
+            Called by Unity as it creates an <see cref="T:Animancer.AnimancerPlayable"/>.
+            </summary>
+        </member>
+        <member name="T:Animancer.AnimancerPlayable.FastComparer">
+            <summary>
+            An <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> which ignores overloaded equality operators so it's faster than
+            <see cref="P:System.Collections.Generic.EqualityComparer`1.Default"/> for types derived from <see cref="T:UnityEngine.Object"/>.
+            </summary>
+        </member>
+        <member name="F:Animancer.AnimancerPlayable.FastComparer.Instance">
+            <summary>Singleton instance.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.FastComparer.Equals(System.Object,System.Object)">
+            <summary>Calls <see cref="M:System.Object.Equals(System.Object,System.Object)"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.FastComparer.GetHashCode(System.Object)">
+            <summary>Calls <see cref="M:System.Object.GetHashCode"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Play(UnityEngine.Animator,Animancer.AnimancerPlayable)">
+            <summary>
+            Plays this <see cref="P:Animancer.AnimancerPlayable.Playable"/> on the specified 'animator'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Dispose">
+            <summary>
+            Destroys the <see cref="P:Animancer.AnimancerPlayable.Graph"/> and all its layers and states. This operation cannot be undone.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CreateState(UnityEngine.AnimationClip,System.Int32)">
+            <summary>
+            Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the 'clip' with this
+            <see cref="T:Animancer.AnimancerPlayable"/> as its parent.
+            <para></para>
+            This method does not register the created state with any key, leaving the caller responsible for keeping
+            track of it.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CreateState(System.Object,UnityEngine.AnimationClip,System.Int32)">
+            <summary>
+            Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the 'clip' and registers it with the 'key'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.ValidateState(Animancer.AnimancerState)">
+            <summary>
+            Throws an <see cref="T:System.ArgumentException"/> if the <see cref="P:Animancer.AnimancerState.Parent"/> is null or not in this
+            <see cref="T:Animancer.AnimancerPlayable"/>'s <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.op_Implicit(Animancer.AnimancerPlayable)~Animancer.AnimancerLayer">
+            <summary>Returns layer 0.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.Item(System.Object)">
+            <summary>
+            Gets or sets the state registered with the 'key'.
+            <para></para>
+            Get: if no state exists with the 'key', this method returns null.
+            <para></para>
+            Set: if a different state is already registered with the 'key', the existing one will be destroyed first.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetState(System.Object)">
+            <summary>
+            Returns the state registered with the 'key', or null if none exists.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.TryGetState(System.Object,Animancer.AnimancerState@)">
+            <summary>
+            If a state is registered with the 'key', this method outputs it as the 'state' and returns true. Otherwise
+            'state' is set to null and this method returns false.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetOrCreateState(System.Object,UnityEngine.AnimationClip,System.Int32)">
+            <summary>
+            If a state is registered with the 'key', this method verifies that it has the correct 'clip' and returns
+            it. If the <see cref="P:Animancer.AnimancerState.Clip"/> doesn't match the specified 'clip', an exception is thrown. If
+            no state was registered, this method creates a new one with the 'clip', registers it with the 'key', and
+            returns it.
+            <para></para>
+            If you wish to change the registered <see cref="P:Animancer.AnimancerState.Clip"/> to match the specified 'clip', you
+            can call <see cref="M:Animancer.AnimancerPlayable.ForceSetClip(System.Object,UnityEngine.AnimationClip,System.Int32)"/> instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.ForceSetClip(System.Object,UnityEngine.AnimationClip,System.Int32)">
+            <summary>
+            If a state is registered with the 'key', this method verifies that it has the correct 'clip' and returns
+            it. If the <see cref="P:Animancer.AnimancerState.Clip"/> doesn't match the specified 'clip', the state is destroyed and
+            a new one is created in its place with the correct 'clip'. A new one is also created if no existing state
+            was registered with the 'key'.
+            <para></para>
+            Note that destroying and creating states is more computationally expensive than most other operations and
+            should be avoided at performance intensive times. Consider using
+            <see cref="M:Animancer.AnimancerPlayable.GetOrCreateState(System.Object,UnityEngine.AnimationClip,System.Int32)"/> which will throw an exception if the clip is
+            different instead of replacing the state.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.AddState(System.Object,Animancer.AnimancerState)">
+            <summary>
+            Registers the 'state' so it can be accessed later on using the 'key'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetEnumerator">
+            <summary>
+            Returns an enumerator that will iterate through all states in each layer (not states inside mixers).
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetLayerEnumerator">
+            <summary>
+            Returns an enumerator that will iterate through all layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetRegisteredStateEnumerator">
+            <summary>
+            Returns an enumerator for the dictionary containing all currently registered keys and the animation states
+            they are mapped to.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.System#Collections#IEnumerator#MoveNext">
+            <summary>Returns <see cref="M:Animancer.AnimancerPlayable.IsPlaying"/> so this object can be used as a custom yield instruction to wait until all animations finish playing.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.System#Collections#IEnumerator#Current">
+            <summary>Returns null.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.System#Collections#IEnumerator#Reset">
+            <summary>Does nothing.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.AppendDescription(System.Text.StringBuilder)">
+            <summary>Appends a detailed descrption of all currently playing states and other registered states.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetDescription">
+            <summary>Appends a detailed descrption of all currently playing states and other registered states.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GatherLayerInfo(Animancer.AnimancerPlayable,System.Collections.Generic.List{Animancer.AnimancerLayer.Info},System.Int32@)">
+            <summary>Gathers all states into various collections. Active states have non-zero weight while inactive states have zero.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.DisposeState(System.Object)">
+            <summary>
+            If a state is registered with the 'key', this method destroys it and returns true.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.SetMaxLayerCount(System.Int32)">
+            <summary>[Editor-Conditional]
+            Sets the maximum number of layers that can be created before a warning will be given.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.LayerCount">
+            <summary>[Pro-Only]
+            The number of animation layers in the graph.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.SetMinLayerCount(System.Int32)">
+            <summary>[Pro-Only]
+            If the <see cref="P:Animancer.AnimancerPlayable.LayerCount"/> is below the specified 'min', this method sets it to that value.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetLayer(System.Int32)">
+            <summary>
+            Returns the layer at the specified index.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.AddLayer">
+            <summary>[Pro-Only]
+            Creates and returns a new <see cref="T:Animancer.AnimancerLayer"/>. New layers will override earlier layers by default.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.IsLayerAdditive(System.Int32)">
+            <summary>[Pro-Only]
+            Checks whether the layer at the specified index is set to additive blending. Otherwise it will override any
+            earlier layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.SetLayerAdditive(System.Int32,System.Boolean)">
+            <summary>[Pro-Only]
+            Sets the layer at the specified index to blend additively with earlier layers (if true) or to override them
+            (if false). Newly created layers will override by default.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.SetLayerMask(System.Int32,UnityEngine.AvatarMask)">
+            <summary>[Pro-Only]
+            Sets an <see cref="T:UnityEngine.AvatarMask"/> to determine which bones the layer at the specified index will affect.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.SetLayerName(System.Int32,System.String)">
+            <summary>[Editor-Conditional]
+            Sets the inspector display name of the layer at the specified index. Note that layer names are Editor-Only
+            so any calls to this method will automatically be compiled out of a runtime build.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Play(System.Object)">
+            <summary>
+            Stops all other animations, plays the animation registered with the 'key' from the start, and returns that
+            state. If no state is registered with the 'key', this method does nothing and returns null.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Play(Animancer.AnimancerState)">
+            <summary>
+            Stops all other animations, plays the 'state' from the start, and returns it.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CrossFade(System.Object,System.Single)">
+            <summary>[Pro-Only]
+            Fades out all other animations, fades in the animation registered with the 'key', and returns that state.
+            If no state is registered with the 'key', this method does nothing and returns null.
+            <para></para>
+            Note that if the animation is already playing, it will continue doing so from the current time. If you wish
+            to ensure that it starts from the beginning you should use
+            <see cref="M:Animancer.AnimancerPlayable.CrossFadeNew(System.Object,System.Single)"/> instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CrossFade(Animancer.AnimancerState,System.Single)">
+            <summary>[Pro-Only]
+            Starts fading all other animations to weight 0, starts fading the 'state' to weight 1, and returns it.
+            <para></para>
+            Note that if the 'state' is already playing and fading in with less time remaining than the
+            'fadeDuration', this method will do nothing and allow it to complete the existing fade.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CrossFadeNew(System.Object,System.Single)">
+            <summary>[Pro-Only]
+            Fades out all other animations, fades in the animation registered with the 'key' from the start of its
+            clip, and returns that state. If no state is registered with the 'key', this method does nothing and
+            returns null.
+            <para></para>
+            If the animation isn't currently at 0 weight, this method will actually fade it to 0 along with the others
+            and create and return a new state with the same clip to fade to 1. This ensures that calling this method
+            will always fade out from all current states and fade in from the start of the desired animation. States
+            created for this purpose are cached so they can be reused in the future.
+            <para></para>
+            Calling this method repeatedly on subsequent frames will probably have undesirable effects; you most likely
+            want to call <see cref="M:Animancer.AnimancerPlayable.CrossFade(System.Object,System.Single)"/> instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.CrossFadeNew(Animancer.AnimancerState,System.Single)">
+            <summary>[Pro-Only]
+            Fades out all other animations, fades in the specified 'state' from the start of its clip, and returns it.
+            <para></para>
+            If the 'state' isn't currently at 0 weight, this method will actually fade it to 0 along with the others
+            and create and return a new state with the same clip to fade to 1. This ensures that calling this method
+            will always fade out from all current states and fade in from the start of the desired animation. States
+            created for this purpose are cached so they can be reused in the future.
+            <para></para>
+            Calling this method repeatedly on subsequent frames will probably have undesirable effects; you most likely
+            want to call <see cref="M:Animancer.AnimancerPlayable.CrossFade(Animancer.AnimancerState,System.Single)"/> instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Pause(System.Object)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Pause"/> on the state registered with the 'key' to freeze it at its current
+            time and returns the state (if it exists).
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.PauseAll(System.Int32)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Pause"/> on all animations in the specified layer to freeze them at their
+            current time.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.PauseAll">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Pause"/> on all animations to freeze them at their current time.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Resume(System.Object)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Resume"/> on the state registered with the 'key' to continue playing from
+            its current time and returns the state (if it exists).
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.ResumeAll(System.Int32)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Resume"/> on all animations in the specified layer with any weight to
+            continue playing from their current time.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.ResumeAll">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Resume"/> on all animations with any weight to continue playing from their
+            current time.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Stop(System.Object)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Stop"/> on the state registered with the 'key' to stop it from playing and
+            rewind it to the start.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.StopAll(System.Int32)">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Stop"/> on all animations in the specified layer to stop them from playing
+            and rewind them to the start.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.StopAll">
+            <summary>
+            Calls <see cref="M:Animancer.AnimancerState.Stop"/> on all animations to stop them from playing and rewind them to the
+            start.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.IsPlayingClip(UnityEngine.AnimationClip)">
+            <summary>
+            Returns true if the 'clip' is currently being played by at least one state in any layer.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.IsPlayingClip(UnityEngine.AnimationClip,System.Int32)">
+            <summary>
+            Returns true if the 'clip' is currently being played by at least one state in the specified layer.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.IsPlaying">
+            <summary>
+            Returns true if at least one animation is being played.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.PlayGraph">
+            <summary>Plays the <see cref="T:UnityEngine.Playables.PlayableGraph"/> if it was stopped.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.StopGraph">
+            <summary>Stops the <see cref="T:UnityEngine.Playables.PlayableGraph"/> if it was playing.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Evaluate">
+            <summary>
+            Evaluates all of the currently playing animations to apply their states to the animated objects.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.Evaluate(System.Single)">
+            <summary>
+            Advances all currently playing animations by the specified amount of time (in seconds) and evaluates the
+            graph to apply their states to the animated objects.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.GetTotalWeight">
+            <summary>
+            Calculates the total <see cref="P:Animancer.AnimancerState.Weight"/> of all states in this playable.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerPlayable.AverageVelocity">
+            <summary>
+            The average velocity of the root motion of all currently playing animations, taking their current
+            <see cref="P:Animancer.AnimancerState.Weight"/> into account.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.PrepareFrame(UnityEngine.Playables.Playable,UnityEngine.Playables.FrameData)">
+            <summary>[Internal]
+            Called by Unity before the <see cref="P:Animancer.AnimancerPlayable.Graph"/> is evaluated. Updates the playing states.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.OnStateDisposed(Animancer.AnimancerState)">
+            <summary>[Internal]
+            Called by <see cref="M:Animancer.AnimancerState.Dispose"/> for any states connected to this mixer.
+            Adds the 'state's port to a list of spares to be reused by another state.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerPlayable.InvokeOnAnimancerChanged">
+            <summary>[Editor-Conditional] [Internal] Invokes <see cref="!:OnAnimancerChanged"/>.</summary>
+        </member>
+        <member name="T:Animancer.AnimancerState">
+            <summary>
+            Base class for all states in an <see cref="T:Animancer.AnimancerPlayable"/> graph.
+            Each state is a wrapper for a <see cref="T:UnityEngine.Playables.Playable"/> in the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            <para></para>
+            This class can be used as a custom yield instruction to wait until the animation either stops playing or reaches its end.
+            </summary>
+            <remarks>
+            There are various different ways of getting a state:
+            <list type="bullet">
+              <item>
+              Use one of the state's constructors. Generally the first parameter is a layer or mixer which will be used as
+              the state's parent. If not specified, you will need to call SetParent manually. Also note than an
+              AnimancerController can be implicitly cast to its first layer.
+              </item>
+              <item>
+              CreateState creates a new ClipState. You can optionally specify a custom 'key' to register it in the
+              dictionary instead of the default (the 'clip' itself).
+              </item>
+              <item>
+              GetOrCreateState looks for an existing state registered with the specified 'key' and only create a new one if
+              it doesn’t already exist.
+              </item>
+              <item>
+              GetState returns an existing state registered with the specified 'key' if there is one.
+              </item>
+              <item>
+              TryGetState is similar but returns a bool to indicate success and returns the 'state' as an out parameter.
+              </item>
+              <item>
+              Play and CrossFade also return the state they play.
+              </item>
+            </list>
+            <para></para>
+            Note that when inheriting from this class, the <see cref="F:Animancer.AnimancerState._BasePlayable"/> field must be assigned in the
+            constructor to avoid throwing <see cref="T:System.ArgumentException"/>s throughout the system.
+            </remarks>
+        </member>
+        <member name="P:Animancer.AnimancerState.Parent">
+            <summary>The <see cref="T:Animancer.IAnimationMixer"/> which this mixer is connected to.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.PortIndex">
+            <summary>The index of the parent's <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> port to which this state is connected.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerState._BasePlayable">
+            <summary>
+            The struct this state manages in the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            <para></para>
+            Should be set in the child class constructor. Failure to do so will throw the following exception
+            throughout the system: "<see cref="T:System.ArgumentException"/>: The playable passed as an argument is invalid. To
+            create a valid playable, please use the appropriate Create method".
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.BasePlayable">
+            <summary>The struct this state manages in the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerState._IsPlaying">
+            <summary>Indicates whether this state is playing or not.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerState._IsPlayingDirty">
+            <summary>Indicates whether <see cref="F:Animancer.AnimancerState._IsPlaying"/> has changed since it was last applied to the <see cref="T:UnityEngine.Playables.Playable"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerState._Weight">
+            <summary>The current blend weight of this state. Accessed via <see cref="P:Animancer.AnimancerState.Weight"/>.</summary>
+        </member>
+        <member name="F:Animancer.AnimancerState._IsWeightDirty">
+            <summary>Indicates whether the weight has changed and should be applied to the parent mixer.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.TargetWeight">
+            <summary>The blend <see cref="P:Animancer.AnimancerState.Weight"/> which this state is fading towards.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.FadeSpeed">
+            <summary>The speed at which this state is fading towards the <see cref="P:Animancer.AnimancerState.TargetWeight"/>.</summary>
+        </member>
+        <member name="E:Animancer.AnimancerState.OnEnd">
+            <summary>
+            A callback which is triggered when the <see cref="T:UnityEngine.AnimationClip"/> reaches its end (not when the state is
+            exited). If the clip loops, this event will be triggered every time it passes the end of the clip.
+            <para></para>
+            This event is automatically cleared by <see cref="M:Animancer.AnimancerState.Play"/> and <see cref="M:Animancer.AnimancerState.StartFade(System.Single,System.Single)"/>.
+            </summary>
+            <remarks>
+            The reason this event is automatically cleared is so that you don't have to worry about past uses or other
+            scripts that might have registered their own callback for the same <see cref="T:UnityEngine.AnimationClip"/>. The script
+            that tells an animation to play is responsible for its behaviour.
+            </remarks>
+        </member>
+        <member name="M:Animancer.AnimancerState.ClearOnEndEvent">
+            <summary>Removes all callbacks from the <see cref="E:Animancer.AnimancerState.OnEnd"/> event.</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.Clip">
+            <summary>The <see cref="T:UnityEngine.AnimationClip"/> which this state plays (if any).</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.MainAsset">
+            <summary>The main asset to show in the inspector for this state (if any).</summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.LayerIndex">
+            <summary>
+            The index of the <see cref="T:Animancer.AnimancerLayer"/> this state is connected to (determined by the
+            <see cref="P:Animancer.AnimancerState.Parent"/>).
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.IsPlaying">
+            <summary>
+            Determines whether this state is playing (true) or paused (false).
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.IsStopped">
+            <summary>
+            Returns true if this state is not playing and is at <see cref="P:Animancer.AnimancerState.Time"/> and <see cref="P:Animancer.AnimancerState.Weight"/> 0.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.Time">
+            <summary>
+            The current local time of this state in seconds.
+            If the animation loops then this value will continue increasing with each successive loop.
+            <para></para>
+            For example: if the animation lasts for 2 seconds then this value will go from 0 to 2 over the course of
+            its Duration.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.NormalizedTime">
+            <summary>
+            The current local time of this state as a portion of its <see cref="P:Animancer.AnimancerState.Duration"/>, meaning this value goes
+            from 0 to 1 regardless of its actual Duration.
+            <para></para>
+            If the animation loops then this value will continue increasing with each successive loop. The integer
+            part is the number of times the state has been looped.
+            <para></para>
+            The fractional part is the % (0-1) of progress in the current loop.
+            The current local time of the playable as a portion of its Duration, meaning this value goes from 0 to 1 regardless of its actual Duration.
+            <para></para>
+            Throws a <see cref="T:System.NullReferenceException"/> for states with no <see cref="P:Animancer.AnimancerState.Clip"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.Speed">
+            <summary>
+            The playback speed of the animation.
+            <para></para>
+            1 is the normal speed.
+            <para></para>
+            A negative value will play the animation backwards from the end.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.Duration">
+            <summary>
+            The amount of time the animation will take to play fully at its current <see cref="P:Animancer.AnimancerState.Speed"/> in seconds.
+            Setting this value modifies the <see cref="P:Animancer.AnimancerState.Speed"/>, not the length of the <see cref="P:Animancer.AnimancerState.Clip"/>.
+            <para></para>
+            For the time remaining from now until it reaches the end, use <see cref="P:Animancer.AnimancerState.RemainingDuration"/> instead.
+            <para></para>
+            You can access the actual <see cref="P:UnityEngine.AnimationClip.length"/> via <see cref="P:Animancer.AnimancerState.Clip"/>.length.
+            <para></para>
+            Throws a <see cref="T:System.NullReferenceException"/> for states with no <see cref="P:Animancer.AnimancerState.Clip"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.RemainingDuration">
+            <summary>
+            The amount of time the animation will take to reach the end at its current <see cref="P:Animancer.AnimancerState.Speed"/> in seconds.
+            Setting this value modifies the <see cref="P:Animancer.AnimancerState.Speed"/>, not the length of the <see cref="P:Animancer.AnimancerState.Clip"/>.
+            <para></para>
+            For the time it would take to play fully from the start, use <see cref="P:Animancer.AnimancerState.Duration"/> instead.
+            <para></para>
+            Throws a <see cref="T:System.NullReferenceException"/> for states with no <see cref="P:Animancer.AnimancerState.Clip"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.Weight">
+            <summary>
+            The current blend weight of this state.
+            <para></para>
+            Setting this property also cancels any fade currently in progress. If you don't wish to do that, use
+            <see cref="M:Animancer.AnimancerState.SetWeight(System.Single)"/> instead.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.SetWeight(System.Single)">
+            <summary>
+            Sets the current blend <see cref="P:Animancer.AnimancerState.Weight"/> of this state.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.OutputWeight">
+            <summary>
+            The <see cref="P:Animancer.AnimancerState.Weight"/> of this state multiplied by the <see cref="P:Animancer.IAnimationMixer.Weight"/> of each of
+            its parents down the hierarchy to determine how much this state affects the final output.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.AverageVelocity">
+            <summary>The average velocity of the root motion caused by this state.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.#ctor">
+            <summary>Constructs a new <see cref="T:Animancer.AnimancerState"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.SetParent(Animancer.IAnimationMixer,System.Int32)">
+            <summary>
+            Connects this state to the 'parent' mixer at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.ConnectToGraph">
+            <summary>
+            Connects the <see cref="T:UnityEngine.Playables.Playable"/> to the parent <see cref="!:IAnimationMixer.Playable"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.DisconnectFromGraph">
+            <summary>
+            Disconnects the <see cref="T:UnityEngine.Playables.Playable"/> from the parent <see cref="!:IAnimationMixer.Playable"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.Play">
+            <summary>
+            Plays the animation from the start. Specifically, this method clears the <see cref="E:Animancer.AnimancerState.OnEnd"/> event,
+            sets <see cref="P:Animancer.AnimancerState.Time"/> = 0, <see cref="P:Animancer.AnimancerState.Weight"/> = 1, and <see cref="P:Animancer.AnimancerState.IsPlaying"/> = true.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.Resume">
+            <summary>
+            Resumes playing this state from its current time. Specifically, this method sets
+            <see cref="P:Animancer.AnimancerState.Weight"/> = 1 and <see cref="P:Animancer.AnimancerState.IsPlaying"/> = true.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.Pause">
+            <summary>
+            Freezes this state at its current time. This is identical to setting <see cref="P:Animancer.AnimancerState.IsPlaying"/> = false.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.Stop">
+            <summary>
+            Pauses this state, rewinds it to the start, and sets the <see cref="P:Animancer.AnimancerState.Weight"/> = 0.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.StartFade(System.Single,System.Single)">
+            <summary>[Pro-Only]
+            Clears the <see cref="E:Animancer.AnimancerState.OnEnd"/> event, sets the <see cref="P:Animancer.AnimancerState.TargetWeight"/> and calculates the
+            <see cref="P:Animancer.AnimancerState.FadeSpeed"/> that will reach that weight over the course of the 'fadeDuration'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.Dispose">
+            <summary>
+            Destroys the <see cref="P:Animancer.AnimancerState.BasePlayable"/>. This operation cannot be undone.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.GetEnumerator">
+            <summary>Gets an enumerator for all child-states inside this state.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.HasEvent(System.String)">
+            <summary>Checks if this state has an animation event with the specified 'functionName'.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.GetApplyFootIK">
+            <summary>
+            Indicates whether this state is applying IK to the character's feet.
+            This is equivalent to the "Foot IK" toggle in AnimatorController states.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.GetApplyPlayableIK">
+            <summary>
+            Indicates whether OnAnimatorIK will be called on the animated object.
+            This is equivalent to the "IK Pass" toggle in AnimatorController layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.SetApplyFootIK(System.Boolean)">
+            <summary>
+            Tells this state whether it should apply IK to the character's feet.
+            This is equivalent to the "Foot IK" toggle in AnimatorController states.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.SetApplyPlayableIK(System.Boolean)">
+            <summary>
+            Tells this state whether OnAnimatorIK should be called on the animated object.
+            This is equivalent to the "IK Pass" toggle in AnimatorController layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.UpdateTime">
+            <summary>[Internal]
+            Override this method to check if the animation has reached its end in order to trigger the
+            <see cref="E:Animancer.AnimancerState.OnEnd"/> event.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.UpdatePlayable(System.Single,System.Boolean@)">
+            <summary>[Internal]
+            Updates the <see cref="P:Animancer.AnimancerState.Weight"/> for fading, applies it to this state's port on the parent mixer, and plays
+            or pauses the <see cref="T:UnityEngine.Playables.Playable"/> if its state is dirty.
+            <para></para>
+            If the root <see cref="P:Animancer.AnimancerPlayable.DisconnectAnimationsOnStop"/> is set to true, this method will
+            also connect/disconnect its state from the animation mixer in the playable graph.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.System#Collections#IEnumerator#MoveNext">
+            <summary>
+            Returns true if the animation is playing and hasn't yet reached its end so this state can be used as a
+            custom yield instruction to wait until it finishes.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimancerState.System#Collections#IEnumerator#Current">
+            <summary>Returns null.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.System#Collections#IEnumerator#Reset">
+            <summary>Does nothing.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.GetDescription(System.Object,System.Boolean,System.Boolean,System.String)">
+            <summary>Returns a detailed descrption of the current details of this state.</summary>
+        </member>
+        <member name="M:Animancer.AnimancerState.AppendDescription(System.Text.StringBuilder,System.Object,System.Boolean,System.Boolean,System.String)">
+            <summary>Appends a detailed descrption of the current details of this state.</summary>
+        </member>
+        <member name="T:Animancer.ClipState">
+            <summary>
+            An <see cref="T:Animancer.AnimancerState"/> which plays an <see cref="T:UnityEngine.AnimationClip"/>.
+            </summary>
+        </member>
+        <member name="F:Animancer.ClipState.AnimationClip">
+            <summary>The <see cref="T:UnityEngine.AnimationClip"/> which this state plays.</summary>
+        </member>
+        <member name="P:Animancer.ClipState.Clip">
+            <summary>The <see cref="T:UnityEngine.AnimationClip"/> which this state plays.</summary>
+        </member>
+        <member name="P:Animancer.ClipState.MainAsset">
+            <summary>The <see cref="T:UnityEngine.AnimationClip"/> which this state plays.</summary>
+        </member>
+        <member name="F:Animancer.ClipState.Playable">
+            <summary>The internal system which plays the <see cref="P:Animancer.ClipState.Clip"/>.</summary>
+        </member>
+        <member name="E:Animancer.ClipState.OnEnd">
+            <summary>
+            A callback which is triggered when the <see cref="F:Animancer.ClipState.AnimationClip"/> reaches its end (not when the state is
+            exited). If the clip loops, this event will be triggered every time it passes the end of the clip.
+            <para></para>
+            This event is automatically cleared by <see cref="!:Play"/> and <see cref="!:StartFade"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.ClearOnEndEvent">
+            <summary>Removes all callbacks from the <see cref="E:Animancer.ClipState.OnEnd"/> event.</summary>
+        </member>
+        <member name="F:Animancer.ClipState._Time">
+            <summary>The current time of the <see cref="F:Animancer.ClipState.Playable"/>, retrieved by <see cref="P:Animancer.ClipState.Time"/> whenever <see cref="F:Animancer.ClipState._IsTimeDirty"/> is false.</summary>
+        </member>
+        <member name="F:Animancer.ClipState._IsTimeDirty">
+            <summary>When true, <see cref="F:Animancer.ClipState._Time"/> will be retrieved from the <see cref="F:Animancer.ClipState.Playable"/> when accessing <see cref="P:Animancer.ClipState.Time"/>.</summary>
+        </member>
+        <member name="P:Animancer.ClipState.PreviousTime">
+            <summary>The <see cref="P:Animancer.ClipState.Time"/> from last frame.</summary>
+        </member>
+        <member name="P:Animancer.ClipState.Time">
+            <summary>
+            The current local time of this state in seconds.
+            If the animation loops then this value will continue increasing with each successive loop.
+            <para></para>
+            • For example: if the animation lasts for 2 seconds then this value will go from 0 to 2 over the course of
+            its Duration.
+            </summary>
+        </member>
+        <member name="P:Animancer.ClipState.DefaultApplyFootIK">
+            <summary>
+            If true, newly created states will have their Foot IK enabled by default as if you had called
+            <see cref="M:Animancer.ClipState.SetApplyFootIK(System.Boolean)"/>. Default false.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.AnimationClip)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.ClipState"/> to play the 'clip' without connecting it to the
+            <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/> or it
+            won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.#ctor(Animancer.AnimancerLayer,UnityEngine.AnimationClip)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.ClipState"/> to play the 'clip' and connects it to the 'layer's
+            <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from previously destroyed
+            states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.AnimationClip)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.ClipState"/> to play the 'clip' and connects it to the 'parent's
+            <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.ValidateClip(UnityEngine.AnimationClip)">
+            <summary>
+            Throws an exception if the 'clip' is null or is marked as <see cref="P:UnityEngine.AnimationClip.legacy"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.UpdateTime">
+            <summary>
+            Checks if the animation has reached its end in order to trigger the <see cref="E:Animancer.AnimancerState.OnEnd"/> event. If the
+            <see cref="T:UnityEngine.WrapMode"/> is <see cref="F:UnityEngine.WrapMode.Once"/>, this method also stops and rewinds the
+            animation immediately before triggering the event.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.HasEvent(System.String)">
+            <summary>Checks if the <see cref="P:Animancer.ClipState.Clip"/> has an animation event with the specified 'functionName'.</summary>
+        </member>
+        <member name="M:Animancer.ClipState.HasEvent(UnityEngine.AnimationClip,System.String)">
+            <summary>Checks if the 'clip' has an animation event with the specified 'functionName'.</summary>
+        </member>
+        <member name="P:Animancer.ClipState.AverageVelocity">
+            <summary>The average velocity of the root motion caused by this state.</summary>
+        </member>
+        <member name="M:Animancer.ClipState.GetEnumerator">
+            <summary>A <see cref="T:Animancer.ClipState"/> has no child states.</summary>
+        </member>
+        <member name="M:Animancer.ClipState.ToString">
+            <summary>
+            Returns a string describing the type of this state and the name of the <see cref="P:Animancer.ClipState.Clip"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.AppendDescription(System.Text.StringBuilder,System.Object,System.Boolean,System.Boolean,System.String)">
+            <summary>Appends a detailed descrption of the current details of this state.</summary>
+        </member>
+        <member name="M:Animancer.ClipState.AppendDelegate(System.Text.StringBuilder,System.Delegate,System.String,System.String)">
+            <summary>Appends the <see cref="P:System.Delegate.Target"/> and <see cref="P:System.Delegate.Method"/> of 'del'.</summary>
+        </member>
+        <member name="M:Animancer.ClipState.GetApplyFootIK">
+            <summary>
+            Indicates whether this state is applying IK to the character's feet.
+            This is equivalent to the "Foot IK" toggle in AnimatorController states.
+            The value of this flag is determined by <see cref="P:Animancer.ClipState.DefaultApplyFootIK"/> when a state is created.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.GetApplyPlayableIK">
+            <summary>
+            Indicates whether OnAnimatorIK will be called on the animated object.
+            This is equivalent to the "IK Pass" toggle in AnimatorController layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.SetApplyFootIK(System.Boolean)">
+            <summary>
+            Tells this state whether it should apply IK to the character's feet.
+            This is equivalent to the "Foot IK" toggle in AnimatorController states.
+            The value of this flag is determined by <see cref="P:Animancer.ClipState.DefaultApplyFootIK"/> when a state is created.
+            </summary>
+        </member>
+        <member name="M:Animancer.ClipState.SetApplyPlayableIK(System.Boolean)">
+            <summary>
+            Tells this state whether OnAnimatorIK should be called on the animated object.
+            This is equivalent to the "IK Pass" toggle in AnimatorController layers.
+            </summary>
+        </member>
+        <member name="T:Animancer.IAnimancer">
+            <summary>
+            Interface for components that manage an <see cref="T:Animancer.AnimancerPlayable"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.IAnimancer.gameObject">
+            <summary>The <see cref="T:UnityEngine.GameObject"/> this script is attached to.</summary>
+        </member>
+        <member name="P:Animancer.IAnimancer.Animator">
+            <summary>The <see cref="T:UnityEngine.Animator"/> component which this script controls.</summary>
+        </member>
+        <member name="P:Animancer.IAnimancer.Playable">
+            <summary>The internal system which manages the playing animations.</summary>
+        </member>
+        <member name="P:Animancer.IAnimancer.IsPlayableInitialised">
+            <summary>Indicates whether the <see cref="P:Animancer.IAnimancer.Playable"/> has been initialised (is not null).</summary>
+        </member>
+        <member name="P:Animancer.IAnimancer.UpdateMode">
+            <summary>
+            Determines when animations are updated and which time source is used. This property is mainly a wrapper
+            around the <see cref="P:UnityEngine.Animator.updateMode"/>.
+            </summary>
+        </member>
+        <member name="T:Animancer.ICanFade">
+            <summary>
+            Interface for nodes that can fade their <see cref="P:Animancer.ICanFade.Weight"/> over time.
+            </summary>
+        </member>
+        <member name="P:Animancer.ICanFade.Parent">
+            <summary>The <see cref="T:Animancer.IAnimationMixer"/> which this node is connected to.</summary>
+        </member>
+        <member name="P:Animancer.ICanFade.Weight">
+            <summary>
+            The current blend weight of this node. Setting this property will also set the <see cref="P:Animancer.ICanFade.TargetWeight"/>
+            which cancels any fade currently in progress. If you don't wish to do that, use the <see cref="M:Animancer.ICanFade.SetWeight(System.Single)"/>
+            method instead.
+            </summary>
+        </member>
+        <member name="P:Animancer.ICanFade.TargetWeight">
+            <summary>The blend <see cref="P:Animancer.ICanFade.Weight"/> which this node is fading towards.</summary>
+        </member>
+        <member name="P:Animancer.ICanFade.FadeSpeed">
+            <summary>The speed at which this node is fading towards the <see cref="P:Animancer.ICanFade.TargetWeight"/>.</summary>
+        </member>
+        <member name="M:Animancer.ICanFade.SetWeight(System.Single)">
+            <summary>Sets the current blend <see cref="P:Animancer.ICanFade.Weight"/> of this node.</summary>
+        </member>
+        <member name="M:Animancer.ICanFade.Stop">
+            <summary>Pauses this node, rewinds it to the start, and sets the <see cref="P:Animancer.ICanFade.Weight"/> = 0.</summary>
+        </member>
+        <member name="M:Animancer.ICanFade.ClearOnEndEvent">
+            <summary>Removes all callbacks from the <see cref="E:Animancer.AnimancerState.OnEnd"/> event.</summary>
+        </member>
+        <member name="T:Animancer.FadeExtensions">
+            <summary>
+            Extension methods for <see cref="T:Animancer.ICanFade"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.FadeExtensions.StartFade(Animancer.ICanFade,System.Single,System.Single)">
+            <summary>[Pro-Only]
+            Calls <see cref="M:Animancer.ICanFade.ClearOnEndEvent"/>, sets the <see cref="P:Animancer.ICanFade.TargetWeight"/> and calculates the
+            <see cref="P:Animancer.ICanFade.FadeSpeed"/> that will reach that weight over the course of the 'fadeDuration'.
+            </summary>
+        </member>
+        <member name="M:Animancer.FadeExtensions.UpdateFade(Animancer.ICanFade,System.Single)">
+            <summary>[Pro-Only]
+            Moves the <see cref="P:Animancer.ICanFade.Weight"/> towards the <see cref="P:Animancer.ICanFade.TargetWeight"/>.
+            </summary>
+        </member>
+        <member name="T:Animancer.AnimatorControllerState">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimancerState"/> which plays a <see cref="T:UnityEngine.RuntimeAnimatorController"/>.
+            You can control this state very similarly to an <see cref="T:UnityEngine.Animator"/> via its <see cref="F:Animancer.AnimatorControllerState.Playable"/> field.
+            </summary>
+        </member>
+        <member name="F:Animancer.AnimatorControllerState.AnimatorController">
+            <summary>The <see cref="T:UnityEngine.RuntimeAnimatorController"/> which this state plays.</summary>
+        </member>
+        <member name="P:Animancer.AnimatorControllerState.MainAsset">
+            <summary>The <see cref="T:UnityEngine.RuntimeAnimatorController"/> which this state plays.</summary>
+        </member>
+        <member name="F:Animancer.AnimatorControllerState.Playable">
+            <summary>The internal system which plays the <see cref="T:UnityEngine.RuntimeAnimatorController"/>.</summary>
+        </member>
+        <member name="E:Animancer.AnimatorControllerState.OnEnd">
+            <summary>
+            <see cref="T:Animancer.AnimatorControllerState"/>s don't track the progress of a single animation so this event isn't
+            used and will be ignored.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.ClearOnEndEvent">
+            <summary>Removes all callbacks from the <see cref="E:Animancer.AnimatorControllerState.OnEnd"/> event.</summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimatorControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimatorControllerState"/> to play the 'animatorController' and connects it to
+            the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from previously
+            destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimatorControllerState"/> to play the 'animatorController' and connects it to
+            the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.HasEvent(System.String)">
+            <summary>Checks if any clip in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> has an animation event with the specified 'functionName'.</summary>
+        </member>
+        <member name="P:Animancer.AnimatorControllerState.AverageVelocity">
+            <summary>[Unsupported]
+            Returns <see cref="P:UnityEngine.Vector3.zero"/> since <see cref="T:UnityEngine.Animations.AnimatorControllerPlayable"/> doesn't expose the
+            average velocity.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.GetEnumerator">
+            <summary>
+            A <see cref="T:Animancer.AnimatorControllerState"/> has no child states.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.ToString">
+            <summary>
+            Returns a string describing the type of this state and the name of the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.GetApplyFootIK">
+            <summary>Returns false since <see cref="T:UnityEngine.Animations.AnimatorControllerPlayable"/> doesn't expose this function.</summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.GetApplyPlayableIK">
+            <summary>Returns false since <see cref="T:UnityEngine.Animations.AnimatorControllerPlayable"/> doesn't expose this function.</summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.SetApplyFootIK(System.Boolean)">
+            <summary>Does nothing since <see cref="T:UnityEngine.Animations.AnimatorControllerPlayable"/> doesn't expose this function.</summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.SetApplyPlayableIK(System.Boolean)">
+            <summary>Does nothing since <see cref="T:UnityEngine.Animations.AnimatorControllerPlayable"/> doesn't expose this function.</summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.ValidateParameter(System.String,UnityEngine.AnimatorControllerParameterType)">
+            <summary>[Editor-Conditional]
+            Throws an <see cref="T:System.ArgumentException"/> if the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> doesn't have a parameter
+            with the specified 'name' and 'type'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimatorControllerState.ValidateParameter(System.Int32,UnityEngine.AnimatorControllerParameterType)">
+            <summary>[Editor-Conditional]
+            Throws an <see cref="T:System.ArgumentException"/> if the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> doesn't have a parameter
+            with the specified 'nameHash' and 'type'.
+            </summary>
+        </member>
+        <member name="T:Animancer.FloatParameterControllerState">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimatorControllerState"/> which manages a float parameter.
+            </summary>
+        </member>
+        <member name="F:Animancer.FloatParameterControllerState.ParameterName">
+            <summary>
+            The name of the parameter which <see cref="P:Animancer.FloatParameterControllerState.Parameter"/> will get and set.
+            Note that this will be null if the state was constructed using a hash code.
+            </summary>
+        </member>
+        <member name="F:Animancer.FloatParameterControllerState.ParameterHash">
+            <summary>
+            The name hash of the parameter which <see cref="P:Animancer.FloatParameterControllerState.Parameter"/> will get and set.
+            If the state is constructed using a parameter name, this value is derived from that string.
+            </summary>
+        </member>
+        <member name="P:Animancer.FloatParameterControllerState.Parameter">
+            <summary>
+            Gets and sets a float parameter in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> using the
+            <see cref="F:Animancer.FloatParameterControllerState.ParameterHash"/> as the id.
+            </summary>
+        </member>
+        <member name="M:Animancer.FloatParameterControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.FloatParameterControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.FloatParameterControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.FloatParameterControllerState"/> to play the 'animatorController' and connects
+            it to the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from
+            previously destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.FloatParameterControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.FloatParameterControllerState"/> to play the 'animatorController' and connects
+            it to the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.FloatParameterControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.FloatParameterControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.FloatParameterControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.FloatParameterControllerState"/> to play the 'animatorController' and connects
+            it to the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from
+            previously destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.FloatParameterControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.FloatParameterControllerState"/> to play the 'animatorController' and connects
+            it to the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="T:Animancer.Vector2ParameterControllerState">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimatorControllerState"/> which manages two float parameters.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector2ParameterControllerState.ParameterNameX">
+            <summary>
+            The name of the parameter which <see cref="P:Animancer.Vector2ParameterControllerState.ParameterX"/> will get and set.
+            Note that this will be null if the state was constructed using a hash code.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector2ParameterControllerState.ParameterHashX">
+            <summary>
+            The name hash of the parameter which <see cref="P:Animancer.Vector2ParameterControllerState.ParameterX"/> will get and set.
+            If the state is constructed using a parameter name, this value is derived from that string.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector2ParameterControllerState.ParameterNameY">
+            <summary>
+            The name of the parameter which <see cref="P:Animancer.Vector2ParameterControllerState.ParameterY"/> will get and set.
+            Note that this will be null if the state was constructed using a hash code.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector2ParameterControllerState.ParameterHashY">
+            <summary>
+            The name hash of the parameter which <see cref="P:Animancer.Vector2ParameterControllerState.ParameterY"/> will get and set.
+            If the state is constructed using a parameter name, this value is derived from that string.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector2ParameterControllerState.ParameterX">
+            <summary>
+            Gets and sets a float parameter in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> using the
+            <see cref="F:Animancer.Vector2ParameterControllerState.ParameterHashX"/> as the id.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector2ParameterControllerState.ParameterY">
+            <summary>
+            Gets and sets a float parameter in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> using the
+            <see cref="F:Animancer.Vector2ParameterControllerState.ParameterHashY"/> as the id.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector2ParameterControllerState.Parameter">
+            <summary>
+            Gets and sets a pair of float parameters in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/>
+            using the <see cref="F:Animancer.Vector2ParameterControllerState.ParameterHashX"/> and <see cref="F:Animancer.Vector2ParameterControllerState.ParameterHashY"/> as the ids.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector2ParameterControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController,System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector2ParameterControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector2ParameterControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController,System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector2ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from
+            previously destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector2ParameterControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController,System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector2ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector2ParameterControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector2ParameterControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector2ParameterControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector2ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from
+            previously destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector2ParameterControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector2ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="T:Animancer.Vector3ParameterControllerState">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimatorControllerState"/> which manages three float parameters.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector3ParameterControllerState.ParameterNameX">
+            <summary>
+            The name of the parameter which <see cref="P:Animancer.Vector3ParameterControllerState.ParameterX"/> will get and set.
+            Note that this will be null if the state was constructed using a hash code.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector3ParameterControllerState.ParameterHashX">
+            <summary>
+            The name hash of the parameter which <see cref="P:Animancer.Vector3ParameterControllerState.ParameterX"/> will get and set.
+            If the state is constructed using a parameter name, this value is derived from that string.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector3ParameterControllerState.ParameterNameY">
+            <summary>
+            The name of the parameter which <see cref="P:Animancer.Vector3ParameterControllerState.ParameterY"/> will get and set.
+            Note that this will be null if the state was constructed using a hash code.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector3ParameterControllerState.ParameterHashY">
+            <summary>
+            The name hash of the parameter which <see cref="P:Animancer.Vector3ParameterControllerState.ParameterY"/> will get and set.
+            If the state is constructed using a parameter name, this value is derived from that string.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector3ParameterControllerState.ParameterNameZ">
+            <summary>
+            The name of the parameter which <see cref="P:Animancer.Vector3ParameterControllerState.ParameterZ"/> will get and set.
+            Note that this will be null if the state was constructed using a hash code.
+            </summary>
+        </member>
+        <member name="F:Animancer.Vector3ParameterControllerState.ParameterHashZ">
+            <summary>
+            The name hash of the parameter which <see cref="P:Animancer.Vector3ParameterControllerState.ParameterZ"/> will get and set.
+            If the state is constructed using a parameter name, this value is derived from that string.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector3ParameterControllerState.ParameterX">
+            <summary>
+            Gets and sets a float parameter in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> using the
+            <see cref="F:Animancer.Vector3ParameterControllerState.ParameterHashX"/> as the id.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector3ParameterControllerState.ParameterY">
+            <summary>
+            Gets and sets a float parameter in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> using the
+            <see cref="F:Animancer.Vector3ParameterControllerState.ParameterHashY"/> as the id.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector3ParameterControllerState.ParameterZ">
+            <summary>
+            Gets and sets a float parameter in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/> using the
+            <see cref="F:Animancer.Vector3ParameterControllerState.ParameterHashZ"/> as the id.
+            </summary>
+        </member>
+        <member name="P:Animancer.Vector3ParameterControllerState.Parameter">
+            <summary>
+            Gets and sets a pair of float parameters in the <see cref="F:Animancer.AnimatorControllerState.AnimatorController"/>
+            using the <see cref="F:Animancer.Vector3ParameterControllerState.ParameterHashX"/>, <see cref="F:Animancer.Vector3ParameterControllerState.ParameterHashY"/>, and <see cref="F:Animancer.Vector3ParameterControllerState.ParameterHashZ"/> as
+            the ids.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector3ParameterControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController,System.String,System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector3ParameterControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector3ParameterControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController,System.String,System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector3ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from
+            previously destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector3ParameterControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController,System.String,System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector3ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector3ParameterControllerState.#ctor(UnityEngine.Playables.PlayableGraph,UnityEngine.RuntimeAnimatorController,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector3ParameterControllerState"/> to play the 'animatorController' without connecting
+            it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>. You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/>
+            or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector3ParameterControllerState.#ctor(Animancer.AnimancerLayer,UnityEngine.RuntimeAnimatorController,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector3ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'layer's <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from
+            previously destroyed states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.Vector3ParameterControllerState.#ctor(Animancer.IAnimationMixer,System.Int32,UnityEngine.RuntimeAnimatorController,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.Vector3ParameterControllerState"/> to play the 'animatorController' and
+            connects it to the 'parent's <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="T:Animancer.AnimationMixer">
+            <summary>[Pro-Only]
+            Base class for <see cref="T:Animancer.AnimancerState"/>s which blend other states together.
+            </summary>
+        </member>
+        <member name="F:Animancer.AnimationMixer.Playable">
+            <summary>The <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> responsible for the actual mixing.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.PortCount">
+            <summary>The number of input ports in the <see cref="F:Animancer.AnimationMixer.Playable"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.Animancer#IAnimationMixer#Root">
+            <summary>The <see cref="T:Animancer.AnimancerPlayable"/> at the root of the graph.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.Animancer#IAnimationMixer#RootLayer">
+            <summary>The <see cref="T:Animancer.AnimancerLayer"/> at the root of the graph.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.Animancer#IAnimationMixer#Parent">
+            <summary>The <see cref="T:Animancer.IAnimationMixer"/> which this mixer is connected to.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.Clip">
+            <summary>An <see cref="T:Animancer.AnimationMixer"/> has no <see cref="T:UnityEngine.AnimationClip"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.OnStateDisposed(Animancer.AnimancerState)">
+            <summary>Called by <see cref="!:AnimancerState.Destroy"/> for any states connected to this mixer. Does nothing unless overridden.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.ChildStates">
+            <summary>
+            Returns the collection of states connected to this mixer. Note that some elements may be null.
+            <para></para>
+            Getting an enumerator that automatically skips over null states is slower and creates garbage, so
+            internally we use this property and perform null checks manually even though it increases the code
+            complexity a bit.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.GetEnumerator">
+            <summary>
+            Returns an enumerator through each state connected to this mixer.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.IsPlaying">
+            <summary>
+            Determines whether the clips in this mixer are playing.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.Time">
+            <summary>
+            The current local time of this state in seconds.
+            Setting this property passes the value onto all <see cref="P:Animancer.AnimationMixer.ChildStates"/>.
+            </summary>
+        </member>
+        <member name="E:Animancer.AnimationMixer.OnEnd">
+            <summary>
+            An <see cref="T:Animancer.AnimationMixer"/> has no <see cref="E:Animancer.AnimationMixer.OnEnd"/> event of its own, but will add/remove events
+            from all of its children.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.ClearOnEndEvent">
+            <summary>Removes all callbacks from the <see cref="E:Animancer.AnimationMixer.OnEnd"/> events of all child states.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.AreWeightsDirty">
+            <summary>Indicates whether the weights of all child states should be recalculated.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.#ctor(UnityEngine.Playables.PlayableGraph)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimationMixer"/> without connecting it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/> or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.#ctor(Animancer.AnimancerLayer)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimationMixer"/> and connects it to the 'layer's
+            <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from previously destroyed
+            states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.#ctor(Animancer.IAnimationMixer,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimationMixer"/> and connects it to the 'parent's
+            <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.CreateState(System.Int32,UnityEngine.AnimationClip)">
+            <summary>
+            Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the 'clip' with this
+            <see cref="T:Animancer.AnimationMixer"/> as its parent.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.ConnectState(Animancer.AnimancerState)">
+            <summary>Connects the 'state' to this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.DisconnectState(Animancer.AnimancerState)">
+            <summary>Disconnects the 'state' from this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.UpdateTime">
+            <summary>
+            Updates the time of this mixer and all of its child states.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.RecalculateWeights">
+            <summary>
+            Recalculates the weights of all <see cref="!:States"/> based on the current value of the
+            <see cref="!:Parameter"/> and the <see cref="!:Thresholds"/>.
+            <para></para>
+            Overrides of this method must set <see cref="P:Animancer.AnimationMixer.AreWeightsDirty"/> = false.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.GetApplyFootIK">
+            <summary>
+            Indicates whether this state is applying IK to the character's feet for all child states.
+            This is equivalent to the "Foot IK" toggle in AnimatorController states.
+            The value of this flag is determined by <see cref="P:Animancer.ClipState.DefaultApplyFootIK"/> when a state is created.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.GetApplyPlayableIK">
+            <summary>
+            Indicates whether OnAnimatorIK will be called on the animated object for all child states.
+            This is equivalent to the "IK Pass" toggle in AnimatorController layers.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.SetApplyFootIK(System.Boolean)">
+            <summary>
+            Tells all child states whether it should apply IK to the character's feet.
+            This is equivalent to the "Foot IK" toggle in AnimatorController states.
+            The value of this flag is determined by <see cref="P:Animancer.ClipState.DefaultApplyFootIK"/> when a state is created.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.SetApplyPlayableIK(System.Boolean)">
+            <summary>
+            Tells all child states whether OnAnimatorIK should be called on the animated object.
+            This is equivalent to the "IK Pass" toggle in AnimatorController layers.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer.AverageVelocity">
+            <summary>The average velocity of the root motion caused by this state.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.NormalizeDurations">
+            <summary>
+            Averages the <see cref="P:Animancer.AnimancerState.Duration"/> of all child states.
+            <para></para>
+            Throws a <see cref="T:System.NullReferenceException"/> if there are any states with no <see cref="P:Animancer.AnimationMixer.Clip"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.HasEvent(System.String)">
+            <summary>Checks if any of this mixer's children has an animation event with the specified 'functionName'.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.GetDisplayKey(Animancer.AnimancerState)">
+            <summary>Gets a user-friendly key to identify the 'state' in the inspector.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer.ToString">
+            <summary>
+            Returns a string describing the type of this mixer and the name of <see cref="P:Animancer.AnimationMixer.Clip"/>s connected to it.
+            </summary>
+        </member>
+        <member name="T:Animancer.AnimationMixer`1">
+            <summary>[Pro-Only]
+            Base class for <see cref="T:Animancer.AnimationMixer"/>s which blend an array of <see cref="P:Animancer.AnimationMixer`1.States"/> together based on a
+            <see cref="P:Animancer.AnimationMixer`1.Parameter"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer`1.States">
+            <summary>The states managed by this mixer.</summary>
+        </member>
+        <member name="F:Animancer.AnimationMixer`1._Thresholds">
+            <summary>The parameter values at which each of the <see cref="P:Animancer.AnimationMixer`1.States"/> are used and blended.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer`1.PortCount">
+            <summary>The number of input ports in the <see cref="!:Mixer"/>.</summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer`1.Parameter">
+            <summary>The value used to calculate the weights of the <see cref="P:Animancer.AnimationMixer`1.States"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.HasThresholds">
+            <summary>
+            Returns true if the thresholds array is not null.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.GetThreshold(System.Int32)">
+            <summary>
+            Returns the value of the threshold associated with the specified portIndex.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.SetThreshold(System.Int32,`0)">
+            <summary>
+            Sets the value of the threshold associated with the specified portIndex.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.SetThresholds(`0[])">
+            <summary>
+            Assigns the specified array as the thresholds to use for blending.
+            <para></para>
+            WARNING: if you keep a reference to the 'thresholds' array you must call <see cref="M:Animancer.AnimationMixer`1.OnThresholdsChanged"/>
+            whenever any changes are made to it, otherwise this mixer may not blend correctly.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.ValidateThresholdCount">
+            <summary>
+            If the <see cref="F:Animancer.AnimationMixer`1._Thresholds"/> don't have the same <see cref="P:System.Array.Length"/> as the
+            <see cref="P:Animancer.AnimationMixer`1.States"/>, this method allocates and assigns a new array of that size.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.OnThresholdsChanged">
+            <summary>
+            Called whenever the thresholds are changed. By default this method simply indicates that the blend weights
+            need recalculating but it can be overridden by child classes to perform validation checks or optimisations.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.CalculateThresholds(System.Func{Animancer.AnimancerState,`0})">
+            <summary>
+            Calls 'calculate' for each of the <see cref="P:Animancer.AnimationMixer`1.States"/> and stores the returned value as the threshold for
+            that state.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.#ctor(UnityEngine.Playables.PlayableGraph)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimationMixer`1"/> without connecting it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/> or it won't actually doanything.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.#ctor(Animancer.AnimancerLayer)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimationMixer`1"/> and connects it to the 'layer's
+            <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from previously destroyed
+            states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.#ctor(Animancer.IAnimationMixer,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.AnimationMixer`1"/> and connects it to the 'parent's
+            <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.Initialise(System.Int32)">
+            <summary>
+            Initialises this mixer with the specified number of ports which can be filled individually by <see cref="M:Animancer.AnimationMixer`1.CreateState(System.Int32,UnityEngine.AnimationClip)"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.Initialise(UnityEngine.AnimationClip[])">
+            <summary>
+            Initialises the <see cref="!:Mixer"/> and <see cref="P:Animancer.AnimationMixer`1.States"/> with one state per clip.
+            Note that you must still initialise the thresholds after calling this method.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.Initialise(UnityEngine.AnimationClip[],`0[])">
+            <summary>
+            Initialises the <see cref="!:Mixer"/> and <see cref="P:Animancer.AnimationMixer`1.States"/> with one state per clip and assigns the
+            'thresholds'.
+            <para></para>
+            WARNING: if the caller keeps a reference to the 'thresholds' array, it must call
+            <see cref="M:Animancer.AnimationMixer`1.OnThresholdsChanged"/> whenever any changes are made to it, otherwise this mixer may not blend
+            correctly.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.Initialise(UnityEngine.AnimationClip[],System.Func{Animancer.AnimancerState,`0})">
+            <summary>
+            Initialises the <see cref="!:Mixer"/> and <see cref="P:Animancer.AnimationMixer`1.States"/> with one state per clip and assigns the
+            thresholds by calling 'calculateThreshold' for each state.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.CreateState(System.Int32,UnityEngine.AnimationClip)">
+            <summary>
+            Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the 'clip' with this
+            <see cref="T:Animancer.AnimationMixer"/> as its parent.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.CreateState(System.Int32,UnityEngine.AnimationClip,`0)">
+            <summary>
+            Creates and returns a new <see cref="T:Animancer.ClipState"/> to play the 'clip' with this
+            <see cref="T:Animancer.AnimationMixer"/> as its parent, connects it to the specified 'portIndex', and assigns the
+            'threshold' for it.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.ConnectState(Animancer.AnimancerState)">
+            <summary>Connects the 'state' to this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.DisconnectState(Animancer.AnimancerState)">
+            <summary>Disconnects the 'state' from this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.OnStateDisposed(Animancer.AnimancerState)">
+            <summary>
+            Called by <see cref="!:AnimancerState.Destroy"/> for any states connected to this mixer.
+            Removes the 'state' from the <see cref="P:Animancer.AnimationMixer`1.States"/> array.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.Dispose">
+            <summary>
+            Destroys the <see cref="T:UnityEngine.Playables.Playable"/> of this mixer and its <see cref="P:Animancer.AnimationMixer`1.ChildStates"/>.
+            </summary>
+        </member>
+        <member name="P:Animancer.AnimationMixer`1.ChildStates">
+            <summary>
+            Returns the <see cref="P:Animancer.AnimationMixer`1.States"/> array.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.DisableRemainingStates(System.Int32)">
+            <summary>
+            Sets the weight of all states after the 'previousIndex' to 0.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.GetNextState(System.Int32@)">
+            <summary>
+            Returns the state at the specified 'index' if it isn't null, otherwise increments the index and checks
+            again. Returns null if no state is found by the end of the <see cref="P:Animancer.AnimationMixer`1.States"/> array.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.NormalizeWeights(System.Single)">
+            <summary>
+            Divides the weight of all states by the 'totalWeight' so that they all add up to 1.
+            </summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.GetDisplayKey(Animancer.AnimancerState)">
+            <summary>Gets a user-friendly key to identify the 'state' in the inspector.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.AppendDescription(System.Text.StringBuilder,System.Object,System.Boolean,System.Boolean,System.String)">
+            <summary>Appends a detailed descrption of the current details of this state.</summary>
+        </member>
+        <member name="M:Animancer.AnimationMixer`1.AppendParameter(System.Text.StringBuilder)">
+            <summary>Appends the current parameter value of this mixer.</summary>
+        </member>
+        <member name="T:Animancer.CartesianAnimationMixer">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimancerState"/> which blends an array of other states together based on a two dimensional
+            parameter and thresholds using Gradient Band Interpolation.
+            <para></para>
+            This mixer type is similar to the 2D Freeform Cartesian Blend Type in Mecanim Blend Trees.
+            </summary>
+        </member>
+        <member name="M:Animancer.CartesianAnimationMixer.#ctor(UnityEngine.Playables.PlayableGraph)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.CartesianAnimationMixer"/> without connecting it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/> or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.CartesianAnimationMixer.#ctor(Animancer.AnimancerLayer)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.CartesianAnimationMixer"/> and connects it to the 'layer's
+            <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from previously destroyed
+            states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.CartesianAnimationMixer.#ctor(Animancer.IAnimationMixer,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.CartesianAnimationMixer"/> and connects it to the 'parent's
+            <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="P:Animancer.CartesianAnimationMixer.ParameterX">
+            <summary>Gets or sets Parameter.x.</summary>
+        </member>
+        <member name="P:Animancer.CartesianAnimationMixer.ParameterY">
+            <summary>Gets or sets Parameter.y.</summary>
+        </member>
+        <member name="M:Animancer.CartesianAnimationMixer.RecalculateWeights">
+            <summary>
+            Recalculates the weights of all <see cref="!:States"/> based on the current value of the
+            <see cref="!:Parameter"/> and the <see cref="!:Thresholds"/>.
+            </summary>
+        </member>
+        <member name="M:Animancer.CartesianAnimationMixer.AppendParameter(System.Text.StringBuilder)">
+            <summary>Appends the current parameter values of this mixer.</summary>
+        </member>
+        <member name="T:Animancer.DirectionalAnimationMixer">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimancerState"/> which blends an array of other states together based on a two dimensional
+            parameter and thresholds using Polar Gradient Band Interpolation.
+            <para></para>
+            This mixer type is similar to the 2D Freeform Directional Blend Type in Mecanim Blend Trees.
+            </summary>
+        </member>
+        <member name="M:Animancer.DirectionalAnimationMixer.#ctor(UnityEngine.Playables.PlayableGraph)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.DirectionalAnimationMixer"/> without connecting it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/> or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.DirectionalAnimationMixer.#ctor(Animancer.AnimancerLayer)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.DirectionalAnimationMixer"/> and connects it to the 'layer's
+            <see cref="!:IAnimationMixer.Playable"/> using a spare port if there are any from previously destroyed
+            states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.DirectionalAnimationMixer.#ctor(Animancer.IAnimationMixer,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.DirectionalAnimationMixer"/> and connects it to the 'parent's
+            <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="P:Animancer.DirectionalAnimationMixer.ParameterX">
+            <summary>Gets or sets Parameter.x.</summary>
+        </member>
+        <member name="P:Animancer.DirectionalAnimationMixer.ParameterY">
+            <summary>Gets or sets Parameter.y.</summary>
+        </member>
+        <member name="M:Animancer.DirectionalAnimationMixer.RecalculateWeights">
+            <summary>
+            Recalculates the weights of all <see cref="!:States"/> based on the current value of the
+            <see cref="!:Parameter"/> and the thresholds.
+            </summary>
+        </member>
+        <member name="M:Animancer.DirectionalAnimationMixer.AppendParameter(System.Text.StringBuilder)">
+            <summary>Appends the current parameter values of this mixer.</summary>
+        </member>
+        <member name="T:Animancer.IAnimationMixer">
+            <summary>
+            Interface for nodes in a <see cref="T:UnityEngine.Playables.PlayableGraph"/> which use an <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> to blend
+            multiple animations.
+            </summary>
+        </member>
+        <member name="P:Animancer.IAnimationMixer.Root">
+            <summary>The <see cref="T:Animancer.AnimancerPlayable"/> at the root of the graph.</summary>
+        </member>
+        <member name="P:Animancer.IAnimationMixer.RootLayer">
+            <summary>The <see cref="T:Animancer.AnimancerLayer"/> at the root of the graph.</summary>
+        </member>
+        <member name="P:Animancer.IAnimationMixer.Parent">
+            <summary>The <see cref="T:Animancer.IAnimationMixer"/> which this mixer is connected to.</summary>
+        </member>
+        <member name="P:Animancer.IAnimationMixer.Weight">
+            <summary>The current blend weight of this mixer.</summary>
+        </member>
+        <member name="P:Animancer.IAnimationMixer.BasePlayable">
+            <summary>The <see cref="T:UnityEngine.Animations.AnimationMixerPlayable"/> responsible for the actual mixing.</summary>
+        </member>
+        <member name="M:Animancer.IAnimationMixer.ConnectState(Animancer.AnimancerState)">
+            <summary>Connects the 'state' to this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.IAnimationMixer.DisconnectState(Animancer.AnimancerState)">
+            <summary>Disconnects the 'state' from this mixer at its <see cref="P:Animancer.AnimancerState.PortIndex"/>.</summary>
+        </member>
+        <member name="M:Animancer.IAnimationMixer.OnStateDisposed(Animancer.AnimancerState)">
+            <summary>Called by <see cref="M:Animancer.AnimancerState.Dispose"/> for any states connected to this mixer.</summary>
+        </member>
+        <member name="M:Animancer.IAnimationMixer.GetDisplayKey(Animancer.AnimancerState)">
+            <summary>Gets a user-friendly key to identify the 'state' in the inspector.</summary>
+        </member>
+        <member name="T:Animancer.LinearAnimationMixer">
+            <summary>[Pro-Only]
+            An <see cref="T:Animancer.AnimancerState"/> which linearly blends an array of other states together.
+            <para></para>
+            This mixer type is similar to the 1D Blend Type in Mecanim Blend Trees.
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.#ctor(UnityEngine.Playables.PlayableGraph)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.LinearAnimationMixer"/> without connecting it to the <see cref="T:UnityEngine.Playables.PlayableGraph"/>.
+            You must call <see cref="!:AnimancerState.SetParent(AnimancerLayer)"/> or it won't actually do anything.
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.#ctor(Animancer.AnimancerLayer)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.LinearAnimationMixer"/> and connects it to the 'layer's
+            <see cref="P:Animancer.IAnimationMixer.BasePlayable"/> using a spare port if there are any from previously destroyed
+            states, or by adding a new port.
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.#ctor(Animancer.IAnimationMixer,System.Int32)">
+            <summary>
+            Constructs a new <see cref="T:Animancer.LinearAnimationMixer"/> and connects it to the 'parent's
+            <see cref="!:IAnimationMixer.Playable"/> at the specified 'portIndex'.
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.Initialise(UnityEngine.AnimationClip[],System.Single,System.Single)">
+            <summary>
+            Initialises the <see cref="!:Mixer"/> and <see cref="!:States"/> with one state per clip and assigns thresholds
+            evenly spaced between the specified min and max (inclusive).
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.Initialise(UnityEngine.AnimationClip,UnityEngine.AnimationClip,System.Single,System.Single)">
+            <summary>
+            Initialises the <see cref="!:Mixer"/> with two ports and connects two states to them for the specified clips
+            at the specified thresholds (default 0 and 1).
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.Initialise(UnityEngine.AnimationClip,UnityEngine.AnimationClip,UnityEngine.AnimationClip,System.Single,System.Single,System.Single)">
+            <summary>
+            Initialises the <see cref="!:Mixer"/> with three ports and connects three states to them for the specified
+            clips at the specified thresholds (default -1, 0, and 1).
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.AssertThresholdsSorted">
+            <summary>
+            Checks if the thresholds are sorted from lowest to highest and throws an exception if they aren't.
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.RecalculateWeights">
+            <summary>
+            Recalculates the weights of all <see cref="!:States"/> based on the current value of the
+            <see cref="!:Parameter"/> and the thresholds.
+            </summary>
+        </member>
+        <member name="M:Animancer.LinearAnimationMixer.AssignLinearThresholds(System.Single,System.Single)">
+            <summary>
+            Assigns the <see cref="!:Thresholds"/> to be evenly spaced between the specified min and max (inclusive).
+            </summary>
+        </member>
+    </members>
+</doc>
