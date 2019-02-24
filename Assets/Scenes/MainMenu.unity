@@ -2892,6 +2892,30 @@ Prefab:
       propertyPath: _OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ConnectToServer
       objectReference: {fileID: 0}
+    - target: {fileID: 4940925393173400, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940925393173400, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940925393173400, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338326131898150, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338326131898150, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338326131898150, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0533df8f32a8174fabf11a3b09f9ca6, type: 2}
   m_IsPrefabAsset: 0
@@ -2956,7 +2980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1079458419
 Camera:
   m_ObjectHideFlags: 0
