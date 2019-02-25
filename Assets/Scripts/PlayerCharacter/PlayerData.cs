@@ -5,6 +5,7 @@ namespace Fyp.Game.PlayerCharacter {
 	public class PlayerData : ScriptableObject {
 		private string roomName;
 		private int dayNumber;
+		private bool isMaster;
 
 		public PlayerData(string roomName, int dayNumber) {
 			this.roomName = roomName;

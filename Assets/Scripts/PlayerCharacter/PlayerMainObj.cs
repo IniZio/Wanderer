@@ -17,7 +17,7 @@ namespace Fyp.Game.PlayerCharacter {
 
         private GameObject playerChac;
         private PlayerData playerData;
-        private bool isMaster;
+        private PlayerState playerSate;
 
         private bool enable = false;
         // private PlayerBag bag = new PlayerBag();

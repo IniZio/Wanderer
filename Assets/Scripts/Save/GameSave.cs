@@ -19,8 +19,8 @@ namespace Fyp.Game.Save {
 		}
 		#endregion
 
-		void SaveTest() {
-			FileIO.WriteSave();
-		}
+		// void SaveGame() {
+		// 	FileIO.WriteSave();
+		// }
 	}
 }

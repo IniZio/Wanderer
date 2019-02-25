@@ -9,11 +9,10 @@ namespace Fyp.Game.Save {
 	public class FileIO {
 		public static void WriteSave(PlayerData po) {
 			string path = Path.Combine(Application.persistentDataPath, po.getRoomName() + ".txt");
-
-			StreamWriter writer = new StreamWriter(path);
-			writer.Write(po);
-
-			writer.Close();
+			string jsonString = JsonUtility.ToJson (po);
+			using (StreamWriter streamWriter = File.CreateText (path)) {
+				streamWriter.Write (jsonString);
+        	}
 		}
 
 		public static void ReadSave(string path) {
