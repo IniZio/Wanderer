@@ -15,15 +15,15 @@ namespace Fyp.Game.PlayerCharacter {
             }
         }
 
-        private GameObject playerChac;
+        private GameObject playerChar;
         private PlayerData playerData;
         private PlayerState playerSate;
 
         private bool enable = false;
         // private PlayerBag bag = new PlayerBag();
 
-        public void setChac(GameObject chac, bool isMaster) {
-            playerChac = chac;
+        public void setChar(GameObject character, bool isMaster) {
+            this.playerChar = character;
         }
     }
 }

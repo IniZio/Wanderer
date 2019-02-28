@@ -401,8 +401,8 @@ namespace Leap.Unity.Interaction {
       get { return chirality == Chirality.Left ? XRNode.LeftHand : XRNode.RightHand; }
     }
     #else
-    public VRNode xrNode {
-      get { return chirality == Chirality.Left ? VRNode.LeftHand : VRNode.RightHand; }
+    public UnityEngine.XR.XRNode xrNode {
+      get { return chirality == Chirality.Left ? UnityEngine.XR.XRNode.LeftHand : UnityEngine.XR.XRNode.RightHand; }
     }
     #endif
 

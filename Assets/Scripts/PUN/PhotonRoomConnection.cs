@@ -46,12 +46,11 @@ namespace Fyp.Game.Network {
             Debug.Log(PhotonNetwork.isMasterClient);
             Debug.Log(PhotonNetwork.isNonMasterClientInRoom);
             if(PhotonNetwork.isMasterClient && photonView.isMine) {
-                GameObject temp = PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
-                Debug.Log(temp);
-                spawned = true;
+                PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
+                this.spawned = true;
             } else {
                 PhotonNetwork.Instantiate("Player2Character", new Vector3(-1f,5f,2f), Quaternion.identity, 0);
-                spawned = true;
+                this.spawned = true;
             }
         }
 
