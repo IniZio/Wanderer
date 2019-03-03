@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fyp.Constant;
+using Fyp.Game.Carmera;
+using Fyp.Game.PlayerControl;
 
 namespace Fyp.Game.Network {
     public class PhotonRoomConnection : Photon.PunBehaviour {
@@ -46,11 +48,25 @@ namespace Fyp.Game.Network {
             Debug.Log(PhotonNetwork.isMasterClient);
             Debug.Log(PhotonNetwork.isNonMasterClientInRoom);
             if(PhotonNetwork.isMasterClient && photonView.isMine) {
-                PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
+                GameObject player = PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,5f,0f), Quaternion.identity, 0);
                 this.spawned = true;
+                GameObject playerCamera = GameObject.FindWithTag("Player1Camera");
+                if (playerCamera != null) {
+                    PlayerCamera cameraScirpt = playerCamera.GetComponent("CameraController") as PlayerCamera;
+                    if (cameraScirpt.player == null) {
+                        cameraScirpt.player = player;
+                    }
+                }
             } else {
-                PhotonNetwork.Instantiate("Player2Character", new Vector3(-1f,5f,2f), Quaternion.identity, 0);
+                GameObject player2 = PhotonNetwork.Instantiate("Player2Character", new Vector3(-1f,5f,2f), Quaternion.identity, 0);
                 this.spawned = true;
+                GameObject player2Camera = GameObject.FindWithTag("Player2Camera");
+                if (player2Camera != null) {
+                    PlayerCamera cameraScirpt = player2Camera.GetComponent("CameraController") as PlayerCamera;
+                    if (cameraScirpt.player == null) {
+                        cameraScirpt.player = player2;
+                    }
+                }
             }
         }
 
