@@ -5,21 +5,18 @@ using UnityEngine;
 public class hp : MonoBehaviour {
     public SimpleHealthBar healthBar;
 
-    private int health = 100;
+    private float health = 100;
 
     // Use this for initialization
     void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	public void Increase () {
-        health += 10;
-        healthBar.UpdateBar(health, 100);
+	public void Increase (float amount = 10) {
+        healthBar.UpdateBar(health += amount, 100);
     }
 
-    public void Decrease() {
-        health -= 10;
-        healthBar.UpdateBar(health, 100);
+    public void Decrease(float amount = 10) {
+        healthBar.UpdateBar(health -= amount, 100);
     }
 }
