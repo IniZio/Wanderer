@@ -10,7 +10,7 @@
 using UnityEngine;
 using Leap.Unity.Interaction;
 
-namespace Leap.Unity.Examples {
+namespace Leap.Unity.Example {
 
   using IntObj = InteractionBehaviour;
 
@@ -38,14 +38,26 @@ namespace Leap.Unity.Examples {
       _swapScheduled = true;
     }
 
+    public void swapOBj(){
+          Vector3 tempPosition = objA.transform.position;
+          objA.transform.position = objB.transform.position;
+          objB.transform.position = tempPosition;
+    
+    }
+
     private void onPostPhysics() {
       //Swapping when both objects are grasped is unsupported
-      if(objA.isGrasped && objB.isGrasped) { return; }
+      if(_swapScheduled && (!objA.isGrasped && !objB.isGrasped)) { 
+        Vector3 tempPosition = objA.transform.position;
+          objA.transform.position = objB.transform.position;
+          objB.transform.position = tempPosition;
+     }
   
-      if (_swapScheduled && (objA.isGrasped || objB.isGrasped)) {
+      if (_swapScheduled  && (objA.isGrasped || objB.isGrasped)  ) {
 
         // Swap "a" for "b"; a will be whichever object is the grasped one.
         IntObj a, b;
+        
         if (objA.isGrasped) {
           a = objA;
           b = objB;
@@ -54,6 +66,7 @@ namespace Leap.Unity.Examples {
           a = objB;
           b = objA;
         }
+        
 
         // (Optional) Remember B's pose and motion to apply to A post-swap.
         var bPose = new Pose(b.rigidbody.position, b.rigidbody.rotation);
