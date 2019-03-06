@@ -5,7 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - FirstCamera
-  - PlayerController
+  - Player1Controllor
+  - Player2Controllor
+  - Player2Character
+  - Player1Character
+  - Player1Camera
+  - Player2Camera
+  - FollowCamera
   layers:
   - Default
   - TransparentFX

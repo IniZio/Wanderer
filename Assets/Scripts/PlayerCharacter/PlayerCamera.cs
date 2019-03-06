@@ -36,17 +36,22 @@ namespace Fyp.Game.Carmera {
 
 		public GameObject player;
 		private Vector3 offset;
-		private Vector3 playerHeight = new Vector3((float) 0, (float) 2, (float) 0);
+		private Vector3 playerHeight = new Vector3((float) 0, (float) 1.6, (float) 0);
 
 		void start() {
 			offset = transform.position;
 		}
 
-		void LaterUpdate() {
+		void LateUpdate() {
 			if (this.player != null) {
 				transform.position = player.transform.position + offset + playerHeight;
             	transform.rotation = player.transform.rotation;
 			}
+		}
+
+		public void setCamera(GameObject player) {
+			Debug.Log("set Camera");
+			this.player = player;
 		}
 	}
 }
