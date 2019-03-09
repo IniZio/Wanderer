@@ -14,6 +14,7 @@ namespace Fyp.Game.Network {
         GameObject p1SpawnPoint;
         GameObject p2SpawnPoint;
         PanelManager menuManager;
+        GameObject p1SpawnEffect, p2SpawnEffect;
 
         public void Start () {
             this.followCamera = GameObject.FindWithTag("FollowCamera");
@@ -61,6 +62,11 @@ namespace Fyp.Game.Network {
             }
         }
 
+        IEnumerator SpawnEffect(GameObject effect) {
+            yield return new WaitForSeconds(10);
+            PhotonNetwork.Destroy(effect);
+        }
+
         public override void OnJoinedRoom() {
             this.followCamera.SetActive(true);
             GameObject player;
@@ -69,11 +75,16 @@ namespace Fyp.Game.Network {
                 Debug.Log("player1");
                 player = PhotonNetwork.Instantiate("PlayerCharacter", this.p1SpawnPoint.transform.position, this.p1SpawnPoint.transform.rotation, 0);
                 point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
+                p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
+                StartCoroutine(SpawnEffect(p1SpawnEffect));
             }
             else {
                 Debug.Log("player2");
                 player = PhotonNetwork.Instantiate("Player2Character", this.p2SpawnPoint.transform.position, this.p2SpawnPoint.transform.rotation, 0);
                 point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
+                p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
+                StartCoroutine(SpawnEffect(p2SpawnEffect));
+
             }
             // GameObject camera = PhotonNetwork.Instantiate("FirstCamera", player.transform.position, Quaternion.identity, 0);
 

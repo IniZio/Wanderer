@@ -15,7 +15,7 @@ namespace Fyp.Game.UI{
 
 		public void onSpawnPlayer() {
 			this.light.color = Color.cyan;
-			this.effect.SetActive(true);
+			// this.effect.SetActive(true);
 		}
 	}
 }
