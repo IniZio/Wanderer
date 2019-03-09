@@ -12,6 +12,9 @@ TagManager:
   - Player1Camera
   - Player2Camera
   - FollowCamera
+  - Player1SpawnPoint
+  - Player2SpawnPoint
+  - MenuManager
   layers:
   - Default
   - TransparentFX

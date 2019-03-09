@@ -4,10 +4,25 @@ using UnityEngine;
 using Fyp.Constant;
 using Fyp.Game.Carmera;
 using Fyp.Game.PlayerControl;
+using Fyp.Game.UI;
 
 namespace Fyp.Game.Network {
     public class PhotonRoomConnection : Photon.PunBehaviour {
         public bool spawned = false;
+        GameObject followCamera;
+        GameObject mainCamera;
+        GameObject p1SpawnPoint;
+        GameObject p2SpawnPoint;
+        PanelManager menuManager;
+
+        public void Start () {
+            this.followCamera = GameObject.FindWithTag("FollowCamera");
+            this.mainCamera = GameObject.FindWithTag("MainCamera");
+            this.followCamera.SetActive(false);
+            this.p1SpawnPoint = GameObject.FindWithTag("Player1SpawnPoint");
+            this.p2SpawnPoint = GameObject.FindWithTag("Player2SpawnPoint");
+            this.menuManager = GameObject.FindWithTag("MenuManager").GetComponent("PanelManager") as PanelManager;
+        }
 
         public void CreateRoom(string playerName) {
             Debug.Log("create room");
@@ -16,14 +31,17 @@ namespace Fyp.Game.Network {
             }
             else {
                 Debug.Log("create room fail");
+                menuManager.OpenPanel(menuManager.initiallyOpen);
             }
         }
 
         public void JoinRoom(string roomName) {
             if(PhotonNetwork.JoinRoom(roomName)) {
                 Debug.Log("join room success");
-            } else {
+            }
+            else {
                 Debug.Log("join room fail");
+                menuManager.OpenPanel(menuManager.initiallyOpen);
             }
         }
 
@@ -44,24 +62,25 @@ namespace Fyp.Game.Network {
         }
 
         public override void OnJoinedRoom() {
-            GameObject mainCamera = GameObject.FindWithTag("MainCamera");
-            GameObject followCamera = GameObject.FindWithTag("FollowCamera");
-            Debug.Log(mainCamera.ToString());
+            this.followCamera.SetActive(true);
             GameObject player;
+            SpawnPoint point;
             if(PhotonNetwork.isMasterClient && photonView.isMine) {
                 Debug.Log("player1");
-                player = PhotonNetwork.Instantiate("PlayerCharacter", new Vector3(-1f,3f,0f), Quaternion.identity, 0);
+                player = PhotonNetwork.Instantiate("PlayerCharacter", this.p1SpawnPoint.transform.position, this.p1SpawnPoint.transform.rotation, 0);
+                point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
             }
             else {
                 Debug.Log("player2");
-                player = PhotonNetwork.Instantiate("Player2Character", new Vector3(-1f,3f,2f), Quaternion.identity, 0);
+                player = PhotonNetwork.Instantiate("Player2Character", this.p2SpawnPoint.transform.position, this.p2SpawnPoint.transform.rotation, 0);
+                point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
             }
             // GameObject camera = PhotonNetwork.Instantiate("FirstCamera", player.transform.position, Quaternion.identity, 0);
 
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;
-
+            point.onSpawnPlayer();
             cameraScirpt.setCamera(player);
-            mainCamera.SetActive(false);
+            this.mainCamera.SetActive(false);
 
             // mainCamera.SetActive(false);
         }
