@@ -18,6 +18,7 @@ namespace Fyp.Game.Network {
 
         public void Start () {
             this.followCamera = GameObject.FindWithTag("FollowCamera");
+            Debug.Log(this.followCamera);
             this.mainCamera = GameObject.FindWithTag("MainCamera");
             this.followCamera.SetActive(false);
             this.p1SpawnPoint = GameObject.FindWithTag("Player1SpawnPoint");
@@ -63,7 +64,7 @@ namespace Fyp.Game.Network {
         }
 
         IEnumerator SpawnEffect(GameObject effect) {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(8);
             PhotonNetwork.Destroy(effect);
         }
 
@@ -74,6 +75,7 @@ namespace Fyp.Game.Network {
             if(PhotonNetwork.isMasterClient && photonView.isMine) {
                 Debug.Log("player1");
                 player = PhotonNetwork.Instantiate("PlayerCharacter", this.p1SpawnPoint.transform.position, this.p1SpawnPoint.transform.rotation, 0);
+                player.SetActive(false);
                 point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p1SpawnEffect));
