@@ -4,7 +4,8 @@ using UnityEngine;
 namespace Fyp.Game.PlayerControl {
 	public class ControlScript : Photon.PunBehaviour  {
 
-		public GameObject player;
+		public bool readyForPlayer = false;
+		public bool isMaster;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
@@ -31,6 +32,7 @@ namespace Fyp.Game.PlayerControl {
 				if(Input.GetButtonDown ("Jump")){
 					myAnimator.SetBool ("Jumping", true);
 					Invoke ("StopJumping", 0.1f);
+					ReadyToPlay();
 				}
 
 
@@ -168,6 +170,10 @@ namespace Fyp.Game.PlayerControl {
 			GUI.Label (new Rect(0, 200, 200, 25), "Wave (Layer): 3");
 		}
 	*/
+		[PunRPC]
+		void ReadyToPlay() {
+			this.readyForPlayer = !this.readyForPlayer;
+		}
 	}
 
 	/*

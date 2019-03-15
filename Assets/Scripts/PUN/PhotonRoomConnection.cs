@@ -17,18 +17,32 @@ namespace Fyp.Game.Network {
         PanelManager menuManager;
         GameObject p1SpawnEffect, p2SpawnEffect;
         Door door;
+        ControlScript player1, player2;
         int test = 0;
 
         public void Start () {
-            Debug.Log("hihi: " + this.test.ToString());
             this.followCamera = GameObject.FindWithTag("FollowCamera");
-            Debug.Log(this.followCamera);
             this.mainCamera = GameObject.FindWithTag("MainCamera");
             this.followCamera.SetActive(false);
             this.p1SpawnPoint = GameObject.FindWithTag("Player1SpawnPoint");
             this.p2SpawnPoint = GameObject.FindWithTag("Player2SpawnPoint");
             this.menuManager = GameObject.FindWithTag("MenuManager").GetComponent("PanelManager") as PanelManager;
             this.door = GameObject.FindWithTag("WaitingRmDoor").GetComponent("Door") as Door;
+        }
+
+        public void Update() {
+            if (this.player2 != null && this.player1 != null) {
+                if (player1.readyForPlayer && player2.readyForPlayer) {
+                    if (!this.door.isOpen) {
+                        OpenDoor();
+                    }
+                }
+                else {
+                    if (this.door.isOpen) {
+                        CloseDoor();
+                    }
+                }
+            }
         }
 
         public void CreateRoom(string playerName) {
@@ -60,12 +74,13 @@ namespace Fyp.Game.Network {
         public void ConnectToServer() {
             Debug.Log("connect");
             if(PhotonNetwork.ConnectUsingSettings(GameConstant.GAME_VERSION)) {
-                Debug.Log("Connected to server~~");
-                this.test += 1;
+                Debug.Log("Connected to server");
                 // NetworkChangeScene.ChangeToScene((int) GameConstant.ScenceName.WaitingRoom);
                 UI.ChangeSence.MenuToWaitingRoom();
             } else {
                 Debug.Log("Connect to server failed");
+                UI.ChangeSence.WaitingRoomToMenu();
+
             }
         }
 
@@ -79,6 +94,24 @@ namespace Fyp.Game.Network {
             this.door.OpenDoor();
         }
 
+        [PunRPC]
+        void CloseDoor() {
+            this.door.CloseDoor();
+        }
+
+        [PunRPC]
+        void setPlayerControl(GameObject player, bool isMaster) {
+            ControlScript script = player.GetComponent("ControlScript") as ControlScript;
+            if (isMaster) {
+                this.player1 = script;
+                this.player1.isMaster = true;
+            }
+            else {
+                this.player2 = script;
+                this.player2.isMaster = false;
+            }
+        }
+
         public override void OnJoinedRoom() {
             Debug.Log("hihihi: " + this.test.ToString());
             this.followCamera.SetActive(true);
@@ -90,6 +123,7 @@ namespace Fyp.Game.Network {
                 point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p1SpawnEffect));
+                setPlayerControl(player, true);
             }
             else {
                 Debug.Log("player2");
@@ -97,16 +131,13 @@ namespace Fyp.Game.Network {
                 point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p2SpawnEffect));
-                photonView.RPC("OpenDoor", 0);
-            }
-            // GameObject camera = PhotonNetwork.Instantiate("FirstCamera", player.transform.position, Quaternion.identity, 0);
+                setPlayerControl(player, false);
 
+            }
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;
             point.onSpawnPlayer();
             cameraScirpt.setCamera(player);
             this.mainCamera.SetActive(false);
-
-            // mainCamera.SetActive(false);
         }
 
         // public override void OnPhotonInstantiate(PhotonMessageInfo info) {

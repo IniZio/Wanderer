@@ -39,4 +39,6 @@ MonoBehaviour:
   - onSpawnPlayer
   - CloseDoor
   - OpenDoor
+  - setPlayerControl
+  - ReadyToPlay
   DisableAutoOpenWizard: 1
