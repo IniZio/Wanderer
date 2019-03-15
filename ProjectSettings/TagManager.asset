@@ -15,6 +15,7 @@ TagManager:
   - Player1SpawnPoint
   - Player2SpawnPoint
   - MenuManager
+  - WaitingRmDoor
   layers:
   - Default
   - TransparentFX

@@ -37,4 +37,6 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - onSpawnPlayer
+  - CloseDoor
+  - OpenDoor
   DisableAutoOpenWizard: 1

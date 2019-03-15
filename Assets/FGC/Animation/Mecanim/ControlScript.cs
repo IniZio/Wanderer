@@ -174,4 +174,18 @@ namespace Fyp.Game.PlayerControl {
 	* We hope that this has been helpful to get you started with your own custom game logic and animation setup.  For any questions don't hesitate to reach us
 	* at the Mixamo community!  community.mixamo.com
 	*/
+
+	// void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+    //     if(stream.isWriting) {
+    //         stream.SendNext(transform.position);
+    //         stream.SendNext(transform.localScale);
+    //         stream.SendNext(transform.rotation);
+    //     }
+    //     else
+    //     {
+    //         currPos = (Vector3)stream.ReceiveNext();
+    //         currScale = (Vector3)stream.ReceiveNext();
+    //         currRot = (Quaternion)stream.ReceiveNext();
+    //     }
+    // }
 }
