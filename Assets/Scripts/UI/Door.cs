@@ -10,10 +10,12 @@ namespace Fyp.Game.UI {
 			this.ani = GetComponent<Animator>();
 			this.ani.SetBool ("OpenDoor", false);
 		}
+		[PunRPC]
 		public void OpenDoor() {
 			this.ani.SetBool ("OpenDoor", true);
 			this.isOpen = true;
 		}
+		[PunRPC]
 		public void CloseDoor() {
 			this.ani.SetBool ("OpenDoor", false);
 			this.isOpen = false;

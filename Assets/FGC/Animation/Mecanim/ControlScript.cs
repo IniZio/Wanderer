@@ -2,14 +2,26 @@ using UnityEngine;
 //using System.Collections;
 
 namespace Fyp.Game.PlayerControl {
-	public class ControlScript : Photon.PunBehaviour  {
+	public class ControlScript : Photon.PunBehaviour, IPunObservable {
 
-		public bool readyForPlayer = false;
+		PlayerStatus playerStatus;
 		public bool isMaster;
+		public bool isReady = false;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
 		private Animator myAnimator;
+
+		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+			if (stream.isWriting) {
+				stream.SendNext(isMaster);
+				stream.SendNext(isReady);
+			}
+			else {
+				isMaster = (bool)stream.ReceiveNext();
+				isReady = (bool)stream.ReceiveNext();
+			}
+		}
 
 		// The start method is called when the script is initalized, before other stuff in the scripts start happening.
 		void Start () {
@@ -156,8 +168,21 @@ namespace Fyp.Game.PlayerControl {
 			myAnimator.SetBool ("Jumping", false);
 		}
 
+		void ReadyToPlay() {
+			isReady = !isReady;
+		}
+
 		//We've added some simple GUI labels for our controls to make it easier for you to test out.
 
+		public PlayerStatus GetPlayerStatus() {
+			return playerStatus;
+		}
+
+		public void setPlayerStatus(PlayerStatus ps) {
+			Debug.Log("settttt");
+			Debug.Log(ps);
+			playerStatus = ps;
+		}
 	/*	void OnGUI(){
 			GUI.Label (new Rect(0, 0, 200, 25), "Forward: W");
 			GUI.Label(new Rect(0, 25, 200, 25), "Backward: S");
@@ -170,10 +195,6 @@ namespace Fyp.Game.PlayerControl {
 			GUI.Label (new Rect(0, 200, 200, 25), "Wave (Layer): 3");
 		}
 	*/
-		[PunRPC]
-		void ReadyToPlay() {
-			this.readyForPlayer = !this.readyForPlayer;
-		}
 	}
 
 	/*

@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 114669587917344962}
   m_Layer: 0
   m_Name: PlayerCharacter2
-  m_TagString: Player1Character
+  m_TagString: Player2Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1992,7 +1992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e025529ad97e584395a267094b7b2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  isMaster: 0
+  isReady: 0
 --- !u!114 &114493863585724138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2092,6 +2093,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114493863585724138}
   - {fileID: 114669587917344962}
+  - {fileID: 114233662606431840}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

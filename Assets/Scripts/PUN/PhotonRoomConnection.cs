@@ -9,7 +9,6 @@ using Fyp.Game.UI;
 
 namespace Fyp.Game.Network {
     public class PhotonRoomConnection : Photon.PunBehaviour {
-        public bool spawned = false;
         GameObject followCamera;
         GameObject mainCamera;
         GameObject p1SpawnPoint;
@@ -18,7 +17,6 @@ namespace Fyp.Game.Network {
         GameObject p1SpawnEffect, p2SpawnEffect;
         Door door;
         ControlScript player1, player2;
-        int test = 0;
 
         public void Start () {
             this.followCamera = GameObject.FindWithTag("FollowCamera");
@@ -30,20 +28,45 @@ namespace Fyp.Game.Network {
             this.door = GameObject.FindWithTag("WaitingRmDoor").GetComponent("Door") as Door;
         }
 
-        public void Update() {
-            if (this.player2 != null && this.player1 != null) {
-                if (player1.readyForPlayer && player2.readyForPlayer) {
-                    if (!this.door.isOpen) {
-                        OpenDoor();
-                    }
-                }
-                else {
-                    if (this.door.isOpen) {
-                        CloseDoor();
-                    }
-                }
-            }
-        }
+        // public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+		// 	if (stream.isWriting) {
+        //         if (PhotonNetwork.isMasterClient) {
+        //             stream.SendNext(player1Ready);
+        //         }
+        //         else {
+        //             stream.SendNext(player2Ready);
+        //         }
+		// 	}
+		// 	else {
+        //         if (PhotonNetwork.isMasterClient) {
+		// 		    player2Ready = (bool)stream.ReceiveNext();
+        //         }
+        //         else {
+		// 		    player1Ready = (bool)stream.ReceiveNext();
+        //         }
+		// 	}
+		// }
+
+        // void Update() {
+        //     if (PhotonNetwork.isMasterClient) {
+        //         player1Ready = player1.isReady;
+        //     }
+        //     else {
+        //         player2Ready = player2.isReady;
+        //     }
+        //     if (PhotonNetwork.isMasterClient) {
+        //         if (player1Ready && player2Ready) {
+        //             if (!this.door.isOpen) {
+        //                 OpenDoor();
+        //             }
+        //         }
+        //         else {
+        //             if (this.door.isOpen) {
+        //                 CloseDoor();
+        //             }
+        //         }
+        //     }
+        // }
 
         public void CreateRoom(string playerName) {
             Debug.Log("create room");
@@ -90,30 +113,19 @@ namespace Fyp.Game.Network {
         }
 
         [PunRPC]
-        void OpenDoor() {
-            this.door.OpenDoor();
-        }
-
-        [PunRPC]
-        void CloseDoor() {
-            this.door.CloseDoor();
-        }
-
-        [PunRPC]
         void setPlayerControl(GameObject player, bool isMaster) {
             ControlScript script = player.GetComponent("ControlScript") as ControlScript;
+            // PlayerStatus temp = new PlayerStatus(isMaster);
+            // script.setPlayerStatus(temp);
             if (isMaster) {
                 this.player1 = script;
-                this.player1.isMaster = true;
             }
             else {
                 this.player2 = script;
-                this.player2.isMaster = false;
             }
         }
 
         public override void OnJoinedRoom() {
-            Debug.Log("hihihi: " + this.test.ToString());
             this.followCamera.SetActive(true);
             GameObject player;
             SpawnPoint point;
@@ -123,7 +135,6 @@ namespace Fyp.Game.Network {
                 point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p1SpawnEffect));
-                setPlayerControl(player, true);
             }
             else {
                 Debug.Log("player2");
@@ -131,23 +142,28 @@ namespace Fyp.Game.Network {
                 point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p2SpawnEffect));
-                setPlayerControl(player, false);
-
             }
+            setPlayerControl(player, PhotonNetwork.isMasterClient);
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;
             point.onSpawnPlayer();
             cameraScirpt.setCamera(player);
             this.mainCamera.SetActive(false);
         }
 
-        // public override void OnPhotonInstantiate(PhotonMessageInfo info) {
-        //     info.sender.TagObject = this.GameObject;
-        // }
+        public override void OnPhotonInstantiate(PhotonMessageInfo info) {
+            Debug.Log("hihi111");
+            Debug.Log(info.GetType());
+        }
 
         public void DisconnectFromServer() {
             Debug.Log("Disconnect");
             PhotonNetwork.Disconnect();
             UI.ChangeSence.WaitingRoomToMenu();
         }
+        public override void OnPhotonPlayerConnected(PhotonPlayer other) {
+            if (PhotonNetwork.isMasterClient) {
+            }
+        }
+
     }
 }
