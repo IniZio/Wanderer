@@ -34,6 +34,9 @@ public class AttackAnimal : MonoBehaviour {
                 {
                     // TODO: switch to attack state
                     return;
+                } else
+                {
+                    agent.SetDestination(runTo);
                 }
             }
         }
