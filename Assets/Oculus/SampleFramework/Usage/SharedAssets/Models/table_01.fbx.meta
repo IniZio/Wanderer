@@ -1,25 +1,15 @@
 fileFormatVersion: 2
-guid: 1ee2328736527460b965c63e3bf6c1d8
+guid: 9031c6b251ed20b41a8ff55d0a935125
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
-    100000: deskTeacher01
-    100002: //RootNode
-    400000: deskTeacher01
-    400002: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: MAT_room_atlas_02
-    2300000: deskTeacher01
-    2300002: //RootNode
-    3300000: deskTeacher01
-    3300002: //RootNode
-    4300000: deskTeacher01
-    4300002: table_01
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MAT_room_atlas_02
-    second: {fileID: 2100000, guid: ceac5ee61756b458c8653efdc49480ec, type: 2}
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: table_01
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -38,6 +28,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -49,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -69,6 +60,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

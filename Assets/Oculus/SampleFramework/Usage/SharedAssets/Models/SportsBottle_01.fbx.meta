@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 6bc9bd2834c994245845178cc95f9233
+guid: 4310cada23fa8b249b8b2441133d424a
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
@@ -10,17 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: SportsBottle
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sports_Bottles_Blurry_Brushed_Metal1
-    second: {fileID: 2100000, guid: e04a4300d0596db4ba52a535422513d3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sports_Bottles_Glossy_Black1
-    second: {fileID: 2100000, guid: c99e99ab53520b24f933da34732440eb, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,6 +29,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -70,6 +61,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
