@@ -63,8 +63,9 @@ using System.Collections.Generic;
 
 		public void CloseCurrent()
 		{
-			if (m_Open == null)
+			if (m_Open == null){
 				return;
+			}
 
 			m_Open.SetBool(m_OpenParameterId, false);
 			SetSelected(m_PreviouslySelected);
