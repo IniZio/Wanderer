@@ -148,6 +148,7 @@ namespace Fyp.Game.Network {
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;
             point.onSpawnPlayer();
             cameraScirpt.setCamera(player);
+            menuManager.CloseCurrent();
         }
 
         public override void OnPhotonInstantiate(PhotonMessageInfo info) {

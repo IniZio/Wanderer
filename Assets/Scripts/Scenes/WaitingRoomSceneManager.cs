@@ -5,7 +5,7 @@ using Photon;
 using Fyp.Game.PlayerControl;
 
 namespace Fyp.Game.UI {
-	public class UiManager : Photon.PunBehaviour {
+	public class WaitingRoomSceneManager : UnityEngine.MonoBehaviour {
 		GameObject Player1, Player2;
 		Door door;
 
