@@ -8,5 +8,13 @@ namespace Fyp.Game.Network {
 		public static void ChangeToScene(string sceneName) {
 			SceneManager.LoadScene(sceneName);
 		}
+
+		public static void AllPlayerChangeScene(string sceneName) {
+			PhotonNetwork.automaticallySyncScene = true;
+
+			if (PhotonNetwork.isMasterClient) {
+				PhotonNetwork.LoadLevelAsync(sceneName);
+			}
+		}
 	}
 }

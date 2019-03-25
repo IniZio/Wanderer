@@ -36,7 +36,7 @@ namespace Fyp.Game.Carmera {
 
 		public GameObject player;
 		private Vector3 offset;
-		private Vector3 playerHeight = new Vector3((float) 0, (float) 1.6, (float) 0);
+		private Vector3 playerHeight = new Vector3((float) 0.2, (float) 0, (float) 0);
 
 		void start() {
 			offset = transform.position;
