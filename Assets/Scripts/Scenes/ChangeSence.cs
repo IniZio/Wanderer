@@ -14,6 +14,11 @@ namespace Fyp.Game.UI {
 			Debug.Log("WaitingRoomToMenu");
 			SceneManager.LoadScene("MainMenu");
 		}
+
+		public static void WaitingRoomToBase() {
+			Debug.Log("WaitingRoomToBase");
+			SceneManager.LoadScene("Base");
+		}
 	}
 }
 

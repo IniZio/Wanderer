@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon;
 using Fyp.Game.PlayerControl;
+using Fyp.Game.Network;
 
 namespace Fyp.Game.UI {
 	public class WaitingRoomSceneManager : UnityEngine.MonoBehaviour {
@@ -26,6 +27,11 @@ namespace Fyp.Game.UI {
 					if (door.isOpen) {
 						door.CloseDoor();
 					}
+				}
+				if (script1.getStandingWaitingRmDoor() && script2.getStandingWaitingRmDoor()) {
+					script1.exitWaitingRmDoor();
+					script2.exitWaitingRmDoor();
+					NetworkChangeScene.AllPlayerChangeScene("Base");
 				}
 			}
 			if (Player1 == null) {

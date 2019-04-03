@@ -7,6 +7,8 @@ namespace Fyp.Game.PlayerControl {
 		PlayerStatus playerStatus;
 		public bool isMaster;
 		public bool isReady = false;
+		public bool isStandingWaitingRmDoor = false;
+		bool isMe = false;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
@@ -16,10 +18,12 @@ namespace Fyp.Game.PlayerControl {
 			if (stream.isWriting) {
 				stream.SendNext(isMaster);
 				stream.SendNext(isReady);
+				stream.SendNext(isStandingWaitingRmDoor);
 			}
 			else {
 				isMaster = (bool)stream.ReceiveNext();
 				isReady = (bool)stream.ReceiveNext();
+				isStandingWaitingRmDoor = (bool)stream.ReceiveNext();
 			}
 		}
 
@@ -28,6 +32,7 @@ namespace Fyp.Game.PlayerControl {
 			//We have a reference called myAnimator but we need to fill that reference with an Animator component.
 			//We can do that by 'getting' the animator that is on the same game object this script is appleid to.
 			myAnimator = GetComponent<Animator>();
+			DontDestroyOnLoad(this);
 		}
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
@@ -182,6 +187,24 @@ namespace Fyp.Game.PlayerControl {
 			Debug.Log("settttt");
 			Debug.Log(ps);
 			playerStatus = ps;
+		}
+
+		public bool getStandingWaitingRmDoor() {
+			return this.isStandingWaitingRmDoor;
+		}
+
+		public void enterWaitingRmDoor() {
+			this.isStandingWaitingRmDoor = true;
+		}
+		public void exitWaitingRmDoor() {
+			this.isStandingWaitingRmDoor = false;
+		}
+		public void SetIsMe() {
+			this.isMe = true;
+		}
+
+		public bool getIsMe() {
+			return this.isMe;
 		}
 	/*	void OnGUI(){
 			GUI.Label (new Rect(0, 0, 200, 25), "Forward: W");

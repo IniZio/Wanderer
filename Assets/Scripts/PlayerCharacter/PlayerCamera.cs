@@ -5,13 +5,13 @@ using UnityEngine;
 namespace Fyp.Game.Carmera {
 	public class PlayerCamera : MonoBehaviour {
 		public GameObject player;
-		private Vector3 playerHeight = new Vector3((float) 0, (float) 0, (float) 0);
+		private Vector3 playerHeight = new Vector3((float) 0, (float) 1.7, (float) 0);
 
 		void LateUpdate() {
 			if (this.player != null) {
 				transform.rotation = player.transform.rotation;
 				transform.position = player.transform.position + playerHeight;
-				transform.position = transform.position + transform.forward * (float)0.15;
+				transform.position = transform.position + transform.forward * (float) 0.2;
 			}
 		}
 		public void setCamera(GameObject player) {

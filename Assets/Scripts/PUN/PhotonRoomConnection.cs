@@ -18,6 +18,10 @@ namespace Fyp.Game.Network {
         Door door;
         ControlScript player1, player2;
 
+        public void Awake () {
+            PhotonNetwork.automaticallySyncScene = true;
+        }
+
         public void Start () {
             this.followCamera = GameObject.FindWithTag("FollowCamera");
             this.mainCamera = GameObject.FindWithTag("MainCamera");
@@ -117,6 +121,7 @@ namespace Fyp.Game.Network {
             ControlScript script = player.GetComponent("ControlScript") as ControlScript;
             // PlayerStatus temp = new PlayerStatus(isMaster);
             // script.setPlayerStatus(temp);
+            script.SetIsMe();
             if (isMaster) {
                 this.player1 = script;
             }
