@@ -8,6 +8,7 @@ namespace Fyp.Game.PlayerControl {
 		public bool isMaster;
 		public bool isReady = false;
 		public bool isStandingWaitingRmDoor = false;
+		public bool isStandingBaseGate = false;
 		bool isMe = false;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
@@ -19,11 +20,13 @@ namespace Fyp.Game.PlayerControl {
 				stream.SendNext(isMaster);
 				stream.SendNext(isReady);
 				stream.SendNext(isStandingWaitingRmDoor);
+				stream.SendNext(isStandingBaseGate);
 			}
 			else {
 				isMaster = (bool)stream.ReceiveNext();
 				isReady = (bool)stream.ReceiveNext();
 				isStandingWaitingRmDoor = (bool)stream.ReceiveNext();
+				isStandingBaseGate = (bool)stream.ReceiveNext();
 			}
 		}
 
@@ -198,6 +201,17 @@ namespace Fyp.Game.PlayerControl {
 		}
 		public void exitWaitingRmDoor() {
 			this.isStandingWaitingRmDoor = false;
+		}
+
+		public bool getStandingBaseGate() {
+			return this.isStandingBaseGate;
+		}
+
+		public void enterBaseGate() {
+			this.isStandingBaseGate = true;
+		}
+		public void exitBaseGate() {
+			this.isStandingBaseGate = false;
 		}
 		public void SetIsMe() {
 			this.isMe = true;
