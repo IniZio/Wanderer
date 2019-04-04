@@ -28,7 +28,7 @@ namespace Fyp.Game.UI {
                 if (this.P1Script.getStandingBaseGate() && this.P2Script.getStandingBaseGate()) {
 					this.P1Script.exitBaseGate();
 					this.P2Script.exitBaseGate();
-					NetworkChangeScene.AllPlayerChangeScene("Resource1");
+					NetworkChangeScene.AllPlayerChangeScene("Dungeon");
                 }
             }
         }

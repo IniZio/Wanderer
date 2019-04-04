@@ -214,6 +214,7 @@ MonoBehaviour:
   isMaster: 0
   isReady: 0
   isStandingWaitingRmDoor: 0
+  isStandingBaseGate: 0
 --- !u!114 &114487972738440570
 MonoBehaviour:
   m_ObjectHideFlags: 0
