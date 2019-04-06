@@ -1149,9 +1149,9 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
+    InterpolateLerpSpeed: 10
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -1226,6 +1226,7 @@ MonoBehaviour:
   isMaster: 0
   isReady: 0
   isStandingWaitingRmDoor: 0
+  isStandingBaseGate: 0
 --- !u!114 &114669587917344962
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 51dc84124218a4dae8638e36d862cb2d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BigCats_Head_JawSHJnt
+    100002: BigCats_Head_TopSHJnt
+    100004: BigCats_l_Clavicle_01_01SHJnt
+    100006: BigCats_l_FrontLeg_AnkleSHJnt
+    100008: BigCats_l_FrontLeg_BallSHJnt
+    100010: BigCats_l_FrontLeg_HipSHJnt
+    100012: BigCats_l_FrontLeg_KneeSHJnt
+    100014: BigCats_l_HindLeg_AnkleSHJnt
+    100016: BigCats_l_HindLeg_BallSHJnt
+    100018: BigCats_l_HindLeg_HipSHJnt
+    100020: BigCats_l_HindLeg_Knee1SHJnt
+    100022: BigCats_l_HindLeg_Knee2SHJnt
+    100024: BigCats_Neck_01SHJnt
+    100026: BigCats_Neck_02SHJnt
+    100028: BigCats_Neck_TopSHJnt
+    100030: BigCats_r_Clavicle_01_01SHJnt
+    100032: BigCats_r_FrontLeg_AnkleSHJnt
+    100034: BigCats_r_FrontLeg_BallSHJnt
+    100036: BigCats_r_FrontLeg_HipSHJnt
+    100038: BigCats_r_FrontLeg_KneeSHJnt
+    100040: BigCats_r_HindLeg_AnkleSHJnt
+    100042: BigCats_r_HindLeg_BallSHJnt
+    100044: BigCats_r_HindLeg_HipSHJnt
+    100046: BigCats_r_HindLeg_Knee1SHJnt
+    100048: BigCats_r_HindLeg_Knee2SHJnt
+    100050: BigCats_ROOTSHJnt
+    100052: BigCats_Spine_01SHJnt
+    100054: BigCats_Spine_02SHJnt
+    100056: BigCats_Spine_03SHJnt
+    100058: BigCats_Spine_04SHJnt
+    100060: BigCats_Spine_TopSHJnt
+    100062: BigCats_Tail_01_01SHJnt
+    100064: BigCats_Tail_01_02SHJnt
+    100066: BigCats_Tail_01_03SHJnt
+    100068: BigCats_Tail_01_04SHJnt
+    100070: BigCats_Tail_01_05SHJnt
+    100072: Cats_Puma_hp
+    100074: //RootNode
+    400000: BigCats_Head_JawSHJnt
+    400002: BigCats_Head_TopSHJnt
+    400004: BigCats_l_Clavicle_01_01SHJnt
+    400006: BigCats_l_FrontLeg_AnkleSHJnt
+    400008: BigCats_l_FrontLeg_BallSHJnt
+    400010: BigCats_l_FrontLeg_HipSHJnt
+    400012: BigCats_l_FrontLeg_KneeSHJnt
+    400014: BigCats_l_HindLeg_AnkleSHJnt
+    400016: BigCats_l_HindLeg_BallSHJnt
+    400018: BigCats_l_HindLeg_HipSHJnt
+    400020: BigCats_l_HindLeg_Knee1SHJnt
+    400022: BigCats_l_HindLeg_Knee2SHJnt
+    400024: BigCats_Neck_01SHJnt
+    400026: BigCats_Neck_02SHJnt
+    400028: BigCats_Neck_TopSHJnt
+    400030: BigCats_r_Clavicle_01_01SHJnt
+    400032: BigCats_r_FrontLeg_AnkleSHJnt
+    400034: BigCats_r_FrontLeg_BallSHJnt
+    400036: BigCats_r_FrontLeg_HipSHJnt
+    400038: BigCats_r_FrontLeg_KneeSHJnt
+    400040: BigCats_r_HindLeg_AnkleSHJnt
+    400042: BigCats_r_HindLeg_BallSHJnt
+    400044: BigCats_r_HindLeg_HipSHJnt
+    400046: BigCats_r_HindLeg_Knee1SHJnt
+    400048: BigCats_r_HindLeg_Knee2SHJnt
+    400050: BigCats_ROOTSHJnt
+    400052: BigCats_Spine_01SHJnt
+    400054: BigCats_Spine_02SHJnt
+    400056: BigCats_Spine_03SHJnt
+    400058: BigCats_Spine_04SHJnt
+    400060: BigCats_Spine_TopSHJnt
+    400062: BigCats_Tail_01_01SHJnt
+    400064: BigCats_Tail_01_02SHJnt
+    400066: BigCats_Tail_01_03SHJnt
+    400068: BigCats_Tail_01_04SHJnt
+    400070: BigCats_Tail_01_05SHJnt
+    400072: Cats_Puma_hp
+    400074: //RootNode
+    2100000: 'Material #2'
+    4300000: Cats_Puma_hp
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Cats_Puma_hp
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

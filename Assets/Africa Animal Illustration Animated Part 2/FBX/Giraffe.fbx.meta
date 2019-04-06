@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: d313db907c0a44f8985033703dac92b2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Giraffe_Head_JawEndSHJnt
+    100004: Giraffe_Head_JawSHJnt
+    100006: Giraffe_Head_TopSHJnt
+    100008: Giraffe_l_Clavicle_01_01SHJnt
+    100010: Giraffe_l_FrontLeg_AnkleSHJnt
+    100012: Giraffe_l_FrontLeg_BallSHJnt
+    100014: Giraffe_l_FrontLeg_HipSHJnt
+    100016: Giraffe_l_FrontLeg_KneeSHJnt
+    100018: Giraffe_l_HindLeg_AnkleSHJnt
+    100020: Giraffe_l_HindLeg_BallSHJnt
+    100022: Giraffe_l_HindLeg_HipSHJnt
+    100024: Giraffe_l_HindLeg_Knee1SHJnt
+    100026: Giraffe_l_HindLeg_Knee2SHJnt
+    100028: Giraffe_Neck_01SHJnt
+    100030: Giraffe_Neck_02SHJnt
+    100032: Giraffe_Neck_03SHJnt
+    100034: Giraffe_Neck_04SHJnt
+    100036: Giraffe_Neck_05SHJnt
+    100038: Giraffe_Neck_TopSHJnt
+    100040: Giraffe_r_Clavicle_01_01SHJnt
+    100042: Giraffe_r_FrontLeg_AnkleSHJnt
+    100044: Giraffe_r_FrontLeg_BallSHJnt
+    100046: Giraffe_r_FrontLeg_HipSHJnt
+    100048: Giraffe_r_FrontLeg_KneeSHJnt
+    100050: Giraffe_r_HindLeg_AnkleSHJnt
+    100052: Giraffe_r_HindLeg_BallSHJnt
+    100054: Giraffe_r_HindLeg_HipSHJnt
+    100056: Giraffe_r_HindLeg_Knee1SHJnt
+    100058: Giraffe_r_HindLeg_Knee2SHJnt
+    100060: Giraffe_ROOTSHJnt
+    100062: Giraffe_SHJntGrp
+    100064: Giraffe_Spine_01SHJnt
+    100066: Giraffe_Spine_02SHJnt
+    100068: Giraffe_Spine_03SHJnt
+    100070: Giraffe_Spine_04SHJnt
+    100072: Giraffe_Spine_TopSHJnt
+    100074: Giraffe_Tail_01_01SHJnt
+    100076: Giraffe_Tail_01_02SHJnt
+    100078: Giraffe_Tail_01_03SHJnt
+    100080: Giraffe_Tail_01_04SHJnt
+    100082: GiraffeLP
+    400000: //RootNode
+    400002: Giraffe_Head_JawEndSHJnt
+    400004: Giraffe_Head_JawSHJnt
+    400006: Giraffe_Head_TopSHJnt
+    400008: Giraffe_l_Clavicle_01_01SHJnt
+    400010: Giraffe_l_FrontLeg_AnkleSHJnt
+    400012: Giraffe_l_FrontLeg_BallSHJnt
+    400014: Giraffe_l_FrontLeg_HipSHJnt
+    400016: Giraffe_l_FrontLeg_KneeSHJnt
+    400018: Giraffe_l_HindLeg_AnkleSHJnt
+    400020: Giraffe_l_HindLeg_BallSHJnt
+    400022: Giraffe_l_HindLeg_HipSHJnt
+    400024: Giraffe_l_HindLeg_Knee1SHJnt
+    400026: Giraffe_l_HindLeg_Knee2SHJnt
+    400028: Giraffe_Neck_01SHJnt
+    400030: Giraffe_Neck_02SHJnt
+    400032: Giraffe_Neck_03SHJnt
+    400034: Giraffe_Neck_04SHJnt
+    400036: Giraffe_Neck_05SHJnt
+    400038: Giraffe_Neck_TopSHJnt
+    400040: Giraffe_r_Clavicle_01_01SHJnt
+    400042: Giraffe_r_FrontLeg_AnkleSHJnt
+    400044: Giraffe_r_FrontLeg_BallSHJnt
+    400046: Giraffe_r_FrontLeg_HipSHJnt
+    400048: Giraffe_r_FrontLeg_KneeSHJnt
+    400050: Giraffe_r_HindLeg_AnkleSHJnt
+    400052: Giraffe_r_HindLeg_BallSHJnt
+    400054: Giraffe_r_HindLeg_HipSHJnt
+    400056: Giraffe_r_HindLeg_Knee1SHJnt
+    400058: Giraffe_r_HindLeg_Knee2SHJnt
+    400060: Giraffe_ROOTSHJnt
+    400062: Giraffe_SHJntGrp
+    400064: Giraffe_Spine_01SHJnt
+    400066: Giraffe_Spine_02SHJnt
+    400068: Giraffe_Spine_03SHJnt
+    400070: Giraffe_Spine_04SHJnt
+    400072: Giraffe_Spine_TopSHJnt
+    400074: Giraffe_Tail_01_01SHJnt
+    400076: Giraffe_Tail_01_02SHJnt
+    400078: Giraffe_Tail_01_03SHJnt
+    400080: Giraffe_Tail_01_04SHJnt
+    400082: GiraffeLP
+    2100000: GiraffeMaterial
+    4300000: GiraffeLP
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: GiraffeLP
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -23,10 +23,10 @@ namespace Fyp.Game.PlayerControl {
 				stream.SendNext(isStandingBaseGate);
 			}
 			else {
-				isMaster = (bool)stream.ReceiveNext();
-				isReady = (bool)stream.ReceiveNext();
-				isStandingWaitingRmDoor = (bool)stream.ReceiveNext();
-				isStandingBaseGate = (bool)stream.ReceiveNext();
+				isMaster = (bool) stream.ReceiveNext();
+				isReady = (bool) stream.ReceiveNext();
+				isStandingWaitingRmDoor = (bool) stream.ReceiveNext();
+				isStandingBaseGate = (bool) stream.ReceiveNext();
 			}
 		}
 

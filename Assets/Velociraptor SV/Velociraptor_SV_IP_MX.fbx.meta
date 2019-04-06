@@ -1,0 +1,1237 @@
+fileFormatVersion: 2
+guid: d1426d5dd9655e44ca99603016ba4538
+timeCreated: 1468579798
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: left
+    100002: RootMotion
+    100004: Velo_Head_JawSHJnt
+    100006: Velo_Head_TopSHJnt
+    100008: Velo_HP_Msh
+    100010: Velo_l_Arm_ClavicleSHJnt
+    100012: Velo_l_Arm_Elbow_CurveSHJnt
+    100014: Velo_l_Arm_Shoulder_CurveSHJnt
+    100016: Velo_l_Arm_WristSHJnt
+    100018: Velo_l_eye_01SHJnt
+    100020: Velo_l_Finger_01_01SHJnt
+    100022: Velo_l_Finger_01_02SHJnt
+    100024: Velo_l_Finger_02_01SHJnt
+    100026: Velo_l_Finger_02_02SHJnt
+    100028: Velo_l_Finger_03_01SHJnt
+    100030: Velo_l_Finger_03_02SHJnt
+    100032: Velo_l_Leg_AnkleSHJnt
+    100034: Velo_l_Leg_BallSHJnt
+    100036: Velo_l_Leg_HipSHJnt
+    100038: Velo_l_Leg_Knee_CurveSHJnt
+    100040: Velo_l_Leg_ToeSHJnt
+    100042: Velo_l_Toe_01_01SHJnt
+    100044: Velo_l_Toe_01_02SHJnt
+    100046: Velo_l_Toe_02_01SHJnt
+    100048: Velo_l_Toe_02_02SHJnt
+    100050: Velo_l_Toe_03_01SHJnt
+    100052: Velo_l_Toe_03_02SHJnt
+    100054: Velo_LP
+    100056: Velo_Neck_01SHJnt
+    100058: Velo_Neck_02SHJnt
+    100060: Velo_Neck_03SHJnt
+    100062: Velo_Neck_04SHJnt
+    100064: Velo_Neck_TopSHJnt
+    100066: Velo_r_Arm_ClavicleSHJnt
+    100068: Velo_r_Arm_Elbow_CurveSHJnt
+    100070: Velo_r_Arm_Shoulder_CurveSHJnt
+    100072: Velo_r_Arm_WristSHJnt
+    100074: Velo_r_eye_01SHJnt
+    100076: Velo_r_Finger_01_01SHJnt
+    100078: Velo_r_Finger_01_02SHJnt
+    100080: Velo_r_Finger_02_01SHJnt
+    100082: Velo_r_Finger_02_02SHJnt
+    100084: Velo_r_Finger_03_01SHJnt
+    100086: Velo_r_Finger_03_02SHJnt
+    100088: Velo_r_Leg_AnkleSHJnt
+    100090: Velo_r_Leg_BallSHJnt
+    100092: Velo_r_Leg_HipSHJnt
+    100094: Velo_r_Leg_Knee_CurveSHJnt
+    100096: Velo_r_Leg_ToeSHJnt
+    100098: Velo_r_Toe_01_01SHJnt
+    100100: Velo_r_Toe_01_02SHJnt
+    100102: Velo_r_Toe_02_01SHJnt
+    100104: Velo_r_Toe_02_02SHJnt
+    100106: Velo_r_Toe_03_01SHJnt
+    100108: Velo_r_Toe_03_02SHJnt
+    100110: Velo_ROOTSHJnt
+    100112: Velo_SHP
+    100114: Velo_Spine_01SHJnt
+    100116: Velo_Spine_02SHJnt
+    100118: Velo_Spine_03SHJnt
+    100120: Velo_Spine_04SHJnt
+    100122: Velo_Spine_TopSHJnt
+    100124: Velo_Tail_01_01SHJnt
+    100126: Velo_Tail_01_02SHJnt
+    100128: Velo_Tail_01_03SHJnt
+    100130: Velo_Tail_01_04SHJnt
+    100132: Velo_Tail_01_05SHJnt
+    100134: Velo_Tail_01_06SHJnt
+    100136: Velo_Tail_01_07SHJnt
+    100138: Velo_Tail_01_08SHJnt
+    100140: Velo_Tail_01_09SHJnt
+    100142: //RootNode
+    400000: left
+    400002: RootMotion
+    400004: Velo_Head_JawSHJnt
+    400006: Velo_Head_TopSHJnt
+    400008: Velo_HP_Msh
+    400010: Velo_l_Arm_ClavicleSHJnt
+    400012: Velo_l_Arm_Elbow_CurveSHJnt
+    400014: Velo_l_Arm_Shoulder_CurveSHJnt
+    400016: Velo_l_Arm_WristSHJnt
+    400018: Velo_l_eye_01SHJnt
+    400020: Velo_l_Finger_01_01SHJnt
+    400022: Velo_l_Finger_01_02SHJnt
+    400024: Velo_l_Finger_02_01SHJnt
+    400026: Velo_l_Finger_02_02SHJnt
+    400028: Velo_l_Finger_03_01SHJnt
+    400030: Velo_l_Finger_03_02SHJnt
+    400032: Velo_l_Leg_AnkleSHJnt
+    400034: Velo_l_Leg_BallSHJnt
+    400036: Velo_l_Leg_HipSHJnt
+    400038: Velo_l_Leg_Knee_CurveSHJnt
+    400040: Velo_l_Leg_ToeSHJnt
+    400042: Velo_l_Toe_01_01SHJnt
+    400044: Velo_l_Toe_01_02SHJnt
+    400046: Velo_l_Toe_02_01SHJnt
+    400048: Velo_l_Toe_02_02SHJnt
+    400050: Velo_l_Toe_03_01SHJnt
+    400052: Velo_l_Toe_03_02SHJnt
+    400054: Velo_LP
+    400056: Velo_Neck_01SHJnt
+    400058: Velo_Neck_02SHJnt
+    400060: Velo_Neck_03SHJnt
+    400062: Velo_Neck_04SHJnt
+    400064: Velo_Neck_TopSHJnt
+    400066: Velo_r_Arm_ClavicleSHJnt
+    400068: Velo_r_Arm_Elbow_CurveSHJnt
+    400070: Velo_r_Arm_Shoulder_CurveSHJnt
+    400072: Velo_r_Arm_WristSHJnt
+    400074: Velo_r_eye_01SHJnt
+    400076: Velo_r_Finger_01_01SHJnt
+    400078: Velo_r_Finger_01_02SHJnt
+    400080: Velo_r_Finger_02_01SHJnt
+    400082: Velo_r_Finger_02_02SHJnt
+    400084: Velo_r_Finger_03_01SHJnt
+    400086: Velo_r_Finger_03_02SHJnt
+    400088: Velo_r_Leg_AnkleSHJnt
+    400090: Velo_r_Leg_BallSHJnt
+    400092: Velo_r_Leg_HipSHJnt
+    400094: Velo_r_Leg_Knee_CurveSHJnt
+    400096: Velo_r_Leg_ToeSHJnt
+    400098: Velo_r_Toe_01_01SHJnt
+    400100: Velo_r_Toe_01_02SHJnt
+    400102: Velo_r_Toe_02_01SHJnt
+    400104: Velo_r_Toe_02_02SHJnt
+    400106: Velo_r_Toe_03_01SHJnt
+    400108: Velo_r_Toe_03_02SHJnt
+    400110: Velo_ROOTSHJnt
+    400112: Velo_SHP
+    400114: Velo_Spine_01SHJnt
+    400116: Velo_Spine_02SHJnt
+    400118: Velo_Spine_03SHJnt
+    400120: Velo_Spine_04SHJnt
+    400122: Velo_Spine_TopSHJnt
+    400124: Velo_Tail_01_01SHJnt
+    400126: Velo_Tail_01_02SHJnt
+    400128: Velo_Tail_01_03SHJnt
+    400130: Velo_Tail_01_04SHJnt
+    400132: Velo_Tail_01_05SHJnt
+    400134: Velo_Tail_01_06SHJnt
+    400136: Velo_Tail_01_07SHJnt
+    400138: Velo_Tail_01_08SHJnt
+    400140: Velo_Tail_01_09SHJnt
+    400142: //RootNode
+    4300000: Velo_HP_Msh
+    4300002: Velo_LP
+    4300004: Velo_SHP
+    7400000: Bind Pose
+    7400002: Attack
+    7400004: Creeping
+    7400006: Death
+    7400008: Eating
+    7400010: Fight Idle
+    7400012: Fight Idle 01
+    7400014: Hit Left
+    7400016: Hit Right
+    7400018: Hit Front
+    7400020: Hit Back
+    7400022: Idle
+    7400024: JumpAtack Legs/Head
+    7400026: Jumping
+    7400028: Jump Death
+    7400030: Lie Down
+    7400032: Sleeping
+    7400034: Stand Up
+    7400036: Look Round
+    7400038: Rotate Left
+    7400040: Rotate Right
+    7400042: Run Up Head
+    7400044: Run Jump
+    7400046: Run Look Round
+    7400048: Run Head Attack
+    7400050: Run
+    7400052: Srafe Left
+    7400054: Srafe Right
+    7400056: Walk
+    7400058: Walk Look Round
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Velo_HP_Msh
+    13700002: Velo_LP
+    13700004: Velo_SHP
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bind Pose
+      takeName: 
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: left
+        weight: 1
+      - path: RootMotion
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt/Velo_l_Toe_01_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt/Velo_l_Toe_01_01SHJnt/Velo_l_Toe_01_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt/Velo_l_Toe_02_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt/Velo_l_Toe_02_01SHJnt/Velo_l_Toe_02_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt/Velo_l_Toe_03_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_l_Leg_HipSHJnt/Velo_l_Leg_Knee_CurveSHJnt/Velo_l_Leg_AnkleSHJnt/Velo_l_Leg_BallSHJnt/Velo_l_Leg_ToeSHJnt/Velo_l_Toe_03_01SHJnt/Velo_l_Toe_03_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt/Velo_r_Toe_01_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt/Velo_r_Toe_01_01SHJnt/Velo_r_Toe_01_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt/Velo_r_Toe_02_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt/Velo_r_Toe_02_01SHJnt/Velo_r_Toe_02_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt/Velo_r_Toe_03_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_r_Leg_HipSHJnt/Velo_r_Leg_Knee_CurveSHJnt/Velo_r_Leg_AnkleSHJnt/Velo_r_Leg_BallSHJnt/Velo_r_Leg_ToeSHJnt/Velo_r_Toe_03_01SHJnt/Velo_r_Toe_03_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt/Velo_l_Finger_01_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt/Velo_l_Finger_01_01SHJnt/Velo_l_Finger_01_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt/Velo_l_Finger_02_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt/Velo_l_Finger_02_01SHJnt/Velo_l_Finger_02_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt/Velo_l_Finger_03_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_l_Arm_ClavicleSHJnt/Velo_l_Arm_Shoulder_CurveSHJnt/Velo_l_Arm_Elbow_CurveSHJnt/Velo_l_Arm_WristSHJnt/Velo_l_Finger_03_01SHJnt/Velo_l_Finger_03_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt/Velo_Neck_04SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt/Velo_Neck_04SHJnt/Velo_Neck_TopSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt/Velo_Neck_04SHJnt/Velo_Neck_TopSHJnt/Velo_Head_JawSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt/Velo_Neck_04SHJnt/Velo_Neck_TopSHJnt/Velo_Head_TopSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt/Velo_Neck_04SHJnt/Velo_Neck_TopSHJnt/Velo_Head_TopSHJnt/Velo_l_eye_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_Neck_01SHJnt/Velo_Neck_02SHJnt/Velo_Neck_03SHJnt/Velo_Neck_04SHJnt/Velo_Neck_TopSHJnt/Velo_Head_TopSHJnt/Velo_r_eye_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt/Velo_r_Finger_01_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt/Velo_r_Finger_01_01SHJnt/Velo_r_Finger_01_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt/Velo_r_Finger_02_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt/Velo_r_Finger_02_01SHJnt/Velo_r_Finger_02_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt/Velo_r_Finger_03_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Spine_01SHJnt/Velo_Spine_02SHJnt/Velo_Spine_03SHJnt/Velo_Spine_04SHJnt/Velo_Spine_TopSHJnt/Velo_r_Arm_ClavicleSHJnt/Velo_r_Arm_Shoulder_CurveSHJnt/Velo_r_Arm_Elbow_CurveSHJnt/Velo_r_Arm_WristSHJnt/Velo_r_Finger_03_01SHJnt/Velo_r_Finger_03_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt/Velo_Tail_01_04SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt/Velo_Tail_01_04SHJnt/Velo_Tail_01_05SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt/Velo_Tail_01_04SHJnt/Velo_Tail_01_05SHJnt/Velo_Tail_01_06SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt/Velo_Tail_01_04SHJnt/Velo_Tail_01_05SHJnt/Velo_Tail_01_06SHJnt/Velo_Tail_01_07SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt/Velo_Tail_01_04SHJnt/Velo_Tail_01_05SHJnt/Velo_Tail_01_06SHJnt/Velo_Tail_01_07SHJnt/Velo_Tail_01_08SHJnt
+        weight: 1
+      - path: RootMotion/Velo_ROOTSHJnt/Velo_Tail_01_01SHJnt/Velo_Tail_01_02SHJnt/Velo_Tail_01_03SHJnt/Velo_Tail_01_04SHJnt/Velo_Tail_01_05SHJnt/Velo_Tail_01_06SHJnt/Velo_Tail_01_07SHJnt/Velo_Tail_01_08SHJnt/Velo_Tail_01_09SHJnt
+        weight: 1
+      - path: Velo_HP_Msh
+        weight: 1
+      - path: Velo_LP
+        weight: 1
+      - path: Velo_SHP
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: 
+      firstFrame: 2
+      lastFrame: 37
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Creeping
+      takeName: 
+      firstFrame: 40
+      lastFrame: 94
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Death
+      takeName: 
+      firstFrame: 96
+      lastFrame: 135
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Eating
+      takeName: 
+      firstFrame: 137
+      lastFrame: 197
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fight Idle
+      takeName: 
+      firstFrame: 200
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fight Idle 01
+      takeName: 
+      firstFrame: 263
+      lastFrame: 320
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit Left
+      takeName: 
+      firstFrame: 323
+      lastFrame: 338
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit Right
+      takeName: 
+      firstFrame: 340
+      lastFrame: 355
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit Front
+      takeName: 
+      firstFrame: 357
+      lastFrame: 372
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit Back
+      takeName: 
+      firstFrame: 374
+      lastFrame: 389
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: 
+      firstFrame: 392
+      lastFrame: 532
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: JumpAtack Legs/Head
+      takeName: 
+      firstFrame: 535
+      lastFrame: 567
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jumping
+      takeName: 
+      firstFrame: 570
+      lastFrame: 592
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump Death
+      takeName: 
+      firstFrame: 594
+      lastFrame: 634
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lie Down
+      takeName: 
+      firstFrame: 635
+      lastFrame: 671
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sleeping
+      takeName: 
+      firstFrame: 672
+      lastFrame: 732
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Stand Up
+      takeName: 
+      firstFrame: 733
+      lastFrame: 769
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Look Round
+      takeName: 
+      firstFrame: 771
+      lastFrame: 911
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Rotate Left
+      takeName: 
+      firstFrame: 913
+      lastFrame: 949
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Rotate Right
+      takeName: 
+      firstFrame: 950
+      lastFrame: 986
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run Up Head
+      takeName: 
+      firstFrame: 988
+      lastFrame: 1026
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run Jump
+      takeName: 
+      firstFrame: 1029
+      lastFrame: 1051
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run Look Round
+      takeName: 
+      firstFrame: 1054
+      lastFrame: 1140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run Head Attack
+      takeName: 
+      firstFrame: 1143
+      lastFrame: 1181
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: 
+      firstFrame: 1184
+      lastFrame: 1222
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Srafe Left
+      takeName: 
+      firstFrame: 1225
+      lastFrame: 1257
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Srafe Right
+      takeName: 
+      firstFrame: 1260
+      lastFrame: 1292
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: 
+      firstFrame: 1295
+      lastFrame: 1332
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk Look Round
+      takeName: 
+      firstFrame: 1335
+      lastFrame: 1408
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

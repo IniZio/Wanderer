@@ -9,7 +9,7 @@ namespace Fyp.Game.UI {
     public class BaseSceneManager : MonoBehaviour {
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
-        ControlScript P1Script, P2Script;
+        public ControlScript P1Script, P2Script;
         public GameObject FollowCamera;
 
         void Awake() {
@@ -18,18 +18,16 @@ namespace Fyp.Game.UI {
         }
 
         void Update() {
-            if (!this.Player1) {
+            if (!this.Player1 || !this.P1Script) {
                 this.MapPlayer1();
             }
-            else if (!this.Player2) {
+            if (!this.Player2 || !this.P2Script) {
                 this.MapPlayer2();
             }
-            else {
-                if (this.P1Script.getStandingBaseGate() && this.P2Script.getStandingBaseGate()) {
-					this.P1Script.exitBaseGate();
-					this.P2Script.exitBaseGate();
-					NetworkChangeScene.AllPlayerChangeScene("Dungeon");
-                }
+            if (this.P1Script.getStandingBaseGate() && this.P2Script.getStandingBaseGate()) {
+                this.P1Script.exitBaseGate();
+                this.P2Script.exitBaseGate();
+                NetworkChangeScene.AllPlayerChangeScene("Dungeon");
             }
         }
 
@@ -41,9 +39,9 @@ namespace Fyp.Game.UI {
                 ControlScript script = Player1.GetComponent("ControlScript") as ControlScript;
                 if(script.getIsMe()) {
                     PlayerCamera cameraScirpt = FollowCamera.GetComponent("PlayerCamera") as PlayerCamera;
-                    this.P1Script = script;
                     cameraScirpt.setCamera(this.Player1);
                 }
+                this.P1Script = script;
             }
         }
         void MapPlayer2() {
@@ -54,9 +52,9 @@ namespace Fyp.Game.UI {
                 ControlScript script = Player2.GetComponent("ControlScript") as ControlScript;
                 if(script.getIsMe()) {
                     PlayerCamera cameraScirpt = FollowCamera.GetComponent("PlayerCamera") as PlayerCamera;
-                    this.P2Script = script;
                     cameraScirpt.setCamera(this.Player2);
                 }
+                this.P2Script = script;
             }
         }
     }

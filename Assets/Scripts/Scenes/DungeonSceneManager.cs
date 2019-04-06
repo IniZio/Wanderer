@@ -22,7 +22,7 @@ namespace Fyp.Game.UI {
             if (!this.Player1) {
                 this.MapPlayer1();
             }
-            else if (!this.Player2) {
+            if (!this.Player2) {
                 this.MapPlayer2();
             }
         }

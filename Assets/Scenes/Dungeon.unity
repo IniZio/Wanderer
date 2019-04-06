@@ -9961,6 +9961,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a3587a5d567624eba4344962962a06, type: 3}
+--- !u!1 &28950092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3924092949255176965, guid: 79a3587a5d567624eba4344962962a06,
+    type: 3}
+  m_PrefabInstance: {fileID: 28950091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &31684027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16303,11 +16309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0445ab4721e99d4f969ccd29eef6300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1point: {fileID: 0}
-  P2point: {fileID: 0}
+  P1point: {fileID: 28950092}
+  P2point: {fileID: 1578069403}
   Player1: {fileID: 0}
   Player2: {fileID: 0}
-  FollowCamera: {fileID: 0}
+  FollowCamera: {fileID: 470612372}
 --- !u!4 &183564280
 Transform:
   m_ObjectHideFlags: 0
@@ -101011,7 +101017,7 @@ PrefabInstance:
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.53
+      value: 14.946
       objectReference: {fileID: 0}
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
@@ -101075,6 +101081,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d57dc265c58614ab378a8aaebb9920, type: 3}
+--- !u!1 &1578069403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+    type: 3}
+  m_PrefabInstance: {fileID: 1578069402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1581005545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9947a6e7e8c8208469c1c86e15f5c089,

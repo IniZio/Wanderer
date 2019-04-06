@@ -15,7 +15,7 @@ namespace Fyp.Game.UI {
         void OnTriggerExit(Collider col) {
             if (col.gameObject.CompareTag("Player1Character") || col.gameObject.CompareTag("Player2Character")) {
                 ControlScript script = col.gameObject.GetComponent("ControlScript") as ControlScript;
-                    script.exitBaseGate();
+                script.exitBaseGate();
             }
         }
     }
