@@ -7,15 +7,28 @@ using Fyp.Game.Carmera;
 
 namespace Fyp.Game.UI {
 
-    public class DungeonSceneManager : MonoBehaviour {
+    public class DungeonSceneManager : Photon.PunBehaviour {
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
         ControlScript P1Script, P2Script;
         public GameObject FollowCamera;
+        public GameObject MainDoor;
+
+        public bool[] ButtonArray = {false, false};
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+			if (stream.isWriting) {
+				stream.SendNext(ButtonArray);
+			}
+			else {
+                ButtonArray = (bool[]) stream.ReceiveNext();
+			}
+		}
 
         void Awake() {
             this.MapPlayer1();
             this.MapPlayer2();
+            this.MainDoor.SetActive(false);
         }
 
         void Update() {
@@ -24,6 +37,13 @@ namespace Fyp.Game.UI {
             }
             if (!this.Player2) {
                 this.MapPlayer2();
+            }
+            if (ButtonArray[0]) {
+                this.MainDoor.SetActive(true);
+                // Door ani
+            }
+            if (ButtonArray[1]) {
+                // hihi
             }
         }
 
@@ -52,6 +72,10 @@ namespace Fyp.Game.UI {
                     cameraScirpt.setCamera(this.Player2);
                 }
             }
+        }
+
+        public void ClickButton(int num) {
+            this.ButtonArray[num] = !this.ButtonArray[num];
         }
     }
 }
