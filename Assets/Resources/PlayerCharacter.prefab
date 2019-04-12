@@ -74,7 +74,7 @@ CharacterController:
   m_Height: 1.85
   m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 1
   m_SkinWidth: 0.005
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.89, z: 0}
@@ -117,8 +117,8 @@ MonoBehaviour:
   - {fileID: 114487972738440570}
   - {fileID: 114079972652502292}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 18
-  instantiationId: 18
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114325623515329602

@@ -144,7 +144,7 @@ namespace Fyp.Game.Network {
             }
             else {
                 Debug.Log("player2");
-                player = PhotonNetwork.Instantiate("PlayerCharacter2", this.p2SpawnPoint.transform.position, this.p2SpawnPoint.transform.rotation, 0);
+                player = PhotonNetwork.Instantiate("PlayerCharacter3", this.p2SpawnPoint.transform.position, this.p2SpawnPoint.transform.rotation, 0);
                 point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p2SpawnEffect));
