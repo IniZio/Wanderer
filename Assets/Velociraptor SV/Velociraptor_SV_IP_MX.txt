@@ -1,0 +1,30 @@
+0000-0001 Bind Pose
+0002-0037 loop Attack
+0040-0094 loop Creeping
+0096-0135 Death
+0137-0197 loop Eating
+0200-0260 loop Fight Idle
+0263-0320 loop Fight Idle 01
+0323-0338 loop Hit Left
+0340-0355 loop Hit Right
+0357-0372 loop Hit Front
+0374-0389 loop Hit Back
+0392-0532 loop Idle
+0535-0567 loop JumpAtack Legs/Head
+0570-0592 loop Jumping 
+0594-0634 Jump Death
+0635-0671 Lie Down
+0672-0732 loop Sleeping
+0733-0769 Stand Up
+0771-0911 loop Look Round
+0913-0949 Rotate Left
+0950-0986 Rotate Right
+0988-1026 loop Run Up Head
+1029-1051 loop Run Jump
+1054-1140 loop Run Look Round
+1143-1181 loop Run Head Attack
+1184-1222 loop Run
+1225-1257 loop Srafe Left
+1260-1292 loop Srafe Right
+1295-1332 loop Walk
+1335-1408 loop  Walk Look Round   

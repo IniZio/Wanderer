@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: de55320a02560b84a95406a4d04714dc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: doorBL
+    100002: doorFL
+    100004: doorFR
+    100006: handle
+    100008: LB
+    100010: LF
+    100012: Object004
+    100014: RB
+    100016: RF
+    100018: wagon
+    100020: //RootNode
+    100022: glass
+    100024: wagon 1
+    100026: Plane002
+    400000: doorBL
+    400002: doorFL
+    400004: doorFR
+    400006: handle
+    400008: LB
+    400010: LF
+    400012: Object004
+    400014: RB
+    400016: RF
+    400018: wagon
+    400020: //RootNode
+    400022: glass
+    400024: wagon 1
+    400026: Plane002
+    2300000: doorBL
+    2300002: doorFL
+    2300004: doorFR
+    2300006: handle
+    2300008: LB
+    2300010: LF
+    2300012: Object004
+    2300014: RB
+    2300016: RF
+    2300018: wagon
+    2300020: glass
+    2300022: wagon 1
+    2300024: Plane002
+    3300000: doorBL
+    3300002: doorFL
+    3300004: doorFR
+    3300006: handle
+    3300008: LB
+    3300010: LF
+    3300012: Object004
+    3300014: RB
+    3300016: RF
+    3300018: wagon
+    3300020: glass
+    3300022: wagon 1
+    3300024: Plane002
+    4300000: RB
+    4300002: Object004
+    4300004: LB
+    4300006: LF
+    4300008: RF
+    4300010: handle
+    4300012: doorFR
+    4300014: doorFL
+    4300016: doorBL
+    4300018: wagon
+    4300020: glass
+    4300022: Plane002
+    7400000: wagonOpenDoor
+    7400002: wagonCloseDoor
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: wagonOpenDoor
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: doorBL
+        weight: 1
+      - path: doorFL
+        weight: 1
+      - path: doorFR
+        weight: 1
+      - path: glass
+        weight: 1
+      - path: handle
+        weight: 1
+      - path: LB
+        weight: 1
+      - path: LF
+        weight: 1
+      - path: Object004
+        weight: 1
+      - path: RB
+        weight: 1
+      - path: RF
+        weight: 1
+      - path: wagon 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: wagonCloseDoor
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: doorBL
+        weight: 1
+      - path: doorFL
+        weight: 1
+      - path: doorFR
+        weight: 1
+      - path: glass
+        weight: 1
+      - path: handle
+        weight: 1
+      - path: LB
+        weight: 1
+      - path: LF
+        weight: 1
+      - path: Object004
+        weight: 1
+      - path: RB
+        weight: 1
+      - path: RF
+        weight: 1
+      - path: wagon 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.028
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

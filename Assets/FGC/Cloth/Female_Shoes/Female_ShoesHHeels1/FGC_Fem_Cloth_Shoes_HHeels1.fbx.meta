@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 477379003be031e48bbb3374b2a12502
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: FGC_Fem_Cloth_HHeels1_Rig
+    100002: FGC_Fem_Cloth_HHeels1_Skin
+    100004: //RootNode
+    100006: tongueTip
+    100008: wcl_SH1_Abdomen
+    100010: wcl_SH1_Chest
+    100012: wcl_SH1_Head
+    100014: wcl_SH1_Hip
+    100016: wcl_SH1_Left Collar
+    100018: wcl_SH1_Left Foot
+    100020: wcl_SH1_Left Forearm
+    100022: wcl_SH1_Left Hand
+    100024: wcl_SH1_Left Shin
+    100026: wcl_SH1_Left Shoulder
+    100028: wcl_SH1_Left Thigh
+    100030: wcl_SH1_lEye
+    100032: wcl_SH1_lIndex1
+    100034: wcl_SH1_lIndex2
+    100036: wcl_SH1_lIndex3
+    100038: wcl_SH1_lMid1
+    100040: wcl_SH1_lMid2
+    100042: wcl_SH1_lMid3
+    100044: wcl_SH1_lowerJaw
+    100046: wcl_SH1_lPinky1
+    100048: wcl_SH1_lPinky2
+    100050: wcl_SH1_lPinky3
+    100052: wcl_SH1_lRing1
+    100054: wcl_SH1_lRing2
+    100056: wcl_SH1_lRing3
+    100058: wcl_SH1_lThumb1
+    100060: wcl_SH1_lThumb2
+    100062: wcl_SH1_lThumb3
+    100064: wcl_SH1_lToe
+    100066: wcl_SH1_Neck
+    100068: wcl_SH1_rEye
+    100070: wcl_SH1_Right Collar
+    100072: wcl_SH1_Right Foot
+    100074: wcl_SH1_Right Forearm
+    100076: wcl_SH1_Right Hand
+    100078: wcl_SH1_Right Shin
+    100080: wcl_SH1_Right Shoulder
+    100082: wcl_SH1_Right Thigh
+    100084: wcl_SH1_rIndex1
+    100086: wcl_SH1_rIndex2
+    100088: wcl_SH1_rIndex3
+    100090: wcl_SH1_rMid1
+    100092: wcl_SH1_rMid2
+    100094: wcl_SH1_rMid3
+    100096: wcl_SH1_rPinky1
+    100098: wcl_SH1_rPinky2
+    100100: wcl_SH1_rPinky3
+    100102: wcl_SH1_rRing1
+    100104: wcl_SH1_rRing2
+    100106: wcl_SH1_rRing3
+    100108: wcl_SH1_rThumb1
+    100110: wcl_SH1_rThumb2
+    100112: wcl_SH1_rThumb3
+    100114: wcl_SH1_rToe
+    100116: wcl_SH1_tongue01
+    100118: wcl_SH1_tongue02
+    100120: wcl_SH1_tongue03
+    100122: wcl_SH1_tongue04
+    100124: wcl_SH1_tongue05
+    100126: wcl_SH1_tongueBase
+    100128: wcl_SH1_upperJaw
+    400000: FGC_Fem_Cloth_HHeels1_Rig
+    400002: FGC_Fem_Cloth_HHeels1_Skin
+    400004: //RootNode
+    400006: tongueTip
+    400008: wcl_SH1_Abdomen
+    400010: wcl_SH1_Chest
+    400012: wcl_SH1_Head
+    400014: wcl_SH1_Hip
+    400016: wcl_SH1_Left Collar
+    400018: wcl_SH1_Left Foot
+    400020: wcl_SH1_Left Forearm
+    400022: wcl_SH1_Left Hand
+    400024: wcl_SH1_Left Shin
+    400026: wcl_SH1_Left Shoulder
+    400028: wcl_SH1_Left Thigh
+    400030: wcl_SH1_lEye
+    400032: wcl_SH1_lIndex1
+    400034: wcl_SH1_lIndex2
+    400036: wcl_SH1_lIndex3
+    400038: wcl_SH1_lMid1
+    400040: wcl_SH1_lMid2
+    400042: wcl_SH1_lMid3
+    400044: wcl_SH1_lowerJaw
+    400046: wcl_SH1_lPinky1
+    400048: wcl_SH1_lPinky2
+    400050: wcl_SH1_lPinky3
+    400052: wcl_SH1_lRing1
+    400054: wcl_SH1_lRing2
+    400056: wcl_SH1_lRing3
+    400058: wcl_SH1_lThumb1
+    400060: wcl_SH1_lThumb2
+    400062: wcl_SH1_lThumb3
+    400064: wcl_SH1_lToe
+    400066: wcl_SH1_Neck
+    400068: wcl_SH1_rEye
+    400070: wcl_SH1_Right Collar
+    400072: wcl_SH1_Right Foot
+    400074: wcl_SH1_Right Forearm
+    400076: wcl_SH1_Right Hand
+    400078: wcl_SH1_Right Shin
+    400080: wcl_SH1_Right Shoulder
+    400082: wcl_SH1_Right Thigh
+    400084: wcl_SH1_rIndex1
+    400086: wcl_SH1_rIndex2
+    400088: wcl_SH1_rIndex3
+    400090: wcl_SH1_rMid1
+    400092: wcl_SH1_rMid2
+    400094: wcl_SH1_rMid3
+    400096: wcl_SH1_rPinky1
+    400098: wcl_SH1_rPinky2
+    400100: wcl_SH1_rPinky3
+    400102: wcl_SH1_rRing1
+    400104: wcl_SH1_rRing2
+    400106: wcl_SH1_rRing3
+    400108: wcl_SH1_rThumb1
+    400110: wcl_SH1_rThumb2
+    400112: wcl_SH1_rThumb3
+    400114: wcl_SH1_rToe
+    400116: wcl_SH1_tongue01
+    400118: wcl_SH1_tongue02
+    400120: wcl_SH1_tongue03
+    400122: wcl_SH1_tongue04
+    400124: wcl_SH1_tongue05
+    400126: wcl_SH1_tongueBase
+    400128: wcl_SH1_upperJaw
+    4300000: FGC_Fem_Cloth_HHeels1_Skin
+    9500000: //RootNode
+    13700000: FGC_Fem_Cloth_HHeels1_Skin
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Cloth_HHeels1_Mat
+    second: {fileID: 2100000, guid: 96ae3c4b3fc4faf4d8ed982ec5ccb4e8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

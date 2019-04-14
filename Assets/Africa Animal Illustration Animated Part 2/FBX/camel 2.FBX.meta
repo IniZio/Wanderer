@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 2b7757e79090f4d48a1aa0d786eebced
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Camel_1humpM2015_Head_JawEndSHJnt
+    100004: Camel_1humpM2015_Head_JawSHJnt
+    100006: Camel_1humpM2015_Head_TopSHJnt
+    100008: Camel_1humpM2015_l_Clavicle_01_01SHJnt
+    100010: Camel_1humpM2015_l_FrontLeg_AnkleSHJnt
+    100012: Camel_1humpM2015_l_FrontLeg_BallSHJnt
+    100014: Camel_1humpM2015_l_FrontLeg_HipSHJnt
+    100016: Camel_1humpM2015_l_FrontLeg_KneeSHJnt
+    100018: Camel_1humpM2015_l_HindLeg_AnkleSHJnt
+    100020: Camel_1humpM2015_l_HindLeg_BallSHJnt
+    100022: Camel_1humpM2015_l_HindLeg_HipSHJnt
+    100024: Camel_1humpM2015_l_HindLeg_Knee1SHJnt
+    100026: Camel_1humpM2015_l_HindLeg_Knee2SHJnt
+    100028: Camel_1humpM2015_Neck_01SHJnt
+    100030: Camel_1humpM2015_Neck_02SHJnt
+    100032: Camel_1humpM2015_Neck_TopSHJnt
+    100034: Camel_1humpM2015_r_Clavicle_01_01SHJnt
+    100036: Camel_1humpM2015_r_FrontLeg_AnkleSHJnt
+    100038: Camel_1humpM2015_r_FrontLeg_BallSHJnt
+    100040: Camel_1humpM2015_r_FrontLeg_HipSHJnt
+    100042: Camel_1humpM2015_r_FrontLeg_KneeSHJnt
+    100044: Camel_1humpM2015_r_HindLeg_AnkleSHJnt
+    100046: Camel_1humpM2015_r_HindLeg_BallSHJnt
+    100048: Camel_1humpM2015_r_HindLeg_HipSHJnt
+    100050: Camel_1humpM2015_r_HindLeg_Knee1SHJnt
+    100052: Camel_1humpM2015_r_HindLeg_Knee2SHJnt
+    100054: Camel_1humpM2015_ROOTSHJnt
+    100056: Camel_1humpM2015_SHJntGrp1
+    100058: Camel_1humpM2015_Spine_01SHJnt
+    100060: Camel_1humpM2015_Spine_02SHJnt
+    100062: Camel_1humpM2015_Spine_03SHJnt
+    100064: Camel_1humpM2015_Spine_04SHJnt
+    100066: Camel_1humpM2015_Spine_TopSHJnt
+    100068: Camel_1humpM2015_Tail_01_01SHJnt
+    100070: Camel_1humpM2015_Tail_01_02SHJnt
+    100072: Camel_1humpM2015_Tail_01_03SHJnt
+    100074: Camel_1humpM2015_Tail_01_04SHJnt
+    100076: Hump
+    100078: msh4
+    400000: //RootNode
+    400002: Camel_1humpM2015_Head_JawEndSHJnt
+    400004: Camel_1humpM2015_Head_JawSHJnt
+    400006: Camel_1humpM2015_Head_TopSHJnt
+    400008: Camel_1humpM2015_l_Clavicle_01_01SHJnt
+    400010: Camel_1humpM2015_l_FrontLeg_AnkleSHJnt
+    400012: Camel_1humpM2015_l_FrontLeg_BallSHJnt
+    400014: Camel_1humpM2015_l_FrontLeg_HipSHJnt
+    400016: Camel_1humpM2015_l_FrontLeg_KneeSHJnt
+    400018: Camel_1humpM2015_l_HindLeg_AnkleSHJnt
+    400020: Camel_1humpM2015_l_HindLeg_BallSHJnt
+    400022: Camel_1humpM2015_l_HindLeg_HipSHJnt
+    400024: Camel_1humpM2015_l_HindLeg_Knee1SHJnt
+    400026: Camel_1humpM2015_l_HindLeg_Knee2SHJnt
+    400028: Camel_1humpM2015_Neck_01SHJnt
+    400030: Camel_1humpM2015_Neck_02SHJnt
+    400032: Camel_1humpM2015_Neck_TopSHJnt
+    400034: Camel_1humpM2015_r_Clavicle_01_01SHJnt
+    400036: Camel_1humpM2015_r_FrontLeg_AnkleSHJnt
+    400038: Camel_1humpM2015_r_FrontLeg_BallSHJnt
+    400040: Camel_1humpM2015_r_FrontLeg_HipSHJnt
+    400042: Camel_1humpM2015_r_FrontLeg_KneeSHJnt
+    400044: Camel_1humpM2015_r_HindLeg_AnkleSHJnt
+    400046: Camel_1humpM2015_r_HindLeg_BallSHJnt
+    400048: Camel_1humpM2015_r_HindLeg_HipSHJnt
+    400050: Camel_1humpM2015_r_HindLeg_Knee1SHJnt
+    400052: Camel_1humpM2015_r_HindLeg_Knee2SHJnt
+    400054: Camel_1humpM2015_ROOTSHJnt
+    400056: Camel_1humpM2015_SHJntGrp1
+    400058: Camel_1humpM2015_Spine_01SHJnt
+    400060: Camel_1humpM2015_Spine_02SHJnt
+    400062: Camel_1humpM2015_Spine_03SHJnt
+    400064: Camel_1humpM2015_Spine_04SHJnt
+    400066: Camel_1humpM2015_Spine_TopSHJnt
+    400068: Camel_1humpM2015_Tail_01_01SHJnt
+    400070: Camel_1humpM2015_Tail_01_02SHJnt
+    400072: Camel_1humpM2015_Tail_01_03SHJnt
+    400074: Camel_1humpM2015_Tail_01_04SHJnt
+    400076: Hump
+    400078: msh4
+    2100000: DromaderMaterial
+    4300000: msh4
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: msh4
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

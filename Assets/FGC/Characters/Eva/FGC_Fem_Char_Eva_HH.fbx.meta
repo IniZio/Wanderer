@@ -1,0 +1,1104 @@
+fileFormatVersion: 2
+guid: 39529e629f4c22241b474c3b034cd8dd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: FGC_Fem_Char_Eva_Rig
+    100004: FGC_Fem_Char_Eva_Skin
+    100006: wc_Ev_Abdomen
+    100008: wc_Ev_Chest
+    100010: wc_Ev_Head
+    100012: wc_Ev_Hip
+    100014: wc_Ev_Left Collar
+    100016: wc_Ev_Left Foot
+    100018: wc_Ev_Left Forearm
+    100020: wc_Ev_Left Hand
+    100022: wc_Ev_Left Shin
+    100024: wc_Ev_Left Shoulder
+    100026: wc_Ev_Left Thigh
+    100028: wc_Ev_lEye
+    100030: wc_Ev_lIndex1
+    100032: wc_Ev_lIndex2
+    100034: wc_Ev_lIndex3
+    100036: wc_Ev_lMid1
+    100038: wc_Ev_lMid2
+    100040: wc_Ev_lMid3
+    100042: wc_Ev_lowerJaw
+    100044: wc_Ev_lPinky1
+    100046: wc_Ev_lPinky2
+    100048: wc_Ev_lPinky3
+    100050: wc_Ev_lRing1
+    100052: wc_Ev_lRing2
+    100054: wc_Ev_lRing3
+    100056: wc_Ev_lThumb1
+    100058: wc_Ev_lThumb2
+    100060: wc_Ev_lThumb3
+    100062: wc_Ev_lToe
+    100064: wc_Ev_Neck
+    100066: wc_Ev_rEye
+    100068: wc_Ev_Right Collar
+    100070: wc_Ev_Right Foot
+    100072: wc_Ev_Right Forearm
+    100074: wc_Ev_Right Hand
+    100076: wc_Ev_Right Shin
+    100078: wc_Ev_Right Shoulder
+    100080: wc_Ev_Right Thigh
+    100082: wc_Ev_rIndex1
+    100084: wc_Ev_rIndex2
+    100086: wc_Ev_rIndex3
+    100088: wc_Ev_rMid1
+    100090: wc_Ev_rMid2
+    100092: wc_Ev_rMid3
+    100094: wc_Ev_rPinky1
+    100096: wc_Ev_rPinky2
+    100098: wc_Ev_rPinky3
+    100100: wc_Ev_rRing1
+    100102: wc_Ev_rRing2
+    100104: wc_Ev_rRing3
+    100106: wc_Ev_rThumb1
+    100108: wc_Ev_rThumb2
+    100110: wc_Ev_rThumb3
+    100112: wc_Ev_rToe
+    100114: wc_Ev_tongue01
+    100116: wc_Ev_tongue02
+    100118: wc_Ev_tongue03
+    100120: wc_Ev_tongue04
+    100122: wc_Ev_tongue05
+    100124: wc_Ev_tongueBase
+    100126: wc_Ev_tongueTip
+    100128: wc_Ev_upperJaw
+    400000: //RootNode
+    400002: FGC_Fem_Char_Eva_Rig
+    400004: FGC_Fem_Char_Eva_Skin
+    400006: wc_Ev_Abdomen
+    400008: wc_Ev_Chest
+    400010: wc_Ev_Head
+    400012: wc_Ev_Hip
+    400014: wc_Ev_Left Collar
+    400016: wc_Ev_Left Foot
+    400018: wc_Ev_Left Forearm
+    400020: wc_Ev_Left Hand
+    400022: wc_Ev_Left Shin
+    400024: wc_Ev_Left Shoulder
+    400026: wc_Ev_Left Thigh
+    400028: wc_Ev_lEye
+    400030: wc_Ev_lIndex1
+    400032: wc_Ev_lIndex2
+    400034: wc_Ev_lIndex3
+    400036: wc_Ev_lMid1
+    400038: wc_Ev_lMid2
+    400040: wc_Ev_lMid3
+    400042: wc_Ev_lowerJaw
+    400044: wc_Ev_lPinky1
+    400046: wc_Ev_lPinky2
+    400048: wc_Ev_lPinky3
+    400050: wc_Ev_lRing1
+    400052: wc_Ev_lRing2
+    400054: wc_Ev_lRing3
+    400056: wc_Ev_lThumb1
+    400058: wc_Ev_lThumb2
+    400060: wc_Ev_lThumb3
+    400062: wc_Ev_lToe
+    400064: wc_Ev_Neck
+    400066: wc_Ev_rEye
+    400068: wc_Ev_Right Collar
+    400070: wc_Ev_Right Foot
+    400072: wc_Ev_Right Forearm
+    400074: wc_Ev_Right Hand
+    400076: wc_Ev_Right Shin
+    400078: wc_Ev_Right Shoulder
+    400080: wc_Ev_Right Thigh
+    400082: wc_Ev_rIndex1
+    400084: wc_Ev_rIndex2
+    400086: wc_Ev_rIndex3
+    400088: wc_Ev_rMid1
+    400090: wc_Ev_rMid2
+    400092: wc_Ev_rMid3
+    400094: wc_Ev_rPinky1
+    400096: wc_Ev_rPinky2
+    400098: wc_Ev_rPinky3
+    400100: wc_Ev_rRing1
+    400102: wc_Ev_rRing2
+    400104: wc_Ev_rRing3
+    400106: wc_Ev_rThumb1
+    400108: wc_Ev_rThumb2
+    400110: wc_Ev_rThumb3
+    400112: wc_Ev_rToe
+    400114: wc_Ev_tongue01
+    400116: wc_Ev_tongue02
+    400118: wc_Ev_tongue03
+    400120: wc_Ev_tongue04
+    400122: wc_Ev_tongue05
+    400124: wc_Ev_tongueBase
+    400126: wc_Ev_tongueTip
+    400128: wc_Ev_upperJaw
+    4300000: FGC_Fem_Char_Eva_Skin
+    9500000: //RootNode
+    13700000: FGC_Fem_Char_Eva_Skin
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Cornea
+    second: {fileID: 2100000, guid: cb8a221a1a9ceec48819cd0ea6bc70c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_EyeSurface
+    second: {fileID: 2100000, guid: e16b51748ca27ae418c716d2c0eab9e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Eyelash
+    second: {fileID: 2100000, guid: 6a879a52c95fd294d9c04ffd730a1934, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Fingernail
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Gums
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_InnerMouth
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Iris
+    second: {fileID: 2100000, guid: c07939a5362395d41bca1135419e4a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Lacrimal
+    second: {fileID: 2100000, guid: c07939a5362395d41bca1135419e4a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Lip
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Nipple
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Nostril
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Pupil
+    second: {fileID: 2100000, guid: c07939a5362395d41bca1135419e4a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Sclera
+    second: {fileID: 2100000, guid: c07939a5362395d41bca1135419e4a6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinArm
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinFace
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinFoot
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinForearm
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinHand
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinHead
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinHip
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinLeg
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinNeck
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_SkinTorso
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Teeth
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Char_Eva_Tongue
+    second: {fileID: 2100000, guid: 5891c2dafa1461c40bfc51abe2c32eb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FGC_Fem_Eyes_Tear
+    second: {fileID: 2100000, guid: 5d76993b0964a564a857290e809771b4, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: wc_Ev_Hip
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Shin
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Shin
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Abdomen
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Chest
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Collar
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Collar
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Shoulder
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Shoulder
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Left Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_Right Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lToe
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rToe
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lEye
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rEye
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lMid1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lMid2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lMid3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_lPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rMid1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rMid2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rMid3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: wc_Ev_rPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: FGC_Fem_Char_Eva_HH(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FGC_Fem_Char_Eva_Skin
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FGC_Fem_Char_Eva_Rig
+      parentName: 
+      position: {x: 0, y: 0.105, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Hip
+      parentName: 
+      position: {x: -0, y: 0.9620983, z: 0.0070302733}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Abdomen
+      parentName: 
+      position: {x: -0, y: 0.13449997, z: 0.007124638}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Chest
+      parentName: 
+      position: {x: -0, y: 0.12267586, z: -0.021232368}
+      rotation: {x: 6.938894e-18, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Neck
+      parentName: 
+      position: {x: -0, y: 0.24771102, z: -0.035387278}
+      rotation: {x: -1.3877788e-16, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Head
+      parentName: 
+      position: {x: -0, y: 0.07785202, z: 0.004718299}
+      rotation: {x: -1.3877788e-16, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rEye
+      parentName: 
+      position: {x: 0.031784855, y: 0.08289123, z: 0.094647996}
+      rotation: {x: -1.3877788e-16, y: -2.4734317e-23, z: -3.432576e-39, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lEye
+      parentName: 
+      position: {x: -0.031784855, y: 0.08289123, z: 0.094647996}
+      rotation: {x: -1.3877788e-16, y: 2.4734317e-23, z: 3.432576e-39, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_upperJaw
+      parentName: 
+      position: {x: 0.0001, y: 0.02951538, z: 0.066712104}
+      rotation: {x: -1.3877788e-16, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lowerJaw
+      parentName: 
+      position: {x: 0.00010999999, y: 0.055263214, z: 0.0343602}
+      rotation: {x: -1.405126e-16, y: -1.6940659e-20, z: -1.5881868e-22, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongueBase
+      parentName: 
+      position: {x: -0.00010919029, y: -0.05290405, z: 0.03877351}
+      rotation: {x: -2.220446e-16, y: -1.3552527e-19, z: 1.0842022e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongue01
+      parentName: 
+      position: {x: 0.000091268754, y: 0.0061950684, z: 0.002201326}
+      rotation: {x: 0.1650476, y: -0.000018731862, z: -0.00003828839, w: 0.9862856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongue02
+      parentName: 
+      position: {x: 0.000002035238, y: 0.006926422, z: 0.005383582}
+      rotation: {x: 0.14780942, y: -0.0000046336377, z: -0.000011433861, w: 0.9890159}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongue03
+      parentName: 
+      position: {x: 0.0000007039681, y: 0.006334381, z: 0.006531315}
+      rotation: {x: 0.052335955, y: -0.0000008993258, z: -0.0000025804989, w: 0.9986295}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongue04
+      parentName: 
+      position: {x: 0.00000041662713, y: 0.0052539064, z: 0.006620016}
+      rotation: {x: -0.12186934, y: 0.0000072446346, z: 0.000019243565, w: 0.99254614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongue05
+      parentName: 
+      position: {x: 0.00000073038973, y: 0.0030503843, z: 0.0034757422}
+      rotation: {x: -1.1934898e-15, y: -2.0261028e-18, z: -1.822815e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_tongueTip
+      parentName: 
+      position: {x: -0.00000043290666, y: 0.004255829, z: 0.0051221894}
+      rotation: {x: -1.2490009e-15, y: -2.3581397e-18, z: -1.7347235e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Collar
+      parentName: 
+      position: {x: 0.030668978, y: 0.21468292, z: -0.037746433}
+      rotation: {x: -1.3847972e-16, y: -4.3368087e-18, z: 8.8426005e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Shoulder
+      parentName: 
+      position: {x: 0.1132393, y: -0.004718323, z: -0.0023591518}
+      rotation: {x: -1.4192196e-16, y: 0.0032915124, z: 0.005485854, w: 0.99997956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Forearm
+      parentName: 
+      position: {x: 0.28781652, y: -0.02359146, z: 0.014154911}
+      rotation: {x: 0.0023792356, y: 0.2194552, z: 0.0043610595, w: 0.97560996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Hand
+      parentName: 
+      position: {x: 0.2146828, y: -0.004718323, z: 0.12031675}
+      rotation: {x: -1.5265567e-16, y: 1.110223e-16, z: -7.077672e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rThumb1
+      parentName: 
+      position: {x: -0.0047182464, y: -0.0023591614, z: 0.02595067}
+      rotation: {x: -0.056914814, y: -0.021864725, z: 0.013686215, w: 0.9980458}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rThumb2
+      parentName: 
+      position: {x: 0.011795807, y: -0.007077484, z: 0.037746437}
+      rotation: {x: -0.06620878, y: -0.1642556, z: -0.010107568, w: 0.98414147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rThumb3
+      parentName: 
+      position: {x: 0.020316925, y: -0.009618225, z: 0.023219718}
+      rotation: {x: -3.469447e-16, y: 8.6042284e-16, z: -7.771561e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rIndex1
+      parentName: 
+      position: {x: 0.051901396, y: 0.009436646, z: 0.058978796}
+      rotation: {x: -0.083038546, y: 0.07830993, z: 0.108574316, w: 0.9875139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rIndex2
+      parentName: 
+      position: {x: 0.024419555, y: -0.010094909, z: 0.025957288}
+      rotation: {x: -0.14481975, y: -0.0063071316, z: 0.13378766, w: 0.98035115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rIndex3
+      parentName: 
+      position: {x: 0.011519775, y: -0.01493576, z: 0.011765556}
+      rotation: {x: -7.077672e-16, y: 4.9960036e-16, z: -2.810252e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rMid1
+      parentName: 
+      position: {x: 0.06133804, y: 0.009436646, z: 0.04010559}
+      rotation: {x: -0.057513636, y: -0.0013733769, z: 0.08828533, w: 0.99443257}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rMid2
+      parentName: 
+      position: {x: 0.036689453, y: -0.010653991, z: 0.023735655}
+      rotation: {x: -0.14836048, y: 0.05385459, z: 0.25350213, w: 0.95437175}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rMid3
+      parentName: 
+      position: {x: 0.012293548, y: -0.020555267, z: 0.011561489}
+      rotation: {x: -4.8572257e-16, y: 1.110223e-16, z: -4.3715032e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rRing1
+      parentName: 
+      position: {x: 0.06841545, y: -0.0023591614, z: 0.02595067}
+      rotation: {x: -0.06616697, y: -0.06258121, z: 0.115921825, w: 0.9890741}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rRing2
+      parentName: 
+      position: {x: 0.030548628, y: -0.009354095, z: 0.012386961}
+      rotation: {x: -0.0603208, y: 0.066447854, z: 0.1989412, w: 0.9758937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rRing3
+      parentName: 
+      position: {x: 0.015676575, y: -0.017460022, z: 0.010585041}
+      rotation: {x: -5.551115e-16, y: 6.2450045e-16, z: -1.4502288e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rPinky1
+      parentName: 
+      position: {x: 0.06841545, y: -0.009436646, z: 0.0070774555}
+      rotation: {x: -0.1359068, y: -0.08355772, z: 0.22751862, w: 0.9606158}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rPinky2
+      parentName: 
+      position: {x: 0.025950698, y: -0.016513977, z: 0.009436607}
+      rotation: {x: -0.027898118, y: 0.07890331, z: 0.21479954, w: 0.97306585}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rPinky3
+      parentName: 
+      position: {x: 0.0074337004, y: -0.015313263, z: 0.0065905284}
+      rotation: {x: -9.992007e-16, y: 2.0816682e-16, z: -1.0338952e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Collar
+      parentName: 
+      position: {x: -0.030668978, y: 0.21468292, z: -0.037746433}
+      rotation: {x: -1.3847972e-16, y: 4.3368087e-18, z: -8.8426005e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Shoulder
+      parentName: 
+      position: {x: -0.1132393, y: -0.004718323, z: -0.0023591518}
+      rotation: {x: -1.4192196e-16, y: -0.0032915124, z: -0.005485854, w: 0.99997956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Forearm
+      parentName: 
+      position: {x: -0.28781652, y: -0.02359146, z: 0.014154911}
+      rotation: {x: 0.0023792356, y: -0.2194552, z: -0.0043610595, w: 0.97560996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Hand
+      parentName: 
+      position: {x: -0.2146828, y: -0.004718323, z: 0.12031675}
+      rotation: {x: -1.5265567e-16, y: -1.110223e-16, z: 7.077672e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lThumb1
+      parentName: 
+      position: {x: 0.0047182464, y: -0.0023591614, z: 0.02595067}
+      rotation: {x: -0.056914814, y: 0.021864725, z: -0.013686215, w: 0.9980458}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lThumb2
+      parentName: 
+      position: {x: -0.011795807, y: -0.007077484, z: 0.037746437}
+      rotation: {x: -0.06620878, y: 0.1642556, z: 0.010107568, w: 0.98414147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lThumb3
+      parentName: 
+      position: {x: -0.020316925, y: -0.009618225, z: 0.023219718}
+      rotation: {x: -3.469447e-16, y: -8.6042284e-16, z: 7.771561e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lIndex1
+      parentName: 
+      position: {x: -0.051901396, y: 0.009436646, z: 0.058978796}
+      rotation: {x: -0.083038546, y: -0.07830993, z: -0.108574316, w: 0.9875139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lIndex2
+      parentName: 
+      position: {x: -0.024419555, y: -0.010094909, z: 0.025957288}
+      rotation: {x: -0.14481975, y: 0.0063071316, z: -0.13378766, w: 0.98035115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lIndex3
+      parentName: 
+      position: {x: -0.011519775, y: -0.01493576, z: 0.011765556}
+      rotation: {x: -7.077672e-16, y: -4.9960036e-16, z: 2.810252e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lMid1
+      parentName: 
+      position: {x: -0.06133804, y: 0.009436646, z: 0.04010559}
+      rotation: {x: -0.057513636, y: 0.0013733769, z: -0.08828533, w: 0.99443257}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lMid2
+      parentName: 
+      position: {x: -0.036689453, y: -0.010653991, z: 0.023735655}
+      rotation: {x: -0.14836048, y: -0.05385459, z: -0.25350213, w: 0.95437175}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lMid3
+      parentName: 
+      position: {x: -0.012293548, y: -0.020555267, z: 0.011561489}
+      rotation: {x: -4.8572257e-16, y: -1.110223e-16, z: 4.3715032e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lRing1
+      parentName: 
+      position: {x: -0.06841545, y: -0.0023591614, z: 0.02595067}
+      rotation: {x: -0.06616697, y: 0.06258121, z: -0.115921825, w: 0.9890741}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lRing2
+      parentName: 
+      position: {x: -0.030548628, y: -0.009354095, z: 0.012386961}
+      rotation: {x: -0.0603208, y: -0.066447854, z: -0.1989412, w: 0.9758937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lRing3
+      parentName: 
+      position: {x: -0.015676575, y: -0.017460022, z: 0.010585041}
+      rotation: {x: -5.551115e-16, y: -6.2450045e-16, z: 1.4502288e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lPinky1
+      parentName: 
+      position: {x: -0.06841545, y: -0.009436646, z: 0.0070774555}
+      rotation: {x: -0.1359068, y: 0.08355772, z: -0.22751862, w: 0.9606158}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lPinky2
+      parentName: 
+      position: {x: -0.025950698, y: -0.016513977, z: 0.009436607}
+      rotation: {x: -0.027898118, y: -0.07890331, z: -0.21479954, w: 0.97306585}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lPinky3
+      parentName: 
+      position: {x: -0.0074337004, y: -0.015313263, z: 0.0065905284}
+      rotation: {x: -9.992007e-16, y: -2.0816682e-16, z: 1.0338952e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Thigh
+      parentName: 
+      position: {x: 0.087288626, y: -0.023563156, z: 0.0024063347}
+      rotation: {x: -0.0026937176, y: 0.017318811, z: 0.004865408, w: 0.9998346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Shin
+      parentName: 
+      position: {x: -0.021232367, y: -0.4435206, z: -0.014154913}
+      rotation: {x: -0.000004105348, y: -0.0003823538, z: 0.004346523, w: 0.9999905}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Right Foot
+      parentName: 
+      position: {x: -0.0049631833, y: -0.41118556, z: -0.03390503}
+      rotation: {x: 0.17080389, y: -0.008380038, z: -0.03135852, w: 0.9847703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_rToe
+      parentName: 
+      position: {x: 0.01439979, y: -0.10573602, z: 0.10399377}
+      rotation: {x: -0.20171587, y: -0.002870044, z: 0.07841285, w: 0.976296}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Thigh
+      parentName: 
+      position: {x: -0.087288626, y: -0.023563156, z: 0.0024063347}
+      rotation: {x: -0.0026937176, y: -0.017318811, z: -0.004865408, w: 0.9998346}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Shin
+      parentName: 
+      position: {x: 0.021232367, y: -0.4435206, z: -0.014154913}
+      rotation: {x: -0.000004105348, y: 0.0003823538, z: -0.004346523, w: 0.9999905}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_Left Foot
+      parentName: 
+      position: {x: 0.0049631833, y: -0.41118556, z: -0.03390503}
+      rotation: {x: 0.17080389, y: 0.008380038, z: 0.03135852, w: 0.9847703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wc_Ev_lToe
+      parentName: 
+      position: {x: -0.01439979, y: -0.10573602, z: 0.10399377}
+      rotation: {x: -0.20171587, y: 0.002870044, z: -0.07841285, w: 0.976296}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

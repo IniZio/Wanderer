@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 1a65cf65a077d479baf6997d7ce86902
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Ear_L
+    100002: Ear_R
+    100004: //RootNode
+    100006: Gazelle_Head_JawEndSHJnt
+    100008: Gazelle_Head_JawSHJnt
+    100010: Gazelle_Head_TopSHJnt
+    100012: Gazelle_l_Clavicle_01_01SHJnt
+    100014: Gazelle_l_FrontLeg_AnkleSHJnt
+    100016: Gazelle_l_FrontLeg_BallSHJnt
+    100018: Gazelle_l_FrontLeg_HipSHJnt
+    100020: Gazelle_l_FrontLeg_KneeSHJnt
+    100022: Gazelle_l_HindLeg_AnkleSHJnt
+    100024: Gazelle_l_HindLeg_BallSHJnt
+    100026: Gazelle_l_HindLeg_HipSHJnt
+    100028: Gazelle_l_HindLeg_Knee1SHJnt
+    100030: Gazelle_l_HindLeg_Knee2SHJnt
+    100032: Gazelle_msh
+    100034: Gazelle_Neck_01SHJnt
+    100036: Gazelle_Neck_02SHJnt
+    100038: Gazelle_Neck_TopSHJnt
+    100040: Gazelle_r_Clavicle_01_01SHJnt
+    100042: Gazelle_r_FrontLeg_AnkleSHJnt
+    100044: Gazelle_r_FrontLeg_BallSHJnt
+    100046: Gazelle_r_FrontLeg_HipSHJnt
+    100048: Gazelle_r_FrontLeg_KneeSHJnt
+    100050: Gazelle_r_HindLeg_AnkleSHJnt
+    100052: Gazelle_r_HindLeg_BallSHJnt
+    100054: Gazelle_r_HindLeg_HipSHJnt
+    100056: Gazelle_r_HindLeg_Knee1SHJnt
+    100058: Gazelle_r_HindLeg_Knee2SHJnt
+    100060: Gazelle_ROOTSHJnt
+    100062: Gazelle_Spine_01SHJnt
+    100064: Gazelle_Spine_02SHJnt
+    100066: Gazelle_Spine_03SHJnt
+    100068: Gazelle_Spine_04SHJnt
+    100070: Gazelle_Spine_TopSHJnt
+    100072: Gazelle_Tail_01_01SHJnt
+    100074: Gazelle_Tail_01_02SHJnt
+    100076: Gazelle_Tail_01_03SHJnt
+    100078: TRS
+    400000: Ear_L
+    400002: Ear_R
+    400004: //RootNode
+    400006: Gazelle_Head_JawEndSHJnt
+    400008: Gazelle_Head_JawSHJnt
+    400010: Gazelle_Head_TopSHJnt
+    400012: Gazelle_l_Clavicle_01_01SHJnt
+    400014: Gazelle_l_FrontLeg_AnkleSHJnt
+    400016: Gazelle_l_FrontLeg_BallSHJnt
+    400018: Gazelle_l_FrontLeg_HipSHJnt
+    400020: Gazelle_l_FrontLeg_KneeSHJnt
+    400022: Gazelle_l_HindLeg_AnkleSHJnt
+    400024: Gazelle_l_HindLeg_BallSHJnt
+    400026: Gazelle_l_HindLeg_HipSHJnt
+    400028: Gazelle_l_HindLeg_Knee1SHJnt
+    400030: Gazelle_l_HindLeg_Knee2SHJnt
+    400032: Gazelle_msh
+    400034: Gazelle_Neck_01SHJnt
+    400036: Gazelle_Neck_02SHJnt
+    400038: Gazelle_Neck_TopSHJnt
+    400040: Gazelle_r_Clavicle_01_01SHJnt
+    400042: Gazelle_r_FrontLeg_AnkleSHJnt
+    400044: Gazelle_r_FrontLeg_BallSHJnt
+    400046: Gazelle_r_FrontLeg_HipSHJnt
+    400048: Gazelle_r_FrontLeg_KneeSHJnt
+    400050: Gazelle_r_HindLeg_AnkleSHJnt
+    400052: Gazelle_r_HindLeg_BallSHJnt
+    400054: Gazelle_r_HindLeg_HipSHJnt
+    400056: Gazelle_r_HindLeg_Knee1SHJnt
+    400058: Gazelle_r_HindLeg_Knee2SHJnt
+    400060: Gazelle_ROOTSHJnt
+    400062: Gazelle_Spine_01SHJnt
+    400064: Gazelle_Spine_02SHJnt
+    400066: Gazelle_Spine_03SHJnt
+    400068: Gazelle_Spine_04SHJnt
+    400070: Gazelle_Spine_TopSHJnt
+    400072: Gazelle_Tail_01_01SHJnt
+    400074: Gazelle_Tail_01_02SHJnt
+    400076: Gazelle_Tail_01_03SHJnt
+    400078: TRS
+    2100000: GazelleMaterial
+    4300000: Gazelle_msh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Gazelle_msh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
