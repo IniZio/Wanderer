@@ -4526,6 +4526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerView-WaitingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 4443814156271376608, guid: c1a43d8ca3ff9864096d68fb0e8ae495,
+        type: 3}
+      propertyPath: m_TagString
+      value: FollowCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 4443814156271376609, guid: c1a43d8ca3ff9864096d68fb0e8ae495,
         type: 3}
       propertyPath: m_LocalPosition.x
