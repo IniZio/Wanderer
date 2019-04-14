@@ -2851,13 +2851,13 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 22200004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
       propertyPath: m_Text
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 22200004, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a93c012dd9ef6454fa7d140e976926f7, type: 3}
       propertyPath: m_Enabled
