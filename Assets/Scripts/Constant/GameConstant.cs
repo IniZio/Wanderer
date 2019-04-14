@@ -17,7 +17,42 @@ namespace Fyp.Constant{
         }
 
         public static class UpgradeList {
-
+            class AxeUpgrade {
+                class level1 {
+                    public readonly int woodNum = 10;
+                    public readonly int ironNum = 10;
+                    public readonly int stoneNum = 10;
+                }
+                class level2 {
+                    public readonly int woodNum = 100;
+                    public readonly int ironNum = 100;
+                    public readonly int stoneNum = 100;
+                }
+            }
+            class PickAxeUpgrade {
+                class level1 {
+                    public readonly int woodNum = 10;
+                    public readonly int ironNum = 10;
+                    public readonly int stoneNum = 10;
+                }
+                class level2 {
+                    public readonly int woodNum = 100;
+                    public readonly int ironNum = 100;
+                    public readonly int stoneNum = 100;
+                }
+            }
+            class ShovelUpgrade {
+                class level1 {
+                    public readonly int woodNum = 10;
+                    public readonly int ironNum = 10;
+                    public readonly int stoneNum = 10;
+                }
+                class level2 {
+                    public readonly int woodNum = 100;
+                    public readonly int ironNum = 100;
+                    public readonly int stoneNum = 100;
+                }
+            }
         }
     }
 }
