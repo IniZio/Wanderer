@@ -132,7 +132,7 @@ namespace Fyp.Game.Network {
 
         public override void OnJoinedRoom() {
             this.followCamera.SetActive(true);
-            this.mainCamera.SetActive(false);
+            // this.mainCamera.SetActive(false);
             GameObject player;
             SpawnPoint point;
             if(PhotonNetwork.isMasterClient && photonView.isMine) {

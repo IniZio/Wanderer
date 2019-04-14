@@ -41,7 +41,6 @@ namespace Leap.Unity.Examples {
         initialize();
       }
       if (!_initialized) return;
-
       if (GetIsFacingCamera(toFaceCamera, Camera.main, _isFacingCamera ? 0.77F : 0.82F) != _isFacingCamera) {
         _isFacingCamera = !_isFacingCamera;
 
