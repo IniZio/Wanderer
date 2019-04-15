@@ -1,5 +1,5 @@
-using UnityEngine;
-//using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
 public class FGC_add2Item : MonoBehaviour {
 
@@ -24,7 +24,7 @@ public class FGC_add2Item : MonoBehaviour {
 	}
 
 
-	 
+
 	private void AddNewItem(GameObject item)
 	{
 		// find SkinnedMeschRendered on this gameObject
