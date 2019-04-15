@@ -16449,7 +16449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   P1point: {fileID: 1371349635}
-  P2point: {fileID: 0}
+  P2point: {fileID: 383840495}
   Player1: {fileID: 0}
   Player2: {fileID: 0}
   FollowCamera: {fileID: 4443814155725378448}
@@ -28914,6 +28914,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d57dc265c58614ab378a8aaebb9920, type: 3}
+--- !u!1 &383840495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+    type: 3}
+  m_PrefabInstance: {fileID: 383840494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &389761865
 PrefabInstance:
   m_ObjectHideFlags: 0
