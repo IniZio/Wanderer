@@ -1,9 +1,9 @@
-//======= Copyright (c) Valve Corporation, All rights reserved. ===============
+//  Copyright (c) Valve Corporation, All rights reserved.   =
 //
 // Purpose: This file contains C#/managed code bindings for the OpenVR interfaces
 // This file is auto-generated, do not edit it.
 //
-//=============================================================================
+//
 
 using System;
 using System.Runtime.InteropServices;

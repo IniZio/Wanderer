@@ -9,9 +9,9 @@ public class OvrAvatarPacket
     // Used with SDK driven packet flow
     public IntPtr ovrNativePacket = IntPtr.Zero;
 
-    // ===============================================================
+    //
     // All code below used for unity only pose blending option.
-    // ===============================================================
+    //
     List<float> frameTimes = new List<float>();
     List<OvrAvatarDriver.PoseFrame> frames = new List<OvrAvatarDriver.PoseFrame>();
     List<byte[]> encodedAudioPackets = new List<byte[]>();

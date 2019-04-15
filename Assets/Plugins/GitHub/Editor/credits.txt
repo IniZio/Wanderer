@@ -1,6 +1,6 @@
-===============================================================================
+           ==
 Port of Axosoft's NSFW (https://github.com/github-for-unity/sfw)
-===============================================================================
+           ==
 
 The MIT License (MIT)
 
@@ -24,9 +24,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-===============================================================================
+           ==
 AsyncBridge (https://github.com/OmerMor/AsyncBridge)
-===============================================================================
+           ==
 
 The MIT License (MIT)
 
@@ -50,9 +50,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-===============================================================================
+           ==
 TaskParallelLibrary (https://www.nuget.org/packages/TaskParallelLibrary/)
-===============================================================================
+           ==
 
 MICROSOFT SOFTWARE LICENSE TERMS
 
@@ -71,7 +71,7 @@ BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT
 
 If you comply with these license terms, you have the rights below.
 
-    INSTALLATION AND USE RIGHTS. You may install and use any number of copies of the software on your devices to design, develop and test your programs. 
+    INSTALLATION AND USE RIGHTS. You may install and use any number of copies of the software on your devices to design, develop and test your programs.
     ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
         Distributable Code.The software contains code that you are permitted to distribute in programs you develop if you comply with the terms below.
             Right to Use and Distribute. The code and text files listed in the software REDIST.TXT files are "Distributable Code."
@@ -81,10 +81,10 @@ If you comply with these license terms, you have the rights below.
                 add significant primary functionality to it in your programs;
                 require distributors and external end users to agree to terms that protect it at least as much as this agreement;
                 display your valid copyright notice on your programs; and
-                indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your programs.
+                indemnify, defend, and hold harmless Microsoft from any claims, including attorneysï¿½ fees, related to the distribution or use of your programs.
             Distributable Code Restrictions. You may not
                 alter any copyright, trademark or patent notice in the Distributable Code;
-                use Microsoft’s trademarks in your programs’ names or in a way that suggests your programs come from or are endorsed by Microsoft;
+                use Microsoftï¿½s trademarks in your programsï¿½ names or in a way that suggests your programs come from or are endorsed by Microsoft;
                 include Distributable Code in malicious, deceptive or unlawful programs; or
                 modify or distribute the source code of any Distributable Code so that any part of it becomes subject to an Excluded License. An Excluded License is one that requires, as a condition of use, modification or distribution, that
                     the code be disclosed or distributed in source code form; or
@@ -99,13 +99,13 @@ If you comply with these license terms, you have the rights below.
     BACKUP COPY. You may make one backup copy of the software. You may use it only to reinstall the software.
     DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
     EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
-    SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+    SUPPORT SERVICES. Because this software is ï¿½as is,ï¿½ we may not provide support services for it.
     ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
     APPLICABLE LAW.
         United States. If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
         Outside the United States. If you acquired the software in any other country, the laws of that country apply.
     LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
-    DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+    DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED ï¿½AS-IS.ï¿½ YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
     LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
 
 This limitation applies to
@@ -115,9 +115,9 @@ This limitation applies to
 
 It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
 
-===============================================================================
+           ==
 dotnet-threading (https://github.com/tunnelvisionlabs/dotnet-threading)
-===============================================================================
+           ==
 
 Copyright (c) Tunnel Vision Laboratories, LLC. All rights reserved.
 
@@ -173,10 +173,10 @@ Microsoft .NET Reference Source
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   SOFTWARE.
-    
-===============================================================================
+
+           ==
 ReadOnlyCollectionInterfaces (https://www.openhub.net/p/ReadOnlyCollections)
-===============================================================================
+           ==
 
 Apache License, Version 2.0
 

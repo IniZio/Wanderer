@@ -18,15 +18,15 @@ CGPROGRAM
 
 #define FXAA_HLSL_3 1
 
-/*============================================================================
- 
-                  FXAA v2 CONSOLE by TIMOTHY LOTTES @ NVIDIA                                
+/*          ======
 
-============================================================================*/
+                  FXAA v2 CONSOLE by TIMOTHY LOTTES @ NVIDIA
 
-/*============================================================================
+          ======*/
+
+/*          ======
                                  API PORTING
-============================================================================*/
+          ======*/
 #ifndef     FXAA_GLSL_120
     #define FXAA_GLSL_120 0
 #endif
@@ -38,7 +38,7 @@ CGPROGRAM
 #endif
 #ifndef     FXAA_HLSL_4
     #define FXAA_HLSL_4 0
-#endif    
+#endif
 /*--------------------------------------------------------------------------*/
 #if FXAA_GLSL_120
     // Requires,
@@ -85,16 +85,16 @@ CGPROGRAM
     #define FxaaFloat2 float2
     #define FxaaSat(a) saturate((a))
     struct FxaaTex { SamplerState smpl; Texture2D tex; };
-    #define FxaaTexLod0(t, p) t.tex.SampleLevel(t.smpl, p, 0.0) 
+    #define FxaaTexLod0(t, p) t.tex.SampleLevel(t.smpl, p, 0.0)
     #define FxaaTexOff(t, p, o, r) t.tex.SampleLevel(t.smpl, p, 0.0, o)
 #endif
 
 
-/*============================================================================
+/*          ======
 
                                 VERTEX SHADER
-                                
-============================================================================*/
+
+          ======*/
 float4 FxaaVertexShader(
 float2 pos,                 // Both x and y range {-1.0 to 1.0 across screen}.
 float2 rcpFrame) {          // {1.0/frameWidth, 1.0/frameHeight}
@@ -105,12 +105,12 @@ float2 rcpFrame) {          // {1.0/frameWidth, 1.0/frameHeight}
     posPos.xy = (pos.xy * 0.5) + 0.5;
     posPos.zw = posPos.xy - (rcpFrame * (0.5 + FXAA_SUBPIX_SHIFT));
     return posPos; }
-        
-/*============================================================================
- 
+
+/*          ======
+
                                 PIXEL SHADER
-                                
-============================================================================*/
+
+          ======*/
 float3 FxaaPixelShader(
 float4 posPos,       // Output of FxaaVertexShader interpolated across screen.
 FxaaTex tex,         // Input texture.
@@ -136,7 +136,7 @@ float2 rcpFrame) {   // Constant {1.0/frameWidth, 1.0/frameHeight}.
     float lumaMin = min(lumaM, min(min(lumaNW, lumaNE), min(lumaSW, lumaSE)));
     float lumaMax = max(lumaM, max(max(lumaNW, lumaNE), max(lumaSW, lumaSE)));
 /*--------------------------------------------------------------------------*/
-    float2 dir; 
+    float2 dir;
     dir.x = -((lumaNW + lumaNE) - (lumaSW + lumaSE));
     dir.y =  ((lumaNW + lumaSW) - (lumaNE + lumaSE));
 /*--------------------------------------------------------------------------*/
@@ -144,8 +144,8 @@ float2 rcpFrame) {   // Constant {1.0/frameWidth, 1.0/frameHeight}.
         (lumaNW + lumaNE + lumaSW + lumaSE) * (0.25 * FXAA_REDUCE_MUL),
         FXAA_REDUCE_MIN);
     float rcpDirMin = 1.0/(min(abs(dir.x), abs(dir.y)) + dirReduce);
-    dir = min(FxaaFloat2( FXAA_SPAN_MAX,  FXAA_SPAN_MAX), 
-          max(FxaaFloat2(-FXAA_SPAN_MAX, -FXAA_SPAN_MAX), 
+    dir = min(FxaaFloat2( FXAA_SPAN_MAX,  FXAA_SPAN_MAX),
+          max(FxaaFloat2(-FXAA_SPAN_MAX, -FXAA_SPAN_MAX),
           dir * rcpDirMin)) * rcpFrame.xy;
 /*--------------------------------------------------------------------------*/
     float3 rgbA = (1.0/2.0) * (
@@ -180,7 +180,7 @@ float4 frag (v2f i) : SV_Target
 {
 	return float4(FxaaPixelShader(i.uv, _MainTex, _MainTex_TexelSize.xy).xyz, 0.0f);
 }
-	
+
 ENDCG
 	}
 }
