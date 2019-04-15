@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Toon/Basic Outline" {
 	Properties {
 		_Color ("Main Color", Color) = (.5,.5,.5,1)
@@ -6,10 +8,10 @@ Shader "Toon/Basic Outline" {
 		_MainTex ("Base (RGB)", 2D) = "white" { }
 		_ToonShade ("ToonShader Cubemap(RGB)", CUBE) = "" { }
 	}
-	
+
 	CGINCLUDE
 	#include "UnityCG.cginc"
-	
+
 	struct appdata {
 		float4 vertex : POSITION;
 		float3 normal : NORMAL;
@@ -20,10 +22,10 @@ Shader "Toon/Basic Outline" {
 		UNITY_FOG_COORDS(0)
 		fixed4 color : COLOR;
 	};
-	
+
 	uniform float _Outline;
 	uniform float4 _OutlineColor;
-	
+
 	v2f vert(appdata v) {
 		v2f o;
 		o.pos = UnityObjectToClipPos(v.vertex);
@@ -65,6 +67,6 @@ Shader "Toon/Basic Outline" {
 			ENDCG
 		}
 	}
-	
+
 	Fallback "Toon/Basic"
 }

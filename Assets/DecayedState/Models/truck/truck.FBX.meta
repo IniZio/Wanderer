@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: ecd17ee5eaf920f46ba76645168e8ac7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: DoorL
+    100002: DoorR
+    100004: HandleBar
+    100006: Object002
+    100008: //RootNode
+    100010: Wheel1L
+    100012: Wheel1R
+    100014: Wheel2L
+    100016: Wheel2R
+    100018: Wheel3L
+    100020: Wheel3R
+    100022: doorLeft
+    400000: DoorL
+    400002: DoorR
+    400004: HandleBar
+    400006: Object002
+    400008: //RootNode
+    400010: Wheel1L
+    400012: Wheel1R
+    400014: Wheel2L
+    400016: Wheel2R
+    400018: Wheel3L
+    400020: Wheel3R
+    400022: doorLeft
+    2300000: DoorL
+    2300002: DoorR
+    2300004: HandleBar
+    2300006: Object002
+    2300008: Wheel1L
+    2300010: Wheel1R
+    2300012: Wheel2L
+    2300014: Wheel2R
+    2300016: Wheel3L
+    2300018: Wheel3R
+    2300020: doorLeft
+    3300000: DoorL
+    3300002: DoorR
+    3300004: HandleBar
+    3300006: Object002
+    3300008: Wheel1L
+    3300010: Wheel1R
+    3300012: Wheel2L
+    3300014: Wheel2R
+    3300016: Wheel3L
+    3300018: Wheel3R
+    3300020: doorLeft
+    4300000: HandleBar
+    4300002: Wheel1L
+    4300004: Wheel2L
+    4300006: Object002
+    4300008: DoorR
+    4300010: DoorL
+    4300012: Wheel3L
+    4300014: Wheel1R
+    4300016: Wheel2R
+    4300018: Wheel3R
+    4300020: doorLeft
+    7400000: carOpenDoor
+    7400002: closedDoors
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: carOpenDoor
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DoorL
+        weight: 1
+      - path: DoorR
+        weight: 1
+      - path: HandleBar
+        weight: 1
+      - path: Object002
+        weight: 1
+      - path: Wheel1L
+        weight: 1
+      - path: Wheel1R
+        weight: 1
+      - path: Wheel2L
+        weight: 1
+      - path: Wheel2R
+        weight: 1
+      - path: Wheel3L
+        weight: 1
+      - path: Wheel3R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: closedDoors
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DoorL
+        weight: 1
+      - path: DoorR
+        weight: 1
+      - path: HandleBar
+        weight: 1
+      - path: Object002
+        weight: 1
+      - path: Wheel1L
+        weight: 1
+      - path: Wheel1R
+        weight: 1
+      - path: Wheel2L
+        weight: 1
+      - path: Wheel2R
+        weight: 1
+      - path: Wheel3L
+        weight: 1
+      - path: Wheel3R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.022
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
