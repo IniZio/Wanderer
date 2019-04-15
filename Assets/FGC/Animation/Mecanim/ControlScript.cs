@@ -147,7 +147,14 @@ public class ControlScript : MonoBehaviour {
 			myAnimator.SetInteger ("CurrentAction", 0);
 		}
 //MauryEND
-
+		if(Input.GetKey("r") && (myAnimator.GetInteger ("CurrentAction") == 0)){
+				myAnimator.SetBool ("2HandIdle", true);
+		} 
+		if(Input.GetKey("t") && (myAnimator.GetInteger ("CurrentAction") == 0)){
+				myAnimator.SetBool ("chopTree", true);
+		} else{
+							myAnimator.SetBool ("chopTree", false);
+		}
 	}
 	
 	//This method is called after jumping is started to stop the jumping!
