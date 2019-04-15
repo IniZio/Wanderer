@@ -10,6 +10,7 @@ namespace Fyp.Game.PlayerControl {
 		public bool isStandingWaitingRmDoor = false;
 		public bool isStandingBaseGate = false;
 		bool isMe = false;
+		public AudioSource footstep;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
@@ -40,6 +41,7 @@ namespace Fyp.Game.PlayerControl {
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
 		//interacted with the game since the LAST frame (such as a button press or mouse click).
+		 [PunRPC]
 		void Update () {
 			if (photonView.isMine) {
 				//Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
@@ -109,6 +111,16 @@ namespace Fyp.Game.PlayerControl {
 					}
 				}
 
+				if(Input.GetKey("w") || Input.GetKey("s") || Input.GetKey("a") || Input.GetKey("d")) {
+					if (!footstep.isPlaying) {
+						footstep.Play();
+					}
+				}
+				if(Input.GetKeyUp("w") || Input.GetKeyUp("s") || Input.GetKeyUp("a") || Input.GetKeyUp("d")) {
+					if (footstep.isPlaying) {
+						footstep.Stop();
+					}
+				}
 
 				//Combining methods.
 				//You can combine all of these methods (and much more advanced logic) in many ways!  Let's go over an example.  We want our character to kneel down
