@@ -6,6 +6,8 @@ public class FGC_addItem : MonoBehaviour {
 	// gear, cloth etc. with SkinnedMeschRendered you want to add to this gameObject with bones
 	public GameObject addItem1=null;
 	public GameObject addItem2=null;
+	public GameObject addItem3=null;
+	public GameObject addItem4=null;
 
 
 	void Start () {
@@ -21,7 +23,21 @@ public class FGC_addItem : MonoBehaviour {
 		else {
 			Debug.Log("FGC_addItem Script. No Item2 found.");
 		}
+		if (addItem3!=null) {
+			AddNewItem(addItem3);
+		}
+		else {
+			Debug.Log("FGC_addItem Script. No Item3 found.");
+		}
+		if (addItem4!=null) {
+			AddNewItem(addItem4);
+		}
+		else {
+			Debug.Log("FGC_addItem Script. No Item4 found.");
+		}
 	}
+
+
 
 	private void AddNewItem(GameObject item)
 	{

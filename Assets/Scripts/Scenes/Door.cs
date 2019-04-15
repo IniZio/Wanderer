@@ -7,6 +7,7 @@ namespace Fyp.Game.UI {
 	public class Door : MonoBehaviour {
 		Animator ani;
 		public bool isOpen = false;
+		public AudioSource sound;
 
 		void Start () {
 			this.ani = GetComponent<Animator>();
@@ -15,10 +16,12 @@ namespace Fyp.Game.UI {
 
 		public void OpenDoor() {
 			this.ani.SetBool("OpenDoor", true);
+			sound.Play();
 			this.isOpen = true;
 		}
 		public void CloseDoor() {
 			this.ani.SetBool("OpenDoor", false);
+			sound.Play();
 			this.isOpen = false;
 		}
 
