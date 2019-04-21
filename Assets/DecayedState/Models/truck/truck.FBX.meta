@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ecd17ee5eaf920f46ba76645168e8ac7
+guid: f45da63f8bae01d4eb969cd4ee1c4128
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,7 +14,6 @@ ModelImporter:
     100016: Wheel2R
     100018: Wheel3L
     100020: Wheel3R
-    100022: doorLeft
     400000: DoorL
     400002: DoorR
     400004: HandleBar
@@ -26,7 +25,9 @@ ModelImporter:
     400016: Wheel2R
     400018: Wheel3L
     400020: Wheel3R
-    400022: doorLeft
+    2100000: 09 - Default
+    2100002: 08 - Default
+    2100004: glass
     2300000: DoorL
     2300002: DoorR
     2300004: HandleBar
@@ -37,7 +38,6 @@ ModelImporter:
     2300014: Wheel2R
     2300016: Wheel3L
     2300018: Wheel3R
-    2300020: doorLeft
     3300000: DoorL
     3300002: DoorR
     3300004: HandleBar
@@ -48,27 +48,24 @@ ModelImporter:
     3300014: Wheel2R
     3300016: Wheel3L
     3300018: Wheel3R
-    3300020: doorLeft
-    4300000: HandleBar
-    4300002: Wheel1L
-    4300004: Wheel2L
-    4300006: Object002
-    4300008: DoorR
-    4300010: DoorL
-    4300012: Wheel3L
-    4300014: Wheel1R
-    4300016: Wheel2R
-    4300018: Wheel3R
-    4300020: doorLeft
-    7400000: carOpenDoor
-    7400002: closedDoors
+    4300000: Wheel3R
+    4300002: Wheel2R
+    4300004: DoorR
+    4300006: HandleBar
+    4300008: Wheel3L
+    4300010: Wheel1R
+    4300012: Wheel2L
+    4300014: Object002
+    4300016: Wheel1L
+    4300018: DoorL
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -90,118 +87,18 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: carOpenDoor
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 125
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: DoorL
-        weight: 1
-      - path: DoorR
-        weight: 1
-      - path: HandleBar
-        weight: 1
-      - path: Object002
-        weight: 1
-      - path: Wheel1L
-        weight: 1
-      - path: Wheel1R
-        weight: 1
-      - path: Wheel2L
-        weight: 1
-      - path: Wheel2R
-        weight: 1
-      - path: Wheel3L
-        weight: 1
-      - path: Wheel3R
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: closedDoors
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 20
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: DoorL
-        weight: 1
-      - path: DoorR
-        weight: 1
-      - path: HandleBar
-        weight: 1
-      - path: Object002
-        weight: 1
-      - path: Wheel1L
-        weight: 1
-      - path: Wheel1R
-        weight: 1
-      - path: Wheel2L
-        weight: 1
-      - path: Wheel2R
-        weight: 1
-      - path: Wheel3L
-        weight: 1
-      - path: Wheel3R
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.022
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -209,20 +106,20 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
@@ -241,7 +138,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de55320a02560b84a95406a4d04714dc
+guid: e00a7949888fd624a83e4e5f3ed79250
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -12,11 +12,8 @@ ModelImporter:
     100012: Object004
     100014: RB
     100016: RF
-    100018: wagon
-    100020: //RootNode
-    100022: glass
-    100024: wagon 1
-    100026: Plane002
+    100018: //RootNode
+    100020: wagon
     400000: doorBL
     400002: doorFL
     400004: doorFR
@@ -26,11 +23,10 @@ ModelImporter:
     400012: Object004
     400014: RB
     400016: RF
-    400018: wagon
-    400020: //RootNode
-    400022: glass
-    400024: wagon 1
-    400026: Plane002
+    400018: //RootNode
+    400020: wagon
+    2100000: 11 - Default
+    2100002: glass
     2300000: doorBL
     2300002: doorFL
     2300004: doorFR
@@ -41,9 +37,6 @@ ModelImporter:
     2300014: RB
     2300016: RF
     2300018: wagon
-    2300020: glass
-    2300022: wagon 1
-    2300024: Plane002
     3300000: doorBL
     3300002: doorFL
     3300004: doorFR
@@ -54,30 +47,24 @@ ModelImporter:
     3300014: RB
     3300016: RF
     3300018: wagon
-    3300020: glass
-    3300022: wagon 1
-    3300024: Plane002
-    4300000: RB
-    4300002: Object004
-    4300004: LB
-    4300006: LF
-    4300008: RF
+    4300000: RF
+    4300002: LB
+    4300004: LF
+    4300006: Object004
+    4300008: RB
     4300010: handle
     4300012: doorFR
     4300014: doorFL
     4300016: doorBL
     4300018: wagon
-    4300020: glass
-    4300022: Plane002
-    7400000: wagonOpenDoor
-    7400002: wagonCloseDoor
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -99,122 +86,18 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: wagonOpenDoor
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 140
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: doorBL
-        weight: 1
-      - path: doorFL
-        weight: 1
-      - path: doorFR
-        weight: 1
-      - path: glass
-        weight: 1
-      - path: handle
-        weight: 1
-      - path: LB
-        weight: 1
-      - path: LF
-        weight: 1
-      - path: Object004
-        weight: 1
-      - path: RB
-        weight: 1
-      - path: RF
-        weight: 1
-      - path: wagon 1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: wagonCloseDoor
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 20
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: doorBL
-        weight: 1
-      - path: doorFL
-        weight: 1
-      - path: doorFR
-        weight: 1
-      - path: glass
-        weight: 1
-      - path: handle
-        weight: 1
-      - path: LB
-        weight: 1
-      - path: LF
-        weight: 1
-      - path: Object004
-        weight: 1
-      - path: RB
-        weight: 1
-      - path: RF
-        weight: 1
-      - path: wagon 1
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.028
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -222,20 +105,20 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
@@ -254,7 +137,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1

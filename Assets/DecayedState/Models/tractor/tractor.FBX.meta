@@ -1,70 +1,62 @@
 fileFormatVersion: 2
-guid: 313fbf05a78c8d2428e7facff9eebc7d
+guid: cdfc7b64da2a8ad419ef08cf913f8c5b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: BL
     100002: BR
-    100004: FL
-    100006: FR
-    100008: //RootNode
-    100010: tractor
-    100012: Plane005
-    100014: doorLeft
-    100016: doorRight
-    100018: doorRight 1
-    100020: Object003
-    100022: handle001
+    100004: doorLeft
+    100006: doorRight
+    100008: doorRight 1
+    100010: FL
+    100012: FR
+    100014: handle001
+    100016: //RootNode
+    100018: tractor
     400000: BL
     400002: BR
-    400004: FL
-    400006: FR
-    400008: //RootNode
-    400010: tractor
-    400012: Plane005
-    400014: doorLeft
-    400016: doorRight
-    400018: doorRight 1
-    400020: Object003
-    400022: handle001
+    400004: doorLeft
+    400006: doorRight
+    400008: doorRight 1
+    400010: FL
+    400012: FR
+    400014: handle001
+    400016: //RootNode
+    400018: tractor
+    2100000: default
+    2100002: glass
     2300000: BL
     2300002: BR
-    2300004: FL
-    2300006: FR
-    2300008: tractor
-    2300010: Plane005
-    2300012: doorLeft
-    2300014: doorRight
-    2300016: doorRight 1
-    2300018: handle001
+    2300004: doorLeft
+    2300006: doorRight 1
+    2300008: FL
+    2300010: FR
+    2300012: handle001
+    2300014: tractor
     3300000: BL
     3300002: BR
-    3300004: FL
-    3300006: FR
-    3300008: tractor
-    3300010: Plane005
-    3300012: doorLeft
-    3300014: doorRight
-    3300016: doorRight 1
-    3300018: handle001
+    3300004: doorLeft
+    3300006: doorRight 1
+    3300008: FL
+    3300010: FR
+    3300012: handle001
+    3300014: tractor
     4300000: BL
-    4300002: tractor
-    4300004: FL
-    4300006: FR
-    4300008: BR
-    4300010: Plane005
-    4300012: doorLeft
-    4300014: doorRight
-    4300016: handle001
-    7400000: tractorOpenDoor
-    7400002: tractorCloseDoor
+    4300002: FL
+    4300004: FR
+    4300006: BR
+    4300008: tractor
+    4300010: doorLeft
+    4300012: doorRight
+    4300014: handle001
+    7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -86,106 +78,18 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: tractorOpenDoor
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 125
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: BL
-        weight: 1
-      - path: BR
-        weight: 1
-      - path: doorLeft
-        weight: 1
-      - path: doorRight
-        weight: 1
-      - path: FL
-        weight: 1
-      - path: FR
-        weight: 1
-      - path: tractor
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: tractorCloseDoor
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 20
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: BL
-        weight: 1
-      - path: BR
-        weight: 1
-      - path: doorLeft
-        weight: 1
-      - path: doorRight
-        weight: 1
-      - path: FL
-        weight: 1
-      - path: FR
-        weight: 1
-      - path: tractor
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.028
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -193,20 +97,20 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
@@ -225,7 +129,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1

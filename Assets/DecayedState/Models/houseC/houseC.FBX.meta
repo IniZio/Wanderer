@@ -1,49 +1,41 @@
 fileFormatVersion: 2
-guid: 9a79c107bd599254db23d03e9f218b7b
+guid: e2a5e9a08f6a22b489348f619512e364
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: 56     011
-    100002: door002
-    100004: //RootNode
-    100006: door003
-    100008: door004
-    100010: door005
-    100012: houseC
-    400000: 56     011
-    400002: door002
-    400004: //RootNode
-    400006: door003
-    400008: door004
-    400010: door005
-    400012: houseC
-    2300000: 56     011
-    2300002: door002
-    2300004: door003
-    2300006: door004
-    2300008: door005
-    2300010: houseC
-    2300012: //RootNode
-    3300000: 56     011
-    3300002: door002
-    3300004: door003
-    3300006: door004
-    3300008: door005
-    3300010: houseC
-    3300012: //RootNode
-    4300000: 56     011
+    100000: door002
+    100002: door003
+    100004: door004
+    100006: door005
+    100008: //RootNode
+    400000: door002
+    400002: door003
+    400004: door004
+    400006: door005
+    400008: //RootNode
+    2100000: 10 - Default
+    2100002: 11 - Default
+    2300000: door002
+    2300002: door003
+    2300004: door004
+    2300006: door005
+    2300008: //RootNode
+    3300000: door002
+    3300002: door003
+    3300004: door004
+    3300006: door005
+    3300008: //RootNode
+    4300000: houseC
     4300002: door002
-    4300004: houseC
-    4300006: door003
+    4300004: door003
+    4300006: door005
     4300008: door004
-    4300010: door005
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -69,14 +61,14 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.06
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -84,20 +76,20 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
@@ -116,9 +108,9 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

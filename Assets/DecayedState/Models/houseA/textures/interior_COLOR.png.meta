@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf15b26ae1c1c21428706d6a090e8304
+guid: 138bcd4f28557f348b8ff2e1ec72ddb7
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -27,7 +27,7 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2

@@ -1,44 +1,28 @@
 fileFormatVersion: 2
-guid: 6a57910e6495c8b4eb5ee449f6b057cf
+guid: c46dceeb6dff78145bd30c3438ce4139
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: 7      011
-    100002: Box006
-    100004: Rectangle001
-    100006: //RootNode
-    100008: backDoors
-    100010: shop
-    400000: 7      011
-    400002: Box006
-    400004: Rectangle001
-    400006: //RootNode
-    400008: backDoors
-    400010: shop
-    2300000: 7      011
-    2300002: Box006
-    2300004: Rectangle001
-    2300006: //RootNode
-    2300008: backDoors
-    2300010: shop
-    3300000: 7      011
-    3300002: Box006
-    3300004: Rectangle001
-    3300006: //RootNode
-    3300008: backDoors
-    3300010: shop
-    4300000: 7      011
-    4300002: Rectangle001
-    4300004: Box006
-    4300006: shop
-    4300008: backDoors
-    9500000: //RootNode
+    100000: backDoors
+    100002: //RootNode
+    100004: shop
+    400000: backDoors
+    400002: //RootNode
+    400004: shop
+    2100000: 'Material #2087'
+    2100002: 'Material #2142'
+    2300000: backDoors
+    2300002: shop
+    3300000: backDoors
+    3300002: shop
+    4300000: shop
+    4300002: backDoors
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -64,14 +48,14 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.055
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -79,20 +63,20 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
@@ -111,9 +95,9 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
-    skeletonHasParents: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
