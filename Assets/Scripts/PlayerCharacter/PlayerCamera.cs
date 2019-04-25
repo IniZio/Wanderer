@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fyp.Game.PlayerControl;
 
 namespace Fyp.Game.Carmera {
 	public class PlayerCamera : MonoBehaviour {
@@ -16,6 +17,11 @@ namespace Fyp.Game.Carmera {
 		}
 		public void setCamera(GameObject player) {
 			this.player = player;
+		}
+
+		public void isReady() {
+            ControlScript cs = player.GetComponent("ControlScript") as ControlScript;
+			cs.ReadyToPlay();
 		}
 	}
 }

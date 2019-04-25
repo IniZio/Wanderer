@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: 491bba8799d9b2f4bac67024d4a4c900
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 56     011
+    100002: archexteriors11_005__001_1459
+    100004: Box001
+    100006: Box002
+    100008: Box003
+    100010: Box004
+    100012: Box005
+    100014: Box006
+    100016: Box007
+    100018: Display 01
+    100020: door
+    100022: door001
+    100024: door002
+    100026: door003
+    100028: door004
+    100030: Event 01
+    100032: glass
+    100034: houseA
+    100036: houseALOD1
+    100038: houseB
+    100040: houseBLOD
+    100042: //RootNode
+    100044: Object001
+    100046: Object011
+    100048: Particle View 01
+    100050: Shape 01
+    100052: Sky001
+    100054: Slider01
+    100056: door 1
+    100058: garageDoors
+    100060: houseD
+    400000: 56     011
+    400002: archexteriors11_005__001_1459
+    400004: Box001
+    400006: Box002
+    400008: Box003
+    400010: Box004
+    400012: Box005
+    400014: Box006
+    400016: Box007
+    400018: Display 01
+    400020: door
+    400022: door001
+    400024: door002
+    400026: door003
+    400028: door004
+    400030: Event 01
+    400032: glass
+    400034: houseA
+    400036: houseALOD1
+    400038: houseB
+    400040: houseBLOD
+    400042: //RootNode
+    400044: Object001
+    400046: Object011
+    400048: Particle View 01
+    400050: Shape 01
+    400052: Sky001
+    400054: Slider01
+    400056: door 1
+    400058: garageDoors
+    400060: houseD
+    2300000: 56     011
+    2300002: Box001
+    2300004: Box002
+    2300006: Box003
+    2300008: Box004
+    2300010: Box005
+    2300012: Box006
+    2300014: Box007
+    2300016: door
+    2300018: door001
+    2300020: door002
+    2300022: door003
+    2300024: door004
+    2300026: glass
+    2300028: houseA
+    2300030: houseALOD1
+    2300032: houseB
+    2300034: houseBLOD
+    2300036: Object001
+    2300038: Object011
+    2300040: door 1
+    2300042: garageDoors
+    2300044: houseD
+    2300046: //RootNode
+    3300000: 56     011
+    3300002: Box001
+    3300004: Box002
+    3300006: Box003
+    3300008: Box004
+    3300010: Box005
+    3300012: Box006
+    3300014: Box007
+    3300016: door
+    3300018: door001
+    3300020: door002
+    3300022: door003
+    3300024: door004
+    3300026: glass
+    3300028: houseA
+    3300030: houseALOD1
+    3300032: houseB
+    3300034: houseBLOD
+    3300036: Object001
+    3300038: Object011
+    3300040: door 1
+    3300042: garageDoors
+    3300044: houseD
+    3300046: //RootNode
+    4300000: houseA
+    4300002: door
+    4300004: houseALOD1
+    4300006: glass
+    4300008: houseB
+    4300010: door001
+    4300012: houseBLOD
+    4300014: 56     011
+    4300016: Object001
+    4300018: door002
+    4300020: Box001
+    4300022: Box002
+    4300024: Box003
+    4300026: Box004
+    4300028: Box005
+    4300030: Box006
+    4300032: Object011
+    4300034: Box007
+    4300036: door003
+    4300038: door004
+    4300040: houseD
+    4300042: garageDoors
+    4300044: door
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.06
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

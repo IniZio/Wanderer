@@ -1,0 +1,3109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  - component: {fileID: 19300000}
+  - component: {fileID: 3300000}
+  - component: {fileID: 2300000}
+  m_Layer: 0
+  m_Name: Tree 29
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!193 &19300000
+Tree:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_SpeedTreeWindAsset: {fileID: 0}
+  m_TreeData: {fileID: 11400000}
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Mesh: {fileID: 4300000}
+--- !u!23 &2300000
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100002}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Optimized Bark Material
+  m_Shader: {fileID: 10604, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpSpecMap:
+        m_Texture: {fileID: 2800000, guid: 29b8e20e73c70af499195b22a08bb674, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 1e2799a48abd5374db36ae2071f7e346, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TranslucencyMap:
+        m_Texture: {fileID: 2800000, guid: 23fa203b004217943b5cfbc344cb17b7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _SquashAmount: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!21 &2100002
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Optimized Leaf Material
+  m_Shader: {fileID: 10605, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpSpecMap:
+        m_Texture: {fileID: 2800000, guid: 29b8e20e73c70af499195b22a08bb674, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 1e2799a48abd5374db36ae2071f7e346, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowTex:
+        m_Texture: {fileID: 2800000, guid: 18644e71547c88a41810e0aa34fbf176, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TranslucencyMap:
+        m_Texture: {fileID: 2800000, guid: 23fa203b004217943b5cfbc344cb17b7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Cutoff: 0.7
+    - _ShadowOffsetScale: 1
+    - _ShadowStrength: 0.674
+    - _SquashAmount: 1
+    - _TranslucencyViewDependency: 0.644
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _TranslucencyColor: {r: 0.5102434, g: 0.5735294, b: 0.43858132, a: 1}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
+--- !u!43 &4300000
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mesh
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 312
+    topology: 0
+    baseVertex: 0
+    firstVertex: 5
+    vertexCount: 168
+    localAABB:
+      m_Center: {x: -0.10497397, y: 0.79843205, z: -0.29038185}
+      m_Extent: {x: 1.7980046, y: 0.8299143, z: 1.5759146}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 120011000a000a00110009000d000e0006000d000600050013000c00140013000b000c0008000f00100007000f000800220021001a001a00210019001d001e0016001d001600150023001c00240023001b001c0018001f00200017001f0018002a0029002200220029002100250026001e0025001e001d002b0024002c002b00230024002000270028001f00270020003a0039003200320039003100350036002e0035002e002d003b0034003c003b00330034003000370038002f0037003000420041003a003a00410039003d003e0036003d003600350043003c00440043003b003c0038003f00400037003f003800520051004a004a00510049004d004e0046004d004600450053004c00540053004b004c0048004f00500047004f0048005a0059005200520059005100550056004e0055004e004d005b0054005c005b00530054005000570058004f00570050006a0069006200620069006100650066005e0065005e005d006b0064006c006b00630064006000670068005f00670060007a0079007200720079007100750076006e0075006e006d007b0074007c007b00730074007000770078006f0077007000820081007a007a00810079007d007e0076007d007600750083007c00840083007b007c0078007f00800077007f007800920091008a008a00910089008d008e0086008d008600850093008c00940093008b008c0088008f00900087008f0088009a0099009200920099009100950096008e0095008e008d009b0094009c009b00930094009000970098008f0097009000aa00a900a200a200a900a100a500a6009e00a5009e009d00ab00a400ac00ab00a300a400a000a700a8009f00a700a000
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 173
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 44
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 24
+      format: 2
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 36
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 10380
+    _typelessdata: 00000000cdcc4cbdcdcccc3dce7aaea60000803f2ebd3bb3000000df0000803f000000000000000000000000000080bf0000000072ebed32000080bfc405cc3dcdcc4cbdfb9e95b12ebd3bb30000803fedad0927000000e20000403f0000000000000000000000002ebd3b33000000000000803f000080bff23016b2cdcc4cbdcdccccbdce7aae260000803f2ebd3b33000000e20000003f0000000000000000000000000000803f0000000072ebedb2000080bfb824cfbdcdcc4cbd0ac5a5302ebd3b330000803fe484cea7000000df0000803e000000000000000000000000e3cd0cb400000000000080bf000080bff2309632cdcc4cbdcdcccc3dce7aaea60000803f2ebd3bb3000000df00000000000000000000000000000000000080bf0000000072ebed32000080bfedd42bbe4d0aa33e707d323ffe6820bf82be3dbf13a2763e03ff009d00007c3f0000803c00000000000000002127e8bdc6edc83e0aab693f0000803ff1f09dbd3705933bc51c07bda02f00bf1db356bf39655bbe0300009d0080073f0000803c0000000000000000e069c9be7ecd94300f5c6b3f0000803ff1f09dbd3705933bc51c07bda02f00bf1db356bf39655bbe0300009d0080073f0000803c0000000000000000e069c9be7ecd94300f5c6b3f0000803f50e3c63e490aa33e7d501abf505384be84be3dbff49a1ebf03ff009d0000983d0000803c0000000000000000b7fb14bfc0edc8be5b56363f0000803fedd42bbe4d0aa33e707d323ffe68203f82be3d3f13a276be03ff00ed00007c3f0000803c00000000000000002127e8bdc6edc83e0aab693f000080bff1f09dbd3705933bc51c07bda02f003f1db3563f39655b3e030000e10080073f0000803c0000000000000000e069c9be7ecd94300f5c6b3f000080bff1f09dbd3705933bc51c07bda02f003f1db3563f39655b3e030000e10080073f0000803c0000000000000000e069c9be7ecd94300f5c6b3f000080bf50e3c63e490aa33e7d501abf5053843e84be3d3ff49a1e3f03ff00f00000983d0000803c0000000000000000b7fb14bfc0edc8be5b56363f000080bfd892b1bfa911c43f15bd953e3ce70cbfe1404abff7368a3e03ff00c400007c3f00007c3f3c00543d6dc1e13d6117ebbc6e9dae3e358a703f0000803f8da2aebf6025a13f0e20ebbeed2cf2be31995bbfaaec4dbe030000a70080073f00007c3f3c00543d6dc1e13ddfd990be4ad98bbd13eb743f0000803f8da2aebf6025a13f0e20ebbeed2cf2be31995bbfaaec4dbe030000a70080073f00007c3f3c00543d6dc1e13ddfd990be4ad98bbd13eb743f0000803f58bc7cbfa76dd03fc3b987bf0b3f92bec3e439bf0e1a20bf03ff00d40000983d00007c3f3c00543d6dc1e13de455f1be6069ecbe5e5c403f0000803fd892b1bfa911c43f15bd953e3ce70c3fe1404a3ff7368abe03ff00fc00007c3f00007c3f3c00543d6dc1e13d6117ebbc6e9dae3e358a703f000080bf8da2aebf6025a13f0e20ebbeed2cf23e31995b3faaec4d3e030000fb0080073f00007c3f3c00543d6dc1e13ddfd990be4ad98bbd13eb743f000080bf8da2aebf6025a13f0e20ebbeed2cf23e31995b3faaec4d3e030000fb0080073f00007c3f3c00543d6dc1e13ddfd990be4ad98bbd13eb743f000080bf58bc7cbfa76dd03fc3b987bf0b3f923ec3e4393f0e1a203f03ff00fb0000983d00007c3f3c00543d6dc1e13de455f1be6069ecbe5e5c403f000080bf71d0313f5006a33e47a836be739d013f82be3dbf9caee13e51ff009d00007c3f0000803c0000000000000000440a5c3fc7edc83e31a2a7be0000803fcd1ce43b3206923bd81cab3dfd5f393d1db356bf06f20a3f5100009d0080073f0000803c0000000000000000581d7f3f08da5cb0742eaabd0000803fcd1ce43b3206923bd81cab3dfd5f393d1db356bf06f20a3f5100009d0080073f0000803c0000000000000000581d7f3f08da5cb0742eaabd0000803f9bec36bf4c06a33eeb5879bde045dabe83be3dbfd1bf043f51ff009d0000983d0000803c000000000000000009e2663fc1edc8bed1dd383e0000803f71d0313f5006a33e47a836be739d01bf82be3d3f9caee1be51ff00e400007c3f0000803c0000000000000000440a5c3fc7edc83e31a2a7be000080bfcd1ce43b3206923bd81cab3dfd5f39bd1db3563f06f20abf510000d90080073f0000803c0000000000000000581d7f3f08da5cb0742eaabd000080bfcd1ce43b3206923bd81cab3dfd5f39bd1db3563f06f20abf510000d90080073f0000803c0000000000000000581d7f3f08da5cb0742eaabd000080bf9bec36bf4c06a33eeb5879bde045da3e83be3d3fd1bf04bf51ff00ef0000983d0000803c000000000000000009e2663fc1edc8bed1dd383e000080bf2beff03e6316b73f89e0483f5e19ff3e33f9e7be133f3d3f51ff00e500007c3fa7b45d3f046a0f3d59f8ad3da3b64e3f8f930d3ff13452be0000803f4e9d33beece97c3f20eb723fa7f17f3dbfc028bf08d73f3f510000a90080073fa7b45d3f046a0f3d59f8ad3dd65e723f82b18d3e5271283e0000803f4e9d33beece97c3f20eb723fa7f17f3dbfc028bf08d73f3f510000a90080073fa7b45d3f046a0f3d59f8ad3dd65e723f82b18d3e5271283e0000803f32405ebf78ff843fe3540d3fe68cc6be104a36bf34d6153f51ff00b90000983da7b45d3f046a0f3d59f8ad3d15af5d3f32d282bd98f7fd3e0000803f2beff03e6316b73f89e0483f5e19ffbe33f9e73e133f3dbf51ff00ef00007c3fa7b45d3f046a0f3d59f8ad3da3b64e3f8f930d3ff13452be000080bf4e9d33beece97c3f20eb723fa7f17fbdbfc0283f08d73fbf510000ee0080073fa7b45d3f046a0f3d59f8ad3dd65e723f82b18d3e5271283e000080bf4e9d33beece97c3f20eb723fa7f17fbdbfc0283f08d73fbf510000ee0080073fa7b45d3f046a0f3d59f8ad3dd65e723f82b18d3e5271283e000080bf32405ebf78ff843fe3540d3fe68cc63e104a363f34d615bf51ff00f90000983da7b45d3f046a0f3d59f8ad3d15af5d3f32d282bd98f7fd3e000080bfbe48c83e5aa2ca3f784b6c3fba8ffb3eedcfdebe6524413f51ff00e900007c3f00007c3f3c00543d6dc1e13d60784b3f5e0a143f69763cbe0000803f51897abe016b8f3f60fe883fb9367f3dbeba27bf3dbd403f510000ab0080073f00007c3f3c00543d6dc1e13d31ad6e3fdb679d3e88f3423e0000803f51897abe016b8f3f60fe883fb9367f3dbeba27bf3dbd403f510000ab0080073f00007c3f3c00543d6dc1e13d31ad6e3fdb679d3e88f3423e0000803f3e5a6dbf83fd923fda60273f902cc3be9a0f39bfca87133f51ff00bf0000983d00007c3f3c00543d6dc1e13de3655a3f54e40ebde142053f0000803fbe48c83e5aa2ca3f784b6c3fba8ffbbeedcfde3e652441bf51ff00f000007c3f00007c3f3c00543d6dc1e13d60784b3f5e0a143f69763cbe000080bf51897abe016b8f3f60fe883fb9367fbdbeba273f3dbd40bf510000ef0080073f00007c3f3c00543d6dc1e13d31ad6e3fdb679d3e88f3423e000080bf51897abe016b8f3f60fe883fb9367fbdbeba273f3dbd40bf510000ef0080073f00007c3f3c00543d6dc1e13d31ad6e3fdb679d3e88f3423e000080bf3e5a6dbf83fd923fda60273f902cc33e9a0f393fca8713bf51ff00f90000983d00007c3f3c00543d6dc1e13de3655a3f54e40ebde142053f000080bfc3fe34bf8bd3993e6d3c173e8594efbe82be3dbf4f71f6beb9ff009d00007c3f0000803ca932933c00000000753e62bfc7edc83e187c823e0000803fa4c9a8b19b555dbc772866bd00804cb31eb356bf776d0bbfb900009d0080073f0000803ca932933c00000000000080bfd5662e272fbdbb330000803fa4c9a8b19b555dbc772866bd00804cb31eb356bf776d0bbfb900009d0080073f0000803ca932933c00000000000080bfd5662e272fbdbb330000803fc6fe343f86d3993e5f3c173e7b94ef3e84be3dbf5271f6beb9ff009d0000983d0000803ca932933c00000000783e62bfc1edc8be0e7c82be0000803fc3fe34bf8bd3993e6d3c173e8594ef3e82be3d3f4f71f63eb9ff00e600007c3f0000803ca932933c00000000753e62bfc7edc83e187c823e000080bfa4c9a8b19b555dbc772866bd00804c331eb3563f776d0b3fb90000cd0080073f0000803ca932933c00000000000080bfd5662e272fbdbb33000080bfa4c9a8b19b555dbc772866bd00804c331eb3563f776d0b3fb90000cd0080073f0000803ca932933c00000000000080bfd5662e272fbdbb33000080bfc6fe343f86d3993e5f3c173e7b94efbe84be3d3f5271f63eb9ff00d10000983d0000803ca932933c00000000783e62bfc1edc8be0e7c82be000080bf6b1454bf78ed683f606d33bf8b22efbe8f7141bf391cebbeb9ff009d00007c3f3134f93e90f5c33c528dd53cc2d361bf7323de3e6eb03b3e0000803f1d58fbbd7e12103f10f758bfd65bde3670ee5ebfeeb1fbbeb900009d0080073f3134f93e90f5c33c528dd53c0a877fbf1e84f43cc2a058bd0000803f1d58fbbd7e12103f10f758bfd65bde3670ee5ebfeeb1fbbeb900009d0080073f3134f93e90f5c33c528dd53c0a877fbf1e84f43cc2a058bd0000803f133e153f721f5e3f4e4820bf0d24ef3e399848bfc3c4d1beb9ff00c60000983d3134f93e90f5c33c528dd53c5dd361bf6320c3bee6b48dbe0000803f6b1454bf78ed683f606d33bf8b22ef3e8f71413f391ceb3eb9ff00f700007c3f3134f93e90f5c33c528dd53cc2d361bf7323de3e6eb03b3e000080bf1d58fbbd7e12103f10f758bfd65bdeb670ee5e3feeb1fb3eb90000f10080073f3134f93e90f5c33c528dd53c0a877fbf1e84f43cc2a058bd000080bf1d58fbbd7e12103f10f758bfd65bdeb670ee5e3feeb1fb3eb90000f10080073f3134f93e90f5c33c528dd53c0a877fbf1e84f43cc2a058bd000080bf133e153f721f5e3f4e4820bf0d24efbe3998483fc3c4d13eb9ff00f10000983d3134f93e90f5c33c528dd53c5dd361bf6320c3bee6b48dbe000080bf52170fbf16b0ab3fd85edcbf6d8cf0be2c7c4cbf7a6ac0beb9ff00d200007c3f00007c3fc8cc8e3d6dc1e13d39ae5fbf5c80f63e3f5e8d3d0000803fd3690f3e6ec6743f5b70e3bf664fd0bbb8636ebf9196babeb90000b70080073f00007c3fc8cc8e3d6dc1e13d0cf67dbf4bd7533d5d36ebbd0000803fd3690f3e6ec6743f5b70e3bf664fd0bbb8636ebf9196babeb90000b70080073f00007c3fc8cc8e3d6dc1e13d0cf67dbf4bd7533d5d36ebbd0000803f2904583fb253a23f4f95c7bf9fcbea3e3be058bf6e6289beb9ff00db0000983d00007c3fc8cc8e3d6dc1e13d213461bf67b2c7be3f478bbe0000803f52170fbf16b0ab3fd85edcbf6d8cf03e2c7c4c3f7a6ac03eb9ff00fb00007c3f00007c3fc8cc8e3d6dc1e13d39ae5fbf5c80f63e3f5e8d3d000080bfd3690f3e6ec6743f5b70e3bf664fd03bb8636e3f9196ba3eb90000fa0080073f00007c3fc8cc8e3d6dc1e13d0cf67dbf4bd7533d5d36ebbd000080bfd3690f3e6ec6743f5b70e3bf664fd03bb8636e3f9196ba3eb90000fa0080073f00007c3fc8cc8e3d6dc1e13d0cf67dbf4bd7533d5d36ebbd000080bf2904583fb253a23f4f95c7bf9fcbeabe3be0583f6e62893eb9ff00f90000983d00007c3fc8cc8e3d6dc1e13d213461bf67b2c7be3f478bbe000080bf6f3c173e89d3993ec3fe343f4f71f6be81be3dbf8794ef3e23ff009d00007c3f0000803ca932933c000000001a7c823ec8edc83e753e623f0000803f752866bd97555dbc667795b1786d0bbf1db356bf20b3d6332300009d0080073f0000803ca932933c00000000827f14349083fc320000803f0000803f752866bd97555dbc667795b1786d0bbf1db356bf20b3d6332300009d0080073f0000803ca932933c00000000827f14349083fc320000803f0000803f5e3c173e85d3993ec6fe34bf5571f6be83be3dbf7b94efbe23ff009d0000983d0000803ca932933c000000000f7c82bec0edc8be783e623f0000803f6f3c173e89d3993ec3fe343f4f71f63e81be3d3f8794efbe23ff00de00007c3f0000803ca932933c000000001a7c823ec8edc83e753e623f000080bf752866bd97555dbc667795b1786d0b3f1db3563f20b3d6b3230000e90080073f0000803ca932933c00000000827f14349083fc320000803f000080bf752866bd97555dbc667795b1786d0b3f1db3563f20b3d6b3230000e90080073f0000803ca932933c00000000827f14349083fc320000803f000080bf5e3c173e85d3993ec6fe34bf5571f63e83be3d3f7b94ef3e23ff00ed0000983d0000803ca932933c000000000f7c82bec0edc8be783e623f000080bf70c430bf0649453f50c9493fb636e8bea04942bf693aef3e23ff009d00007c3f8e08093f4aa5d43c54ec013d6eb3953ec4b1bc3e15e7613f0000803fcea56cbf729df33e9683a83dd2a209bf42da57bf830989372300009d0080073f8e08093f4aa5d43c54ec013d3c203d3d9807f1bcb39d7f3f0000803fcea56cbf729df33e9683a83dd2a209bf42da57bf830989372300009d0080073f8e08093f4aa5d43c54ec013d3c203d3d9807f1bcb39d7f3f0000803f4d7b41bf98ef4f3f39a91fbf9256febe123d3bbf9b36efbe23ff009d0000983d8e08093f4aa5d43c54ec013d89d457be2f52d7be17e8613f0000803f70c430bf0649453f50c9493fb636e83ea049423f693aefbe23ff00f500007c3f8e08093f4aa5d43c54ec013d6eb3953ec4b1bc3e15e7613f000080bfcea56cbf729df33e9683a83dd2a2093f42da573f830989b7230000ed0080073f8e08093f4aa5d43c54ec013d3c203d3d9807f1bcb39d7f3f000080bfcea56cbf729df33e9683a83dd2a2093f42da573f830989b7230000ed0080073f8e08093f4aa5d43c54ec013d3c203d3d9807f1bcb39d7f3f000080bf4d7b41bf98ef4f3f39a91fbf9256fe3e123d3b3f9b36ef3e23ff00f40000983d8e08093f4aa5d43c54ec013d89d457be2f52d7be17e8613f000080bf1f24afbf40c4a13f00834d3f46a6e2be0f1844bf1fabee3e23ff00cb00007c3f00007c3fc8cc8e3d6dc1e13d3a0ba43e486ab33e4b4d613f0000803f2af3cfbf64c47b3f5a29ca3d75880abf294757bf827c1b392300009d0080073f00007c3fc8cc8e3d6dc1e13d4fae9b3df8a447bd42f47e3f0000803f2af3cfbf64c47b3f5a29ca3d75880abf294757bf827c1b392300009d0080073f00007c3fc8cc8e3d6dc1e13d4fae9b3df8a447bd42f47e3f0000803f4fe6bcbfaa96aa3ff2ff1abf658903bfa26a38bfbe88eebe23ff00b20000983d00007c3fc8cc8e3d6dc1e13d90803ebe5886dfbe6556613f0000803f1f24afbf40c4a13f00834d3f46a6e23e0f18443f1fabeebe23ff00fa00007c3f00007c3fc8cc8e3d6dc1e13d3a0ba43e486ab33e4b4d613f000080bf2af3cfbf64c47b3f5a29ca3d75880a3f2947573f827c1bb9230000f50080073f00007c3fc8cc8e3d6dc1e13d4fae9b3df8a447bd42f47e3f000080bf2af3cfbf64c47b3f5a29ca3d75880a3f2947573f827c1bb9230000f50080073f00007c3fc8cc8e3d6dc1e13d4fae9b3df8a447bd42f47e3f000080bf4fe6bcbfaa96aa3ff2ff1abf6589033fa26a383fbe88ee3e23ff00f80000983d00007c3fc8cc8e3d6dc1e13d90803ebe5886dfbe6556613f000080bfdd79c03ec59f903e54ba1fbfc3d52b3f81be3dbf04481b3c71ff00a400007c3f0000803c9e32133e00000000d0b0e33ec5edc83eaa1c4ebf0000803fef2ca53c89f300bded2ca53c302ec53e1db356bf322ec53e7100009d0080073f0000803c9e32133e00000000f404353fcbd017b3f40435bf0000803fef2ca53c89f300bded2ca53c302ec53e1db356bf322ec53e7100009d0080073f0000803c9e32133e00000000f404353fcbd017b3f40435bf0000803f54ba1fbfc19f903ee179c03e84481b3c83be3dbfc2d52b3f71ff009d0000983d0000803c9e32133e00000000aa1c4e3fc3edc8bed3b0e3be0000803fdd79c03ec59f903e54ba1fbfc3d52bbf81be3d3f04481bbc71ff00dc00007c3f0000803c9e32133e00000000d0b0e33ec5edc83eaa1c4ebf000080bfef2ca53c89f300bded2ca53c302ec5be1db3563f322ec5be710000d10080073f0000803c9e32133e00000000f404353fcbd017b3f40435bf000080bfef2ca53c89f300bded2ca53c302ec5be1db3563f322ec5be710000d10080073f0000803c9e32133e00000000f404353fcbd017b3f40435bf000080bf54ba1fbfc19f903ee179c03e84481bbc83be3d3fc2d52bbf71ff00d90000983d0000803c9e32133e00000000aa1c4e3fc3edc8bed3b0e3be000080bfab58883f4336893f9f58b33dfd75363f181733bfd50d513d71ff00db00007c3f00007c3fad32483e6dc1e13d4abdde3e9281c43e388450bf0000803fd298373f4cd2433f413b3d3f6647da3ed43f4cbf903cda3e710000b40080073f00007c3fad32483e6dc1e13dbacd373f0dfc413c712a32bf0000803fd298373f4cd2433f413b3d3f6647da3ed43f4cbf903cda3e710000b40080073f00007c3fad32483e6dc1e13dbacd373f0dfc413c712a32bf0000803f1aa34c3da911873fb12c893fed24273d45ed35bfd7cd333f71ff00b10000983d00007c3fad32483e6dc1e13d4982553f91cab9be51cbd4be0000803fab58883f4336893f9f58b33dfd7536bf1817333fd50d51bd71ff00ef00007c3f00007c3fad32483e6dc1e13d4abdde3e9281c43e388450bf000080bfd298373f4cd2433f413b3d3f6647dabed43f4c3f903cdabe710000ef0080073f00007c3fad32483e6dc1e13dbacd373f0dfc413c712a32bf000080bfd298373f4cd2433f413b3d3f6647dabed43f4c3f903cdabe710000ef0080073f00007c3fad32483e6dc1e13dbacd373f0dfc413c712a32bf000080bf1aa34c3da911873fb12c893fed2427bd45ed353fd7cd33bf71ff00f20000983d00007c3fad32483e6dc1e13d4982553f91cab9be51cbd4be000080bf1195a4bed602a33ed91c24bfaba4a53e82be3dbff89316bfd9ff009d00007c3f0000803c0000000000000000608700bfc7edc83e2d4a45bf0000803f5b41a43d9627913bdcfcc8bc5e56053f1db356bf0d0823bed900009d0080073f0000803c000000000000000054ab95be9e5707315fd174bf0000803f5b41a43d9627913bdcfcc8bc5e56053f1db356bf0d0823bed900009d0080073f0000803c000000000000000054ab95be9e5707315fd174bf0000803f1f37bc3dd202a33ede10363f39db183f84be3dbf06139d3ed9ff009d0000983d0000803c000000000000000086996fbcc1edc8bef66e6bbf0000803f1195a4bed602a33ed91c24bfaba4a5be82be3d3ff893163fd9ff00d400007c3f0000803c0000000000000000608700bfc7edc83e2d4a45bf000080bf5b41a43d9627913bdcfcc8bc5e5605bf1db3563f0d08233ed90000dd0080073f0000803c000000000000000054ab95be9e5707315fd174bf000080bf5b41a43d9627913bdcfcc8bc5e5605bf1db3563f0d08233ed90000dd0080073f0000803c000000000000000054ab95be9e5707315fd174bf000080bf1f37bc3dd202a33ede10363f39db18bf84be3d3f06139dbed9ff00c60000983d0000803c000000000000000086996fbcc1edc8bef66e6bbf000080bf43cd2d3f90cd633f9dbea0bfd30b0f3da82b5fbf3335fabed9ff00c800007c3fb29d423fcf86c03c615e853df2c30fbf9e54c63e4e2c3bbf0000803f3668903f8478143f2ec02bbfc158963e01a273bf41d4b7bdd90000b40080073fb29d423fcf86c03c615e853d2fbef5be8b5086bdfdf45fbf0000803f3668903f8478143f2ec02bbfc158963e01a273bf41d4b7bdd90000b40080073fb29d423fcf86c03c615e853d2fbef5be8b5086bdfdf45fbf0000803fc7c5ad3f218b7b3f42de99bc96dcf73e47754fbf10faa83ed9ff00d80000983db29d423fcf86c03c615e853dd3d392be45d700bf89ad50bf0000803f43cd2d3f90cd633f9dbea0bfd30b0fbda82b5f3f3335fa3ed9ff00f800007c3fb29d423fcf86c03c615e853df2c30fbf9e54c63e4e2c3bbf000080bf3668903f8478143f2ec02bbfc15896be01a2733f41d4b73dd90000f70080073fb29d423fcf86c03c615e853d2fbef5be8b5086bdfdf45fbf000080bf3668903f8478143f2ec02bbfc15896be01a2733f41d4b73dd90000f70080073fb29d423fcf86c03c615e853d2fbef5be8b5086bdfdf45fbf000080bfc7c5ad3f218b7b3f42de99bc96dcf7be47754f3f10faa8bed9ff00f40000983db29d423fcf86c03c615e853dd3d392be45d700bf89ad50bf000080bf023a803f0b0c7a3feb97b7bfd73fde3b636b61bfe7a4f2bed9ff00d200007c3f00007c3f3c00543d6dc1e13df7860ebf38dcc73e64b63bbf0000803fcb3cb93f5b1a2a3f520459bf5a74883e6ffa75bf6a129bbdd90000c40080073f00007c3f3c00543d6dc1e13ddc4bfabe6c5389bdffa95ebf0000803fcb3cb93f5b1a2a3f520459bf5a74883e6ffa75bf6a129bbdd90000c40080073f00007c3f3c00543d6dc1e13ddc4bfabe6c5389bdffa95ebf0000803f3ab5d83fef28893f565651be04b7ed3ed35a51bfd61eae3ed9ff00df0000983d00007c3f3c00543d6dc1e13d275a9dbe634502bf6ada4dbf0000803f023a803f0b0c7a3feb97b7bfd73fdebb636b613fe7a4f23ed9ff00fa00007c3f00007c3f3c00543d6dc1e13df7860ebf38dcc73e64b63bbf000080bfcb3cb93f5b1a2a3f520459bf5a7488be6ffa753f6a129b3dd90000f90080073f00007c3f3c00543d6dc1e13ddc4bfabe6c5389bdffa95ebf000080bfcb3cb93f5b1a2a3f520459bf5a7488be6ffa753f6a129b3dd90000f90080073f00007c3f3c00543d6dc1e13ddc4bfabe6c5389bdffa95ebf000080bf3ab5d83fef28893f565651be04b7edbed35a513fd61eaebed9ff00f60000983d00007c3f3c00543d6dc1e13d275a9dbe634502bf6ada4dbf000080bfe279c0bec89f903e54ba1f3fc2d52bbf82be3dbf3b481bbc42ff009d00007c3f0000803c9e32133e00000000d5b0e3bec6edc83ea91c4e3f0000803fef2ca5bc8af300bdf02ca5bc2e2ec5be1eb356bf322ec5be4200009d0080073f0000803c9e32133e00000000f50435bfef4e5eb2f204353f0000803fef2ca5bc8af300bdf02ca5bc2e2ec5be1eb356bf322ec5be4200009d0080073f0000803c9e32133e00000000f50435bfef4e5eb2f204353f0000803f56ba1f3fc39f903ee179c0be29481bbc84be3dbfc1d52bbf42ff009d0000983d0000803c9e32133e00000000ab1c4ebfc2edc8bed1b0e33e0000803fe279c0bec89f903e54ba1f3fc2d52b3f82be3d3f3b481b3c42ff00d100007c3f0000803c9e32133e00000000d5b0e3bec6edc83ea91c4e3f000080bfef2ca5bc8af300bdf02ca5bc2e2ec53e1eb3563f322ec53e420000d90080073f0000803c9e32133e00000000f50435bfef4e5eb2f204353f000080bfef2ca5bc8af300bdf02ca5bc2e2ec53e1eb3563f322ec53e420000d90080073f0000803c9e32133e00000000f50435bfef4e5eb2f204353f000080bf56ba1f3fc39f903ee179c0be29481b3c84be3d3fc1d52b3f42ff00e80000983d0000803c9e32133e00000000ab1c4ebfc2edc8bed1b0e33e000080bff29294bf24e4133f5d9e20be99fad5be9d0b60bfdf92793e42ff009d00007c3f0935003f24db193eb582e23c6cb310bf6bc9eb3ef3352f3f0000803f256335bf494e563ec25234bfecbfd6bd5f2b7dbff7c2d6bd4200009d0080073f0935003f24db193eb582e23cfaf131bf27bd25bb7e0a383f0000803f256335bf494e563ec25234bfecbfd6bd5f2b7dbff7c2d6bd4200009d0080073f0935003f24db193eb582e23cfaf131bf27bd25bb7e0a383f0000803fae1d36be7cce143f563296bf552b6e3e83705fbfaeafdbbe42ff00a40000983d0935003f24db193eb582e23ca6d229bf4d13eebe6216163f0000803ff29294bf24e4133f5d9e20be99fad53e9d0b603fdf9279be42ff00f700007c3f0935003f24db193eb582e23c6cb310bf6bc9eb3ef3352f3f000080bf256335bf494e563ec25234bfecbfd63d5f2b7d3ff7c2d63d420000e00080073f0935003f24db193eb582e23cfaf131bf27bd25bb7e0a383f000080bf256335bf494e563ec25234bfecbfd63d5f2b7d3ff7c2d63d420000e00080073f0935003f24db193eb582e23cfaf131bf27bd25bb7e0a383f000080bfae1d36be7cce143f563296bf552b6ebe83705f3faeafdb3e42ff00ec0000983d0935003f24db193eb582e23ca6d229bf4d13eebe6216163f000080bfcd94f3bf5220283f79305abf4992b5be414362bfac319c3e42ff00c200007c3f00007c3fad32483e6dc1e13d77d219bff349ee3e035f263f0000803f690db6bf159f913ea5a4afbfb31504bde5b67fbf1b4a0dbd420000bd0080073f00007c3fad32483e6dc1e13d8f6c32bfca5014bbb893373f0000803f690db6bf159f913ea5a4afbfb31504bde5b67fbf1b4a0dbd420000bd0080073f00007c3fad32483e6dc1e13d8f6c32bfca5014bbb893373f0000803fcbdd6abf07f2283fcde2eebf6c63983e76b861bf2269bbbe42ff00ce0000983d00007c3fad32483e6dc1e13d478c21bf3e56f0be621b1e3f0000803fcd94f3bf5220283f79305abf4992b53e4143623fac319cbe42ff00ee00007c3f00007c3fad32483e6dc1e13d77d219bff349ee3e035f263f000080bf690db6bf159f913ea5a4afbfb315043de5b67f3f1b4a0d3d420000e90080073f00007c3fad32483e6dc1e13d8f6c32bfca5014bbb893373f000080bf690db6bf159f913ea5a4afbfb315043de5b67f3f1b4a0d3d420000e90080073f00007c3fad32483e6dc1e13d8f6c32bfca5014bbb893373f000080bfcbdd6abf07f2283fcde2eebf6c6398be76b8613f2269bb3e42ff00f00000983d00007c3fad32483e6dc1e13d478c21bf3e56f0be621b1e3f000080bf53ba1f3fc69f903edf79c03e06481bbc82be3dbfc3d52b3fabff009d00007c3f0000803c9e32133e00000000a91c4e3fc7edc83ed1b0e33e0000803ff02ca5bc89f300bded2ca53c302ec5be1db356bf2f2ec53eab00009d0080073f0000803c9e32133e00000000f304353f5aecb232f504353f0000803ff02ca5bc89f300bded2ca53c302ec5be1db356bf2f2ec53eab00009d0080073f0000803c9e32133e00000000f304353f5aecb232f504353f0000803fe079c0bec29f903e55ba1fbfc1d52bbf84be3dbf67481b3cabff009d0000983d0000803c9e32133e00000000d3b0e33ec2edc8beaa1c4e3f0000803f53ba1f3fc69f903edf79c03e06481b3c82be3d3fc3d52bbfabff00e900007c3f0000803c9e32133e00000000a91c4e3fc7edc83ed1b0e33e000080bff02ca5bc89f300bded2ca53c302ec53e1db3563f2f2ec5beab0000ec0080073f0000803c9e32133e00000000f304353f5aecb232f504353f000080bff02ca5bc89f300bded2ca53c302ec53e1db3563f2f2ec5beab0000ec0080073f0000803c9e32133e00000000f304353f5aecb232f504353f000080bfe079c0bec29f903e55ba1fbfc1d52b3f84be3d3f67481bbcabff00ea0000983d0000803c9e32133e00000000d3b0e33ec2edc8beaa1c4e3f000080bfa6a692be4af3273f568ca43fd3be883d0f0b4dbfb251183fabff00c100007c3f00007c3fad32483e6dc1e13d8fbf433fb22cd93e106af83e0000803f92ec65bf3b29a23e0cbb653ff1fa98be780568bf02fd983eab0000af0080073f00007c3fad32483e6dc1e13d76fe343feaada238700b353f0000803f92ec65bf3b29a23e0cbb653ff1fa98be780568bf02fd983eab0000af0080073f00007c3fad32483e6dc1e13d76fe343feaada238700b353f0000803fb5a0a4bf19ec273f7930923eb44a18bfd20f4dbf03e888bdabff009d0000983d00007c3fad32483e6dc1e13d1b54f83eb31ad9be82cb433f0000803fa6a692be4af3273f568ca43fd3be88bd0f0b4d3fb25118bfabff00e500007c3f00007c3fad32483e6dc1e13d8fbf433fb22cd93e106af83e000080bf92ec65bf3b29a23e0cbb653ff1fa983e7805683f02fd98beab0000c50080073f00007c3fad32483e6dc1e13d76fe343feaada238700b353f000080bf92ec65bf3b29a23e0cbb653ff1fa983e7805683f02fd98beab0000c50080073f00007c3fad32483e6dc1e13d76fe343feaada238700b353f000080bfb5a0a4bf19ec273f7930923eb44a183fd20f4d3f03e8883dabff00ed0000983d00007c3fad32483e6dc1e13d1b54f83eb31ad9be82cb433f000080bf
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: -0.10497397, y: 0.7891732, z: -0.29038185}
+    m_Extent: {x: 1.7980046, y: 0.83917314, z: 1.5759146}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12106, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Tree Data
+  m_EditorClassIdentifier: 
+  _uniqueID: 147
+  materialHash: c24af78bb96eaf31fc3cf8f4430093156291456
+  root:
+    _uniqueID: 1
+    seed: 1234
+    _internalSeed: 2727
+    m_Hash: 
+    distributionFrequency: 1
+    distributionMode: 0
+    distributionCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    distributionNodes: 5
+    distributionTwirl: 0
+    distributionPitch: 0
+    distributionPitchCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    distributionScale: 1
+    distributionScaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    showAnimationProps: 1
+    animationPrimary: 0.5
+    animationSecondary: 0.5
+    animationEdge: 1
+    visible: 1
+    lockFlags: 0
+    nodeIDs: 02000000
+    parentGroupID: -1
+    childGroupIDs: 68000000
+    adaptiveLODQuality: 0
+    shadowTextureQuality: 3
+    enableWelding: 1
+    enableAmbientOcclusion: 1
+    enableMaterialOptimize: 1
+    aoDensity: 0.386
+    rootSpread: 0
+    groundOffset: 0.05
+    rootMatrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  branchGroups:
+  - _uniqueID: 104
+    seed: 1234
+    _internalSeed: 2727
+    m_Hash: 
+    distributionFrequency: 1
+    distributionMode: 0
+    distributionCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    distributionNodes: 5
+    distributionTwirl: 0
+    distributionPitch: 0
+    distributionPitchCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    distributionScale: 1
+    distributionScaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    showAnimationProps: 1
+    animationPrimary: 0.5
+    animationSecondary: 0
+    animationEdge: 1
+    visible: 1
+    lockFlags: 0
+    nodeIDs: 69000000
+    parentGroupID: 1
+    childGroupIDs: 6c000000
+    lodQualityMultiplier: 0
+    geometryMode: 0
+    materialBranch: {fileID: 0}
+    materialBreak: {fileID: 0}
+    materialFrond: {fileID: 0}
+    height: {x: 0.1, y: 0.1}
+    radius: 0.1
+    radiusCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    radiusMode: 1
+    capSmoothing: 0
+    crinklyness: 0
+    crinkCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    seekBlend: 0
+    seekCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noise: 0.1
+    noiseCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseScaleU: 0.2
+    noiseScaleV: 0.1
+    flareSize: 0
+    flareHeight: 0.1
+    flareNoise: 0.3
+    weldHeight: 0.1
+    weldSpreadTop: 0
+    weldSpreadBottom: 0
+    breakingChance: 0
+    breakingSpot: {x: 0.4, y: 0.6}
+    frondCount: 1
+    frondWidth: 1
+    frondCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    frondRange: {x: 0.1, y: 1}
+    frondRotation: 0
+    frondCrease: 0
+  - _uniqueID: 108
+    seed: 1234
+    _internalSeed: 2727
+    m_Hash: 
+    distributionFrequency: 8
+    distributionMode: 3
+    distributionCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    distributionNodes: 4
+    distributionTwirl: 0
+    distributionPitch: 0.44
+    distributionPitchCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    distributionScale: 0
+    distributionScaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    showAnimationProps: 1
+    animationPrimary: 0.5
+    animationSecondary: 0.5
+    animationEdge: 1
+    visible: 1
+    lockFlags: 7
+    nodeIDs: 6d0000007c0000007d0000007e0000007f000000800000008100000082000000
+    parentGroupID: 104
+    childGroupIDs: 
+    lodQualityMultiplier: 1
+    geometryMode: 2
+    materialBranch: {fileID: 0}
+    materialBreak: {fileID: 0}
+    materialFrond: {fileID: 2100000, guid: 410884596ecfa2945b1b6e6426abbbb4, type: 2}
+    height: {x: 0.1, y: 5.430465}
+    radius: 0.5
+    radiusCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: -1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    radiusMode: 1
+    capSmoothing: 0
+    crinklyness: 0.1
+    crinkCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    seekBlend: 0
+    seekCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9342465
+        inSlope: 0.21023063
+        outSlope: 0.21023063
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: -0.05479443
+        inSlope: -3.0196753
+        outSlope: -3.0196753
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noise: 0.1
+    noiseCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    noiseScaleU: 0.2
+    noiseScaleV: 0.1
+    flareSize: 0
+    flareHeight: 0.1
+    flareNoise: 0.3
+    weldHeight: 0.1
+    weldSpreadTop: 0
+    weldSpreadBottom: 0
+    breakingChance: 0
+    breakingSpot: {x: 0.2741722, y: 0.47417206}
+    frondCount: 1
+    frondWidth: 0.8
+    frondCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    frondRange: {x: 0, y: 0.4695364}
+    frondRotation: 0
+    frondCrease: -0.31
+  leafGroups: []
+  nodes:
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3961
+    animSeed: 0
+    visible: 1
+    triStart: 0
+    triEnd: 0
+    vertStart: 0
+    vertEnd: 0
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 1
+    offset: 0
+    baseAngle: 0
+    angle: 0
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 0
+    groupID: 1
+    _uniqueID: 2
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0, y: 0.688082, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 1
+      tension: 0.5
+    seed: 631666
+    animSeed: 0
+    visible: 1
+    triStart: 0
+    triEnd: 16
+    vertStart: 0
+    vertEnd: 15
+    capRange: 0
+    breakOffset: 1
+    size: 0.054199666
+    scale: 0.54199666
+    offset: 0
+    baseAngle: 0
+    angle: 0
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: -0.09
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 3
+    _uniqueID: 4
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3961
+    animSeed: 0.011236007
+    visible: 1
+    triStart: 16
+    triEnd: 24
+    vertStart: 15
+    vertEnd: 31
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.56274843
+    offset: 0.4899998
+    baseAngle: 0
+    angle: 0
+    pitch: -35.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0.6273657
+      e12: -0.7787247
+      e13: 0.6158311
+      e20: 0
+      e21: 0.7787247
+      e22: 0.6273657
+      e23: 0.45975146
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 4
+    groupID: 5
+    _uniqueID: 6
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3964
+    animSeed: 0.3179845
+    visible: 1
+    triStart: 24
+    triEnd: 32
+    vertStart: 31
+    vertEnd: 47
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.5696009
+    offset: 0.4899998
+    baseAngle: 72
+    angle: 72
+    pitch: -35.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.30901706
+      e01: 0.7406112
+      e02: 0.5966602
+      e03: 0.44232464
+      e10: 0
+      e11: 0.6273657
+      e12: -0.77872473
+      e13: 0.62013006
+      e20: -0.9510565
+      e21: 0.24063922
+      e22: 0.19386671
+      e23: 0.14372003
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 4
+    groupID: 5
+    _uniqueID: 7
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3968
+    animSeed: 0.7269825
+    visible: 1
+    triStart: 32
+    triEnd: 40
+    vertStart: 47
+    vertEnd: 63
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.5710489
+    offset: 0.4899998
+    baseAngle: 144
+    angle: 144
+    pitch: -35.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.80901706
+      e01: 0.45772287
+      e02: 0.36875626
+      e03: 0.27403444
+      e10: 0
+      e11: 0.6273657
+      e12: -0.77872473
+      e13: 0.62103856
+      e20: -0.5877852
+      e21: -0.6300016
+      e22: -0.5075496
+      e23: -0.37717614
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 4
+    groupID: 5
+    _uniqueID: 8
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3972
+    animSeed: 0.13598041
+    visible: 1
+    triStart: 40
+    triEnd: 48
+    vertStart: 63
+    vertEnd: 79
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.56193054
+    offset: 0.4899998
+    baseAngle: 216
+    angle: 216
+    pitch: -35.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.80901706
+      e01: -0.45772287
+      e02: -0.36875626
+      e03: -0.26986074
+      e10: 0
+      e11: 0.6273657
+      e12: -0.77872473
+      e13: 0.615318
+      e20: 0.5877852
+      e21: -0.6300016
+      e22: -0.5075496
+      e23: -0.37143153
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 4
+    groupID: 5
+    _uniqueID: 9
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3975
+    animSeed: 0.44272888
+    visible: 1
+    triStart: 48
+    triEnd: 56
+    vertStart: 79
+    vertEnd: 95
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.5744935
+    offset: 0.4899998
+    baseAngle: 288
+    angle: 288
+    pitch: -35.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.30901718
+      e01: -0.74061114
+      e02: -0.5966602
+      e03: -0.44594815
+      e10: 0
+      e11: 0.6273657
+      e12: -0.7787247
+      e13: 0.6231996
+      e20: 0.9510564
+      e21: 0.24063924
+      e22: 0.19386679
+      e23: 0.1448974
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 4
+    groupID: 5
+    _uniqueID: 10
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.06821082, y: 0.98925984, z: 0.12927605}
+        rot: {x: 0.062532656, y: 0.00024414062, z: -0.004928376, w: 0.9980307}
+        normal: {x: 0, y: -0.12482191, z: 0.9921792}
+        tangent: {x: 0.009876984, y: 0.99213076, z: 0.124815814}
+        time: 0.066715024
+      - point: {x: 0.019693464, y: 1.978184, z: 0.24886705}
+        rot: {x: 0.017959693, y: 0.0010780959, z: -0.0353372, w: 0.9992136}
+        normal: {x: 0.00087963225, y: -0.03596794, z: 0.9993526}
+        tangent: {x: 0.070657566, y: 0.99685746, z: 0.035815943}
+        time: 0.13343005
+      - point: {x: 0.072582945, y: 2.9756193, z: 0.20064366}
+        rot: {x: 0.003932862, y: 0.0014850495, z: -0.013233232, w: 0.9999036}
+        normal: {x: 0.0028675725, y: -0.007902341, z: 0.99996465}
+        tangent: {x: 0.026475683, y: 0.9996188, z: 0.007823684}
+        time: 0.20014508
+      - point: {x: 0.07254306, y: 3.9735794, z: 0.26448435}
+        rot: {x: 0.0066592684, y: 0.0012685918, z: 0.012649453, w: 0.999897}
+        normal: {x: 0.0027249984, y: -0.013283704, z: 0.9999081}
+        tangent: {x: -0.025278969, y: 0.9995913, z: 0.013348387}
+        time: 0.2668601
+      - point: {x: 0.022105634, y: 4.971614, z: 0.22729787}
+        rot: {x: -0.027515147, y: 0.001979648, z: 0.053853765, w: 0.9981677}
+        normal: {x: 0.0009889279, y: 0.05514331, z: 0.998478}
+        tangent: {x: -0.10761923, y: 0.9926854, z: -0.05471681}
+        time: 0.33357513
+      - point: {x: -0.14230734, y: 5.9553704, z: 0.15524803}
+        rot: {x: -0.02848871, y: 0.002735029, z: 0.08218043, w: 0.99620646}
+        normal: {x: 0.00076478726, y: 0.057210654, z: 0.9983618}
+        tangent: {x: -0.16389334, y: 0.98486954, z: -0.056311935}
+        time: 0.40029016
+      - point: {x: -0.30564016, y: 6.9411073, z: 0.114688054}
+        rot: {x: -0.024010954, y: 0.0027729045, z: 0.06834106, w: 0.99736917}
+        normal: {x: 0.0022513513, y: 0.048275046, z: 0.99883157}
+        tangent: {x: -0.13645613, y: 0.98950595, z: -0.047516756}
+        time: 0.46700516
+      - point: {x: -0.41511247, y: 7.933605, z: 0.060251847}
+        rot: {x: -0.015886502, y: 0.002666056, z: 0.025855577, w: 0.9995359}
+        normal: {x: 0.004508671, y: 0.031897347, z: 0.999481}
+        tangent: {x: -0.05177256, y: 0.9981582, z: -0.031621587}
+        time: 0.5337202
+      - point: {x: -0.40898427, y: 8.933549, z: 0.051567648}
+        rot: {x: -0.03152512, y: 0.0016692866, z: 0.0070262053, w: 0.99947697}
+        normal: {x: 0.0028903154, y: 0.06304081, z: 0.99800676}
+        tangent: {x: -0.014150478, y: 0.9979136, z: -0.06299394}
+        time: 0.60043526
+      - point: {x: -0.4433658, y: 9.926075, z: -0.0655241}
+        rot: {x: -0.08941015, y: 0.0014749812, z: 0.009551173, w: 0.995948}
+        normal: {x: 0.0012329918, y: 0.17812409, z: 0.9840073}
+        tangent: {x: -0.019291086, y: 0.9838292, z: -0.17806767}
+        time: 0.66715026
+      - point: {x: -0.44748887, y: 10.897251, z: -0.30385166}
+        rot: {x: -0.12451831, y: -0.0037386217, z: -0.029239347, w: 0.99177945}
+        normal: {x: -0.00013343284, y: 0.24720798, z: 0.96896243}
+        tangent: {x: 0.05892924, y: 0.9672805, z: -0.24677077}
+        time: 0.73386526
+      - point: {x: -0.32574674, y: 11.856707, z: -0.55806315}
+        rot: {x: -0.14460535, y: -0.001953125, z: -0.02113897, w: 0.9892617}
+        normal: {x: 0.0022537762, y: 0.2861876, z: 0.95817095}
+        tangent: {x: 0.04238851, y: 0.95728487, z: -0.28602266}
+        time: 0.8005803
+      - point: {x: -0.3630219, y: 12.804819, z: -0.8738048}
+        rot: {x: -0.14044851, y: 0.0045033856, z: 0.024964796, w: 0.98976296}
+        normal: {x: 0.0019024974, y: 0.2782464, z: 0.96050787}
+        tangent: {x: -0.050683916, y: 0.95930195, z: -0.2777967}
+        time: 0.8672953
+      - point: {x: -0.42702615, y: 13.773637, z: -1.1131717}
+        rot: {x: -0.108110145, y: 0.0025106159, z: -0.0010139922, w: 0.9941353}
+        normal: {x: 0.0052113542, y: 0.21494713, z: 0.9766118}
+        tangent: {x: 0.0014779901, y: 0.97662234, z: -0.21495734}
+        time: 0.9340103
+      - point: {x: -0.36080122, y: 14.742584, z: -1.3005965}
+        rot: {x: -0.095250204, y: -0.0006224389, z: -0.033589084, w: 0.99488634}
+        normal: {x: 0.0051713064, y: 0.18956788, z: 0.981854}
+        tangent: {x: 0.0669529, y: 0.97959834, z: -0.189485}
+        time: 1
+      tension: 0.5
+    seed: 3961
+    animSeed: 0
+    visible: 1
+    triStart: 0
+    triEnd: 108
+    vertStart: 0
+    vertEnd: 72
+    capRange: 0
+    breakOffset: 1
+    size: 0.49963757
+    scale: 0.99927515
+    offset: 0
+    baseAngle: 0
+    angle: 0
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: -0.09
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 25
+    _uniqueID: 26
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.10139005, y: 0.9876853, z: 0.11915435}
+        rot: {x: 0.014502243, y: 0.00092965993, z: -0.06508192, w: 0.9977742}
+        normal: {x: 0, y: -0.029061573, z: 0.99957764}
+        tangent: {x: 0.12990168, y: 0.99110806, z: 0.02881533}
+        time: 0.07159253
+      - point: {x: 0.25863612, y: 1.9733102, z: 0.057371736}
+        rot: {x: -0.03551449, y: 0.0055417772, z: -0.027846215, w: 0.9989658}
+        normal: {x: 0.013049241, y: 0.07064695, z: 0.997416}
+        tangent: {x: 0.055241395, y: 0.9959266, z: -0.07126418}
+        time: 0.14318506
+      - point: {x: 0.2112872, y: 2.9689808, z: -0.02261854}
+        rot: {x: -0.0204135, y: 0.005637746, z: -0.0027323035, w: 0.999772}
+        normal: {x: 0.011388862, y: 0.040786427, z: 0.999103}
+        tangent: {x: 0.005231211, y: 0.99915165, z: -0.040848043}
+        time: 0.21477759
+      - point: {x: 0.269076, y: 3.9673085, z: -0.024148352}
+        rot: {x: 0.010545491, y: 0.0055148234, z: 0.0006573688, w: 0.9999291}
+        normal: {x: 0.011043546, y: -0.021082614, z: 0.99971676}
+        tangent: {x: -0.001210608, y: 0.9997767, z: 0.021097252}
+        time: 0.28637013
+      - point: {x: 0.20887083, y: 4.96454, z: 0.01949168}
+        rot: {x: 0.05486379, y: 0.0033563792, z: 0.040183205, w: 0.9976794}
+        normal: {x: 0.011107287, y: -0.10920322, z: 0.9939574}
+        tangent: {x: -0.079811506, y: 0.99075055, z: 0.109742776}
+        time: 0.35796267
+      - point: {x: 0.10983576, y: 5.944058, z: 0.19481087}
+        rot: {x: 0.089267634, y: 0.0048659993, z: 0.038634244, w: 0.9952463}
+        normal: {x: 0.016588258, y: -0.1773103, z: 0.9840152}
+        tangent: {x: -0.076032214, y: 0.9810774, z: 0.17806266}
+        time: 0.42955518
+      - point: {x: 0.056847394, y: 6.926166, z: 0.37552103}
+        rot: {x: 0.077554435, y: 0.0051573804, z: 0.029157434, w: 0.99654835}
+        normal: {x: 0.0148021085, y: -0.15427293, z: 0.9879174}
+        tangent: {x: -0.05731402, y: 0.9862703, z: 0.15487446}
+        time: 0.50114775
+      - point: {x: -0.0047519505, y: 7.9159045, z: 0.5044508}
+        rot: {x: 0.03309524, y: 0.004103451, z: 0.021762094, w: 0.99920684}
+        normal: {x: 0.009646908, y: -0.0659592, z: 0.99777573}
+        tangent: {x: -0.043218546, y: 0.99686223, z: 0.066316664}
+        time: 0.57274026
+      - point: {x: -0.029403463, y: 8.915595, z: 0.5078686}
+        rot: {x: 0.017582789, y: 0.0034806102, z: 0.03808105, w: 0.999114}
+        normal: {x: 0.008295695, y: -0.034868628, z: 0.99935746}
+        tangent: {x: -0.075972475, y: 0.99648136, z: 0.035398927}
+        time: 0.64433277
+      - point: {x: -0.15641831, y: 9.905213, z: 0.57511884}
+        rot: {x: 0.033977237, y: 0.0021768254, z: 0.09461087, w: 0.994932}
+        normal: {x: 0.010757634, y: -0.067199245, z: 0.9976816}
+        tangent: {x: -0.18811487, y: 0.97978866, z: 0.06802243}
+        time: 0.71592534
+      - point: {x: -0.4049126, y: 10.871419, z: 0.64365286}
+        rot: {x: 0.006868557, y: -0.00069053395, z: 0.13689215, w: 0.9905619}
+        normal: {x: 0.00050828955, y: -0.013799415, z: 0.9999047}
+        tangent: {x: -0.27120987, y: 0.9624267, z: 0.013420058}
+        time: 0.78751785
+      - point: {x: -0.6978702, y: 11.8266325, z: 0.60191107}
+        rot: {x: 0.026445907, y: 0.0015584894, z: 0.15374866, w: 0.9877548}
+        normal: {x: 0.011209737, y: -0.051765677, z: 0.9985964}
+        tangent: {x: -0.30364963, y: 0.9513239, z: 0.05272376}
+        time: 0.85911036
+      - point: {x: -1.0094628, y: 12.765454, z: 0.74862313}
+        rot: {x: 0.075425625, y: 0.01050656, z: 0.13656008, w: 0.98770034}
+        normal: {x: 0.04135476, y: -0.14612646, z: 0.9884012}
+        tangent: {x: -0.26817614, y: 0.95132464, z: 0.15186553}
+        time: 0.9307029
+      - point: {x: -1.2264794, y: 13.696475, z: 0.9003038}
+        rot: {x: 0.07766282, y: 0.012610519, z: 0.11418502, w: 0.990339}
+        normal: {x: 0.04271318, y: -0.1509453, z: 0.9876189}
+        tangent: {x: -0.2242052, y: 0.96186054, z: 0.15670502}
+        time: 1
+      tension: 0.5
+    seed: 3961
+    animSeed: 0.011236007
+    visible: 1
+    triStart: 108
+    triEnd: 204
+    vertStart: 72
+    vertEnd: 137
+    capRange: 0
+    breakOffset: 1
+    size: 0.30281064
+    scale: 0.9318713
+    offset: 0.1919192
+    baseAngle: 126.184296
+    angle: 126.184296
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.59230494
+      e01: 0.8050385
+      e02: -0.032983985
+      e03: 0.3938354
+      e10: 0.027025366
+      e11: -0.021064095
+      e12: -0.9994128
+      e13: 2.7540505
+      e20: -0.8052606
+      e21: -0.59284854
+      e22: -0.009280187
+      e23: -0.03696331
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 26
+    groupID: 27
+    _uniqueID: 28
+  - spline:
+      nodes: []
+      tension: 0.5
+    seed: 3961
+    animSeed: 0
+    visible: 1
+    triStart: 0
+    triEnd: 4
+    vertStart: 0
+    vertEnd: 8
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 1
+    offset: 0
+    baseAngle: 0
+    angle: 0
+    pitch: -0
+    rotation: {x: 0.07740762, y: -0.08742739, z: 0.006814323, w: 0.99313545}
+    matrix:
+      e00: 0.98462003
+      e01: -0.027070183
+      e02: -0.17259952
+      e03: -0.027070183
+      e10: -0.17470942
+      e11: -0.15256092
+      e12: -0.97272897
+      e13: -0.24256092
+      e20: 0.0000000094821715
+      e21: 0.9879232
+      e22: -0.15494394
+      e23: 0.9879232
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 29
+    _uniqueID: 30
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.10245009, y: 0.9657723, z: -0.23830219}
+        rot: {x: -0.02901707, y: -0.0019796481, z: -0.068041585, w: 0.99725854}
+        normal: {x: -0, y: 0.05814445, z: 0.9983082}
+        tangent: {x: 0.1358253, y: 0.9890567, z: -0.057605617}
+        time: 0.3975023
+      - point: {x: 0.2669908, y: 1.9441814, z: -0.11323494}
+        rot: {x: 0.016998045, y: -0.0036539624, z: -0.15263388, w: 0.98812985}
+        normal: {x: -0.0124113625, y: -0.03247623, z: 0.99939543}
+        tangent: {x: 0.30152002, y: 0.95282793, z: 0.03470752}
+        time: 0.7950046
+      - point: {x: 0.4888397, y: 2.408817, z: -0.14242896}
+        rot: {x: -0.028716635, y: 0.0013864522, z: -0.22066434, w: 0.974926}
+        normal: {x: 0.015398321, y: 0.05537601, z: 0.99834687}
+        tangent: {x: 0.43018252, y: 0.9009652, z: -0.05660953}
+        time: 1
+      tension: 0.5
+    seed: 1175426
+    animSeed: 0
+    visible: 1
+    triStart: 0
+    triEnd: 0
+    vertStart: 0
+    vertEnd: 24
+    capRange: 0
+    breakOffset: 1
+    size: 0.40351817
+    scale: 0.9840106
+    offset: 0.08999999
+    baseAngle: 0
+    angle: 0
+    pitch: -55.5
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.56640625
+      e01: 0.82412624
+      e02: 0
+      e03: 0
+      e10: -0.82412624
+      e11: 0.56640625
+      e12: -0
+      e13: -0.09
+      e20: -0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 31
+    _uniqueID: 32
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.3854778, y: 0.91614276, z: 0.10995137}
+        rot: {x: 0.03559663, y: -0.010483133, z: 0.28230244, w: 0.9586075}
+        normal: {x: 0, y: -0.07416553, z: 0.99724597}
+        tangent: {x: -0.54198086, y: 0.8380764, z: 0.062328033}
+        time: 0.4438125
+      - point: {x: -1.2385045, y: 1.8340826, z: 0.125813}
+        rot: {x: 0.013769618, y: -0.017744338, z: 0.3654766, w: 0.9305495}
+        normal: {x: -0.022958744, y: -0.038597364, z: 0.9989911}
+        tangent: {x: -0.6806768, y: 0.7324745, z: 0.012656869}
+        time: 1
+      tension: 0.5
+    seed: 1175429
+    animSeed: 0
+    visible: 1
+    triStart: 16
+    triEnd: 16
+    vertStart: 24
+    vertEnd: 48
+    capRange: 0
+    breakOffset: 1
+    size: 0.36141255
+    scale: 0.9401248
+    offset: 0.18
+    baseAngle: 180
+    angle: 180
+    pitch: -55.5
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.56640625
+      e01: -0.82412624
+      e02: -0.000000049516803
+      e03: -0
+      e10: -0.82412624
+      e11: 0.5664062
+      e12: -0.00000015673015
+      e13: -0.09
+      e20: 0.00000015721206
+      e21: -0.000000047964843
+      e22: -1
+      e23: -0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 31
+    _uniqueID: 37
+  - spline:
+      nodes:
+      - point: {x: -0.0000034219436, y: 0.000022121278, z: -0.000015585903}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.2808028, y: 0.93034816, z: -0.23580098}
+        rot: {x: -0.07818173, y: 0.009089937, z: 0.11512733, w: 0.9902277}
+        normal: {x: -0, y: 0.15692846, z: 0.98761}
+        tangent: {x: -0.22942609, y: 0.96126664, z: -0.15274258}
+        time: 0.3926621
+      - point: {x: -0.45644116, y: 1.9124453, z: -0.30389208}
+        rot: {x: -0.11242267, y: 0.0011516091, z: 0.08053136, w: 0.9903912}
+        normal: {x: -0.015827607, y: 0.22287029, z: 0.97471964}
+        tangent: {x: -0.1597741, y: 0.9617517, z: -0.2224996}
+        time: 0.78533405
+      - point: {x: -0.5329732, y: 2.414208, z: -0.5069592}
+        rot: {x: -0.18917839, y: -0.006597446, z: 0.07275688, w: 0.97922134}
+        normal: {x: -0.04044995, y: 0.36953494, z: 0.928336}
+        tangent: {x: -0.13999414, y: 0.91783595, z: -0.37145516}
+        time: 1
+      tension: 0.5
+    seed: 1175433
+    animSeed: 0
+    visible: 1
+    triStart: 32
+    triEnd: 32
+    vertStart: 48
+    vertEnd: 72
+    capRange: 0
+    breakOffset: 1
+    size: 0.40848598
+    scale: 0.3
+    offset: 1
+    baseAngle: -11.762094
+    angle: -11.762094
+    pitch: -55.5
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.5708075
+      e01: 0.8124362
+      e02: -0.11885388
+      e03: 0
+      e10: -0.73993075
+      e11: 0.5717204
+      e12: 0.35445508
+      e13: -0.09
+      e20: 0.3559233
+      e21: -0.114382036
+      e22: 0.92748874
+      e23: -0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 31
+    _uniqueID: 38
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 0}
+        tangent: {x: 0, y: 0, z: 0}
+        time: 0
+      tension: 0.5
+    seed: 3961
+    animSeed: 0
+    visible: 1
+    triStart: 0
+    triEnd: 0
+    vertStart: 0
+    vertEnd: 5
+    capRange: 0
+    breakOffset: 1
+    size: 0.1
+    scale: 1
+    offset: 0
+    baseAngle: 0
+    angle: 0
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: -0.05
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 104
+    _uniqueID: 105
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.06821082, y: 0.98925984, z: 0.12927605}
+        rot: {x: 0.062532656, y: 0.00024414062, z: -0.004928376, w: 0.9980307}
+        normal: {x: 0, y: -0.12482191, z: 0.9921792}
+        tangent: {x: 0.009876984, y: 0.99213076, z: 0.124815814}
+        time: 0.066715024
+      - point: {x: 0.019693464, y: 1.978184, z: 0.24886705}
+        rot: {x: 0.017959693, y: 0.0010780959, z: -0.0353372, w: 0.9992136}
+        normal: {x: 0.00087963225, y: -0.03596794, z: 0.9993526}
+        tangent: {x: 0.070657566, y: 0.99685746, z: 0.035815943}
+        time: 0.13343005
+      - point: {x: 0.072582945, y: 2.9756193, z: 0.20064366}
+        rot: {x: 0.003932862, y: 0.0014850495, z: -0.013233232, w: 0.9999036}
+        normal: {x: 0.0028675725, y: -0.007902341, z: 0.99996465}
+        tangent: {x: 0.026475683, y: 0.9996188, z: 0.007823684}
+        time: 0.20014508
+      - point: {x: 0.07254306, y: 3.9735794, z: 0.26448435}
+        rot: {x: 0.0066592684, y: 0.0012685918, z: 0.012649453, w: 0.999897}
+        normal: {x: 0.0027249984, y: -0.013283704, z: 0.9999081}
+        tangent: {x: -0.025278969, y: 0.9995913, z: 0.013348387}
+        time: 0.2668601
+      - point: {x: 0.022105634, y: 4.971614, z: 0.22729787}
+        rot: {x: -0.027515147, y: 0.001979648, z: 0.053853765, w: 0.9981677}
+        normal: {x: 0.0009889279, y: 0.05514331, z: 0.998478}
+        tangent: {x: -0.10761923, y: 0.9926854, z: -0.05471681}
+        time: 0.33357513
+      - point: {x: -0.14230734, y: 5.9553704, z: 0.15524803}
+        rot: {x: -0.02848871, y: 0.002735029, z: 0.08218043, w: 0.99620646}
+        normal: {x: 0.00076478726, y: 0.057210654, z: 0.9983618}
+        tangent: {x: -0.16389334, y: 0.98486954, z: -0.056311935}
+        time: 0.40029016
+      - point: {x: -0.30564016, y: 6.9411073, z: 0.114688054}
+        rot: {x: -0.024010954, y: 0.0027729045, z: 0.06834106, w: 0.99736917}
+        normal: {x: 0.0022513513, y: 0.048275046, z: 0.99883157}
+        tangent: {x: -0.13645613, y: 0.98950595, z: -0.047516756}
+        time: 0.46700516
+      - point: {x: -0.41511247, y: 7.933605, z: 0.060251847}
+        rot: {x: -0.015886502, y: 0.002666056, z: 0.025855577, w: 0.9995359}
+        normal: {x: 0.004508671, y: 0.031897347, z: 0.999481}
+        tangent: {x: -0.05177256, y: 0.9981582, z: -0.031621587}
+        time: 0.5337202
+      - point: {x: -0.40898427, y: 8.933549, z: 0.051567648}
+        rot: {x: -0.03152512, y: 0.0016692866, z: 0.0070262053, w: 0.99947697}
+        normal: {x: 0.0028903154, y: 0.06304081, z: 0.99800676}
+        tangent: {x: -0.014150478, y: 0.9979136, z: -0.06299394}
+        time: 0.60043526
+      - point: {x: -0.4433658, y: 9.926075, z: -0.0655241}
+        rot: {x: -0.08941015, y: 0.0014749812, z: 0.009551173, w: 0.995948}
+        normal: {x: 0.0012329918, y: 0.17812409, z: 0.9840073}
+        tangent: {x: -0.019291086, y: 0.9838292, z: -0.17806767}
+        time: 0.66715026
+      - point: {x: -0.44748887, y: 10.897251, z: -0.30385166}
+        rot: {x: -0.12451831, y: -0.0037386217, z: -0.029239347, w: 0.99177945}
+        normal: {x: -0.00013343284, y: 0.24720798, z: 0.96896243}
+        tangent: {x: 0.05892924, y: 0.9672805, z: -0.24677077}
+        time: 0.73386526
+      - point: {x: -0.32574674, y: 11.856707, z: -0.55806315}
+        rot: {x: -0.14460535, y: -0.001953125, z: -0.02113897, w: 0.9892617}
+        normal: {x: 0.0022537762, y: 0.2861876, z: 0.95817095}
+        tangent: {x: 0.04238851, y: 0.95728487, z: -0.28602266}
+        time: 0.8005803
+      - point: {x: -0.3630219, y: 12.804819, z: -0.8738048}
+        rot: {x: -0.14044851, y: 0.0045033856, z: 0.024964796, w: 0.98976296}
+        normal: {x: 0.0019024974, y: 0.2782464, z: 0.96050787}
+        tangent: {x: -0.050683916, y: 0.95930195, z: -0.2777967}
+        time: 0.8672953
+      - point: {x: -0.42702615, y: 13.773637, z: -1.1131717}
+        rot: {x: -0.108110145, y: 0.0025106159, z: -0.0010139922, w: 0.9941353}
+        normal: {x: 0.0052113542, y: 0.21494713, z: 0.9766118}
+        tangent: {x: 0.0014779901, y: 0.97662234, z: -0.21495734}
+        time: 0.9340103
+      - point: {x: -0.36080122, y: 14.742584, z: -1.3005965}
+        rot: {x: -0.095250204, y: -0.0006224389, z: -0.033589084, w: 0.99488634}
+        normal: {x: 0.0051713064, y: 0.18956788, z: 0.981854}
+        tangent: {x: 0.0669529, y: 0.97959834, z: -0.189485}
+        time: 1
+      tension: 0.5
+    seed: 3961
+    animSeed: 0
+    visible: 1
+    triStart: 32
+    triEnd: 140
+    vertStart: 25
+    vertEnd: 97
+    capRange: 0
+    breakOffset: 1
+    size: 0.49963757
+    scale: 0.99927515
+    offset: 0
+    baseAngle: 0
+    angle: 0
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: -0.09
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 2
+    groupID: 106
+    _uniqueID: 107
+  - spline:
+      nodes:
+      - point: {x: 0.000010964227, y: 0.000021768697, z: -0.000013049694}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.1434916, y: 2.0465217, z: -0.3196659}
+        rot: {x: 0.024331529, y: 0.0018269814, z: -0.074828014, w: 0.996898}
+        normal: {x: 0, y: -0.04878527, z: 0.9988093}
+        tangent: {x: 0.14928067, y: 0.9876175, z: 0.048238624}
+        time: 0.5296241
+      - point: {x: 0.55358684, y: 3.785141, z: 0.13792396}
+        rot: {x: 0.12578118, y: -0.0009216106, z: -0.11293773, w: 0.9856081}
+        normal: {x: -0.030224295, y: -0.2477341, z: 0.9683565}
+        tangent: {x: 0.22239348, y: 0.9428483, z: 0.2481497}
+        time: 1
+      tension: 0.5
+    seed: 3961
+    animSeed: 0.011236007
+    visible: 1
+    triStart: 0
+    triEnd: 0
+    vertStart: 5
+    vertEnd: 21
+    capRange: 0
+    breakOffset: 1
+    size: 0.075
+    scale: 1
+    offset: 0
+    baseAngle: -113.165344
+    angle: -113.165344
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.3933859
+      e01: -0.77105147
+      e02: -0.5007267
+      e03: -0.07710515
+      e10: 0
+      e11: 0.54463905
+      e12: -0.83867055
+      e13: 0.004463905
+      e20: 0.91937345
+      e21: -0.32992116
+      e22: -0.21425332
+      e23: -0.032992117
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 109
+  - spline:
+      nodes:
+      - point: {x: -0.0000054334796, y: -0.000026305697, z: -0.000008021029}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.25364834, y: 1.2461435, z: -0.36341098}
+        rot: {x: -0.13468699, y: 0.025685288, z: 0.18555892, w: 0.97301984}
+        normal: {x: -0, y: 0.27163848, z: 0.96239936}
+        tangent: {x: -0.36802402, y: 0.8948546, z: -0.25257388}
+        time: 0.4121804
+      - point: {x: -0.8967447, y: 2.234385, z: -0.63167435}
+        rot: {x: -0.08241103, y: 0.04374565, z: 0.28636196, w: 0.9535679}
+        normal: {x: 0.036230866, y: 0.18222317, z: 0.9825895}
+        tangent: {x: -0.5533414, y: 0.8224105, z: -0.1321144}
+        time: 0.78901273
+      - point: {x: -1.2827303, y: 2.7899027, z: -0.6596003}
+        rot: {x: -0.03939752, y: 0.05690179, z: 0.2969593, w: 0.9523787}
+        normal: {x: 0.08498512, y: 0.108838074, z: 0.99042004}
+        tangent: {x: -0.57011914, y: 0.820526, z: -0.04124798}
+        time: 1
+      tension: 0.5
+    seed: 3964
+    animSeed: 0.3179845
+    visible: 1
+    triStart: 8
+    triEnd: 8
+    vertStart: 21
+    vertEnd: 45
+    capRange: 0
+    breakOffset: 1
+    size: 0.075
+    scale: 1
+    offset: 0
+    baseAngle: 4.7665706
+    angle: 4.7665706
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.9965415
+      e01: 0.06969052
+      e02: 0.045257553
+      e03: 0.006969052
+      e10: 0
+      e11: 0.54463905
+      e12: -0.8386705
+      e13: 0.004463905
+      e20: -0.083096415
+      e21: 0.83576995
+      e22: 0.5427554
+      e23: 0.083577
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 124
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.1227266, y: 0.97753507, z: -0.052329935}
+        rot: {x: 0.031001534, y: -0.0009455526, z: 0.03036387, w: 0.9990576}
+        normal: {x: 0, y: -0.062001996, z: 0.998076}
+        tangent: {x: -0.06072986, y: 0.9962339, z: 0.06188756}
+        time: 0.22833468
+      - point: {x: -0.15715279, y: 2.076837, z: 0.14796053}
+        rot: {x: 0.11083374, y: -0.0018064759, z: 0.05987086, w: 0.9920324}
+        normal: {x: 0.009687028, y: -0.22011754, z: 0.97542524}
+        tangent: {x: -0.11918866, y: 0.96826273, z: 0.2196849}
+        time: 0.4949304
+      - point: {x: -0.14945604, y: 3.1871636, z: 0.44893932}
+        rot: {x: 0.23405725, y: 0.0359283, z: -0.06423695, w: 0.96943283}
+        normal: {x: 0.03958997, y: -0.45842144, z: 0.8878527}
+        tangent: {x: 0.14136556, y: 0.88218164, z: 0.44918972}
+        time: 0.76118016
+      - point: {x: 0.1266092, y: 3.9570744, z: 1.0781038}
+        rot: {x: 0.33340865, y: 0.049605776, z: -0.12563668, w: 0.93305594}
+        normal: {x: 0.008793625, y: -0.63464254, z: 0.77275586}
+        tangent: {x: 0.26753035, y: 0.7461082, z: 0.6097132}
+        time: 1
+      tension: 0.5
+    seed: 3968
+    animSeed: 0.7269825
+    visible: 1
+    triStart: 24
+    triEnd: 24
+    vertStart: 45
+    vertEnd: 69
+    capRange: 0
+    breakOffset: 1
+    size: 0.05025001
+    scale: 1
+    offset: 0.32999995
+    baseAngle: 180
+    angle: 180
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.9999999
+      e01: -0.00000007331891
+      e02: -0.00000004761386
+      e03: -0.0000000049123674
+      e10: 0
+      e11: 0.54463905
+      e12: -0.8386705
+      e13: -0.013509179
+      e20: 0.00000008742278
+      e21: -0.83867055
+      e22: -0.544639
+      e23: -0.056190934
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 125
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.082282305, y: 0.9946483, z: 0.062485315}
+        rot: {x: 0.004159357, y: 0.00012207033, z: -0.027385412, w: 0.9996164}
+        normal: {x: 0, y: -0.008327061, z: 0.99996537}
+        tangent: {x: 0.054751296, y: 0.9984655, z: 0.008314571}
+        time: 0.25187108
+      - point: {x: 0.109299615, y: 1.9932295, z: 0.016598318}
+        rot: {x: 0.004726187, y: 0.00021143198, z: -0.050059397, w: 0.9987351}
+        normal: {x: -0.00006217702, y: -0.009460939, z: 0.99995524}
+        tangent: {x: 0.09999438, y: 0.99494344, z: 0.009419738}
+        time: 0.50374216
+      - point: {x: 0.28143132, y: 2.9761798, z: 0.081245676}
+        rot: {x: 0.056611285, y: 0.0009216106, z: -0.10851653, w: 0.992481}
+        normal: {x: -0.0104300855, y: -0.11257391, z: 0.9935886}
+        tangent: {x: 0.2155071, y: 0.97003865, z: 0.11216795}
+        time: 0.7556132
+      - point: {x: 0.53172076, y: 3.9008129, z: 0.23572043}
+        rot: {x: 0.0805702, y: 0, z: -0.13051292, w: 0.9881674}
+        normal: {x: -0.020819329, y: -0.15926139, z: 0.9870169}
+        tangent: {x: 0.2579545, y: 0.95294964, z: 0.15920551}
+        time: 1
+      tension: 0.5
+    seed: 3972
+    animSeed: 0.13598041
+    visible: 1
+    triStart: 40
+    triEnd: 40
+    vertStart: 69
+    vertEnd: 93
+    capRange: 0
+    breakOffset: 1
+    size: 0.05025001
+    scale: 1
+    offset: 0.32999995
+    baseAngle: 270
+    angle: 270
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.00000011920929
+      e01: -0.83867043
+      e02: -0.544639
+      e03: -0.056190927
+      e10: 0
+      e11: 0.5446391
+      e12: -0.8386704
+      e13: -0.013509176
+      e20: 0.9999999
+      e21: -0.000000064926034
+      e22: 0.00000009997732
+      e23: -0.0000000043500448
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 126
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.0106407, y: 0.99433756, z: -0.10573344}
+        rot: {x: -0.03722564, y: 0.00029901, z: 0.007956138, w: 0.9992752}
+        normal: {x: -0, y: 0.07440264, z: 0.9972283}
+        tangent: {x: -0.015925508, y: 0.9971019, z: -0.074393205}
+        time: 0.3691369
+      - point: {x: -0.031834804, y: 1.9931889, z: -0.14871067}
+        rot: {x: -0.017542062, y: 0.0005593965, z: 0.013828472, w: 0.99975044}
+        normal: {x: 0.0006269597, y: 0.035090785, z: 0.9993839}
+        tangent: {x: -0.027669597, y: 0.9990021, z: -0.03506002}
+        time: 0.73827386
+      - point: {x: -0.056042362, y: 2.701536, z: -0.16795291}
+        rot: {x: -0.013583854, y: 0.00065736874, z: 0.01706585, w: 0.9997619}
+        normal: {x: 0.00084590993, y: 0.027183851, z: 0.9996301}
+        tangent: {x: -0.034142196, y: 0.9990485, z: -0.027139142}
+        time: 1
+      tension: 0.5
+    seed: 3975
+    animSeed: 0.44272888
+    visible: 1
+    triStart: 56
+    triEnd: 56
+    vertStart: 93
+    vertEnd: 109
+    capRange: 0
+    breakOffset: 1
+    size: 0.025500026
+    scale: 1
+    offset: 0.65999967
+    baseAngle: 45
+    angle: 45
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.70710677
+      e01: 0.5930296
+      e02: 0.38511795
+      e03: 0.020163028
+      e10: 0
+      e11: 0.54463905
+      e12: -0.83867043
+      e13: -0.031482253
+      e20: -0.70710677
+      e21: 0.5930295
+      e22: 0.385118
+      e23: 0.020163024
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 127
+  - spline:
+      nodes:
+      - point: {x: 0.000017861636, y: -0.00001484061, z: 0.000031066164}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.3118033, y: 1.3124253, z: 0.16609383}
+        rot: {x: 0.13078563, y: 0.014130133, z: -0.10648122, w: 0.98557454}
+        normal: {x: 0, y: -0.26080734, z: 0.9653909}
+        tangent: {x: 0.21358629, y: 0.94311374, z: 0.254789}
+        time: 0.36089173
+      - point: {x: 0.7784057, y: 3.486599, z: 1.087284}
+        rot: {x: 0.19668603, y: 0.005163156, z: -0.09832087, w: 0.9755106}
+        normal: {x: -0.028602105, y: -0.38475397, z: 0.9225759}
+        tangent: {x: 0.19385745, y: 0.9032952, z: 0.38272315}
+        time: 1
+      tension: 0.5
+    seed: 3979
+    animSeed: 0.85172683
+    visible: 1
+    triStart: 64
+    triEnd: 64
+    vertStart: 109
+    vertEnd: 133
+    capRange: 0
+    breakOffset: 1
+    size: 0.075
+    scale: 1
+    offset: 0
+    baseAngle: 106.99706
+    angle: 106.99706
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.29232275
+      e01: 0.80203724
+      e02: 0.5208491
+      e03: 0.08020373
+      e10: 0
+      e11: 0.54463905
+      e12: -0.83867055
+      e13: 0.004463905
+      e20: -0.95631975
+      e21: -0.24516244
+      e22: -0.1592104
+      e23: -0.024516245
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 128
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.0029390114, y: 0.9451261, z: 0.32669234}
+        rot: {x: 0.2119296, y: 0.0018023466, z: -0.008320505, w: 0.9772479}
+        normal: {x: 0, y: -0.41424552, z: 0.9101652}
+        tangent: {x: 0.017027399, y: 0.9100332, z: 0.41418546}
+        time: 0.23516044
+      - point: {x: 0.064686745, y: 2.6735878, z: 1.3197181}
+        rot: {x: 0.28875238, y: -0.0003229677, z: -0.0034505117, w: 0.95739764}
+        normal: {x: -0.0026917732, y: -0.55289906, z: 0.83324397}
+        tangent: {x: 0.0063976934, y: 0.83322036, z: 0.55290407}
+        time: 0.7041563
+      - point: {x: 0.041795164, y: 3.6747615, z: 2.0811763}
+        rot: {x: 0.31941697, y: -0.0043741395, z: 0.00812662, w: 0.94756943}
+        normal: {x: -0.0030981957, y: -0.6054106, z: 0.7959074}
+        tangent: {x: -0.018196074, y: 0.79581356, z: 0.60526836}
+        time: 1
+      tension: 0.5
+    seed: 3983
+    animSeed: 0.2607248
+    visible: 1
+    triStart: 80
+    triEnd: 80
+    vertStart: 133
+    vertEnd: 157
+    capRange: 0
+    breakOffset: 1
+    size: 0.025500026
+    scale: 1
+    offset: 0.65999967
+    baseAngle: 225
+    angle: 225
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.70710695
+      e01: -0.5930296
+      e02: -0.38511795
+      e03: -0.020163028
+      e10: 0
+      e11: 0.544639
+      e12: -0.8386706
+      e13: -0.031482257
+      e20: 0.70710677
+      e21: -0.5930297
+      e22: -0.38511807
+      e23: -0.02016303
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 129
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.001156372, y: 2.6637821, z: 0.8311129}
+        rot: {x: 0.15064119, y: 0, z: 0.00017263349, w: 0.9885885}
+        normal: {x: 0, y: -0.29784432, z: 0.95461446}
+        tangent: {x: -0.0004144068, y: 0.9546144, z: 0.2978443}
+        time: 1
+      tension: 0.5
+    seed: 3987
+    animSeed: 0.6697228
+    visible: 1
+    triStart: 96
+    triEnd: 96
+    vertStart: 157
+    vertEnd: 173
+    capRange: 0
+    breakOffset: 1
+    size: 0.025500026
+    scale: 1
+    offset: 0.65999967
+    baseAngle: 315
+    angle: 315
+    pitch: -33
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.7071067
+      e01: -0.5930297
+      e02: -0.38511798
+      e03: -0.02016303
+      e10: 0
+      e11: 0.54463905
+      e12: -0.8386705
+      e13: -0.031482253
+      e20: 0.7071068
+      e21: 0.5930295
+      e22: 0.38511795
+      e23: 0.020163024
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 108
+    _uniqueID: 130
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.10139004, y: 0.9876853, z: 0.11915434}
+        rot: {x: 0.014501215, y: 0.0009455527, z: -0.06508192, w: 0.9977742}
+        normal: {x: 0, y: -0.029061565, z: 0.99957764}
+        tangent: {x: 0.1299017, y: 0.9911081, z: 0.028815323}
+        time: 0.07154064
+      - point: {x: 0.25863612, y: 1.9733102, z: 0.05737172}
+        rot: {x: -0.03551449, y: 0.0055417772, z: -0.027846215, w: 0.9989658}
+        normal: {x: 0.013049244, y: 0.07064695, z: 0.997416}
+        tangent: {x: 0.055241387, y: 0.9959266, z: -0.07126418}
+        time: 0.14308128
+      - point: {x: 0.21128717, y: 2.9689808, z: -0.022618562}
+        rot: {x: -0.0204135, y: 0.005637746, z: -0.0027323035, w: 0.999772}
+        normal: {x: 0.011388865, y: 0.040786434, z: 0.999103}
+        tangent: {x: 0.005231195, y: 0.99915165, z: -0.04084805}
+        time: 0.21462192
+      - point: {x: 0.26907596, y: 3.9673085, z: -0.024148384}
+        rot: {x: 0.010545491, y: 0.0055148234, z: 0.0006573688, w: 0.9999291}
+        normal: {x: 0.01104355, y: -0.021082604, z: 0.99971676}
+        tangent: {x: -0.001210623, y: 0.9997767, z: 0.021097243}
+        time: 0.28616256
+      - point: {x: 0.20887077, y: 4.96454, z: 0.01949164}
+        rot: {x: 0.05486379, y: 0.0033563792, z: 0.040183205, w: 0.9976794}
+        normal: {x: 0.011107294, y: -0.109203205, z: 0.9939574}
+        tangent: {x: -0.07981152, y: 0.99075055, z: 0.10974276}
+        time: 0.35770318
+      - point: {x: 0.1098357, y: 5.944058, z: 0.19481081}
+        rot: {x: 0.089267634, y: 0.0048659993, z: 0.038634244, w: 0.9952463}
+        normal: {x: 0.016588263, y: -0.17731027, z: 0.9840152}
+        tangent: {x: -0.07603223, y: 0.9810774, z: 0.17806263}
+        time: 0.42924383
+      - point: {x: 0.056847304, y: 6.926166, z: 0.3755209}
+        rot: {x: 0.077554435, y: 0.0051573804, z: 0.029157434, w: 0.99654835}
+        normal: {x: 0.014802114, y: -0.15427288, z: 0.9879174}
+        tangent: {x: -0.05731405, y: 0.9862703, z: 0.15487441}
+        time: 0.50078446
+      - point: {x: -0.0047520697, y: 7.9159045, z: 0.5044507}
+        rot: {x: 0.03309524, y: 0.004103451, z: 0.021762094, w: 0.99920684}
+        normal: {x: 0.009646914, y: -0.0659592, z: 0.99777573}
+        tangent: {x: -0.04321857, y: 0.99686223, z: 0.066316664}
+        time: 0.5723251
+      - point: {x: -0.029403606, y: 8.915595, z: 0.50786847}
+        rot: {x: 0.017582789, y: 0.0034806102, z: 0.03808105, w: 0.999114}
+        normal: {x: 0.008295699, y: -0.034868624, z: 0.99935746}
+        tangent: {x: -0.075972505, y: 0.99648136, z: 0.035398927}
+        time: 0.64386576
+      - point: {x: -0.1564185, y: 9.905213, z: 0.5751187}
+        rot: {x: 0.033977237, y: 0.0021768254, z: 0.09461087, w: 0.994932}
+        normal: {x: 0.010757643, y: -0.067199275, z: 0.9976816}
+        tangent: {x: -0.18811491, y: 0.97978866, z: 0.06802246}
+        time: 0.71540636
+      - point: {x: -0.40491283, y: 10.871419, z: 0.6436528}
+        rot: {x: 0.006868557, y: -0.00069053395, z: 0.13689215, w: 0.9905619}
+        normal: {x: 0.0005082955, y: -0.013799444, z: 0.9999047}
+        tangent: {x: -0.27120993, y: 0.9624267, z: 0.013420087}
+        time: 0.786947
+      - point: {x: -0.69787055, y: 11.8266325, z: 0.601911}
+        rot: {x: 0.02644591, y: 0.0015584896, z: 0.15374877, w: 0.9877549}
+        normal: {x: 0.011209764, y: -0.051765773, z: 0.9985964}
+        tangent: {x: -0.3036499, y: 0.95132387, z: 0.052723862}
+        time: 0.85848767
+      - point: {x: -1.0094633, y: 12.765453, z: 0.74862313}
+        rot: {x: 0.07542563, y: 0.010506561, z: 0.1365602, w: 0.9877004}
+        normal: {x: 0.041354805, y: -0.14612654, z: 0.9884012}
+        tangent: {x: -0.26817632, y: 0.9513246, z: 0.15186562}
+        time: 0.9300283
+      - point: {x: -1.2287515, y: 13.70622, z: 0.90189147}
+        rot: {x: 0.07766282, y: 0.012610519, z: 0.11418502, w: 0.990339}
+        normal: {x: 0.042713188, y: -0.15094525, z: 0.9876189}
+        tangent: {x: -0.22420521, y: 0.96186054, z: 0.15670498}
+        time: 1
+      tension: 0.5
+    seed: 3961
+    animSeed: 0.011236007
+    visible: 1
+    triStart: 104
+    triEnd: 152
+    vertStart: 173
+    vertEnd: 208
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.9318713
+    offset: 0.1919192
+    baseAngle: 126.184296
+    angle: 126.184296
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.61024815
+      e01: 0.0047152126
+      e02: 0.79219633
+      e03: -0.4920223
+      e10: 0.69432217
+      e11: 0.47832543
+      e12: -0.5377002
+      e13: 0.2879829
+      e20: -0.38146305
+      e21: 0.8781701
+      e22: 0.28862336
+      e23: -0.17760116
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 109
+    groupID: 133
+    _uniqueID: 134
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.12499348, y: 0.98170924, z: 0.14360932}
+        rot: {x: 0.050071154, y: -0.0011053937, z: 0.022058615, w: 0.9985014}
+        normal: {x: 0, y: -0.100040905, z: 0.9949833}
+        tangent: {x: -0.044161852, y: 0.9940126, z: 0.0999433}
+        time: 0.22119106
+      - point: {x: -0.08794428, y: 1.9794848, z: 0.1990279}
+        rot: {x: 0.034083858, y: -0.00012207031, z: -0.018004026, w: 0.9992568}
+        normal: {x: -0.00141617, y: -0.06811374, z: 0.99767655}
+        tangent: {x: 0.035976157, y: 0.9970283, z: 0.06812055}
+        time: 0.44238213
+      - point: {x: -0.053047046, y: 2.975603, z: 0.27983928}
+        rot: {x: 0.06732817, y: -0.0020571654, z: 0.0022040368, w: 0.9977263}
+        normal: {x: -0.003808853, y: -0.1343595, z: 0.9909254}
+        tangent: {x: -0.004683631, y: 0.9909241, z: 0.13434133}
+        time: 0.66357315
+      - point: {x: -0.09729066, y: 3.9569144, z: 0.46711147}
+        rot: {x: 0.113222964, y: 0, z: -0.015050829, w: 0.9934556}
+        normal: {x: -0.0033617541, y: -0.22496471, z: 0.9743611}
+        tangent: {x: 0.029910078, y: 0.97390807, z: 0.2249633}
+        time: 0.88476425
+      - point: {x: -0.04318437, y: 4.456904, z: 0.60313135}
+        rot: {x: 0.13212238, y: 0.0046450924, z: -0.051839225, w: 0.9898661}
+        normal: {x: -0.0045032473, y: -0.26204857, z: 0.9650442}
+        tangent: {x: 0.10385516, y: 0.95971274, z: 0.26108548}
+        time: 1
+      tension: 0.5
+    seed: 3964
+    animSeed: 0.3179845
+    visible: 1
+    triStart: 152
+    triEnd: 184
+    vertStart: 208
+    vertEnd: 233
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.30139858
+    offset: 0.8181818
+    baseAngle: 158.13857
+    angle: 158.13857
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.8298618
+      e01: 0.22573285
+      e02: 0.51026857
+      e03: -0.8225698
+      e10: -0.107735015
+      e11: 0.83247733
+      e12: -0.5434837
+      e13: 1.6713599
+      e20: -0.54746914
+      e21: -0.5059902
+      e22: -0.66652185
+      e23: 1.7661352
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 124
+    groupID: 133
+    _uniqueID: 135
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.08860187, y: 0.9904017, z: -0.106085606}
+        rot: {x: -0.021470152, y: 0.00055939646, z: 0.027321124, w: 0.99939597}
+        normal: {x: -0, y: 0.042945527, z: 0.99907744}
+        tangent: {x: -0.054634877, y: 0.9975852, z: -0.042881384}
+        time: 0.14209785
+      - point: {x: -0.10898564, y: 1.9899828, z: -0.08553977}
+        rot: {x: -0.022304488, y: -0.00024414062, z: -0.009196684, w: 0.9997089}
+        normal: {x: -0.00009068238, y: 0.044601254, z: 0.9990049}
+        tangent: {x: 0.018399986, y: 0.99883586, z: -0.044592038}
+        time: 0.2841957
+      - point: {x: -0.05190766, y: 2.9823325, z: -0.19501337}
+        rot: {x: -0.043208063, y: -0.0024414062, z: -0.06435803, w: 0.99698806}
+        normal: {x: 0.0006814189, y: 0.08647086, z: 0.9962542}
+        tangent: {x: 0.12853971, y: 0.9879822, z: -0.08584081}
+        time: 0.42629355
+      - point: {x: 0.14736316, y: 3.9603314, z: -0.25673345}
+        rot: {x: -0.047262814, y: -0.0017605231, z: -0.05552683, w: 0.9973364}
+        normal: {x: 0.0017224923, y: 0.09447009, z: 0.99552625}
+        tangent: {x: 0.11092501, y: 0.989366, z: -0.09407744}
+        time: 0.5683914
+      - point: {x: 0.16894618, y: 4.952179, z: -0.38232332}
+        rot: {x: -0.06915928, y: 0.0027404719, z: -0.0081357835, w: 0.9975688}
+        normal: {x: 0.0066045215, y: 0.13793734, z: 0.990419}
+        tangent: {x: 0.015852764, y: 0.9903016, z: -0.13802671}
+        time: 0.7104893
+      - point: {x: 0.17906567, y: 5.940747, z: -0.5327607}
+        rot: {x: -0.06985793, y: 0.0035672947, z: 0.003508327, w: 0.9975444}
+        normal: {x: 0.0066278954, y: 0.13939777, z: 0.9902143}
+        tangent: {x: -0.0074968026, y: 0.9902151, z: -0.13934772}
+        time: 0.8525871
+      - point: {x: 0.15301663, y: 6.969261, z: -0.6657531}
+        rot: {x: -0.06428819, y: 0.0041557727, z: 0.01231338, w: 0.9978468}
+        normal: {x: 0.0067106704, y: 0.12840205, z: 0.9916995}
+        tangent: {x: -0.025109837, y: 0.9914308, z: -0.12819736}
+        time: 1
+      tension: 0.5
+    seed: 3968
+    animSeed: 0.7269825
+    visible: 1
+    triStart: 184
+    triEnd: 224
+    vertStart: 233
+    vertEnd: 263
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.46916026
+    offset: 0.64646465
+    baseAngle: 46.932396
+    angle: 46.932396
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.65633196
+      e01: -0.754184
+      e02: 0.020847172
+      e03: 0.18669124
+      e10: 0.7344579
+      e11: -0.6449994
+      e12: -0.21106201
+      e13: 1.080328
+      e20: 0.17262599
+      e21: -0.123215385
+      e22: 0.9772503
+      e23: -2.5059042
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 125
+    groupID: 133
+    _uniqueID: 136
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.007203035, y: 0.99349, z: -0.113691494}
+        rot: {x: -0.024328157, y: 0.00032296768, z: 0.013488079, w: 0.999613}
+        normal: {x: -0, y: 0.04864607, z: 0.9988161}
+        tangent: {x: -0.026983662, y: 0.9984524, z: -0.04862836}
+        time: 0.074330084
+      - point: {x: -0.05382089, y: 1.9914865, z: -0.09699283}
+        rot: {x: -0.031319067, y: 0.0010358009, z: 0.03896166, w: 0.99874926}
+        normal: {x: -0.0003783289, y: 0.06264026, z: 0.9980361}
+        tangent: {x: -0.077891074, y: 0.9950022, z: -0.062479366}
+        time: 0.14866017
+      - point: {x: -0.14806792, y: 2.9769645, z: -0.23824018}
+        rot: {x: -0.100087024, y: 0.00021143201, z: 0.057307437, w: 0.993327}
+        normal: {x: -0.011084956, y: 0.19886062, z: 0.9799651}
+        tangent: {x: -0.11388943, y: 0.9733969, z: -0.19881602}
+        time: 0.22299026
+      - point: {x: -0.28116176, y: 3.9345367, z: -0.49386021}
+        rot: {x: -0.14448893, y: 0.0032732151, z: 0.09580499, w: 0.9848522}
+        normal: {x: -0.02123902, y: 0.28522766, z: 0.9582245}
+        tangent: {x: -0.18965349, y: 0.9398887, z: -0.28397346}
+        time: 0.29732034
+      - point: {x: -0.5265564, y: 4.8526855, z: -0.8049615}
+        rot: {x: -0.1590497, y: 0.0023353426, z: 0.09881545, w: 0.9823102}
+        normal: {x: -0.026845586, y: 0.31293386, z: 0.9493955}
+        tangent: {x: -0.19487792, y: 0.9298774, z: -0.31201088}
+        time: 0.37165043
+      - point: {x: -0.6703933, y: 5.7917895, z: -1.1170425}
+        rot: {x: -0.16214494, y: 0.0012207031, z: 0.09396402, w: 0.9822822}
+        normal: {x: -0.028070282, y: 0.31877396, z: 0.94741505}
+        tangent: {x: -0.18499507, y: 0.92975956, z: -0.31831455}
+        time: 0.44598052
+      - point: {x: -0.8962098, y: 6.710512, z: -1.4410112}
+        rot: {x: -0.120786786, y: 0.0053167194, z: 0.09510344, w: 0.9880981}
+        normal: {x: -0.0124633005, y: 0.23970994, z: 0.9707646}
+        tangent: {x: -0.18922791, y: 0.9527318, z: -0.23768654}
+        time: 0.5203106
+      - point: {x: -1.0469682, y: 7.6877832, z: -1.5900531}
+        rot: {x: -0.06926175, y: 0.009458677, z: 0.08310344, w: 0.9940861}
+        normal: {x: 0.007293643, y: 0.13927642, z: 0.9902267}
+        tangent: {x: -0.16653444, y: 0.97659326, z: -0.13613223}
+        time: 0.5946407
+      - point: {x: -1.2292094, y: 8.663293, z: -1.713219}
+        rot: {x: -0.07171961, y: 0.009817367, z: 0.09102616, w: 0.9932141}
+        normal: {x: 0.006444539, y: 0.14425337, z: 0.98951983}
+        tangent: {x: -0.18222532, y: 0.9731411, z: -0.14067887}
+        time: 0.66897076
+      - point: {x: -1.4113619, y: 9.633761, z: -1.8713669}
+        rot: {x: -0.103759706, y: 0.00360676, z: 0.05994722, w: 0.9927877}
+        normal: {x: -0.0052721677, y: 0.20645547, z: 0.97844183}
+        tangent: {x: -0.11977874, y: 0.9712805, z: -0.2055898}
+        time: 0.74330086
+      - point: {x: -1.4680312, y: 10.599888, z: -2.1231358}
+        rot: {x: -0.15433367, y: -0.0037106161, z: 0.032869343, w: 0.9874649}
+        normal: {x: -0.017475266, y: 0.3045542, z: 0.9523347}
+        tangent: {x: -0.06376928, y: 0.95020145, z: -0.30504215}
+        time: 0.81763095
+      - point: {x: -1.5387001, y: 11.531178, z: -2.4804926}
+        rot: {x: -0.13772199, y: -0.0010429692, z: 0.04809772, w: 0.98930186}
+        normal: {x: -0.015318814, y: 0.27239668, z: 0.96206313}
+        tangent: {x: -0.0948783, y: 0.9574385, z: -0.27259803}
+        time: 0.89196104
+      - point: {x: -1.7106285, y: 12.9490595, z: -2.7501678}
+        rot: {x: -0.093469754, y: 0.0021458003, z: 0.0593062, w: 0.9938519}
+        normal: {x: -0.006808136, y: 0.18604535, z: 0.9825176}
+        tangent: {x: -0.11828555, y: 0.97549236, z: -0.18553472}
+        time: 1
+      tension: 0.5
+    seed: 3972
+    animSeed: 0.13598041
+    visible: 1
+    triStart: 224
+    triEnd: 280
+    vertStart: 263
+    vertEnd: 303
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.8969002
+    offset: 0.08080808
+    baseAngle: 136.40948
+    angle: 136.40948
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.36575103
+      e01: 0.40111125
+      e02: 0.83984274
+      e03: -0.2724454
+      e10: 0.58454245
+      e11: 0.60318947
+      e12: -0.54265296
+      e13: -0.045979172
+      e20: -0.7242487
+      e21: 0.6893997
+      e22: -0.013849186
+      e23: 0.022241982
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 126
+    groupID: 133
+    _uniqueID: 137
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.0019302473, y: 0.9944263, z: -0.10541616}
+        rot: {x: -0.037618853, y: 0.00012207031, z: 0.0033585979, w: 0.99928653}
+        normal: {x: -0, y: 0.07518529, z: 0.9971696}
+        tangent: {x: -0.00672695, y: 0.9971471, z: -0.07518359}
+        time: 0.082683854
+      - point: {x: -0.013447194, y: 1.9933004, z: -0.15029225}
+        rot: {x: -0.019045316, y: 0.00029901, z: 0.011266237, w: 0.9997551}
+        normal: {x: 0.00024991034, y: 0.03808876, z: 0.9992744}
+        tangent: {x: -0.022541452, y: 0.9990207, z: -0.038073454}
+        time: 0.16536771
+      - point: {x: -0.043150455, y: 2.9923701, z: -0.18155934}
+        rot: {x: 0.020324249, y: 0.0005320922, z: 0.023616426, w: 0.99951434}
+        normal: {x: 0.0020220592, y: -0.040603887, z: 0.9991733}
+        tangent: {x: -0.047188208, y: 0.9980584, z: 0.040654078}
+        time: 0.24805155
+      - point: {x: -0.107565045, y: 3.9839485, z: -0.069206856}
+        rot: {x: 0.084620185, y: 0.0014340016, z: 0.030787868, w: 0.9959366}
+        normal: {x: 0.008066456, y: -0.16846436, z: 0.98567474}
+        tangent: {x: -0.061082955, y: 0.98378307, z: 0.16864094}
+        time: 0.33073542
+      - point: {x: -0.16511843, y: 4.9567485, z: 0.15517607}
+        rot: {x: 0.10347488, y: 0.0025605685, z: 0.025521746, w: 0.9943013}
+        normal: {x: 0.010376393, y: -0.20563978, z: 0.9785728}
+        tangent: {x: -0.050223086, y: 0.9772832, z: 0.20590132}
+        time: 0.41341925
+      - point: {x: -0.20799035, y: 5.938109, z: 0.34251025}
+        rot: {x: 0.09767738, y: 0.006985793, z: -0.020933902, w: 0.9949734}
+        normal: {x: 0.00981242, y: -0.19466525, z: 0.98082066}
+        tangent: {x: 0.043022342, y: 0.9800418, z: 0.19408026}
+        time: 0.4961031
+      - point: {x: -0.07939318, y: 6.9095554, z: 0.5418956}
+        rot: {x: 0.09920374, y: 0.007415206, z: -0.025577154, w: 0.99471074}
+        normal: {x: 0.009677464, y: -0.19773746, z: 0.98020726}
+        tangent: {x: 0.052355763, y: 0.97900885, z: 0.19697879}
+        time: 0.57878697
+      - point: {x: -0.103586465, y: 7.890374, z: 0.73531044}
+        rot: {x: 0.12027104, y: 0.004916267, z: -0.009566762, w: 0.9926828}
+        normal: {x: 0.007459399, y: -0.23887606, z: 0.9710214}
+        tangent: {x: 0.020178799, y: 0.9708867, z: 0.2386879}
+        time: 0.66147083
+      - point: {x: -0.039118692, y: 8.847331, z: 1.0182886}
+        rot: {x: 0.14638782, y: 0.013526142, z: -0.06943473, w: 0.9866948}
+        normal: {x: 0.0063630906, y: -0.2907585, z: 0.9567753}
+        tangent: {x: 0.14098212, y: 0.94749886, z: 0.28700182}
+        time: 0.74415463
+      - point: {x: 0.17753741, y: 9.779724, z: 1.3076034}
+        rot: {x: 0.1285551, y: 0.015824474, z: -0.07730271, w: 0.9885583}
+        normal: {x: 0.011411556, y: -0.256615, z: 0.96644634}
+        tangent: {x: 0.156905, y: 0.95499575, z: 0.25172192}
+        time: 0.8268385
+      - point: {x: 0.2738292, y: 10.752075, z: 1.5203494}
+        rot: {x: 0.12862417, y: 0.014174355, z: -0.06452464, w: 0.9894905}
+        normal: {x: 0.011451155, y: -0.25637397, z: 0.9665098}
+        tangent: {x: 0.13133955, y: 0.9585848, z: 0.2527157}
+        time: 0.90952235
+      - point: {x: 0.4554668, y: 11.782789, z: 1.8397894}
+        rot: {x: 0.14942528, y: 0.015389092, z: -0.08190372, w: 0.9852548}
+        normal: {x: 0.0058473684, y: -0.29696497, z: 0.9548705}
+        tangent: {x: 0.16599125, y: 0.94192773, z: 0.29192328}
+        time: 1
+      tension: 0.5
+    seed: 3975
+    animSeed: 0.44272888
+    visible: 1
+    triStart: 280
+    triEnd: 352
+    vertStart: 303
+    vertEnd: 353
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.806284
+    offset: 0.121212125
+    baseAngle: 32.53657
+    angle: 32.53657
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.3836812
+      e01: 0.7177793
+      e02: -0.5810177
+      e03: 0.15714873
+      e10: 0.44626513
+      e11: -0.6949441
+      e12: -0.56382614
+      e13: -0.019394966
+      e20: -0.8084777
+      e21: -0.04295845
+      e22: -0.58695674
+      e23: 0.16043513
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 127
+    groupID: 133
+    _uniqueID: 138
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.14679436, y: 0.9882727, z: -0.04205227}
+        rot: {x: 0.003080916, y: -0.00021143201, z: 0.06908156, w: 0.99760634}
+        normal: {x: 0, y: -0.006178938, z: 0.9999809}
+        tangent: {x: -0.13783364, y: 0.9904365, z: 0.0061199623}
+        time: 0.19123647
+      - point: {x: -0.27533567, y: 1.9784904, z: 0.012225203}
+        rot: {x: 0.049456716, y: 0.0048521995, z: 0.031914797, w: 0.99825454}
+        normal: {x: 0.01284199, y: -0.098431244, z: 0.995061}
+        tangent: {x: -0.06323861, y: 0.99307096, z: 0.09905054}
+        time: 0.38247293
+      - point: {x: -0.2728746, y: 2.9681807, z: 0.15542701}
+        rot: {x: 0.09536444, y: 0.007843909, z: 0.015750857, w: 0.995287}
+        normal: {x: 0.018618507, y: -0.1895829, z: 0.9816882}
+        tangent: {x: -0.02985845, y: 0.9813151, z: 0.19007713}
+        time: 0.57370937
+      - point: {x: -0.33495367, y: 3.93787, z: 0.39174986}
+        rot: {x: 0.07529868, y: 0.006809729, z: 0.025347158, w: 0.99681556}
+        normal: {x: 0.017396698, y: -0.14977244, z: 0.9885675}
+        tangent: {x: -0.049506955, y: 0.98737526, z: 0.15046303}
+        time: 0.7649458
+      - point: {x: -0.37987408, y: 5.163701, z: 0.46970502}
+        rot: {x: 0.03162375, y: 0.00592387, z: 0.018472994, w: 0.99931157}
+        normal: {x: 0.013007435, y: -0.062985405, z: 0.9979297}
+        tangent: {x: -0.036546562, y: 0.9973174, z: 0.06342312}
+        time: 1
+      tension: 0.5
+    seed: 3979
+    animSeed: 0.85172683
+    visible: 1
+    triStart: 352
+    triEnd: 392
+    vertStart: 353
+    vertEnd: 383
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.34860855
+    offset: 0.6969697
+    baseAngle: 326.8284
+    angle: 326.8284
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.283441
+      e01: 0.44856185
+      e02: -0.8476163
+      e03: 2.301129
+      e10: -0.587731
+      e11: -0.77967066
+      e12: -0.21606885
+      e13: 0.68306
+      e20: -0.757782
+      e21: 0.43692768
+      e22: 0.4846242
+      e23: -1.3084306
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 128
+    groupID: 133
+    _uniqueID: 139
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.023389086, y: 0.9915324, z: 0.127736}
+        rot: {x: 0.0991601, y: -0.00036621094, z: 0.0036150129, w: 0.99506485}
+        normal: {x: 0, y: -0.19734417, z: 0.9803343}
+        tangent: {x: -0.0072661894, y: 0.9803084, z: 0.19733895}
+        time: 0.10312713
+      - point: {x: -0.0144943725, y: 1.9554893, z: 0.39364573}
+        rot: {x: 0.13869852, y: 0.0054972316, z: -0.037135467, w: 0.9896229}
+        normal: {x: 0.0005797166, y: -0.27492678, z: 0.961465}
+        tangent: {x: 0.075025514, y: 0.95876735, z: 0.27411017}
+        time: 0.20625426
+      - point: {x: 0.12632675, y: 2.9047837, z: 0.67473173}
+        rot: {x: 0.17091897, y: 0.007938325, z: -0.05836097, w: 0.98352313}
+        normal: {x: -0.0043354146, y: -0.33713207, z: 0.9414474}
+        tangent: {x: 0.117512226, y: 0.9347614, z: 0.33527896}
+        time: 0.30938137
+      - point: {x: 0.22009626, y: 3.8215613, z: 1.062966}
+        rot: {x: 0.21080342, y: 0.0075219483, z: -0.067748144, w: 0.975149}
+        normal: {x: -0.013892439, y: -0.41214868, z: 0.9110107}
+        tangent: {x: 0.13530064, y: 0.9019442, z: 0.4101102}
+        time: 0.41250852
+      - point: {x: 0.39660013, y: 4.706486, z: 1.4939582}
+        rot: {x: 0.23771521, y: 0.010348654, z: -0.08713042, w: 0.9673638}
+        normal: {x: -0.021402605, y: -0.46171764, z: 0.88676876}
+        tangent: {x: 0.17349368, y: 0.8717995, z: 0.4581109}
+        time: 0.5156356
+      - point: {x: 0.5669246, y: 5.564361, z: 1.9787678}
+        rot: {x: 0.22912675, y: 0.003215806, z: -0.05344841, w: 0.9719229}
+        normal: {x: -0.018232932, y: -0.44573116, z: 0.8949812}
+        tangent: {x: 0.105371185, y: 0.8892884, z: 0.44504264}
+        time: 0.61876273
+      - point: {x: 0.60662735, y: 6.4790273, z: 2.381023}
+        rot: {x: 0.17888868, y: 0.003336341, z: -0.03875209, w: 0.9831003}
+        normal: {x: -0.0073086005, y: -0.35198942, z: 0.93597543}
+        tangent: {x: 0.07738752, y: 0.93299425, z: 0.3514726}
+        time: 0.7218899
+      - point: {x: 0.7213641, y: 7.426305, z: 2.6801891}
+        rot: {x: 0.16195671, y: 0.0033071819, z: -0.034467522, w: 0.9861902}
+        normal: {x: -0.0046406873, y: -0.31966832, z: 0.94751817}
+        tangent: {x: 0.06905496, y: 0.945164, z: 0.31921232}
+        time: 0.82501704
+      - point: {x: 0.74456507, y: 8.366999, z: 3.0186517}
+        rot: {x: 0.19058788, y: 0.0027048974, z: -0.03664123, w: 0.98098236}
+        normal: {x: -0.0086510945, y: -0.37412524, z: 0.9273379}
+        tangent: {x: 0.07292194, y: 0.92466736, z: 0.37372813}
+        time: 0.92814416
+      - point: {x: 0.8298171, y: 8.997553, z: 3.3025918}
+        rot: {x: 0.2092346, y: 0.007246496, z: -0.061132256, w: 0.9759259}
+        normal: {x: -0.011438885, y: -0.4092809, z: 0.91233677}
+        tangent: {x: 0.1223532, y: 0.9049675, z: 0.40750903}
+        time: 1
+      tension: 0.5
+    seed: 3983
+    animSeed: 0.2607248
+    visible: 1
+    triStart: 392
+    triEnd: 464
+    vertStart: 383
+    vertEnd: 433
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.6464513
+    offset: 0.45454547
+    baseAngle: 284.01077
+    angle: 284.01077
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.20309655
+      e01: 0.66738445
+      e02: 0.7164844
+      e03: -1.3706042
+      e10: -0.96950036
+      e11: -0.23958564
+      e12: -0.05165003
+      e13: 0.13058254
+      e20: 0.13718893
+      e21: -0.7051219
+      e22: 0.6956884
+      e23: -1.3241398
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 129
+    groupID: 133
+    _uniqueID: 140
+  - spline:
+      nodes:
+      - point: {x: 0, y: 0, z: 0}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.10590086, y: 0.9885881, z: -0.10713832}
+        rot: {x: -0.023413645, y: -0.0015488986, z: -0.06608944, w: 0.9975378}
+        normal: {x: -0, y: 0.04691774, z: 0.9988988}
+        tangent: {x: 0.13192642, y: 0.990168, z: -0.04650766}
+        time: 0.1802373
+      - point: {x: 0.26327816, y: 1.9760227, z: -0.09281273}
+        rot: {x: 0.034687735, y: -0.0059200954, z: -0.050964903, w: 0.9980803}
+        normal: {x: -0.015353831, y: -0.06863861, z: 0.9975234}
+        tangent: {x: 0.10132398, y: 0.9923987, z: 0.06984556}
+        time: 0.3604746
+      - point: {x: 0.30791563, y: 2.9671838, z: 0.0321163}
+        rot: {x: 0.033584647, y: -0.006690522, z: -0.026699655, w: 0.9990568}
+        normal: {x: -0.015160912, y: -0.066749245, z: 0.9976546}
+        tangent: {x: 0.0529002, y: 0.9963184, z: 0.06746374}
+        time: 0.5407119
+      - point: {x: 0.36889884, y: 3.9652748, z: 0.041885577}
+        rot: {x: 0.020181883, y: -0.0060050664, z: -0.042824943, w: 0.9988608}
+        normal: {x: -0.013725969, y: -0.039803497, z: 0.99911326}
+        tangent: {x: 0.08530999, y: 0.99551743, z: 0.040832248}
+        time: 0.7209492
+      - point: {x: 0.4784022, y: 4.956662, z: 0.11371694}
+        rot: {x: 0.053812243, y: -0.007828696, z: -0.035517007, w: 0.9978885}
+        normal: {x: -0.019447213, y: -0.10684102, z: 0.9940859}
+        tangent: {x: 0.070041485, y: 0.99168557, z: 0.10795326}
+        time: 0.9011865
+      - point: {x: 0.49505728, y: 5.4989524, z: 0.19253547}
+        rot: {x: 0.071924485, y: -0.009881665, z: -0.015943617, w: 0.9972337}
+        normal: {x: -0.022002669, y: -0.14313592, z: 0.98945844}
+        tangent: {x: 0.030379124, y: 0.98914534, z: 0.14376616}
+        time: 1
+      tension: 0.5
+    seed: 3987
+    animSeed: 0.6697228
+    visible: 1
+    triStart: 464
+    triEnd: 496
+    vertStart: 433
+    vertEnd: 458
+    capRange: 0
+    breakOffset: 1
+    size: 0
+    scale: 0.36988273
+    offset: 0.64646465
+    baseAngle: 35.345253
+    angle: 35.345253
+    pitch: -0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: 0.7246546
+      e01: 0.20029601
+      e02: 0.65936124
+      e03: -1.3124521
+      e10: 0.5393921
+      e11: -0.7603512
+      e12: -0.36183158
+      e13: 0.3310351
+      e20: 0.4288727
+      e21: 0.6178572
+      e22: -0.65902996
+      e23: 1.3113397
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 130
+    groupID: 133
+    _uniqueID: 141
+  - spline:
+      nodes:
+      - point: {x: -0.0000010322801, y: -0.00001217976, z: -0.000008435064}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: 0.04924255, y: 1.173321, z: -0.8707132}
+        rot: {x: -0.3137681, y: -0.0052857995, z: -0.015993074, w: 0.94935024}
+        normal: {x: -0, y: 0.59592074, z: 0.8030433}
+        tangent: {x: 0.033683773, y: 0.8025876, z: -0.5955826}
+        time: 1
+      tension: 0.5
+    seed: 3961
+    animSeed: 0.011236007
+    visible: 1
+    triStart: 104
+    triEnd: 104
+    vertStart: 173
+    vertEnd: 189
+    capRange: 0
+    breakOffset: 1
+    size: 0.075
+    scale: 1
+    offset: 0
+    baseAngle: 149.19147
+    angle: 149.19147
+    pitch: -47.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.8588836
+      e01: 0.3476619
+      e02: 0.37609854
+      e03: 0.034766193
+      e10: 0
+      e11: 0.7343225
+      e12: -0.67880076
+      e13: -0.12656775
+      e20: -0.5121708
+      e21: -0.58301085
+      e22: -0.63069755
+      e23: -0.058301087
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 142
+    _uniqueID: 143
+  - spline:
+      nodes:
+      - point: {x: -0.000010468347, y: 0.000030624327, z: -0.000010124607}
+        rot: {x: 0, y: 0, z: 0, w: 1}
+        normal: {x: 0, y: 0, z: 1}
+        tangent: {x: 0, y: 1, z: 0}
+        time: 0
+      - point: {x: -0.16381508, y: 0.6383227, z: -0.97638786}
+        rot: {x: -0.47466627, y: 0.03316428, z: 0.061303243, w: 0.8774018}
+        normal: {x: -0, y: 0.83701235, z: 0.5471841}
+        tangent: {x: -0.13905925, y: 0.5418677, z: -0.8288799}
+        time: 1
+      tension: 0.5
+    seed: 3964
+    animSeed: 0.3179845
+    visible: 1
+    triStart: 112
+    triEnd: 112
+    vertStart: 189
+    vertEnd: 205
+    capRange: 0
+    breakOffset: 1
+    size: 0.075
+    scale: 1
+    offset: 0
+    baseAngle: 140.44032
+    angle: 140.44032
+    pitch: -47.25
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    matrix:
+      e00: -0.7709615
+      e01: 0.4323156
+      e02: 0.46767634
+      e03: 0.043231558
+      e10: 0
+      e11: 0.7343225
+      e12: -0.6788006
+      e13: -0.12656775
+      e20: -0.6368814
+      e21: -0.52332944
+      e22: -0.5661344
+      e23: -0.052332945
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    parentID: 105
+    groupID: 142
+    _uniqueID: 144
+  mesh: {fileID: 4300000}
+  optimizedSolidMaterial: {fileID: 2100000}
+  optimizedCutoutMaterial: {fileID: 2100002}
+  isInPreviewMode: 0

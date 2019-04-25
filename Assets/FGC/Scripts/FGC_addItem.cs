@@ -38,7 +38,7 @@ public class FGC_addItem : MonoBehaviour {
 	}
 
 
-	 
+
 	private void AddNewItem(GameObject item)
 	{
 		// find SkinnedMeschRendered on this gameObject

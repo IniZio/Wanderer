@@ -1086,7 +1086,7 @@ CharacterController:
   m_Height: 1.85
   m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 1
+  m_StepOffset: 0.3
   m_SkinWidth: 0.005
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.89, z: 0}
@@ -1129,8 +1129,8 @@ MonoBehaviour:
   - {fileID: 114669587917344962}
   - {fileID: 114233662606431840}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 5
-  instantiationId: 5
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114493863585724138
@@ -1227,6 +1227,7 @@ MonoBehaviour:
   isReady: 0
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
+  footstep: {fileID: 0}
 --- !u!114 &114669587917344962
 MonoBehaviour:
   m_ObjectHideFlags: 0

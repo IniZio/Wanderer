@@ -188,7 +188,7 @@ namespace Fyp.Game.PlayerControl {
 			myAnimator.SetBool ("Jumping", false);
 		}
 
-		void ReadyToPlay() {
+		public void ReadyToPlay() {
 			isReady = !isReady;
 		}
 

@@ -31,7 +31,7 @@ namespace Fyp.Game.UI {
 				if (script1.getStandingWaitingRmDoor() && script2.getStandingWaitingRmDoor()) {
 					script1.exitWaitingRmDoor();
 					script2.exitWaitingRmDoor();
-					NetworkChangeScene.AllPlayerChangeScene("Base");
+					NetworkChangeScene.AllPlayerChangeScene("BaseNew");
 				}
 			}
 			if (Player1 == null) {

@@ -1,0 +1,228 @@
+fileFormatVersion: 2
+guid: ad16aa9292ef7164e97948588592a6c1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BL
+    100002: BR
+    100004: //RootNode
+    100006: doorLeft
+    100008: doorRight
+    100010: FL
+    100012: FR
+    100014: handleBar
+    100016: mailCar
+    400000: BL
+    400002: BR
+    400004: //RootNode
+    400006: doorLeft
+    400008: doorRight
+    400010: FL
+    400012: FR
+    400014: handleBar
+    400016: mailCar
+    2300000: BL
+    2300002: BR
+    2300004: doorLeft
+    2300006: doorRight
+    2300008: FL
+    2300010: FR
+    2300012: handleBar
+    2300014: mailCar
+    3300000: BL
+    3300002: BR
+    3300004: doorLeft
+    3300006: doorRight
+    3300008: FL
+    3300010: FR
+    3300012: handleBar
+    3300014: mailCar
+    4300000: doorLeft
+    4300002: handleBar
+    4300004: doorRight
+    4300006: FR
+    4300008: BR
+    4300010: BL
+    4300012: FL
+    4300014: mailCar
+    7400000: carOpenDoor
+    7400002: closedDoors
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: carOpenDoor
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BL
+        weight: 1
+      - path: BR
+        weight: 1
+      - path: doorLeft
+        weight: 1
+      - path: doorRight
+        weight: 1
+      - path: FL
+        weight: 1
+      - path: FR
+        weight: 1
+      - path: handleBar
+        weight: 1
+      - path: mailCar
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: closedDoors
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BL
+        weight: 1
+      - path: BR
+        weight: 1
+      - path: doorLeft
+        weight: 1
+      - path: doorRight
+        weight: 1
+      - path: FL
+        weight: 1
+      - path: FR
+        weight: 1
+      - path: handleBar
+        weight: 1
+      - path: mailCar
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.028
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
