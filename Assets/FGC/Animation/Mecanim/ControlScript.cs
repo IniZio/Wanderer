@@ -243,6 +243,17 @@ namespace Fyp.Game.PlayerControl {
 		public bool getIsMe() {
 			return this.isMe;
 		}
+		
+		public void Chopping(){
+			 RaycastHit hit;
+           	 Vector3 fwd = transform.TransformDirection(Vector3.forward);
+             float melee_range = 1;
+
+             if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+             Debug.ClearDeveloperConsole();
+         	 Debug.Log("Melee hit something! " + hit.collider.name);
+
+		}
 	/*	void OnGUI(){
 			GUI.Label (new Rect(0, 0, 200, 25), "Forward: W");
 			GUI.Label(new Rect(0, 25, 200, 25), "Backward: S");
