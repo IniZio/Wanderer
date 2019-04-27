@@ -122,6 +122,17 @@ namespace Fyp.Game.PlayerControl {
 					}
 				}
 
+                // Shoot once
+                if (Input.GetKey("t")) {
+                    RaycastHit hit;
+                    Vector3 fwd = transform.TransformDirection(Vector3.forward);
+                    float melee_range = 1;
+
+                    if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+                        Debug.ClearDeveloperConsole();
+                        Debug.Log("Melee hit something! " + hit.collider.name);
+                }
+
 				//Combining methods.
 				//You can combine all of these methods (and much more advanced logic) in many ways!  Let's go over an example.  We want our character to kneel down
 				//Stay in a kneeling loop idle, then stand up when we tell them to.  For this we'll need to combine a triggered 'transition' animation with looping
