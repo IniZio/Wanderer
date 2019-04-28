@@ -7647,7 +7647,6 @@ GameObject:
   - component: {fileID: 7003694918688462217}
   - component: {fileID: 7003694918688462216}
   - component: {fileID: 7003694918688462219}
-  - component: {fileID: 697000877935576441}
   m_Layer: 0
   m_Name: LoPoly Rigged Hand Right
   m_TagString: Untagged
@@ -7888,38 +7887,6 @@ MonoBehaviour:
   TargetObject: {fileID: 0}
   OnAngle: 15
   OffAngle: 25
-  ShowGizmos: 1
---- !u!114 &697000877935576441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7003694918688462229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  Period: 0.1
-  HandModel: {fileID: 7003694918688462222}
-  Thumb: 2
-  Index: 0
-  Middle: 1
-  Ring: 1
-  Pinky: 1
-  MinimumExtendedCount: 1
-  MaximumExtendedCount: 2
   ShowGizmos: 1
 --- !u!1 &7003694918694160470
 GameObject:

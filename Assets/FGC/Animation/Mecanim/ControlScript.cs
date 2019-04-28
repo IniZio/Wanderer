@@ -1,4 +1,5 @@
 using UnityEngine;
+using Leap.Unity.Interaction;
 //using System.Collections;
 
 namespace Fyp.Game.PlayerControl {
@@ -245,13 +246,15 @@ namespace Fyp.Game.PlayerControl {
 		}
 		
 		public void Chopping(){
+			 print("Start chopping");
 			 RaycastHit hit;
            	 Vector3 fwd = transform.TransformDirection(Vector3.forward);
              float melee_range = 1;
 
-             if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+             if (Physics.Raycast(transform.position, fwd, out hit, melee_range)){
              Debug.ClearDeveloperConsole();
          	 Debug.Log("Melee hit something! " + hit.collider.name);
+			 }
 
 		}
 	/*	void OnGUI(){
