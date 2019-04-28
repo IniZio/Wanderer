@@ -17,6 +17,9 @@ TagManager:
   - MenuManager
   - WaitingRmDoor
   - PlayerButFake
+  - RightHand
+  - Hud
+  - HealthBlock
   layers:
   - Default
   - TransparentFX
