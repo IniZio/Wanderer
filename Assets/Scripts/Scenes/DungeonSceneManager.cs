@@ -14,6 +14,8 @@ namespace Fyp.Game.UI {
         public GameObject FollowCamera;
         public GameObject MainDoor;
 
+        private NPCManager npcManager;
+
         public bool[] ButtonArray = {false, false};
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
@@ -24,6 +26,19 @@ namespace Fyp.Game.UI {
                 ButtonArray = (bool[]) stream.ReceiveNext();
 			}
 		}
+
+        private void Start()
+        {
+            if (PhotonNetwork.isMasterClient)
+            {
+                npcManager = new NPCManager();
+
+                foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("EnemySpawnPoint"))
+                {
+                    npcManager.Spawn("Orc_Gnur", spawn);
+                }
+            }
+        }
 
         void Awake() {
             this.MapPlayer1();

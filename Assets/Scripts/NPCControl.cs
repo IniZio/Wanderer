@@ -13,11 +13,25 @@ public class NPCControl : Photon.PunBehaviour
     public float swingInterval = 2;
     public float swingTimer = 0;
     public bool isSwinging = false;
+    public bool isMoaning = false;
     public float wanderTimer = 0;
+    public int health = 30;
 
     private GameObject target;
     private NavMeshAgent agent;
     Animator animator;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(health);
+        }
+        else
+        {
+            health = (int)stream.ReceiveNext();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -52,14 +66,17 @@ public class NPCControl : Photon.PunBehaviour
             }
         }
 
-        if (Vector3.Distance(transform.position, target.transform.position) - 0.2 < attackRange)
+        if (state != "harmed")
         {
-            animator.SetBool("Run", false);
-            state = "attacking";
-        }
-        else
-        {
-            state = "chasing";
+            if (Vector3.Distance(transform.position, target.transform.position) - 0.2 < attackRange)
+            {
+                animator.SetBool("Run", false);
+                state = "attacking";
+            }
+            else
+            {
+                state = "chasing";
+            }
         }
 
         switch (state)
@@ -106,6 +123,21 @@ public class NPCControl : Photon.PunBehaviour
                 animator.SetBool("Run", true);
                 agent.isStopped = false;
                 break;
+            case "harmed":
+                if (!animator.GetBool("Get_Hit") && isMoaning)
+                {
+                    isMoaning = false;
+                    if (health <= 0)
+                    {
+                        animator.SetBool("Dead", true);
+                        return;
+                    }
+                } else
+                {
+                    isMoaning = true;
+                    animator.SetBool("Get_Hit", true);
+                }
+                break;
             default:
                 agent.speed = normalSpeed;
                 wanderTimer += Time.deltaTime;
@@ -128,6 +160,17 @@ public class NPCControl : Photon.PunBehaviour
     {
         this.target = target;
         state = "attacking";
+    }
+
+    public bool Dead()
+    {
+        return animator.GetBool("Dead");
+    }
+
+    public void Harmed(int damage = 10)
+    {
+        state = "harmed";
+        health -= damage;
     }
 
     public Vector3 RandomNavmeshLocation(float radius)

@@ -20,6 +20,7 @@ TagManager:
   - RightHand
   - Hud
   - HealthBlock
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX
