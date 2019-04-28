@@ -7,6 +7,8 @@ namespace Fyp.Game.ResourcesGenerator {
         void Start() {
             this.hp = 3;
             this.maxHp = 3;
+            this.isGen  = true;
+            this.collected = false;
         }
 
         // Update is called once per frame
