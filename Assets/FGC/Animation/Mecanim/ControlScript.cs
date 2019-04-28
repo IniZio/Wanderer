@@ -5,12 +5,15 @@ namespace Fyp.Game.PlayerControl {
 	public class ControlScript : Photon.PunBehaviour, IPunObservable {
 
 		PlayerStatus playerStatus;
+        Hud hud;
 		public bool isMaster;
 		public bool isReady = false;
 		public bool isStandingWaitingRmDoor = false;
 		public bool isStandingBaseGate = false;
 		bool isMe = false;
 		public AudioSource footstep;
+
+        public int health;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
@@ -22,13 +25,15 @@ namespace Fyp.Game.PlayerControl {
 				stream.SendNext(isReady);
 				stream.SendNext(isStandingWaitingRmDoor);
 				stream.SendNext(isStandingBaseGate);
+                stream.SendNext(health);
 			}
 			else {
 				isMaster = (bool) stream.ReceiveNext();
 				isReady = (bool) stream.ReceiveNext();
 				isStandingWaitingRmDoor = (bool) stream.ReceiveNext();
 				isStandingBaseGate = (bool) stream.ReceiveNext();
-			}
+                this.health = (int)stream.ReceiveNext();
+            }
 		}
 
 		// The start method is called when the script is initalized, before other stuff in the scripts start happening.
@@ -36,6 +41,7 @@ namespace Fyp.Game.PlayerControl {
 			//We have a reference called myAnimator but we need to fill that reference with an Animator component.
 			//We can do that by 'getting' the animator that is on the same game object this script is appleid to.
 			myAnimator = GetComponent<Animator>();
+            hud = GameObject.FindGameObjectWithTag("Hud").GetComponent<Hud>();
 			DontDestroyOnLoad(this);
 		}
 
@@ -44,6 +50,9 @@ namespace Fyp.Game.PlayerControl {
 		 [PunRPC]
 		void Update () {
 			if (photonView.isMine) {
+                // Update HUD
+                hud.SetHealth(health);
+
 				//Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
 				myAnimator.SetFloat ("VSpeed", Input.GetAxis ("Vertical"));
 				myAnimator.SetFloat ("HSpeed", Input.GetAxis ("Horizontal"));
