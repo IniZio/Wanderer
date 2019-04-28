@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Fyp.Game.ResourcesGenerator {
-    public abstract class Resources : MonoBehaviour {
-        public int hp;
-        public int maxHp;
-        public bool isGen = false;
-        public bool collected = true;
+    public class Resources : Resources {
+        int hp;
+        int maxHp;
+        bool isGen = false;
+        bool collected = false;
 
-        public void attacked(int i) {
-            this.hp -= i;
+        void Start() {
+            this.hp = 3;
+            this.maxHp = 3;
+            this.isGen  = true;
+            this.collected = false;
+        }
+
+        void attacked(int damage) {
+            this.hp -= damage;
+            if (this.hp < 0 ) {
+                this.hp = 0;
+            }
+            if (this.hp == 0) {
+            }
         }
     }
 }
