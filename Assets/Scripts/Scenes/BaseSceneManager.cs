@@ -4,6 +4,7 @@ using UnityEngine;
 using Fyp.Game.PlayerControl;
 using Fyp.Game.Carmera;
 using Fyp.Game.Network;
+using Fyp.Game.ResourcesGenerator;
 
 namespace Fyp.Game.UI {
     public class BaseSceneManager : MonoBehaviour {
@@ -11,13 +12,23 @@ namespace Fyp.Game.UI {
         public GameObject Player1, Player2;
         public ControlScript P1Script, P2Script;
         public GameObject FollowCamera;
+        public ResourcesGenerator.ResourcesGenerator resGen;
 
         void Awake() {
             this.MapPlayer1();
             this.MapPlayer2();
         }
 
+        void Start() {
+            if (!resGen.generated) {
+                resGen.randomGen();
+            }
+        }
+
         void Update() {
+            if (!this.resGen) {
+                this.MapResGen();
+            }
             if (!this.Player1 || !this.P1Script) {
                 this.MapPlayer1();
             }
@@ -27,7 +38,7 @@ namespace Fyp.Game.UI {
             if (this.P1Script.getStandingBaseGate() && this.P2Script.getStandingBaseGate()) {
                 this.P1Script.exitBaseGate();
                 this.P2Script.exitBaseGate();
-                NetworkChangeScene.AllPlayerChangeScene("Dungeon");
+                NetworkChangeScene.AllPlayerChangeScene("BaseNew");
             }
         }
 
@@ -55,6 +66,19 @@ namespace Fyp.Game.UI {
                     cameraScirpt.setCamera(this.Player2);
                 }
                 this.P2Script = script;
+            }
+        }
+
+        void MapResGen() {
+            GameObject obj = GameObject.FindWithTag("ResourceGen");
+            if (obj != null) {
+                ResourcesGenerator.ResourcesGenerator rg = obj.GetComponent("ResourcesGenerator") as ResourcesGenerator.ResourcesGenerator;
+                if (rg != null) {
+                    this.resGen = rg;
+                }
+                else {
+                    Debug.LogError("cannot get resGen");
+                }
             }
         }
     }

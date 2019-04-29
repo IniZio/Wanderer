@@ -40,9 +40,9 @@ namespace Fyp.Game.PlayerControl {
 		void Start () {
 			//We have a reference called myAnimator but we need to fill that reference with an Animator component.
 			//We can do that by 'getting' the animator that is on the same game object this script is appleid to.
+			DontDestroyOnLoad(this);
 			myAnimator = GetComponent<Animator>();
             hud = GameObject.FindGameObjectWithTag("Hud").GetComponent<Hud>();
-			DontDestroyOnLoad(this);
 		}
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
@@ -51,7 +51,9 @@ namespace Fyp.Game.PlayerControl {
 		void Update () {
 			if (photonView.isMine) {
                 // Update HUD
-                hud.SetHealth(health);
+                if (!hud == null) {
+					hud.SetHealth(health);
+				}
 
 				//Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
 				myAnimator.SetFloat ("VSpeed", Input.GetAxis ("Vertical"));
