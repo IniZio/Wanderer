@@ -10,10 +10,24 @@ public class AnimalControl : Photon.PunBehaviour
     public int normalSpeed = 2;
     public int escapeSpeed = 4;
     public float wanderTimer = 0;
+    public bool isMoaning = false;
+    public int health = 20;
 
     private NavMeshAgent agent;
     private Vector3 thisPos;
     Animator animator;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(health);
+        }
+        else
+        {
+            health = (int)stream.ReceiveNext();
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -31,16 +45,19 @@ public class AnimalControl : Photon.PunBehaviour
 
         Collider[] collis = Physics.OverlapSphere(transform.position, minRange);
 
-        foreach (Collider colli in collis)
+        if (state != "harmed")
         {
-            if (colli && colli.tag.IndexOf("Player") >= 0)
+            foreach (Collider colli in collis)
             {
-                // transform.position += Vector3.Lerp(thisPos, -colli.transform.position, Time.deltaTime * Speed);
-                Vector3 runTo = transform.position + ((transform.position - colli.transform.position) * multiplier);
-                float distance = Vector3.Distance(transform.position, colli.transform.position);
-                if (distance < minRange) agent.SetDestination(runTo);
-                state = "escaping";
-                break;
+                if (colli && colli.tag.IndexOf("Player") >= 0)
+                {
+                    // transform.position += Vector3.Lerp(thisPos, -colli.transform.position, Time.deltaTime * Speed);
+                    Vector3 runTo = transform.position + ((transform.position - colli.transform.position) * multiplier);
+                    float distance = Vector3.Distance(transform.position, colli.transform.position);
+                    if (distance < minRange) agent.SetDestination(runTo);
+                    state = "escaping";
+                    break;
+                }
             }
         }
 
@@ -50,6 +67,24 @@ public class AnimalControl : Photon.PunBehaviour
                 animator.SetBool("Walk", false);
                 animator.SetBool("Run", true);
                 agent.speed = escapeSpeed;
+                break;
+            case "harmed":
+                if (!animator.GetBool("Get_Hit") && isMoaning)
+                {
+                    isMoaning = false;
+                    if (health <= 0)
+                    {
+                        health = 0;
+                        animator.SetBool("Dead", true);
+                        return;
+                    }
+                    state = "";
+                }
+                else
+                {
+                    isMoaning = true;
+                    animator.SetBool("Get_Hit", true);
+                }
                 break;
             default:
                 animator.SetBool("Walk", true);
@@ -63,6 +98,17 @@ public class AnimalControl : Photon.PunBehaviour
                 }
                 break;
         }
+    }
+
+    public bool Dead()
+    {
+        return animator.GetBool("Dead");
+    }
+
+    public void Harmed(int damage = 10)
+    {
+        state = "harmed";
+        health -= damage;
     }
 
     public Vector3 RandomNavmeshLocation(float radius)
