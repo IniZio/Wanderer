@@ -255,6 +255,19 @@ namespace Fyp.Game.PlayerControl {
 			GUI.Label (new Rect(0, 200, 200, 25), "Wave (Layer): 3");
 		}
 	*/
+		void OnTriggerEnter (Collider col) {
+			if (photonView.isMine) {
+				if (col.gameObject.CompareTag("Resources")) {
+					Debug.Log("------enter Resources");
+				}
+			}
+        }
+
+        void OnTriggerExit(Collider col) {
+            if (col.gameObject.CompareTag("Resources")) {
+				Debug.Log("------exit Resources");
+            }
+        }
 	}
 
 	/*

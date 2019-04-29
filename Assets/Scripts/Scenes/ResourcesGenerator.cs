@@ -33,24 +33,26 @@ namespace Fyp.Game.ResourcesGenerator {
             Random.InitState(System.DateTime.Now.Second);
             foreach (GameObject p in this.resourceList) {
                 int i = Random.Range(0, 3);
-                Resources res = p.GetComponent("Resources") as Resources;
                 if (i == 0) {
                     Debug.Log("-----------tree");
-                    GameObject re = PhotonNetwork.Instantiate("Tree", p.transform.position, p.transform.rotation, 0);
-                    res.setObj(re);
-                    re.transform.parent = p.transform;
+                    GameObject GO = PhotonNetwork.Instantiate("Tree", p.transform.position, p.transform.rotation, 0);
+                    Resources res = GO.GetComponent("Resources") as Resources;
+                    res.setObj(GO);
+                    GO.transform.parent = p.transform;
                 }
                 else if (i == 1) {
                     Debug.Log("-----------stone");
-                    // GameObject re = PhotonNetwork.Instantiate("Stone", p.transform.position, p.transform.rotation, 0);
-                    // res.setObj(re);
-                    // re.transform.parent = p.transform;
+                    // GameObject GO = PhotonNetwork.Instantiate("Stone", p.transform.position, p.transform.rotation, 0);
+                    // Resources res = GO.GetComponent("Resources") as Resources;
+                    // res.setObj(GO);
+                    // GO.transform.parent = p.transform;
                 }
                 else {
                     Debug.Log("-----------metal");
-                    // GameObject re = PhotonNetwork.Instantiate("Metal", p.transform.position, p.transform.rotation, 0);
-                    // res.setObj(re);
-                    // re.transform.parent = p.transform;
+                    // GameObject GO = PhotonNetwork.Instantiate("Metal", p.transform.position, p.transform.rotation, 0);
+                    // Resources res = GO.GetComponent("Resources") as Resources;
+                    // res.setObj(GO);
+                    // GO.transform.parent = p.transform;
                 }
             }
         }
