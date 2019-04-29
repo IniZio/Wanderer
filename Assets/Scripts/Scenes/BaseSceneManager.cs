@@ -20,14 +20,14 @@ namespace Fyp.Game.UI {
         }
 
         void Start() {
-            if (!resGen.generated) {
-                resGen.randomGen();
+            if (!this.resGen) {
+                this.MapResGen();
             }
         }
 
         void Update() {
-            if (!this.resGen) {
-                this.MapResGen();
+            if (!this.resGen.generated) {
+                    resGen.randomGen();
             }
             if (!this.Player1 || !this.P1Script) {
                 this.MapPlayer1();
