@@ -20,6 +20,7 @@ TagManager:
   - RightHand
   - Hud
   - HealthBlock
+  - ResourceGen
   - EnemySpawnPoint
   layers:
   - Default
