@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FGC_addItem : MonoBehaviour {
+public class FGC_add2Item : MonoBehaviour {
 
 	// gear, cloth etc. with SkinnedMeschRendered you want to add to this gameObject with bones
 	public GameObject addItem1=null;

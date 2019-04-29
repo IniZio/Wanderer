@@ -17,6 +17,12 @@ TagManager:
   - MenuManager
   - WaitingRmDoor
   - PlayerButFake
+  - RightHand
+  - Hud
+  - HealthBlock
+  - ResourceGen
+  - EnemySpawnPoint
+  - Resources
   layers:
   - Default
   - TransparentFX

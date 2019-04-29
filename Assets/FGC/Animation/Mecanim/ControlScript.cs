@@ -6,6 +6,7 @@ namespace Fyp.Game.PlayerControl {
 	public class ControlScript : Photon.PunBehaviour, IPunObservable {
 
 		PlayerStatus playerStatus;
+        Hud hud;
 		public bool isMaster;
 		public bool isReady = false;
 		public bool isStandingWaitingRmDoor = false;
@@ -13,9 +14,15 @@ namespace Fyp.Game.PlayerControl {
 		bool isMe = false;
 		public AudioSource footstep;
 
+        public int health;
+
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
 		private Animator myAnimator;
+
+		public float colSize = 0.9F;
+		public CapsuleCollider cc;
+		public GameObject colObj;
 
 		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
@@ -23,21 +30,24 @@ namespace Fyp.Game.PlayerControl {
 				stream.SendNext(isReady);
 				stream.SendNext(isStandingWaitingRmDoor);
 				stream.SendNext(isStandingBaseGate);
+                stream.SendNext(health);
 			}
 			else {
 				isMaster = (bool) stream.ReceiveNext();
 				isReady = (bool) stream.ReceiveNext();
 				isStandingWaitingRmDoor = (bool) stream.ReceiveNext();
 				isStandingBaseGate = (bool) stream.ReceiveNext();
-			}
+                this.health = (int)stream.ReceiveNext();
+            }
 		}
 
 		// The start method is called when the script is initalized, before other stuff in the scripts start happening.
 		void Start () {
 			//We have a reference called myAnimator but we need to fill that reference with an Animator component.
 			//We can do that by 'getting' the animator that is on the same game object this script is appleid to.
-			myAnimator = GetComponent<Animator>();
 			DontDestroyOnLoad(this);
+			myAnimator = GetComponent<Animator>();
+            hud = GameObject.FindGameObjectWithTag("Hud").GetComponent<Hud>();
 		}
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
@@ -45,6 +55,13 @@ namespace Fyp.Game.PlayerControl {
 		 [PunRPC]
 		void Update () {
 			if (photonView.isMine) {
+                // Update HUD
+                if (!hud == null) {
+					hud.SetHealth(health);
+				}
+
+				this.cc.radius = this.colSize;
+
 				//Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
 				myAnimator.SetFloat ("VSpeed", Input.GetAxis ("Vertical"));
 				myAnimator.SetFloat ("HSpeed", Input.GetAxis ("Horizontal"));
@@ -244,7 +261,7 @@ namespace Fyp.Game.PlayerControl {
 		public bool getIsMe() {
 			return this.isMe;
 		}
-		
+
 		public void Chopping(){
 			 print("Start chopping");
 			 RaycastHit hit;
@@ -256,6 +273,22 @@ namespace Fyp.Game.PlayerControl {
          	 Debug.Log("Melee hit something! " + hit.collider.name);
 			 }
 
+		}
+
+		void OnTriggerEnter (Collider col) {
+			if (photonView.isMine) {
+				if (col.gameObject.CompareTag("Resources")) {
+					Debug.Log("------enter Resources");
+					this.colObj = col.gameObject;
+				}
+			}
+		}
+
+		void OnTriggerExit(Collider col) {
+			if (col.gameObject.CompareTag("Resources")) {
+				Debug.Log("------exit Resources");
+				this.colObj = null;
+			}
 		}
 	/*	void OnGUI(){
 			GUI.Label (new Rect(0, 0, 200, 25), "Forward: W");

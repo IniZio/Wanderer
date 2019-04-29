@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!195 &7702767603390118629
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3321335964697411413}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &3321335964697442749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,8 +31,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100072, guid: bc81e073692f848918fb380bcef3da8d, type: 3}
       propertyPath: m_Name
-      value: Buffalo
+      value: Buffalo Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: bc81e073692f848918fb380bcef3da8d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3de69b703a4444c0c935cfa9d932d42b, type: 2}
     - target: {fileID: 400070, guid: bc81e073692f848918fb380bcef3da8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.369835
@@ -55,10 +81,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: bc81e073692f848918fb380bcef3da8d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3de69b703a4444c0c935cfa9d932d42b, type: 2}
     - target: {fileID: 13700000, guid: bc81e073692f848918fb380bcef3da8d, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
@@ -197,6 +219,12 @@ PrefabInstance:
       objectReference: {fileID: 3321335964697305865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc81e073692f848918fb380bcef3da8d, type: 3}
+--- !u!4 &3321335964697305865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400052, guid: bc81e073692f848918fb380bcef3da8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3321335964697442749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3321335964697305897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400020, guid: bc81e073692f848918fb380bcef3da8d,
@@ -287,15 +315,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3321335964697442749}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3321335964697305907 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400014, guid: bc81e073692f848918fb380bcef3da8d,
+--- !u!1 &3321335964697411413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100072, guid: bc81e073692f848918fb380bcef3da8d,
     type: 3}
   m_PrefabInstance: {fileID: 3321335964697442749}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3321335964697305865 stripped
+--- !u!4 &3321335964697305909 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400052, guid: bc81e073692f848918fb380bcef3da8d,
+  m_CorrespondingSourceObject: {fileID: 400008, guid: bc81e073692f848918fb380bcef3da8d,
     type: 3}
   m_PrefabInstance: {fileID: 3321335964697442749}
   m_PrefabAsset: {fileID: 0}
@@ -389,9 +417,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3321335964697442749}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3321335964697305909 stripped
+--- !u!4 &3321335964697305907 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400008, guid: bc81e073692f848918fb380bcef3da8d,
+  m_CorrespondingSourceObject: {fileID: 400014, guid: bc81e073692f848918fb380bcef3da8d,
     type: 3}
   m_PrefabInstance: {fileID: 3321335964697442749}
   m_PrefabAsset: {fileID: 0}
