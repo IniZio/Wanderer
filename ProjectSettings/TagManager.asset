@@ -21,6 +21,7 @@ TagManager:
   - Hud
   - HealthBlock
   - ResourceGen
+  - EnemySpawnPoint
   layers:
   - Default
   - TransparentFX
