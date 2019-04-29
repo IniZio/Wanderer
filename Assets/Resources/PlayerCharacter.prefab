@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 114079972652502292}
   - component: {fileID: 114487972738440570}
   - component: {fileID: 5932666808107101232}
+  - component: {fileID: 2699423701515180879}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player1Character
@@ -93,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addItem1: {fileID: 0}
   addItem2: {fileID: 0}
+  addItem3: {fileID: 0}
+  addItem4: {fileID: 0}
 --- !u!114 &114519302522973594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,8 +122,8 @@ MonoBehaviour:
   - {fileID: 114079972652502292}
   - {fileID: 5932666808107101232}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114325623515329602
@@ -218,6 +221,10 @@ MonoBehaviour:
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
   footstep: {fileID: 5932666808107101232}
+  health: 0
+  colSize: 0
+  cc: {fileID: 2699423701515180879}
+  colObj: {fileID: 0}
 --- !u!114 &114487972738440570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +359,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &2699423701515180879
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004752841692518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1019151672427708
 GameObject:
   m_ObjectHideFlags: 0

@@ -1228,6 +1228,7 @@ MonoBehaviour:
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
   footstep: {fileID: 0}
+  health: 0
 --- !u!114 &114669587917344962
 MonoBehaviour:
   m_ObjectHideFlags: 0
