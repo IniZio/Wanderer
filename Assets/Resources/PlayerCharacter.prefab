@@ -94,6 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addItem1: {fileID: 0}
   addItem2: {fileID: 0}
+  addItem3: {fileID: 0}
+  addItem4: {fileID: 0}
 --- !u!114 &114519302522973594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +122,8 @@ MonoBehaviour:
   - {fileID: 114079972652502292}
   - {fileID: 5932666808107101232}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114325623515329602
@@ -220,6 +222,8 @@ MonoBehaviour:
   isStandingBaseGate: 0
   footstep: {fileID: 5932666808107101232}
   health: 0
+  colSize: 0
+  cc: {fileID: 2699423701515180879}
 --- !u!114 &114487972738440570
 MonoBehaviour:
   m_ObjectHideFlags: 0

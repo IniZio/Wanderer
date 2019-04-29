@@ -1842,6 +1842,7 @@ GameObject:
   - component: {fileID: 5888998126502787370}
   - component: {fileID: 5888998126502787369}
   - component: {fileID: 8336623991313872472}
+  - component: {fileID: 5364214798622667910}
   m_Layer: 0
   m_Name: PlayerCharacter3
   m_TagString: Player2Character
@@ -1937,6 +1938,8 @@ MonoBehaviour:
   isStandingBaseGate: 0
   footstep: {fileID: 8336623991313872472}
   health: 0
+  colSize: 0
+  cc: {fileID: 5364214798622667910}
 --- !u!114 &5888998126502787371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,6 +2182,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &5364214798622667910
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888998126502787368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5888998126648629004
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,10 @@ namespace Fyp.Game.PlayerControl {
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
 		private Animator myAnimator;
 
+		public float colSize = 0.9F;
+		public CapsuleCollider cc;
+		public GameObject colObj;
+
 		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
 				stream.SendNext(isMaster);
@@ -54,6 +58,8 @@ namespace Fyp.Game.PlayerControl {
                 if (!hud == null) {
 					hud.SetHealth(health);
 				}
+
+				this.cc.radius = this.colSize;
 
 				//Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
 				myAnimator.SetFloat ("VSpeed", Input.GetAxis ("Vertical"));
@@ -247,6 +253,7 @@ namespace Fyp.Game.PlayerControl {
 			if (photonView.isMine) {
 				if (col.gameObject.CompareTag("Resources")) {
 					Debug.Log("------enter Resources");
+					this.colObj = col.gameObject;
 				}
 			}
 		}
@@ -254,12 +261,12 @@ namespace Fyp.Game.PlayerControl {
 		void OnTriggerExit(Collider col) {
 			if (col.gameObject.CompareTag("Resources")) {
 				Debug.Log("------exit Resources");
+				this.colObj = null;
 			}
 		}
 
-		//This method is called after jumping is started to stop the jumping!
-		void StopJumping(){
-			myAnimator.SetBool ("Jumping", false);
+		void OnChopping() {
+
 		}
 
 		//We've added some simple GUI labels for our controls to make it easier for you to test out.
