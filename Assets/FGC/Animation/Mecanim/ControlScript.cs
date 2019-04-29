@@ -4,15 +4,24 @@ using UnityEngine;
 namespace Fyp.Game.PlayerControl {
 	public class ControlScript : Photon.PunBehaviour, IPunObservable {
 
+        public string state = "";
+        public int[] loadouts = { 0, 3, 6 };
+        public int loadoutIndex = 0;
 		PlayerStatus playerStatus;
         Hud hud;
 		public bool isMaster;
 		public bool isReady = false;
 		public bool isStandingWaitingRmDoor = false;
 		public bool isStandingBaseGate = false;
-		bool isMe = false;
+        public bool isAttacking = false;
+        public bool isMoaning = false;
+        bool isMe = false;
 		public AudioSource footstep;
 
+        private GameObject target;
+        public float attackRange = 2;
+        private float attackTimer = 0;
+        public float attackInterval = 1;
         public int health;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
@@ -30,6 +39,8 @@ namespace Fyp.Game.PlayerControl {
 				stream.SendNext(isStandingWaitingRmDoor);
 				stream.SendNext(isStandingBaseGate);
                 stream.SendNext(health);
+                stream.SendNext(loadouts);
+                stream.SendNext(loadoutIndex);
 			}
 			else {
 				isMaster = (bool) stream.ReceiveNext();
@@ -37,6 +48,8 @@ namespace Fyp.Game.PlayerControl {
 				isStandingWaitingRmDoor = (bool) stream.ReceiveNext();
 				isStandingBaseGate = (bool) stream.ReceiveNext();
                 this.health = (int)stream.ReceiveNext();
+                loadouts = (int[])stream.ReceiveNext();
+                loadoutIndex = (int)stream.ReceiveNext();
             }
 		}
 
@@ -53,9 +66,96 @@ namespace Fyp.Game.PlayerControl {
 		//interacted with the game since the LAST frame (such as a button press or mouse click).
 		 [PunRPC]
 		void Update () {
+            switch (state)
+            {
+                case "attacking":
+                    Weapon weapon = Constants.Weapons[loadouts[loadoutIndex]];
+                    myAnimator.SetBool("Run", false);
+
+                    if (photonView.isMine)
+                    {
+
+                        //if (Constants.Weapons[loadouts[loadoutIndex]].type == "melee")
+                        //{
+                        if (attackTimer < attackInterval)
+                        {
+                            attackTimer += Time.deltaTime;
+                            target = null;
+                            return;
+                        }
+                        attackTimer = 0;
+                        //       }
+                        if (/*!animator.GetBool("Attack(1)") && */isAttacking)
+                        {
+                            isAttacking = false;
+                            if (weapon.type == "melee")
+                            {
+                                RaycastHit hit;
+                                Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
+                                if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
+                                {
+                                    if (hit.collider.GetComponent<NPCControl>() != null)
+                                    {
+                                        hit.collider.GetComponent<NPCControl>().Harmed(weapon.damage);
+                                    }
+
+                                    if (hit.collider.GetComponent<AnimalControl>() != null)
+                                    {
+                                        hit.collider.GetComponent<AnimalControl>().Harmed(weapon.damage);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (target != null)
+                                {
+                                    if (target.GetComponent<NPCControl>() != null)
+                                    {
+                                        target.GetComponent<NPCControl>().Harmed(weapon.damage);
+                                    }
+
+                                    if (target.GetComponent<AnimalControl>() != null)
+                                    {
+                                        target.GetComponent<AnimalControl>().Harmed(weapon.damage);
+                                    }
+                                    target = null;
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            isAttacking = true;
+                            //animator.SetBool("Attack(1)", true);
+                        }
+                    }
+                    break;
+                case "harmed":
+                    if (!myAnimator.GetBool("Get_Hit") && isMoaning)
+                    {
+                        isMoaning = false;
+                        if (health <= 0)
+                        {
+                            health = 0;
+                            myAnimator.SetBool("Dead", true);
+                            return;
+                        }
+                        state = "";
+                    }
+                    else
+                    {
+                        isMoaning = true;
+                        myAnimator.SetBool("Get_Hit", true);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
 			if (photonView.isMine) {
                 // Update HUD
-                if (!hud == null) {
+                if (hud != null) {
 					hud.SetHealth(health);
 				}
 
@@ -274,6 +374,19 @@ namespace Fyp.Game.PlayerControl {
 		void OnGUI(){
 
 		}
+
+        public void Harmed(int damage = 3)
+        {
+            state = "harmed";
+            health -= damage;
+        }
+
+        public void Attack(GameObject target = null)
+        {
+            this.target = target;
+            state = "attacking";
+        }
+
 	/*	void OnGUI(){
 			GUI.Label (new Rect(0, 0, 200, 25), "Forward: W");
 			GUI.Label(new Rect(0, 25, 200, 25), "Backward: S");

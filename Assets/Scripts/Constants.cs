@@ -4,25 +4,20 @@ using UnityEngine;
 
 public struct Weapon {
     public string name;
-
-    public Weapon(string name)
-    {
-        this.name = name;
-    }
-}
-
-class Weapons: List<Weapon>
-{
-    public void Add(string name)
-    {
-        Add(new Weapon(name));
-    }
+    public string type;
+    public int damage;
 }
 
 public static class Constants
 {
-    public static readonly Weapon[] weapons = new Weapon[]
+    public static readonly Weapon[] Weapons = new Weapon[]
     {
-        new Weapon() { name = "Handgun" }
+        new Weapon() { name = "Handgun1", type = "gun", damage = 3 },
+        new Weapon() { name = "Handgun2", type = "gun", damage = 5 },
+        new Weapon() { name = "Handgun2", type = "gun", damage = 10 },
+
+        new Weapon() { name = "Axe1", type = "melee", damage = 5 },
+        new Weapon() { name = "Axe2", type = "melee", damage = 10 },
+        new Weapon() { name = "Axe2", type = "melee", damage = 20 },
     };
 }

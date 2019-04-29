@@ -122,8 +122,8 @@ MonoBehaviour:
   - {fileID: 114079972652502292}
   - {fileID: 5932666808107101232}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114325623515329602
@@ -216,11 +216,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e025529ad97e584395a267094b7b2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 
+  loadouts: 000000000300000006000000
+  loadoutIndex: 0
   isMaster: 0
   isReady: 0
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
+  isAttacking: 0
   footstep: {fileID: 5932666808107101232}
+  attackRange: 2
+  attackTimer: 0
+  attackInterval: 1
   health: 0
   colSize: 0
   cc: {fileID: 2699423701515180879}

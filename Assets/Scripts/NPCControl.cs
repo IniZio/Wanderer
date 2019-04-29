@@ -127,9 +127,9 @@ public class NPCControl : Photon.PunBehaviour
                 if (!animator.GetBool("Get_Hit") && isMoaning)
                 {
                     isMoaning = false;
-                    health = 0;
                     if (health <= 0)
                     {
+                        health = 0;
                         animator.SetBool("Dead", true);
                         return;
                     }
