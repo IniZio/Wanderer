@@ -224,6 +224,7 @@ MonoBehaviour:
   health: 0
   colSize: 0
   cc: {fileID: 2699423701515180879}
+  colObj: {fileID: 0}
 --- !u!114 &114487972738440570
 MonoBehaviour:
   m_ObjectHideFlags: 0
