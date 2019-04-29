@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -16995,6 +16995,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmerySpawnPoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemySpawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17262,6 +17267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EmerySpawnPoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemySpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
@@ -30365,6 +30375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EmerySpawnPoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemySpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
@@ -115576,6 +115591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmerySpawnPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemySpawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -124095,6 +124115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EmerySpawnPoint (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445686881026560274, guid: 96d57dc265c58614ab378a8aaebb9920,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemySpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 1445686881026560278, guid: 96d57dc265c58614ab378a8aaebb9920,
         type: 3}
