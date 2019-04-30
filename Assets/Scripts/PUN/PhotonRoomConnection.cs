@@ -93,15 +93,16 @@ namespace Fyp.Game.Network {
             }
         }
 
-        // public override void OnConnectedToMaster() {
-        //     PhotonNetwork.JoinLobby(TypedLobby.Default);
-        //     Debug.Log("OnConnectedToMaster");
-        // }
+        public override void OnConnectedToMaster() {
+            PhotonNetwork.JoinLobby(TypedLobby.Default);
+            Debug.Log("OnConnectedToMaster");
+        }
 
         public void ConnectToServer() {
             Debug.Log("connect");
             if(PhotonNetwork.ConnectUsingSettings(GameConstant.GAME_VERSION)) {
                 Debug.Log("Connected to server");
+                // PhotonNetwork.JoinLobby(TypedLobby.Default);
                 // NetworkChangeScene.ChangeToScene((int) GameConstant.ScenceName.WaitingRoom);
                 UI.ChangeSence.MenuToWaitingRoom();
             } else {
@@ -141,6 +142,7 @@ namespace Fyp.Game.Network {
                 point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p1SpawnEffect));
+                player.layer = 9;
             }
             else {
                 Debug.Log("player2");
@@ -148,6 +150,7 @@ namespace Fyp.Game.Network {
                 point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p2SpawnEffect));
+                player.layer = 9;
             }
             setPlayerControl(player, PhotonNetwork.isMasterClient);
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;

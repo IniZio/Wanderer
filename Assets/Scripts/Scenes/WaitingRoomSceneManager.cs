@@ -9,9 +9,11 @@ namespace Fyp.Game.UI {
 	public class WaitingRoomSceneManager : UnityEngine.MonoBehaviour {
 		GameObject Player1, Player2;
 		Door door;
+		public PanelManager savePanel;
 
 		void Start () {
             this.door = GameObject.FindWithTag("WaitingRmDoor").GetComponent("Door") as Door;
+			savePanel.CloseCurrent();
         }
 
 		void Update() {

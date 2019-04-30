@@ -15,6 +15,7 @@ using System.Collections.Generic;
 
 		const string k_OpenTransitionName = "Open";
 		const string k_ClosedStateName = "Closed";
+		public bool hideAtStart = false;
 
 		public void OnEnable()
 		{
@@ -23,7 +24,9 @@ using System.Collections.Generic;
 			if (initiallyOpen == null)
 				return;
 
-			OpenPanel(initiallyOpen);
+			if (!this.hideAtStart) {
+				OpenPanel(initiallyOpen);
+			}
 		}
 
 		public void OpenPanel (Animator anim)
