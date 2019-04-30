@@ -13,10 +13,12 @@ namespace Fyp.Game.UI {
         ControlScript P1Script, P2Script;
         public GameObject FollowCamera;
         public GameObject MainDoor;
+        public Light[] Lights = new Light[9];
 
         private NPCManager npcManager;
 
-        public bool[] ButtonArray = {false, false};
+        public bool[] ButtonArray = {false, false, false, false, false, false, false, false, false};
+        public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
@@ -44,9 +46,60 @@ namespace Fyp.Game.UI {
             this.MapPlayer1();
             this.MapPlayer2();
             this.MainDoor.SetActive(false);
+            for(int i = 0; i < Lights.Length; i++){
+                Lights[i].GetComponent<Light>().enabled = false;
+                ButtonArray[i] = false;
+            }
         }
 
         void Update() {
+
+           if (Input.GetKeyDown(KeyCode.Alpha1)) {
+               Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
+               this.ButtonArray[0] = !this.ButtonArray[0];
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
+               this.ButtonArray[1] = !this.ButtonArray[1];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3)) {
+                Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
+               this.ButtonArray[2] = !this.ButtonArray[2];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4)) {
+                Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
+               this.ButtonArray[3] = !this.ButtonArray[3];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha5)) {
+                Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
+               this.ButtonArray[4] = !this.ButtonArray[4];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha6)) {
+                Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
+               this.ButtonArray[5] = !this.ButtonArray[5];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha7)) {
+                Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
+               this.ButtonArray[6] = !this.ButtonArray[6];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha8)) {
+                Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
+               this.ButtonArray[7] = !this.ButtonArray[7];  
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha9)) {
+                Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
+               this.ButtonArray[8] = !this.ButtonArray[8];  
+            }
+            if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
+                if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
+                //complete mission3 back to base
+                print("complete");
+
+                }
+
+            }
+
+
             if (!this.Player1) {
                 this.MapPlayer1();
             }
@@ -90,6 +143,7 @@ namespace Fyp.Game.UI {
         }
 
         public void ClickButton(int num) {
+            Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
     }
