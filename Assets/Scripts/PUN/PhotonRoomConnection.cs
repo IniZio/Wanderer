@@ -94,7 +94,8 @@ namespace Fyp.Game.Network {
             }
         }
         public void MenuJoinRoom() {
-            if (PhotonNetwork.GetRoomList().Length == 0) {
+            RoomInfo[] ri = PhotonNetwork.GetRoomList();
+            if (ri.Length == 0 || ri[0].PlayerCount == ri[0].MaxPlayers) {
                 return;
             }
             if(PhotonNetwork.JoinRoom(PhotonNetwork.GetRoomList()[0].Name)) {
@@ -157,6 +158,12 @@ namespace Fyp.Game.Network {
                 p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p1SpawnEffect));
                 player.layer = 9;
+                foreach (Transform child in player.transform) {
+                    if (child == null) {
+                        continue;
+                    }
+                    child.gameObject.layer =  9;
+                }
             }
             else {
                 Debug.Log("player2");
@@ -165,6 +172,12 @@ namespace Fyp.Game.Network {
                 p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p2SpawnEffect));
                 player.layer = 9;
+                foreach (Transform child in player.transform) {
+                    if (child == null) {
+                        continue;
+                    }
+                    child.gameObject.layer =  9;
+                }
             }
             setPlayerControl(player, PhotonNetwork.isMasterClient);
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;
