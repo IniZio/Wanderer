@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class NPCControl : Photon.PunBehaviour
 {
     public string state = "";
-    public float maxRange = 50;
+    public float maxRange = 5;
     public float attackRange = 2;
     public int chaseSpeed = 5;
     public int normalSpeed = 2;
@@ -60,6 +60,8 @@ public class NPCControl : Photon.PunBehaviour
             {
                 if (colli && colli.tag.IndexOf("Player") >= 0)
                 {
+                    // a bit more random in target choosing
+                    if (new System.Random().Next(2) == 0) { break;  }
                     target = colli.gameObject;
                     break;
                 }
