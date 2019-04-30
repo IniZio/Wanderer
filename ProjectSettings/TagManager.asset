@@ -23,6 +23,8 @@ TagManager:
   - ResourceGen
   - EnemySpawnPoint
   - Resources
+  - Enemy
+  - RoomListManager
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ namespace Fyp.Game.Network {
         GameObject mainCamera;
         GameObject p1SpawnPoint;
         GameObject p2SpawnPoint;
-        PanelManager menuManager;
+        PanelManager menuManager, roomListManager;
         GameObject p1SpawnEffect, p2SpawnEffect;
         Door door;
         ControlScript player1, player2;
@@ -29,6 +29,7 @@ namespace Fyp.Game.Network {
             this.p1SpawnPoint = GameObject.FindWithTag("Player1SpawnPoint");
             this.p2SpawnPoint = GameObject.FindWithTag("Player2SpawnPoint");
             this.menuManager = GameObject.FindWithTag("MenuManager").GetComponent("PanelManager") as PanelManager;
+            this.roomListManager = GameObject.FindWithTag("RoomListManager").GetComponent("PanelManager") as PanelManager;
             this.door = GameObject.FindWithTag("WaitingRmDoor").GetComponent("Door") as Door;
         }
 
@@ -86,6 +87,19 @@ namespace Fyp.Game.Network {
         public void JoinRoom(string roomName) {
             if(PhotonNetwork.JoinRoom(roomName)) {
                 Debug.Log("join room success");
+            }
+            else {
+                Debug.Log("join room fail");
+                menuManager.OpenPanel(menuManager.initiallyOpen);
+            }
+        }
+        public void MenuJoinRoom() {
+            if (PhotonNetwork.GetRoomList().Length == 0) {
+                return;
+            }
+            if(PhotonNetwork.JoinRoom(PhotonNetwork.GetRoomList()[0].Name)) {
+                Debug.Log("join room success");
+                roomListManager.CloseCurrent();
             }
             else {
                 Debug.Log("join room fail");

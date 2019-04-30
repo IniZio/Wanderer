@@ -3370,7 +3370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db9a18f558c93e4baf938df4cecd376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savePanel: {fileID: 0}
 --- !u!1001 &729181313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3949,7 +3948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3958,14 +3957,14 @@ PrefabInstance:
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2018419496}
+      objectReference: {fileID: 1211138125}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenPanel
+      value: MenuJoinRoom
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Animator, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -4022,7 +4021,7 @@ PrefabInstance:
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 523478766}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_Text
       value: Gameplay
@@ -5946,7 +5945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db9a18f558c93e4baf938df4cecd376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savePanel: {fileID: 0}
 --- !u!1001 &1423648738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6502,7 +6500,7 @@ GameObject:
   - component: {fileID: 1593744513}
   m_Layer: 5
   m_Name: SaveManager
-  m_TagString: MenuManager
+  m_TagString: RoomListManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
