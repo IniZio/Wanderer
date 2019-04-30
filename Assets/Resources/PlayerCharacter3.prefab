@@ -1935,6 +1935,7 @@ MonoBehaviour:
   state: 
   loadouts: 000000000300000006000000
   loadoutIndex: 0
+  hud: {fileID: 0}
   isMaster: 0
   isReady: 0
   isStandingWaitingRmDoor: 0
@@ -1944,7 +1945,7 @@ MonoBehaviour:
   footstep: {fileID: 8336623991313872472}
   attackRange: 2
   attackInterval: 1
-  health: 0
+  health: 60
   colSize: 0.9
   cc: {fileID: 5364214798622667910}
   colObj: {fileID: 0}

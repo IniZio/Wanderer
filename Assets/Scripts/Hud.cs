@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hud : MonoBehaviour
 {
-    public GameObject HealthBar;
+    public GameObject[] HealthBlocks;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,12 @@ public class Hud : MonoBehaviour
     public void SetHealth(int health)
     {
         int i = 0;
-        foreach (GameObject block in GameObject.FindGameObjectsWithTag("HealthBlock"))
+        Debug.Log("Health?" + health);
+        foreach (GameObject block in HealthBlocks)
         {
             block.SetActive(health >= (i * 10));
             i++;
         }
+        i = 0;
     }
 }

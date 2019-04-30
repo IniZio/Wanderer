@@ -8,7 +8,7 @@ namespace Fyp.Game.PlayerControl {
         public int[] loadouts = { 0, 3, 6 };
         public int loadoutIndex = 0;
 		PlayerStatus playerStatus;
-        Hud hud;
+        public Hud hud;
 		public bool isMaster;
 		public bool isReady = false;
 		public bool isStandingWaitingRmDoor = false;
@@ -22,7 +22,7 @@ namespace Fyp.Game.PlayerControl {
         public float attackRange = 2;
         private float attackTimer = 0;
         public float attackInterval = 1;
-        public int health;
+        public int health = 60;
 
 		//First, we will create a reference called myAnimator so we can talk to the Animator component on the game object.
 		//The Animator is what listens to our instructions and tells the mesh which animation to use.
@@ -59,13 +59,13 @@ namespace Fyp.Game.PlayerControl {
 			//We can do that by 'getting' the animator that is on the same game object this script is appleid to.
 			DontDestroyOnLoad(this);
 			myAnimator = GetComponent<Animator>();
-            hud = GameObject.FindGameObjectWithTag("Hud").GetComponent<Hud>();
 		}
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
 		//interacted with the game since the LAST frame (such as a button press or mouse click).
 		 [PunRPC]
 		void Update () {
+            Debug.Log("ControlScript update");
             switch (state)
             {
                 case "attacking":
@@ -81,7 +81,7 @@ namespace Fyp.Game.PlayerControl {
                         {
                             attackTimer += Time.deltaTime;
                             target = null;
-                            return;
+                            break;
                         }
                         attackTimer = 0;
                         //       }
@@ -153,8 +153,13 @@ namespace Fyp.Game.PlayerControl {
                     break;
             }
 
-			if (photonView.isMine) {
+            Debug.Log("ControlScript update isMINE");
+            if (photonView.isMine) {
                 // Update HUD
+                try
+                {
+                    hud = GameObject.FindGameObjectWithTag("Hud").GetComponent<Hud>();
+                } catch { }
                 if (hud != null) {
 					hud.SetHealth(health);
 				}
