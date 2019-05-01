@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fyp.Game.PlayerControl;
 using Fyp.Game.Carmera;
-
+using Leap.Unity.Interaction;
 
 namespace Fyp.Game.UI {
 
@@ -13,10 +13,13 @@ namespace Fyp.Game.UI {
         ControlScript P1Script, P2Script;
         public GameObject FollowCamera;
         public GameObject MainDoor;
+        public GameObject Mission1Floor;
         public Light[] Lights = new Light[9];
+        
 
         public bool[] ButtonArray = {false, false, false, false, false, false, false, false, false};
         public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
+        public bool[] Mission1Array = {false, false};
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
@@ -34,7 +37,7 @@ namespace Fyp.Game.UI {
         void Awake() {
             this.MapPlayer1();
             this.MapPlayer2();
-            this.MainDoor.SetActive(false);
+            this.MainDoor.SetActive(true);
             for(int i = 0; i < Lights.Length; i++){
                 Lights[i].GetComponent<Light>().enabled = false;
                 ButtonArray[i] = false;
@@ -82,11 +85,30 @@ namespace Fyp.Game.UI {
             if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
                 if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
                 //complete mission3 back to base
-                print("complete");
+                print("complete Mission3");
 
                 }
 
             }
+
+            if(Input.GetKeyDown(KeyCode.A)){
+                this.Mission1Array[0] = true;
+            }
+            if(Input.GetKeyDown(KeyCode.S)){
+                this.Mission1Array[1] = true;
+            }
+            if(Input.GetKeyUp(KeyCode.A)){
+                this.Mission1Array[0] = false;
+            }
+            if(Input.GetKeyUp(KeyCode.S)){
+                this.Mission1Array[1] = false;
+            }
+            if(Mission1Array[0] == true && Mission1Array[1] == true){
+                Mission1Floor.GetComponent<MeshCollider>().enabled = true;
+                this.MainDoor.SetActive(false);
+                print("complete Mission1");
+            }
+            
 
 
             if (!this.Player1) {
@@ -134,6 +156,13 @@ namespace Fyp.Game.UI {
         public void ClickButton(int num) {
             Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
+        }
+        
+        public void OnpressButton(int num){
+            this.Mission1Array[num] = true;
+        }
+        public void UnpressButton(int num){
+            this.Mission1Array[num] = false;
         }
     }
 }
