@@ -3,21 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+struct Mission2
+{
+    public int nextWave;
+}
+
 public class DungeonMission : Photon.PunBehaviour
 {
     public Constants.Mission nextMission = Constants.Mission.Stage1_1F;
 
     private NPCManager npcManager;
+    private Mission2 mission2;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
             stream.SendNext(nextMission);
+            stream.SendNext(mission2);
         }
         else
         {
             nextMission = (Constants.Mission)stream.ReceiveNext();
+            mission2 = (Mission2)stream.ReceiveNext();
         }
     }
 
@@ -35,9 +43,22 @@ public class DungeonMission : Photon.PunBehaviour
             switch (nextMission)
             {
                 case Constants.Mission.Stage2_1F:
-                    if (npcManager.AllDead())
+                    bool waveDone = npcManager.AllDead();
+
+                    if (waveDone && mission2.nextWave == 2)
                     {
                         FinishMission();
+                        break;
+                    }
+
+                    if (waveDone)
+                    {
+                        mission2.nextWave++;
+                        GameObject[] enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
+
+                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[2]);
+                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[3]);
+                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[4]);
                     }
                     break;
             }
@@ -53,10 +74,9 @@ public class DungeonMission : Photon.PunBehaviour
                 case Constants.Mission.Stage2_1F:
                     npcManager = new NPCManager();
 
-                    foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("EnemySpawnPoint"))
-                    {
-                        npcManager.Spawn("Orc_Gnur", spawn);
-                    }
+                    GameObject[] enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
+                    npcManager.Spawn("Orc_Gnur", enemySpawnPoints[0]);
+                    npcManager.Spawn("Orc_Gnur", enemySpawnPoints[1]);
                     break;
             }
         }
