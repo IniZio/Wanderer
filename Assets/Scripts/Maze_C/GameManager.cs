@@ -19,11 +19,13 @@ namespace Fyp.Game.RandomMap {
         // }
 
         public Maze mazePrefab;
+        public GameObject mazeIns;
 
         private Maze mazeInstance;
 
         private void BeginGame () {
-            mazeInstance = Instantiate (mazePrefab) as Maze;
+            mazeIns = PhotonNetwork.Instantiate ("mazePrefab", new Vector3(0, 0, 0), Quaternion.identity, 0);
+            mazeInstance = mazeIns.GetComponent("Maze") as Maze;
             StartCoroutine (mazeInstance.Generate ());
         }
 
