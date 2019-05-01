@@ -23,7 +23,6 @@ namespace Fyp.Game.RandomMap {
         private void BeginGame () {
             mazeInstance = Instantiate (mazePrefab) as Maze;
             StartCoroutine (mazeInstance.Generate ());
-
         }
 
         private void RestartGame () {

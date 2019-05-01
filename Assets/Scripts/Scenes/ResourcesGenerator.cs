@@ -15,7 +15,6 @@ namespace Fyp.Game.ResourcesGenerator {
         public bool generated;
 
         void Awake() {
-            DontDestroyOnLoad(this);
         }
 
         void Start() {
