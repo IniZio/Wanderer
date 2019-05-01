@@ -112,6 +112,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &947581246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947581248}
+  - component: {fileID: 947581247}
+  m_Layer: 0
+  m_Name: RandomMapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947581247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947581246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5d9ab6dc2126b498b6244495cce5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maze: {fileID: 2055956092}
+  seed: -1
+  isGen: 0
+--- !u!4 &947581248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947581246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.690228, y: 21.77539, z: -0.4851076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1868417059
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,8 +338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6dcd97f222147aca81d1165624101d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazePrefab: {fileID: 4286456979294820248, guid: 4c25149cd27784a3bbe604db7a0be79a,
+  mazePrefab: {fileID: 4286456979294820248, guid: 7d7273eec78d02840b2ac708ab218f9f,
     type: 3}
+  mazeIns: {fileID: 0}
+  temp: []
 --- !u!4 &2055956093
 Transform:
   m_ObjectHideFlags: 0

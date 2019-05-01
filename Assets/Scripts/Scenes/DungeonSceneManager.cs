@@ -15,7 +15,7 @@ namespace Fyp.Game.UI {
         public GameObject MainDoor;
         public GameObject Mission1Floor;
         public Light[] Lights = new Light[9];
-        
+
 
         public bool[] ButtonArray = {false, false, false, false, false, false, false, false, false};
         public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
@@ -52,35 +52,35 @@ namespace Fyp.Game.UI {
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
-               this.ButtonArray[1] = !this.ButtonArray[1];  
+               this.ButtonArray[1] = !this.ButtonArray[1];
             }
             if (Input.GetKeyDown(KeyCode.Alpha3)) {
                 Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
-               this.ButtonArray[2] = !this.ButtonArray[2];  
+               this.ButtonArray[2] = !this.ButtonArray[2];
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
                 Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
-               this.ButtonArray[3] = !this.ButtonArray[3];  
+               this.ButtonArray[3] = !this.ButtonArray[3];
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
-               this.ButtonArray[4] = !this.ButtonArray[4];  
+               this.ButtonArray[4] = !this.ButtonArray[4];
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) {
                 Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
-               this.ButtonArray[5] = !this.ButtonArray[5];  
+               this.ButtonArray[5] = !this.ButtonArray[5];
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) {
                 Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
-               this.ButtonArray[6] = !this.ButtonArray[6];  
+               this.ButtonArray[6] = !this.ButtonArray[6];
             }
             if (Input.GetKeyDown(KeyCode.Alpha8)) {
                 Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
-               this.ButtonArray[7] = !this.ButtonArray[7];  
+               this.ButtonArray[7] = !this.ButtonArray[7];
             }
             if (Input.GetKeyDown(KeyCode.Alpha9)) {
                 Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
-               this.ButtonArray[8] = !this.ButtonArray[8];  
+               this.ButtonArray[8] = !this.ButtonArray[8];
             }
             if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
                 if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
@@ -108,7 +108,7 @@ namespace Fyp.Game.UI {
                 this.MainDoor.SetActive(false);
                 print("complete Mission1");
             }
-            
+
 
 
             if (!this.Player1) {
@@ -157,7 +157,7 @@ namespace Fyp.Game.UI {
             Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
-        
+
         public void OnpressButton(int num){
             this.Mission1Array[num] = true;
         }

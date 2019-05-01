@@ -6,9 +6,9 @@ namespace Fyp.Game.RandomMap {
     public class GameManager : MonoBehaviour {
         // Start is called before the first frame update
         void Start () {
-            if (PhotonNetwork.isMasterClient) {
-                BeginGame ();
-            }
+            // if (PhotonNetwork.isMasterClient) {
+            //     BeginGame ();
+            // }
         }
 
         // Update is called once per frame
@@ -20,12 +20,13 @@ namespace Fyp.Game.RandomMap {
 
         public Maze mazePrefab;
         public GameObject mazeIns;
+        public Object[] temp;
 
         private Maze mazeInstance;
 
-        private void BeginGame () {
-            mazeIns = PhotonNetwork.Instantiate ("mazePrefab", new Vector3(0, 0, 0), Quaternion.identity, 0);
-            mazeInstance = mazeIns.GetComponent("Maze") as Maze;
+        public void BeginGame () {
+            // mazeIns = PhotonNetwork.InstantiateSceneObject ("mazePrefab", new Vector3(0, 0, 0), Quaternion.identity, 0, temp);
+            mazeInstance = Instantiate(mazePrefab) as Maze;
             StartCoroutine (mazeInstance.Generate ());
         }
 
