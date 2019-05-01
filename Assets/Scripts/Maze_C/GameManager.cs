@@ -6,15 +6,17 @@ namespace Fyp.Game.RandomMap {
     public class GameManager : MonoBehaviour {
         // Start is called before the first frame update
         void Start () {
-            BeginGame ();
+            if (PhotonNetwork.isMasterClient) {
+                BeginGame ();
+            }
         }
 
         // Update is called once per frame
-        void Update () {
-            if (Input.GetKeyDown (KeyCode.Space)) {
-                RestartGame ();
-            }
-        }
+        // void Update () {
+        //     if (Input.GetKeyDown (KeyCode.Space)) {
+        //         RestartGame ();
+        //     }
+        // }
 
         public Maze mazePrefab;
 
