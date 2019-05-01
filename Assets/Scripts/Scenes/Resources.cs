@@ -28,13 +28,13 @@ namespace Fyp.Game.ResourcesGenerator {
 
         public Resources(string type) {
             this.type = type;
-            if (type == "tree") {
+            if (type == "Rree") {
 
             }
-            else if (type == "stone") {
+            else if (type == "Rock") {
 
             }
-            else if (type == "metal") {
+            else if (type == "Metal") {
 
             }
         }
