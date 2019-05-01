@@ -230,6 +230,15 @@ MonoBehaviour:
   attackRange: 2
   attackInterval: 1
   health: 60
+  unarmed: 1
+  twoHanded: 0
+  usingAxe: 0
+  arming1: 0
+  chopTree: 0
+  FallingTreePrefab: {fileID: 0}
+  RayOrigin: {fileID: 4725687565374238}
+  chopSounds: []
+  WeaponList: []
   colSize: 0.9
   cc: {fileID: 2699423701515180879}
   colObj: {fileID: 0}
@@ -248,24 +257,45 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 1
-    Name: Jumping
   - Type: 1
     SynchronizeType: 1
     Name: VSpeed
   - Type: 1
     SynchronizeType: 1
     Name: HSpeed
-  - Type: 4
-    SynchronizeType: 1
-    Name: TurningLeft
-  - Type: 4
-    SynchronizeType: 1
-    Name: TurningRight
   - Type: 3
     SynchronizeType: 1
     Name: CurrentAction
+  - Type: 4
+    SynchronizeType: 0
+    Name: TurnLeft
+  - Type: 4
+    SynchronizeType: 0
+    Name: TurnRight
+  - Type: 4
+    SynchronizeType: 0
+    Name: ToUnarmedAttack
+  - Type: 4
+    SynchronizeType: 0
+    Name: UnarmedAttack
+  - Type: 4
+    SynchronizeType: 0
+    Name: UnarmedHit
+  - Type: 4
+    SynchronizeType: 0
+    Name: ToTwoHandedAttack
+  - Type: 4
+    SynchronizeType: 0
+    Name: TwoHandedAttack
+  - Type: 4
+    SynchronizeType: 0
+    Name: TwoHandedHit
+  - Type: 4
+    SynchronizeType: 0
+    Name: SwitchTool
+  - Type: 4
+    SynchronizeType: 0
+    Name: UnarmedDie
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

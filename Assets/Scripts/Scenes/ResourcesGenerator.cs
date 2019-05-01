@@ -38,21 +38,24 @@ namespace Fyp.Game.ResourcesGenerator {
                     GameObject GO = PhotonNetwork.Instantiate("Tree", p.transform.position, p.transform.rotation, 0);
                     Resources res = GO.GetComponent("Resources") as Resources;
                     res.setObj(GO);
+                    res.setType("Tree");
                     GO.transform.parent = p.transform;
                 }
                 else if (i == 1) {
-                    Debug.Log("-----------stone");
-                    // GameObject GO = PhotonNetwork.Instantiate("Stone", p.transform.position, p.transform.rotation, 0);
-                    // Resources res = GO.GetComponent("Resources") as Resources;
-                    // res.setObj(GO);
-                    // GO.transform.parent = p.transform;
+                    Debug.Log("-----------Rock");
+                    GameObject GO = PhotonNetwork.Instantiate("Rock", p.transform.position, p.transform.rotation, 0);
+                    Resources res = GO.GetComponent("Resources") as Resources;
+                    res.setObj(GO);
+                    res.setType("Rock");
+                    GO.transform.parent = p.transform;
                 }
                 else {
                     Debug.Log("-----------metal");
-                    // GameObject GO = PhotonNetwork.Instantiate("Metal", p.transform.position, p.transform.rotation, 0);
-                    // Resources res = GO.GetComponent("Resources") as Resources;
-                    // res.setObj(GO);
-                    // GO.transform.parent = p.transform;
+                    GameObject GO = PhotonNetwork.Instantiate("Metal", p.transform.position, p.transform.rotation, 0);
+                    Resources res = GO.GetComponent("Resources") as Resources;
+                    res.setObj(GO);
+                    res.setType("Metal");
+                    GO.transform.parent = p.transform;
                 }
             }
         }
