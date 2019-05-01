@@ -94,7 +94,6 @@ namespace Fyp.Game.UI {
                 if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
                 //complete mission3 back to base
                 print("complete");
-
                 }
 
             }
