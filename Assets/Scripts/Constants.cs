@@ -20,4 +20,12 @@ public static class Constants
         new Weapon() { name = "Axe2", type = "melee", damage = 10 },
         new Weapon() { name = "Axe2", type = "melee", damage = 20 },
     };
+
+    public enum Mission
+    {
+        Stage1_1F = 0,
+        Stage2_1F,
+        Stage3_1F,
+        Mission1_2F
+    }
 }

@@ -15,8 +15,6 @@ namespace Fyp.Game.UI {
         public GameObject MainDoor;
         public Light[] Lights = new Light[9];
 
-        private NPCManager npcManager;
-
         public bool[] ButtonArray = {false, false, false, false, false, false, false, false, false};
         public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
 
@@ -31,15 +29,6 @@ namespace Fyp.Game.UI {
 
         private void Start()
         {
-            if (PhotonNetwork.isMasterClient)
-            {
-                npcManager = new NPCManager();
-
-                foreach (GameObject spawn in GameObject.FindGameObjectsWithTag("EnemySpawnPoint"))
-                {
-                    npcManager.Spawn("Orc_Gnur", spawn);
-                }
-            }
         }
 
         void Awake() {
