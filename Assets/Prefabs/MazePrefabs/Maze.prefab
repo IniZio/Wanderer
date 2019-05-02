@@ -51,6 +51,8 @@ MonoBehaviour:
   - floorMaterial: {fileID: 2100000, guid: 199644c02aaad764ab340ad4746e055d, type: 2}
   cellPrefab: {fileID: 5595219420366844388, guid: 6d34809ab6e0e4606aa8713fd9b707b4,
     type: 3}
+  firstCellPrefab: {fileID: 4337791592175270824, guid: 55d60f87e5627d840851ec976dea3484,
+    type: 3}
   generationStepDelay: 0.01
   size:
     x: 20

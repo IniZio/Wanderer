@@ -15,7 +15,6 @@ namespace Fyp.Game.RandomMap {
             }
         }
         void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
-            Debug.Log("-------------------asdf");
 			if (stream.isWriting) {
                 if (seed == -1) return;
 				stream.SendNext(seed);

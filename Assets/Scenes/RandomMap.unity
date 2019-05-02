@@ -142,8 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maze: {fileID: 2055956092}
-  seed: -1
-  isGen: 0
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  P1Script: {fileID: 0}
+  P2Script: {fileID: 0}
 --- !u!4 &947581248
 Transform:
   m_ObjectHideFlags: 0
@@ -338,6 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6dcd97f222147aca81d1165624101d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGen: 0
+  seed: -1
+  isSyncSeed: 0
   mazePrefab: {fileID: 4286456979294820248, guid: 7d7273eec78d02840b2ac708ab218f9f,
     type: 3}
   mazeIns: {fileID: 0}

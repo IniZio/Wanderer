@@ -16,7 +16,7 @@ public class Maze : MonoBehaviour {
 
     public MazeRoomSettings[] roomSettings;
 
-    public MazeCell cellPrefab;
+    public MazeCell cellPrefab, firstCellPrefab;
 
     public float generationStepDelay;
 
@@ -43,8 +43,14 @@ public class Maze : MonoBehaviour {
         }
     }
 
-    private MazeCell CreateCell (IntVector2 coordinates) {
-        MazeCell newCell = Instantiate (cellPrefab) as MazeCell;
+    private MazeCell CreateCell (IntVector2 coordinates, bool isFirst) {
+        MazeCell newCell;
+        if (isFirst) {
+            newCell = Instantiate (firstCellPrefab) as MazeCell;
+        }
+        else {
+            newCell = Instantiate (cellPrefab) as MazeCell;
+        }
         cells[coordinates.x, coordinates.z] = newCell;
         newCell.coordinates = coordinates;
         newCell.name = "Maze Cell " + coordinates.x + ", " + coordinates.z;
@@ -76,7 +82,7 @@ public class Maze : MonoBehaviour {
     }
 
     private void DoFirstGenerationStep (List<MazeCell> activeCells) {
-        MazeCell newCell = CreateCell (RandomCoordinates);
+        MazeCell newCell = CreateCell (RandomCoordinates, true);
         newCell.Initialize (CreateRoom (-1));
         activeCells.Add (newCell);
     }
@@ -106,7 +112,7 @@ public class Maze : MonoBehaviour {
         if (ContainsCoordinates (coordinates)) {
             MazeCell neighbor = GetCell (coordinates);
             if (neighbor == null) {
-                neighbor = CreateCell (coordinates);
+                neighbor = CreateCell (coordinates, false);
                 CreatePassage (currentCell, neighbor, direction);
                 activeCells.Add (neighbor);
             } else if (currentCell.room.settingsIndex == neighbor.room.settingsIndex) {
