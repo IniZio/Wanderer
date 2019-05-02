@@ -50,7 +50,7 @@ namespace Fyp.Game.ResourcesGenerator {
             this.type = type;
         }
 
-        void attacked(GameObject tool) {
+        public void Attacked(GameObject tool) {
             if (tool.GetComponent("tools")) {
 
             }
