@@ -146,7 +146,7 @@ MonoBehaviour:
   Player2: {fileID: 0}
   P1point: {fileID: 0}
   P2point: {fileID: 0}
-  FollowCamera: {fileID: 0}
+  FollowCamera: {fileID: 1119605703}
   P1Script: {fileID: 0}
   P2Script: {fileID: 0}
 --- !u!4 &947581248
@@ -262,6 +262,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d83e652068a944e9d30b701a31a871, type: 3}
+--- !u!1 &1119605703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7003694917221176348, guid: 32d83e652068a944e9d30b701a31a871,
+    type: 3}
+  m_PrefabInstance: {fileID: 1119605702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1868417059
 GameObject:
   m_ObjectHideFlags: 0
