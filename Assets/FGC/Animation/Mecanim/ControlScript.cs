@@ -283,7 +283,6 @@ namespace Fyp.Game.PlayerControl {
 						ResourcesGenerator.Resources res = hit.collider.gameObject.GetComponent("Resources") as ResourcesGenerator.Resources;
 						switch(res.type) {
 							case "Tree":
-								Debug.Log("treeasdfasdfasdf");
 								closestTreePosition = hit.transform.position;            
 								break;
 							case "Rock":

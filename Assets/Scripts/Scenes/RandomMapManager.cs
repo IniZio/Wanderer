@@ -10,7 +10,7 @@ namespace Fyp.Game.UI {
         }
 
         void Update() {
-            if (!maze.isGen) {
+            if (!maze.isGen && maze.isSyncSeed) {
                 maze.BeginGame();
             }
         }
