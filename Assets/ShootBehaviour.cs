@@ -1,4 +1,5 @@
-﻿using Leap;
+﻿using Fyp.Game.PlayerControl;
+using Leap;
 using Leap.Unity;
 using System.Collections;
 using System.Collections.Generic;
@@ -99,6 +100,7 @@ public class ShootBehaviour : Photon.PunBehaviour
                 {
                     Debug.ClearDeveloperConsole();
                     Debug.Log("Gun hit something! " + hit.collider.name);
+                    player.GetComponent<ControlScript>().DealDamage(hit.collider.gameObject);
 
                 }
             }

@@ -137,7 +137,7 @@ namespace Fyp.Game.PlayerControl
                         }
                         attackTimer = 0;
                         //       }
-                        if (/*!animator.GetBool("Attack(1)") && */isAttacking)
+                        if (/*!animator.GetBool("ToTwoHandAttack") && */isAttacking)
                         {
                             isAttacking = false;
                             if (weapon.type == "melee")
@@ -147,30 +147,14 @@ namespace Fyp.Game.PlayerControl
 
                                 if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
                                 {
-                                    if (hit.collider.GetComponent<NPCControl>() != null)
-                                    {
-                                        hit.collider.GetComponent<NPCControl>().Harmed(weapon.damage);
-                                    }
-
-                                    if (hit.collider.GetComponent<AnimalControl>() != null)
-                                    {
-                                        hit.collider.GetComponent<AnimalControl>().Harmed(weapon.damage);
-                                    }
+                                    DealDamage(hit.collider.gameObject);
                                 }
                             }
                             else
                             {
                                 if (target != null)
                                 {
-                                    if (target.GetComponent<NPCControl>() != null)
-                                    {
-                                        target.GetComponent<NPCControl>().Harmed(weapon.damage);
-                                    }
-
-                                    if (target.GetComponent<AnimalControl>() != null)
-                                    {
-                                        target.GetComponent<AnimalControl>().Harmed(weapon.damage);
-                                    }
+                                    DealDamage(target);
                                     target = null;
                                 }
                             }
@@ -179,7 +163,10 @@ namespace Fyp.Game.PlayerControl
                         else
                         {
                             isAttacking = true;
-                            //animator.SetBool("Attack(1)", true);
+                            if (weapon.type == "melee")
+                            {
+                                myAnimator.SetBool("ToTwoHandAttack", true);
+                            }
                         }
                     }
                     break;
@@ -295,13 +282,7 @@ namespace Fyp.Game.PlayerControl
                 // Shoot once
                 if (Input.GetKey("t"))
                 {
-                    RaycastHit hit;
-                    Vector3 fwd = transform.TransformDirection(Vector3.forward);
-                    float melee_range = 1;
-
-                    if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
-                        Debug.ClearDeveloperConsole();
-                    Debug.Log("Melee hit something! " + hit.collider.name);
+                    state = "attacking";
                 }
 
                 //Combining methods.
@@ -434,19 +415,33 @@ namespace Fyp.Game.PlayerControl
             return this.isMe;
         }
 
-        public void Chopping()
+        public void DealDamage(GameObject target)
         {
-            print("Start chopping");
-            RaycastHit hit;
-            Vector3 fwd = transform.TransformDirection(Vector3.forward);
-            float melee_range = 1;
-
-            if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+            Weapon weapon = Constants.Weapons[loadouts[loadoutIndex]];
+            if (target.GetComponent<NPCControl>() != null)
             {
-                Debug.ClearDeveloperConsole();
-                Debug.Log("Melee hit something! " + hit.collider.name);
+                target.GetComponent<NPCControl>().Harmed(weapon.damage);
             }
 
+            if (target.GetComponent<AnimalControl>() != null)
+            {
+                target.GetComponent<AnimalControl>().Harmed(weapon.damage);
+            }
+        }
+
+        public void Chopping()
+        {
+            //print("Start chopping");
+            //RaycastHit hit;
+            //Vector3 fwd = transform.TransformDirection(Vector3.forward);
+            //float melee_range = 1;
+
+            //if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+            //{
+            //   Debug.ClearDeveloperConsole();
+            // Debug.Log("Melee hit something! " + hit.collider.name);
+            //}
+            state = "attacking";
         }
 
         void OnTriggerEnter(Collider col)
