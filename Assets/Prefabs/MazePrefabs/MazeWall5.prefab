@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8283045722286734247}
   - component: {fileID: 375682167541005962}
+  - component: {fileID: 1523967112332742601}
   m_Layer: 0
   m_Name: MazeWall5
   m_TagString: Untagged
@@ -47,6 +48,21 @@ MonoBehaviour:
   cell: {fileID: 0}
   otherCell: {fileID: 0}
   direction: 0
+  wall: {fileID: 0}
+--- !u!64 &1523967112332742601
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743478054220551183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &8991175708136520162
 PrefabInstance:
   m_ObjectHideFlags: 0

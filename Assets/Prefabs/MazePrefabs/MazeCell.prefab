@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7032263349916661490}
   - component: {fileID: 5595219420366844388}
+  - component: {fileID: 7411636298557652940}
   m_Layer: 0
   m_Name: MazeCell
   m_TagString: Untagged
@@ -47,6 +48,21 @@ MonoBehaviour:
   coordinates:
     x: 0
     z: 0
+  room: {fileID: 0}
+--- !u!64 &7411636298557652940
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656353143071819548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1 &6516104764767913755
 GameObject:
   m_ObjectHideFlags: 0

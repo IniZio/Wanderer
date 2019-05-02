@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097588042586939537}
   - component: {fileID: 2861819101041428149}
+  - component: {fileID: 763694849683216344}
   m_Layer: 0
   m_Name: MazeDoor
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MonoBehaviour:
   otherCell: {fileID: 0}
   direction: 0
   hinge: {fileID: 943231593705884403}
+--- !u!64 &763694849683216344
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8360929314661911158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &899290520969808166
 PrefabInstance:
   m_ObjectHideFlags: 0
