@@ -27,7 +27,7 @@ namespace Fyp.Game.UI {
 
         void Update() {
             if (!this.resGen.generated) {
-                    resGen.randomGen();
+                resGen.randomGen();
             }
             if (!this.Player1 || !this.P1Script) {
                 this.MapPlayer1();

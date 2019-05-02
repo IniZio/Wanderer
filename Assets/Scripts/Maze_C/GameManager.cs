@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Fyp.Game.RandomMap {
-    public class GameManager : MonoBehaviour {
-        // Start is called before the first frame update
-        void Start () {
-            // if (PhotonNetwork.isMasterClient) {
-            //     BeginGame ();
-            // }
-        }
+    public class GameManager : Photon.PunBehaviour {
+        public bool isGen = false;
 
-        // Update is called once per frame
-        // void Update () {
-        //     if (Input.GetKeyDown (KeyCode.Space)) {
-        //         RestartGame ();
-        //     }
-        // }
+        public int seed = -1;
+
+        void Start() {
+            if (PhotonNetwork.isMasterClient) {
+                seed = System.DateTime.Now.Second;
+            }
+        }
+        void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+            Debug.Log("-------------------asdf");
+			if (stream.isWriting) {
+                if (seed == -1) return;
+				stream.SendNext(seed);
+			}
+			else {
+                int temp = (int) stream.ReceiveNext();
+                if (temp == -1) return;
+                seed = temp;
+			}
+		}
 
         public Maze mazePrefab;
         public GameObject mazeIns;
@@ -26,8 +34,11 @@ namespace Fyp.Game.RandomMap {
 
         public void BeginGame () {
             // mazeIns = PhotonNetwork.InstantiateSceneObject ("mazePrefab", new Vector3(0, 0, 0), Quaternion.identity, 0, temp);
-            mazeInstance = Instantiate(mazePrefab) as Maze;
-            StartCoroutine (mazeInstance.Generate ());
+            if (seed != -1) {
+                Random.InitState(seed);
+                mazeInstance = Instantiate(mazePrefab) as Maze;
+                StartCoroutine (mazeInstance.Generate ());
+            }
         }
 
         private void RestartGame () {
