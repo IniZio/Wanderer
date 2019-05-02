@@ -11,17 +11,15 @@ namespace Fyp.Game.UI {
         public ControlScript P1Script, P2Script;
 
         void Awake() {
-            this.MapPlayer1();
-            this.MapPlayer2();
         }
         void Start() {
         }
 
         void Update() {
-            if (!this.Player1) {
+            if (!this.Player1 && maze.isGen) {
                 this.MapPlayer1();
             }
-            if (!this.Player2) {
+            if (!this.Player2 && maze.isGen) {
                 this.MapPlayer2();
             }
             if (!maze.isGen) {
@@ -47,6 +45,7 @@ namespace Fyp.Game.UI {
             GameObject Player2 = GameObject.FindWithTag("Player2Character");
             if (Player2 != null) {
                 this.Player2 = Player2;
+                P2point = GameObject.FindWithTag("Player2SpawnPoint");
                 this.Player2.transform.position = P2point.transform.position;
                 ControlScript script = Player2.GetComponent("ControlScript") as ControlScript;
                 if(script.getIsMe()) {
