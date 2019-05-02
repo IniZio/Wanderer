@@ -19,10 +19,10 @@ namespace Fyp.Game.UI {
         }
 
         void Update() {
-            if (this.P1point) {
+            if (!this.P1point) {
                 this.MapPlayer1Point();
             }
-            if (this.P2point) {
+            if (!this.P2point) {
                 this.MapPlayer2Point();
             }
             if (!this.Player1 && maze.isGen && this.P1point) {
@@ -35,7 +35,7 @@ namespace Fyp.Game.UI {
                 Random.InitState(P1Script.randomSeed);
                 maze.BeginGame();
             }
-            if (this.Player1 && this.Player2 && this.maze.isGen && !this.firstMap) {
+            if (this.Player1 && this.Player2 && this.maze.isGen && !this.firstMap && this.P1point && this.P2point) {
                 TransportToSpawnPoint();
             }
         }
