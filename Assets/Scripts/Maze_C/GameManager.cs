@@ -36,12 +36,9 @@ namespace Fyp.Game.RandomMap {
 
         public void BeginGame () {
             // mazeIns = PhotonNetwork.InstantiateSceneObject ("mazePrefab", new Vector3(0, 0, 0), Quaternion.identity, 0, temp);
-            if (seed != -1) {
-                isGen = true;
-                Random.InitState(seed);
-                mazeInstance = Instantiate(mazePrefab) as Maze;
-                StartCoroutine (mazeInstance.Generate ());
-            }
+            isGen = true;
+            mazeInstance = Instantiate(mazePrefab) as Maze;
+            StartCoroutine (mazeInstance.Generate ());
         }
 
         private void RestartGame () {

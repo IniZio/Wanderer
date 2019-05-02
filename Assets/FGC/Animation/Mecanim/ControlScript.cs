@@ -62,6 +62,8 @@ namespace Fyp.Game.PlayerControl {
 		public CapsuleCollider cc;
 		public GameObject colObj;
 
+		public int randomSeed = -1;
+
 		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
 				stream.SendNext(isMaster);
@@ -71,6 +73,8 @@ namespace Fyp.Game.PlayerControl {
                 stream.SendNext(health);
                 stream.SendNext(loadouts);
                 stream.SendNext(loadoutIndex);
+				if (randomSeed == -1) return;
+				stream.SendNext(randomSeed);
 			}
 			else {
 				isMaster = (bool) stream.ReceiveNext();
@@ -79,7 +83,10 @@ namespace Fyp.Game.PlayerControl {
 				isStandingBaseGate = (bool) stream.ReceiveNext();
                 this.health = (int)stream.ReceiveNext();
                 loadouts = (int[])stream.ReceiveNext();
+				int temp = (int) stream.ReceiveNext();
                 loadoutIndex = (int)stream.ReceiveNext();
+				if (temp == -1) return;
+                randomSeed = temp;
             }
 		}
 
@@ -98,6 +105,9 @@ namespace Fyp.Game.PlayerControl {
 			WeaponList[0].weaponTransform.position = Holster1.transform.position;
 			WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
 			WeaponList[0].weaponTransform.parent = Holster1;
+			if (PhotonNetwork.isMasterClient) {
+				randomSeed = System.DateTime.Now.Second;
+			}
 		}
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
