@@ -12,8 +12,9 @@ public class ShootBehaviour : Photon.PunBehaviour
     private Leap.Unity.ExtendedFingerDetector shootGestureDetector;
     private GameObject player;
     public LineRenderer gunTrail;
+    private GameObject crosshair;
 
-    public float timeBetweenBullets = 0.15f;
+    public float timeBetweenBullets = 0.75f;
     private bool isShooting;
     float shootTimer;
 
@@ -53,6 +54,8 @@ public class ShootBehaviour : Photon.PunBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        crosshair = PhotonNetwork.Instantiate("Crosshair", new Vector3(0, 0, 0), Quaternion.identity, 0);
+
         // HACK: relies on shooting gesture detector being the last detector
         shootGestureDetector = handModel.GetComponents<Leap.Unity.ExtendedFingerDetector>()[handModel.GetComponents<Leap.Unity.ExtendedFingerDetector>().Length - 1];
 
@@ -74,7 +77,7 @@ public class ShootBehaviour : Photon.PunBehaviour
             shootTimer += Time.deltaTime;
 
            
-                shootTimer = 0;
+                //shootTimer = 0;
                 Hand hand;
                 Vector3 fingerDirection;
                 Vector3 targetDirection;
@@ -95,9 +98,24 @@ public class ShootBehaviour : Photon.PunBehaviour
 
                 if (Physics.Raycast(hand.Fingers[selectedFinger].TipPosition.ToVector3(), fingerDirection, out hit/*, gun_range*/))
                 {
-          //      gunTrail.SetPosition(1, hit.point);
+
+//                Vector3 lineOrigin = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ViewportToWorldPoint(hit.point);
+ //               Debug.DrawRay(lineOrigin, GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().transform.forward * 1000, Color.green);
+
+//                if (crosshair != null)
+//                {
+//                    crosshair.transform.position = hit.point;
+//                    crosshair.transform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
+//                } else
+//                {
+//                    crosshair = PhotonNetwork.Instantiate("Crosshair", hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal), 0);
+//                }
+
+                //      gunTrail.SetPosition(1, hit.point);
                 if (isShooting && shootTimer >= timeBetweenBullets)
                 {
+                    shootTimer = 0;
+                    StartCoroutine(AutoDestroy(PhotonNetwork.Instantiate("BulletHole", hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal), 0)));
                     Debug.ClearDeveloperConsole();
                     Debug.Log("Gun hit something! " + hit.collider.name);
                     player.GetComponent<ControlScript>().DealDamage(hit.collider.gameObject);
@@ -105,6 +123,12 @@ public class ShootBehaviour : Photon.PunBehaviour
                 }
             }
         }
+    }
+
+    private IEnumerator AutoDestroy(GameObject obj)
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(obj);
     }
 
     private Vector3 selectedDirection(Vector3 tipPosition)

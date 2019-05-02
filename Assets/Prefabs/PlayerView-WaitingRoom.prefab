@@ -2216,13 +2216,13 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   Period: 0.1
   HandModel: {fileID: 4443814155591833970}
-  Thumb: 2
+  Thumb: 1
   Index: 0
   Middle: 1
   Ring: 1
   Pinky: 1
   MinimumExtendedCount: 1
-  MaximumExtendedCount: 2
+  MaximumExtendedCount: 1
   ShowGizmos: 1
 --- !u!1 &4443814155597281052
 GameObject:
@@ -4601,11 +4601,11 @@ MonoBehaviour:
   _templateLayer:
     layerIndex: 0
   _interactionLayer:
-    layerIndex: 9
-  _interactionNoContactLayer:
     layerIndex: 10
-  _contactBoneLayer:
+  _interactionNoContactLayer:
     layerIndex: 11
+  _contactBoneLayer:
+    layerIndex: 12
   _drawControllerRuntimeGizmos: 0
 --- !u!1 &4443814156011535619
 GameObject:
@@ -10989,7 +10989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5245167762717712466
 Transform:
   m_ObjectHideFlags: 0
