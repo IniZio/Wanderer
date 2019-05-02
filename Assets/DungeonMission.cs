@@ -1,8 +1,10 @@
 ﻿using Fyp.Game.Network;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 struct Mission2
 {
     public int nextWave;
@@ -14,6 +16,8 @@ public class DungeonMission : Photon.PunBehaviour
 
     private NPCManager npcManager;
     private Mission2 mission2;
+    private readonly float alphaFadeValue;
+    private bool justFailed = false;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -21,11 +25,13 @@ public class DungeonMission : Photon.PunBehaviour
         {
             stream.SendNext(nextMission);
             stream.SendNext(mission2);
+            stream.SendNext(justFailed);
         }
         else
         {
             nextMission = (Constants.Mission)stream.ReceiveNext();
             mission2 = (Mission2)stream.ReceiveNext();
+            justFailed = (bool)stream.ReceiveNext();
         }
     }
 
@@ -38,6 +44,12 @@ public class DungeonMission : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (justFailed)
+        {
+            justFailed = false;
+            StartCoroutine(_FailMission());
+        }
+
         if (PhotonNetwork.isMasterClient)
         {
             switch (nextMission)
@@ -99,6 +111,25 @@ public class DungeonMission : Photon.PunBehaviour
     {
         nextMission += 1;
         //StartMission();
+    }
+
+    public void FailMission()
+    {
+        justFailed = true;
+    }
+
+    IEnumerator _FailMission()
+    {
+        UnityEngine.UI.Image blackScreen = GameObject.Find("Death").GetComponent<UnityEngine.UI.Image>();
+
+        blackScreen.color = Color.black;
+        blackScreen.canvasRenderer.SetAlpha(0.0f);
+        blackScreen.CrossFadeAlpha(1.0f, 3, false);
+
+        yield return new WaitForSeconds(3);
+
+        NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+        yield break;
     }
 
     public void FinishMission(Constants.Mission mission)

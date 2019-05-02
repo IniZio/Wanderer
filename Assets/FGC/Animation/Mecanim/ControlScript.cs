@@ -178,6 +178,7 @@ namespace Fyp.Game.PlayerControl
                         {
                             health = 0;
                             myAnimator.SetBool("Dead", true);
+                            GameObject.Find("SceneManager").GetComponent<DungeonMission>().FailMission();
                             return;
                         }
                         state = "";
