@@ -19,10 +19,16 @@ namespace Fyp.Game.UI {
         }
 
         void Update() {
-            if (!this.Player1 && maze.isGen) {
+            if (this.P1point) {
+                this.MapPlayer1Point();
+            }
+            if (this.P2point) {
+                this.MapPlayer2Point();
+            }
+            if (!this.Player1 && maze.isGen && this.P1point) {
                 this.MapPlayer1();
             }
-            if (!this.Player2 && maze.isGen) {
+            if (!this.Player2 && maze.isGen && this.P2point) {
                 this.MapPlayer2();
             }
             if (!maze.isGen) {
@@ -37,7 +43,6 @@ namespace Fyp.Game.UI {
             GameObject Player1 = GameObject.FindWithTag("Player1Character");
             if (Player1 != null) {
                 this.Player1 = Player1;
-                P1point = GameObject.FindWithTag("Player1SpawnPoint");
                 ControlScript script = Player1.GetComponent("ControlScript") as ControlScript;
                 if(script.getIsMe()) {
                     PlayerCamera cameraScirpt = FollowCamera.GetComponent("PlayerCamera") as PlayerCamera;
@@ -50,13 +55,25 @@ namespace Fyp.Game.UI {
             GameObject Player2 = GameObject.FindWithTag("Player2Character");
             if (Player2 != null) {
                 this.Player2 = Player2;
-                P2point = GameObject.FindWithTag("Player2SpawnPoint");
                 ControlScript script = Player2.GetComponent("ControlScript") as ControlScript;
                 if(script.getIsMe()) {
                     PlayerCamera cameraScirpt = FollowCamera.GetComponent("PlayerCamera") as PlayerCamera;
                     cameraScirpt.setCamera(this.Player2);
                 }
                 this.P2Script = script;
+            }
+        }
+
+        void MapPlayer1Point() {
+            GameObject P1point = GameObject.FindWithTag("Player1SpawnPoint");
+            if (P1point != null) {
+                this.P1point = P1point;
+            }
+        }
+        void MapPlayer2Point() {
+            GameObject P2point = GameObject.FindWithTag("Player2SpawnPoint");
+            if (P2point != null) {
+                this.P2point = P2point;
             }
         }
 
