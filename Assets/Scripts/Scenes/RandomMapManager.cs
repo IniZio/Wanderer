@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fyp.Game.PlayerControl;
 using Fyp.Game.Carmera;
+using Fyp.Game.Network;
 
 namespace Fyp.Game.UI {
     public class RandomMapManager : MonoBehaviour {
@@ -37,6 +38,12 @@ namespace Fyp.Game.UI {
             }
             if (this.Player1 && this.Player2 && this.maze.isGen && !this.firstMap && this.P1point && this.P2point) {
                 TransportToSpawnPoint();
+            }
+            if (this.P1Script && this.P1Script.isStandingRandomMapGate &&
+                    this.P2Script && this.P2Script.isStandingRandomMapGate && maze.done) {
+                this.P1Script.exitRandomMapGate();
+                this.P2Script.exitRandomMapGate();
+                NetworkChangeScene.AllPlayerChangeScene("Dungeon");
             }
         }
         void MapPlayer1() {

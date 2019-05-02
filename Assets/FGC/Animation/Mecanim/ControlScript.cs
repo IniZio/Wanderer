@@ -19,6 +19,7 @@ namespace Fyp.Game.PlayerControl
         public bool isReady = false;
         public bool isStandingWaitingRmDoor = false;
         public bool isStandingBaseGate = false;
+        public bool isStandingRandomMapGate = false;
         public bool isAttacking = false;
         public bool isMoaning = false;
         bool isMe = false;
@@ -78,6 +79,7 @@ namespace Fyp.Game.PlayerControl
                 stream.SendNext(loadouts);
                 stream.SendNext(loadoutIndex);
 				stream.SendNext(randomSeed);
+                stream.SendNext(isRandomMapBaseGate);
 			}
 			else {
 				isMaster = (bool) stream.ReceiveNext();
@@ -88,6 +90,7 @@ namespace Fyp.Game.PlayerControl
                 loadouts = (int[])stream.ReceiveNext();
                 loadoutIndex = (int)stream.ReceiveNext();
                 randomSeed = (int) stream.ReceiveNext();
+                isRandomMapBaseGate = (bool) stream.ReceiveNext();
             }
 		}
 
@@ -405,6 +408,20 @@ namespace Fyp.Game.PlayerControl
         public void exitBaseGate()
         {
             this.isStandingBaseGate = false;
+        }
+
+        public bool getRandomMapGate()
+        {
+            return this.isStandingRandomMapGate;
+        }
+
+        public void enterRandomMapGate()
+        {
+            this.isStandingRandomMapGate = true;
+        }
+        public void exitRandomMapGate()
+        {
+            this.isStandingRandomMapGate = false;
         }
         public void SetIsMe()
         {

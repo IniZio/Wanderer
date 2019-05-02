@@ -8,6 +8,7 @@ namespace Fyp.Game.RandomMap {
 
         public int seed = -1;
         public bool isSyncSeed = false;
+        public bool done = false;
 
         void Start() {
             if (PhotonNetwork.isMasterClient) {
@@ -37,13 +38,17 @@ namespace Fyp.Game.RandomMap {
             // mazeIns = PhotonNetwork.InstantiateSceneObject ("mazePrefab", new Vector3(0, 0, 0), Quaternion.identity, 0, temp);
             isGen = true;
             mazeInstance = Instantiate(mazePrefab) as Maze;
-            StartCoroutine (mazeInstance.Generate ());
+            mazeInstance.Generate (this);
         }
 
         private void RestartGame () {
             StopAllCoroutines ();
             Destroy (mazeInstance.gameObject);
             BeginGame ();
+        }
+
+        public void isDone() {
+            this.done = true;
         }
     }
 }
