@@ -126,6 +126,14 @@ namespace Fyp.Game.UI {
             if (ButtonArray[1]) {
                 // hihi
             }
+
+            // check the player y position
+            if (this.Player1.transform.position.y < -16) {
+                Player1.transform.position = this.P1point.transform.position;
+            }
+            if (this.Player2.transform.position.y < -16) {
+                Player2.transform.position = this.P2point.transform.position;
+            }
         }
 
         void MapPlayer1() {
