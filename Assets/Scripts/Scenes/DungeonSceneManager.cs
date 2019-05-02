@@ -15,6 +15,7 @@ namespace Fyp.Game.UI {
         public GameObject MainDoor;
         public GameObject Mission1Floor;
         public Light[] Lights = new Light[9];
+        public DungeonMission missionManager;
 
 
         public bool[] ButtonArray = {false, false, false, false, false, false, false, false, false};
@@ -32,6 +33,7 @@ namespace Fyp.Game.UI {
 
         private void Start()
         {
+            missionManager = GetComponent<DungeonMission>();
         }
 
         void Awake() {
@@ -86,7 +88,7 @@ namespace Fyp.Game.UI {
                 if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
                 //complete mission3 back to base
                 print("complete Mission3");
-
+                    missionManager.FinishMission(Constants.Mission.Stage1_1F);
                 }
 
             }

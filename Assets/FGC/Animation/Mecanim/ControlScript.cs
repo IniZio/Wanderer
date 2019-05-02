@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fyp.Game.ResourcesGenerator;
+using Leap.Unity.Interaction;
+//using System.Collections;
 
-namespace Fyp.Game.PlayerControl {
-	public class ControlScript : Photon.PunBehaviour, IPunObservable {
+namespace Fyp.Game.PlayerControl
+{
+    public class ControlScript : Photon.PunBehaviour, IPunObservable
+    {
 
         public string state = "";
         public int[] loadouts = { 0, 3, 6 };
         public int loadoutIndex = 0;
-		PlayerStatus playerStatus;
+        PlayerStatus playerStatus;
         public Hud hud;
-		public bool isMaster;
-		public bool isReady = false;
-		public bool isStandingWaitingRmDoor = false;
-		public bool isStandingBaseGate = false;
+        public bool isMaster;
+        public bool isReady = false;
+        public bool isStandingWaitingRmDoor = false;
+        public bool isStandingBaseGate = false;
         public bool isAttacking = false;
         public bool isMoaning = false;
         bool isMe = false;
-		public AudioSource footstep;
+        public AudioSource footstep;
 
         private GameObject target;
         public float attackRange = 2;
@@ -202,188 +206,281 @@ namespace Fyp.Game.PlayerControl {
             }
 
             Debug.Log("ControlScript update isMINE");
-            if (photonView.isMine) {
+            if (photonView.isMine)
+            {
                 // Update HUD
                 try
                 {
                     hud = GameObject.FindGameObjectWithTag("Hud").GetComponent<Hud>();
-                } catch { }
-                if (hud != null) {
-					hud.SetHealth(health);
-				}
+                }
+                catch { }
+                if (hud != null)
+                {
+                    hud.SetHealth(health);
+                }
 
-				this.cc.radius = this.colSize;
+                this.cc.radius = this.colSize;
 
-				//Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
-				myAnimator.SetFloat ("HSpeed", Input.GetAxis ("Horizontal"));
+                //Set the VSpeed and HSpeed floats for our animator to control walking and strafing animations.
+                myAnimator.SetFloat("HSpeed", Input.GetAxis("Horizontal"));
 
-				//Set Jump Boolean to true to trigger jump animation, then wait a small time and set to false so we don't jump agani.
-				if(Input.GetButtonDown ("Jump")){
-					myAnimator.SetBool ("Jumping", true);
-					Invoke ("StopJumping", 0.1f);
-					ReadyToPlay();
-				}
-		//!!!switch run mode
-				if (Input.GetKey (KeyCode.LeftShift)) {
-					_VSpeed = 2 * (Input.GetAxis ("Vertical"));
-				} else {
-					_VSpeed = Input.GetAxis ("Vertical");
-				}
-				myAnimator.SetFloat ("VSpeed", _VSpeed);
+                //Set Jump Boolean to true to trigger jump animation, then wait a small time and set to false so we don't jump agani.
+                if (Input.GetButtonDown("Jump"))
+                {
+                    myAnimator.SetBool("Jumping", true);
+                    Invoke("StopJumping", 0.1f);
+                    ReadyToPlay();
+                }
+                //!!!switch run mode
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    _VSpeed = 2 * (Input.GetAxis("Vertical"));
+                }
+                else
+                {
+                    _VSpeed = Input.GetAxis("Vertical");
+                }
+                myAnimator.SetFloat("VSpeed", _VSpeed);
 
-				if (Input.GetKey ("a") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
+                if (Input.GetKey("a") && (myAnimator.GetInteger("CurrentAction") == 0))
+                {
 
-					//Rotate the character procedurally based on Time.deltaTime.  This will give the illusion of moving
-					//Even though the animations don't have root motion
-					transform.Rotate (Vector3.down * Time.deltaTime * 100.0f);
+                    //Rotate the character procedurally based on Time.deltaTime.  This will give the illusion of moving
+                    //Even though the animations don't have root motion
+                    transform.Rotate(Vector3.down * Time.deltaTime * 100.0f);
 
-					//Also, IF we're currently standing still (both vertically and horizontally)
-					if ((Input.GetAxis ("Vertical") == 0f) && (Input.GetAxis ("Horizontal") == 0)) {
-						//change the animation to the 'inplace' animation
-						myAnimator.SetBool ("TurnLeft", true);
-					}
+                    //Also, IF we're currently standing still (both vertically and horizontally)
+                    if ((Input.GetAxis("Vertical") == 0f) && (Input.GetAxis("Horizontal") == 0))
+                    {
+                        //change the animation to the 'inplace' animation
+                        myAnimator.SetBool("TurnLeft", true);
+                    }
 
-				} else {
-					//Else here means if the Q key is not being held down
-					//Then we make sure that we are not playing the turning animation
-					myAnimator.SetBool ("TurnLeft", false);
-				}
+                }
+                else
+                {
+                    //Else here means if the Q key is not being held down
+                    //Then we make sure that we are not playing the turning animation
+                    myAnimator.SetBool("TurnLeft", false);
+                }
 
-				//Same thing for E key, just rotating the other way!
-				if (Input.GetKey ("d") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
-					transform.Rotate (Vector3.up * Time.deltaTime * 100.0f);
-					if ((Input.GetAxis ("Vertical") == 0f) && (Input.GetAxis ("Horizontal") == 0)) {
-						myAnimator.SetBool ("TurnRight", true);
-					}
+                //Same thing for E key, just rotating the other way!
+                if (Input.GetKey("d") && (myAnimator.GetInteger("CurrentAction") == 0))
+                {
+                    transform.Rotate(Vector3.up * Time.deltaTime * 100.0f);
+                    if ((Input.GetAxis("Vertical") == 0f) && (Input.GetAxis("Horizontal") == 0))
+                    {
+                        myAnimator.SetBool("TurnRight", true);
+                    }
 
-				} else {
-					myAnimator.SetBool ("TurnRight", false);
-				}
+                }
+                else
+                {
+                    myAnimator.SetBool("TurnRight", false);
+                }
 
-				if (Input.GetKey (KeyCode.Alpha1)) {
-					switch (arming1) {
-						case false:
-							StartCoroutine (Arming1 ());
-							break;
+                if (Input.GetKey(KeyCode.Alpha1))
+                {
+                    switch (arming1)
+                    {
+                        case false:
+                            StartCoroutine(Arming1());
+                            break;
 
-						case true:
-							StartCoroutine (Disarming1 ());
-							break;
-					}
-				}
-				//MauryEND
-				// if (Input.GetKey ("r") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
-				// 	myAnimator.SetBool ("2HandIdle", true);
-				// }
-				// if (Input.GetKey ("t") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
-				// 	myAnimator.SetBool ("chopTree", true);
-				// } else {
-				// 	myAnimator.SetBool ("chopTree", false);
-				// }
-				        
-				RaycastHit hit = new RaycastHit ();         // This ray will see where we clicked er chopped
-				Vector3 ahead = RayOrigin.forward;        
-				Vector3 rayStart = new Vector3 (RayOrigin.position.x, RayOrigin.position.y + 1f, RayOrigin.position.z);        
-				Ray ray = new Ray (rayStart, ahead);         // Did we hit anything at that point, out as far as 10 units?
-				        
-				if (Physics.Raycast (ray, out hit, 1.5f)) {   
-					if (hit.collider.gameObject.tag == "Resources") {   // Resources object has valueable type which is Tree, Rock and Metal
-						Debug.Log ("hited");
-						ResourcesGenerator.Resources res = hit.collider.gameObject.GetComponent("Resources") as ResourcesGenerator.Resources;
-						switch(res.type) {
-							case "Tree":
-								closestTreePosition = hit.transform.position;            
-								break;
-							case "Rock":
-							 	break;
-							case "Metal":
-								break;
-						}
-					}            
-					if (usingAxe && !chopTree && Input.GetKey (KeyCode.E)) {
-						choppingPoint = hit.point;                
-						chopTree = true;
-						StartCoroutine (ChopItDown (hit, closestTreePosition));            
-					}        
-				}
-			}
-	//MauryEND
-		}
+                        case true:
+                            StartCoroutine(Disarming1());
+                            break;
+                    }
+                }
+                // Shoot once
+                if (Input.GetKey("t"))
+                {
+                    RaycastHit hit;
+                    Vector3 fwd = transform.TransformDirection(Vector3.forward);
+                    float melee_range = 1;
 
-		//This method is called after jumping is started to stop the jumping!
-		void StopJumping(){
-			myAnimator.SetBool ("Jumping", false);
-		}
+                    if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+                        Debug.ClearDeveloperConsole();
+                    Debug.Log("Melee hit something! " + hit.collider.name);
+                }
 
-		public void ReadyToPlay() {
-			isReady = !isReady;
-		}
+                //Combining methods.
+                //You can combine all of these methods (and much more advanced logic) in many ways!  Let's go over an example.  We want our character to kneel down
+                //Stay in a kneeling loop idle, then stand up when we tell them to.  For this we'll need to combine a triggered 'transition' animation with looping
+                //animations.  You can see in the Animator Controller that Action3 (kneeling) is actually comprised of 3 animations.  "kneeling down", "kneeling idle"
+                //and "kneeling stand".
 
-		//We've added some simple GUI labels for our controls to make it easier for you to test out.
+                //The first is "kneeling down".  The intro requirement is the same as before, CurrentAction = 3.  We can control this using the same "SetInteger" method
+                //we used in our previous examples.  However, the exit transition is based on exit time.  So as soon as that intro "kneeling down" animation plays
+                //The animation will transition into a kneeling idle.  Now we want the character to remain there until we tell it to get up, so the exit transition
+                //From kneeling idle is "currentaction = 0".  This means we'll need to set up a toggle just like in Example #4.  When we toggle from 3 to 0, we'll transition
+                //Into the kneeling stand animation, which will get our character back to their feet.  Finally the exit transition for kneeling stand is exit time, so
+                //As soon as they are done standing up they will go the next state ("idle/walk").
 
-		public PlayerStatus GetPlayerStatus() {
-			return playerStatus;
-		}
+                if (Input.GetKeyDown("2"))
+                {
+                    if (myAnimator.GetInteger("CurrentAction") == 0)
+                    {
+                        myAnimator.SetInteger("CurrentAction", 2);
+                    }
+                    else if (myAnimator.GetInteger("CurrentAction") == 2)
+                    {
+                        myAnimator.SetInteger("CurrentAction", 0);
+                    }
+                }
+                //MauryEND
+                // if (Input.GetKey ("r") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
+                // 	myAnimator.SetBool ("2HandIdle", true);
+                // }
+                // if (Input.GetKey ("t") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
+                // 	myAnimator.SetBool ("chopTree", true);
+                // } else {
+                // 	myAnimator.SetBool ("chopTree", false);
+                // }
 
-		public void setPlayerStatus(PlayerStatus ps) {
-			Debug.Log("settttt");
-			Debug.Log(ps);
-			playerStatus = ps;
-		}
+                RaycastHit hit2 = new RaycastHit();         // This ray will see where we clicked er chopped
+                Vector3 ahead = RayOrigin.forward;
+                Vector3 rayStart = new Vector3(RayOrigin.position.x, RayOrigin.position.y + 1f, RayOrigin.position.z);
+                Ray ray = new Ray(rayStart, ahead);         // Did we hit anything at that point, out as far as 10 units?
 
-		public bool getStandingWaitingRmDoor() {
-			return this.isStandingWaitingRmDoor;
-		}
+                if (Physics.Raycast(ray, out hit2, 1.5f))
+                {
+                    if (hit2.collider.gameObject.tag == "Resources")
+                    {   // Resources object has valueable type which is Tree, Rock and Metal
+                        Debug.Log("hited");
+                        ResourcesGenerator.Resources res = hit2.collider.gameObject.GetComponent("Resources") as ResourcesGenerator.Resources;
+                        switch (res.type)
+                        {
+                            case "Tree":
+                                Debug.Log("treeasdfasdfasdf");
+                                closestTreePosition = hit2.transform.position;
+                                break;
+                            case "Rock":
+                                break;
+                            case "Metal":
+                                break;
+                        }
+                    }
+                    if (usingAxe && !chopTree && Input.GetKey(KeyCode.E))
+                    {
+                        choppingPoint = hit2.point;
+                        chopTree = true;
+                        StartCoroutine(ChopItDown(hit2, closestTreePosition));
+                    }
+                }
+            }
+            //MauryEND
+        }
 
-		public void enterWaitingRmDoor() {
-			this.isStandingWaitingRmDoor = true;
-		}
-		public void exitWaitingRmDoor() {
-			this.isStandingWaitingRmDoor = false;
-		}
+        //This method is called after jumping is started to stop the jumping!
+        void StopJumping()
+        {
+            myAnimator.SetBool("Jumping", false);
+        }
 
-		public bool getStandingBaseGate() {
-			return this.isStandingBaseGate;
-		}
+        public void ReadyToPlay()
+        {
+            isReady = !isReady;
+        }
 
-		public void enterBaseGate() {
-			this.isStandingBaseGate = true;
-		}
-		public void exitBaseGate() {
-			this.isStandingBaseGate = false;
-		}
-		public void SetIsMe() {
-			this.isMe = true;
-		}
+        //We've added some simple GUI labels for our controls to make it easier for you to test out.
 
-		public bool getIsMe() {
-			return this.isMe;
-		}
-		void OnTriggerEnter (Collider col) {
-			if (photonView.isMine) {
-				if (col.gameObject.CompareTag("Resources")) {
-					Debug.Log("------enter Resources");
-					this.colObj = col.gameObject;
-				}
-			}
-		}
+        public PlayerStatus GetPlayerStatus()
+        {
+            return playerStatus;
+        }
 
-		void OnTriggerExit(Collider col) {
-			if (col.gameObject.CompareTag("Resources")) {
-				Debug.Log("------exit Resources");
-				this.colObj = null;
-			}
-		}
+        public void setPlayerStatus(PlayerStatus ps)
+        {
+            Debug.Log("settttt");
+            Debug.Log(ps);
+            playerStatus = ps;
+        }
 
-		void OnChopping() {
+        public bool getStandingWaitingRmDoor()
+        {
+            return this.isStandingWaitingRmDoor;
+        }
 
-		}
+        public void enterWaitingRmDoor()
+        {
+            this.isStandingWaitingRmDoor = true;
+        }
+        public void exitWaitingRmDoor()
+        {
+            this.isStandingWaitingRmDoor = false;
+        }
 
-		//We've added some simple GUI labels for our controls to make it easier for you to test out.
+        public bool getStandingBaseGate()
+        {
+            return this.isStandingBaseGate;
+        }
 
-		void OnGUI(){
+        public void enterBaseGate()
+        {
+            this.isStandingBaseGate = true;
+        }
+        public void exitBaseGate()
+        {
+            this.isStandingBaseGate = false;
+        }
+        public void SetIsMe()
+        {
+            this.isMe = true;
+        }
 
-		}
+        public bool getIsMe()
+        {
+            return this.isMe;
+        }
+
+        public void Chopping()
+        {
+            print("Start chopping");
+            RaycastHit hit;
+            Vector3 fwd = transform.TransformDirection(Vector3.forward);
+            float melee_range = 1;
+
+            if (Physics.Raycast(transform.position, fwd, out hit, melee_range))
+            {
+                Debug.ClearDeveloperConsole();
+                Debug.Log("Melee hit something! " + hit.collider.name);
+            }
+
+        }
+
+        void OnTriggerEnter(Collider col)
+        {
+            if (photonView.isMine)
+            {
+                if (col.gameObject.CompareTag("Resources"))
+                {
+                    Debug.Log("------enter Resources");
+                    this.colObj = col.gameObject;
+                }
+            }
+        }
+
+        void OnTriggerExit(Collider col)
+        {
+            if (col.gameObject.CompareTag("Resources"))
+            {
+                Debug.Log("------exit Resources");
+                this.colObj = null;
+            }
+        }
+
+        void OnChopping()
+        {
+
+        }
+
+        //We've added some simple GUI labels for our controls to make it easier for you to test out.
+
+        void OnGUI()
+        {
+
+        }
 
         public void Harmed(int damage = 3)
         {
@@ -391,59 +488,62 @@ namespace Fyp.Game.PlayerControl {
             health -= damage;
         }
 
-        public void Attack(GameObject target = null)
-        {
+        public void Attack(GameObject target = null) {
             this.target = target;
             state = "attacking";
         }
 
-		IEnumerator Arming1 () {
-			myAnimator.SetBool ("SwitchTool", true);
-			arming1 = true;
-			usingAxe = true;
-			//currentWeapon = WeaponList[0];
-			yield return new WaitForSeconds (0.5f);
-			WeaponList[0].weaponTransform.position = toolHandPosistion.transform.position;
-			WeaponList[0].weaponTransform.rotation = toolHandPosistion.transform.rotation;
-			WeaponList[0].weaponTransform.parent = toolHandPosistion.transform;
-			myAnimator.SetBool ("SwitchTool", false);
+        IEnumerator Arming1()
+        {
+            myAnimator.SetBool("SwitchTool", true);
+            arming1 = true;
+            usingAxe = true;
+            //currentWeapon = WeaponList[0];
+            yield return new WaitForSeconds(0.5f);
+            WeaponList[0].weaponTransform.position = toolHandPosistion.transform.position;
+            WeaponList[0].weaponTransform.rotation = toolHandPosistion.transform.rotation;
+            WeaponList[0].weaponTransform.parent = toolHandPosistion.transform;
+            myAnimator.SetBool("SwitchTool", false);
 
-		}
-		IEnumerator Disarming1 () {
-			myAnimator.SetBool ("SwitchTool", true);
-			arming1 = false;
-			usingAxe = false;
-			//currentWeapon = WeaponList[0];
-			yield return new WaitForSeconds (0.5f);
-			WeaponList[0].weaponTransform.position = Holster1.transform.position;
-			WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
-			WeaponList[0].weaponTransform.parent = Holster1;
-			myAnimator.SetBool ("SwitchTool", false);
-		}
-		    
-		IEnumerator ChopItDown (RaycastHit hit, Vector3 closestTreePosition) {   
-							myAnimator.SetBool ("ToTwoHandedAttack", true);                     
-			yield return new WaitForSeconds (4f);        
-			// Remove the tree from the terrain tree list
-			        
-			hit.collider.gameObject.SetActive (false);        
-			// Now refresh the terrain, getting rid of the darn collider
-			         // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
-			         // terrain.SetHeights (0, 0, heights);
-			         // Put a falling tree in its place
-			        
-			Instantiate (FallingTreePrefab, closestTreePosition, new Quaternion (0, 90, 0, 0));  
-							myAnimator.SetBool ("ToTwoHandedAttack", false);                
-	  
-		}    
-		public void treeChopSound () {        
-			GameObject go = new GameObject ("Audio");        
-			go.transform.position = choppingPoint;         //Create the source
-			        
-			AudioSource source = go.AddComponent<AudioSource> ();        
-			source.clip = chopSounds[Random.Range (0, chopSounds.Length)];        
-			source.Play ();        
-			Destroy (go, source.clip.length);    
-		}
-	}
+        }
+        IEnumerator Disarming1()
+        {
+            myAnimator.SetBool("SwitchTool", true);
+            arming1 = false;
+            usingAxe = false;
+            //currentWeapon = WeaponList[0];
+            yield return new WaitForSeconds(0.5f);
+            WeaponList[0].weaponTransform.position = Holster1.transform.position;
+            WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
+            WeaponList[0].weaponTransform.parent = Holster1;
+            myAnimator.SetBool("SwitchTool", false);
+        }
+
+        IEnumerator ChopItDown(RaycastHit hit, Vector3 closestTreePosition)
+        {
+            myAnimator.SetBool("ToTwoHandedAttack", true);
+            yield return new WaitForSeconds(4f);
+            // Remove the tree from the terrain tree list
+
+            hit.collider.gameObject.SetActive(false);
+            // Now refresh the terrain, getting rid of the darn collider
+            // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
+            // terrain.SetHeights (0, 0, heights);
+            // Put a falling tree in its place
+
+            Instantiate(FallingTreePrefab, closestTreePosition, new Quaternion(0, 90, 0, 0));
+            myAnimator.SetBool("ToTwoHandedAttack", false);
+
+        }
+        public void treeChopSound()
+        {
+            GameObject go = new GameObject("Audio");
+            go.transform.position = choppingPoint;         //Create the source
+
+            AudioSource source = go.AddComponent<AudioSource>();
+            source.clip = chopSounds[Random.Range(0, chopSounds.Length)];
+            source.Play();
+            Destroy(go, source.clip.length);
+        }
+    }
 }
