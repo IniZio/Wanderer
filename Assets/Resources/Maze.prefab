@@ -55,10 +55,13 @@ MonoBehaviour:
     type: 3}
   firstCellPrefab: {fileID: 4337791592175270824, guid: 55d60f87e5627d840851ec976dea3484,
     type: 3}
+  goalCellPrefab: {fileID: 7445177515519575001, guid: 88e213d0145f0aa41a91675648474183,
+    type: 3}
   generationStepDelay: 0.01
   size:
     x: 20
     z: 20
+  genGoal: 0
   passagePrefab: {fileID: 896375025798299803, guid: 6b04f9a47cbeb475e9e42c94c1396d1c,
     type: 3}
   wallPrefabs:
@@ -93,8 +96,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4286456979294820248}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &9128668055811024918

@@ -107,6 +107,7 @@ namespace Fyp.Game.RandomMap {
 
         private void DoNextGenerationStep (List<MazeCell> activeCells) {
             int currentIndex = activeCells.Count - 1;
+            Debug.Log(currentIndex.ToString());
             MazeCell currentCell = activeCells[currentIndex];
             if (currentCell.IsFullyInitialized) {
                 activeCells.RemoveAt (currentIndex);
@@ -117,7 +118,7 @@ namespace Fyp.Game.RandomMap {
             if (ContainsCoordinates (coordinates)) {
                 MazeCell neighbor = GetCell (coordinates);
                 if (neighbor == null) {
-                    neighbor = CreateCell (coordinates, false, currentIndex == 0);
+                    neighbor = CreateCell (coordinates, false, false);
                     CreatePassage (currentCell, neighbor, direction);
                     activeCells.Add (neighbor);
                 } else if (currentCell.room.settingsIndex == neighbor.room.settingsIndex) {
