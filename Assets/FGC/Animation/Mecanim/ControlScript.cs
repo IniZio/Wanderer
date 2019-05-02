@@ -79,7 +79,7 @@ namespace Fyp.Game.PlayerControl
                 stream.SendNext(loadouts);
                 stream.SendNext(loadoutIndex);
 				stream.SendNext(randomSeed);
-                stream.SendNext(isRandomMapBaseGate);
+                stream.SendNext(isStandingRandomMapGate);
 			}
 			else {
 				isMaster = (bool) stream.ReceiveNext();
@@ -90,7 +90,7 @@ namespace Fyp.Game.PlayerControl
                 loadouts = (int[])stream.ReceiveNext();
                 loadoutIndex = (int)stream.ReceiveNext();
                 randomSeed = (int) stream.ReceiveNext();
-                isRandomMapBaseGate = (bool) stream.ReceiveNext();
+                isStandingRandomMapGate = (bool) stream.ReceiveNext();
             }
 		}
 
