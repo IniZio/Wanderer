@@ -1,8 +1,10 @@
 ﻿using Fyp.Game.Network;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 struct Mission2
 {
     public int nextWave;
@@ -14,6 +16,7 @@ public class DungeonMission : Photon.PunBehaviour
 
     private NPCManager npcManager;
     private Mission2 mission2;
+    private float alphaFadeValue;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -99,6 +102,17 @@ public class DungeonMission : Photon.PunBehaviour
     {
         nextMission += 1;
         //StartMission();
+    }
+
+    public void FailMission()
+    {
+        UnityEngine.UI.Image blackScreen = GameObject.Find("Death").GetComponent<UnityEngine.UI.Image>();
+
+        blackScreen.color = Color.black;
+        blackScreen.canvasRenderer.SetAlpha(0.0f);
+        blackScreen.CrossFadeAlpha(1.0f, 3, false);
+
+        NetworkChangeScene.AllPlayerChangeScene("BaseNew");
     }
 
     public void FinishMission(Constants.Mission mission)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Fyp.Game.PlayerControl;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -61,8 +62,9 @@ public class NPCControl : Photon.PunBehaviour
                 if (colli && colli.tag.IndexOf("Player") >= 0)
                 {
                     // a bit more random in target choosing
-                    if (new System.Random().Next(2) == 0) { break;  }
-                    target = colli.gameObject;
+                    if (new System.Random().Next(2) == 0) {
+                        target = colli.gameObject;
+                    }
                     break;
                 }
             }
@@ -85,7 +87,7 @@ public class NPCControl : Photon.PunBehaviour
         {
             case "attacking":
                 animator.SetBool("Run", false);
-                agent.isStopped = true;
+                agent.enabled = false;
                 if (swingTimer < swingInterval)
                 {
                     swingTimer += Time.deltaTime;
@@ -105,6 +107,10 @@ public class NPCControl : Photon.PunBehaviour
 
                     if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
                     {
+                        if (hit.collider.tag.StartsWith("Player"))
+                        {
+                            hit.collider.GetComponent<ControlScript>().Harmed(10);
+                        }
                         // TODO: actually deal damage
                     }
                 }
@@ -123,7 +129,7 @@ public class NPCControl : Photon.PunBehaviour
                 Vector3 runTo = transform.position + rangeVector.normalized * (rangeVector.magnitude - attackRange);
                 agent.SetDestination(runTo);
                 animator.SetBool("Run", true);
-                agent.isStopped = false;
+                agent.enabled = true;
                 break;
             case "harmed":
                 if (!animator.GetBool("Get_Hit") && isMoaning)
