@@ -37,10 +37,20 @@ namespace Fyp.Game.RandomMap {
 
         public void Generate (RandomMap.GameManager gm) {
             cells = new MazeCell[size.x, size.z];
+            MazeCell last = new MazeCell();
             List<MazeCell> activeCells = new List<MazeCell> ();
             DoFirstGenerationStep (activeCells);
             while (activeCells.Count > 0) {
                 DoNextGenerationStep (activeCells);
+                if (activeCells.Count == 1) {
+                    last = activeCells[0];
+                }
+            }
+            foreach(Transform child in last.transform) {
+                if (child.tag == "RandomCell") {
+                    child.gameObject.SetActive(false);
+                    Instantiate(goalCellPrefab, child.gameObject.transform, false);
+                }
             }
             gm.isDone();
         }
@@ -110,7 +120,7 @@ namespace Fyp.Game.RandomMap {
             if (ContainsCoordinates (coordinates)) {
                 MazeCell neighbor = GetCell (coordinates);
                 if (neighbor == null) {
-                    neighbor = CreateCell (coordinates, false, (activeCells.Count == 1 && !genGoal));
+                    neighbor = CreateCell (coordinates, false, false);
                     CreatePassage (currentCell, neighbor, direction);
                     activeCells.Add (neighbor);
                 } else if (currentCell.room.settingsIndex == neighbor.room.settingsIndex) {
