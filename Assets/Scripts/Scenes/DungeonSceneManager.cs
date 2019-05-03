@@ -61,7 +61,8 @@ namespace Fyp.Game.UI {
             int LightCount = 0;
             for(int i = 0; i < Lights.Length; i++){
                     if(ButtonArray[i] == true){
-                       LightCount++;
+                    Lights[i].GetComponent<Light>().enabled = true;
+                    LightCount++;
                  }
             }
             if(HintsCount == 250){
@@ -69,8 +70,16 @@ namespace Fyp.Game.UI {
             }
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
-               Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
-               this.ButtonArray[0] = !this.ButtonArray[0];
+                //Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
+                for (int i = 0; i < Lights.Length; i++)
+                {
+                    if (ButtonArray[i] == true)
+                    {
+                        Lights[i].GetComponent<Light>().enabled = true;
+                        LightCount++;
+                    }
+                }
+                this.ButtonArray[0] = !this.ButtonArray[0];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
@@ -278,7 +287,7 @@ namespace Fyp.Game.UI {
         }
 
         public void ClickButton(int num) {
-            Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
+            //Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
 
