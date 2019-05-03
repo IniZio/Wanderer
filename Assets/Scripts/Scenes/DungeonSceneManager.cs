@@ -220,9 +220,11 @@ namespace Fyp.Game.UI {
                         Lights[i].GetComponent<Light>().enabled = true;
                     }
                 }
+
                 yield return new WaitForSeconds(time);
-                // back to base
+
                 missionManager.FinishMission(Constants.Mission.Stage1_1F);
+
 
              }
 

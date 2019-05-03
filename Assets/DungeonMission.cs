@@ -114,6 +114,7 @@ public class DungeonMission : Photon.PunBehaviour
     public void FinishMission()
     {
         nextMission += 1;
+        NetworkChangeScene.AllPlayerChangeScene("BaseNew");
         //StartMission();
     }
 
@@ -138,6 +139,7 @@ public class DungeonMission : Photon.PunBehaviour
 
     public void FinishMission(Constants.Mission mission)
     {
+        print("base");
         nextMission = mission + 1;
         NetworkChangeScene.AllPlayerChangeScene("BaseNew");
         //StartMission();
