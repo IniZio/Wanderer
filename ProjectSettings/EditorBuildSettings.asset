@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 4474d9272bd871341bbbc1062deb63e9
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 1914afa06c9579d46a12ebc88dc8445a
   m_configObjects: {}

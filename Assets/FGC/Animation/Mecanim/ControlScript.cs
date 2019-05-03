@@ -23,6 +23,7 @@ namespace Fyp.Game.PlayerControl
         public bool isAttacking = false;
         public bool isMoaning = false;
         bool isMe = false;
+        public bool isTutMode = false;
         public AudioSource footstep;
 
         private GameObject target;
@@ -97,7 +98,9 @@ namespace Fyp.Game.PlayerControl
 		void Start () {
 			//We have a reference called myAnimator but we need to fill that reference with an Animator component.
 			//We can do that by 'getting' the animator that is on the same game object this script is appleid to.
-			DontDestroyOnLoad(this);
+            if (!isTutMode) {
+			    DontDestroyOnLoad(this);
+            }
 			myAnimator = GetComponent<Animator> ();
 			toolHandPosistion = GameObject.Find ("toolMountPoint").transform;
 			Holster1 = GameObject.Find ("Holster1").transform;
@@ -197,7 +200,7 @@ namespace Fyp.Game.PlayerControl
             }
 
             Debug.Log("ControlScript update isMINE");
-            if (photonView.isMine)
+            if (photonView.isMine || isTutMode)
             {
                 // Update HUD
                 try
