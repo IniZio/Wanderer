@@ -156,6 +156,8 @@ namespace Fyp.Game.UI {
             if(Mission1Array[0] == true && Mission1Array[1] == true){
                 Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);
+                this.Mission1Array[0] = false;
+                this.Mission1Array[1] = false;
                 print("complete Mission1");
             }
 
