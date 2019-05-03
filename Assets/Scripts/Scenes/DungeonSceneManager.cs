@@ -10,7 +10,7 @@ namespace Fyp.Game.UI {
     public class DungeonSceneManager : Photon.PunBehaviour {
         int misssion3 = 0;
         int HintsCount = 0;
-     
+
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
         ControlScript P1Script, P2Script;
@@ -29,14 +29,18 @@ namespace Fyp.Game.UI {
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
 				stream.SendNext(ButtonArray);
+                stream.SendNext(LightArray);
+                stream.SendNext(Mission1Array);
 			}
 			else {
                 ButtonArray = (bool[]) stream.ReceiveNext();
+                LightArray = (bool[]) stream.ReceiveNext();
+                Mission1Array = (bool[]) stream.ReceiveNext();
 			}
 		}
 
         private void Start()
-        
+
         {
 
             missionManager = GetComponent<DungeonMission>();
@@ -71,7 +75,7 @@ namespace Fyp.Game.UI {
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
-               this.ButtonArray[1] = !this.ButtonArray[1];  
+               this.ButtonArray[1] = !this.ButtonArray[1];
 
 
             }
@@ -88,27 +92,27 @@ namespace Fyp.Game.UI {
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
-               this.ButtonArray[4] = !this.ButtonArray[4];  
+               this.ButtonArray[4] = !this.ButtonArray[4];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) {
                 Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
-               this.ButtonArray[5] = !this.ButtonArray[5];  
+               this.ButtonArray[5] = !this.ButtonArray[5];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) {
                 Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
-               this.ButtonArray[6] = !this.ButtonArray[6]; 
+               this.ButtonArray[6] = !this.ButtonArray[6];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha8)) {
                 Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
-               this.ButtonArray[7] = !this.ButtonArray[7];  
+               this.ButtonArray[7] = !this.ButtonArray[7];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha9)) {
                 Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
-               this.ButtonArray[8] = !this.ButtonArray[8];  
+               this.ButtonArray[8] = !this.ButtonArray[8];
 
             }
             if(LightCount == 3){
@@ -122,7 +126,7 @@ namespace Fyp.Game.UI {
                     //}
                      StartCoroutine(Complete(1));
                     print("complete Mission3");
-                    
+
 
                     LightCount = 999;
                     }
@@ -131,7 +135,7 @@ namespace Fyp.Game.UI {
                 }else{
                     // delay -> offlight -> delay -> redlight -> delay -> offlight
                     StartCoroutine(Incomplete(1));
-                   
+
                     print("incomplete");
                     LightCount = 0;
                 }
@@ -173,10 +177,10 @@ namespace Fyp.Game.UI {
 
             // check the player y position
             if (this.Player1.transform.position.y < -16) {
-                Player1.transform.position = this.P1point.transform.position;
+                this.Player1.transform.position = this.P1point.transform.position;
             }
             if (this.Player2.transform.position.y < -16) {
-                Player2.transform.position = this.P2point.transform.position;
+                this.Player2.transform.position = this.P2point.transform.position;
             }
         }
           IEnumerator Incomplete(float time)
@@ -190,7 +194,7 @@ namespace Fyp.Game.UI {
                     }
 
                 yield return new WaitForSeconds(time);
-                
+
                 for(int i = 0; i < Lights.Length; i++){
                         Lights[i].GetComponent<Light>().enabled = true;
                         Lights[i].color = Color.red;
@@ -215,7 +219,7 @@ namespace Fyp.Game.UI {
                     }
 
                 yield return new WaitForSeconds(time);
-                
+
                 for(int i = 0; i < Lights.Length; i++){
                         Lights[i].color = Color.gray;
                         Lights[i].GetComponent<Light>().enabled = true;
