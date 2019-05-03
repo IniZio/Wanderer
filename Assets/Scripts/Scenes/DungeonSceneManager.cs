@@ -8,7 +8,8 @@ using Leap.Unity.Interaction;
 namespace Fyp.Game.UI {
 
     public class DungeonSceneManager : Photon.PunBehaviour {
-        int LightCount = 0;
+        int misssion3 = 0;
+     
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
         ControlScript P1Script, P2Script;
@@ -33,7 +34,9 @@ namespace Fyp.Game.UI {
 		}
 
         private void Start()
+        
         {
+
             missionManager = GetComponent<DungeonMission>();
         }
 
@@ -48,59 +51,64 @@ namespace Fyp.Game.UI {
         }
 
         void Update() {
+            int LightCount = 0;
+            for(int i = 0; i < Lights.Length; i++){
+                    if(ButtonArray[i] == true){
+                       LightCount++;
+                 }
+            }
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
                Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
                this.ButtonArray[0] = !this.ButtonArray[0];
-               LightCount++;
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
                this.ButtonArray[1] = !this.ButtonArray[1];  
-               LightCount++;
+
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha3)) {
                 Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
                this.ButtonArray[2] = !this.ButtonArray[2];
 
-               LightCount++;  
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
                 Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
                this.ButtonArray[3] = !this.ButtonArray[3];
 
-               LightCount++;  
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
                this.ButtonArray[4] = !this.ButtonArray[4];  
-               LightCount++;
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) {
                 Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
                this.ButtonArray[5] = !this.ButtonArray[5];  
-               LightCount++;
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) {
                 Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
                this.ButtonArray[6] = !this.ButtonArray[6]; 
-               LightCount++; 
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha8)) {
                 Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
                this.ButtonArray[7] = !this.ButtonArray[7];  
-               LightCount++;
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha9)) {
                 Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
                this.ButtonArray[8] = !this.ButtonArray[8];  
-               LightCount++;
+
             }
             if(LightCount == 3){
                 if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
-                    if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
+                    misssion3++;
+                    if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false && misssion3 == 1){
                     //complete mission3 back to base
                     //delay -> offlight -> delay -> white light
                     // for(int i = 0; i < Lights.Length; i++){
