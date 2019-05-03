@@ -47,7 +47,9 @@ namespace Fyp.Game.RandomMap {
                 }
             }
             foreach(Transform child in last.transform) {
-                if (child.tag == "RandomCell") {
+                if (child.gameObject.tag == "RandomCell") {
+                    Debug.Log("fkfkfkfkfkkfkfkfkfkfkfkfkfkfk");
+                    Debug.Log(child);
                     child.gameObject.SetActive(false);
                     Instantiate(goalCellPrefab, child.gameObject.transform, false);
                 }
