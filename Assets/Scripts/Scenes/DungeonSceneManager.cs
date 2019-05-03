@@ -9,6 +9,7 @@ namespace Fyp.Game.UI {
 
     public class DungeonSceneManager : Photon.PunBehaviour {
         int misssion3 = 0;
+        int HintsCount = 0;
      
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
@@ -16,6 +17,7 @@ namespace Fyp.Game.UI {
         public GameObject FollowCamera;
         public GameObject MainDoor;
         public GameObject Mission1Floor;
+        public GameObject Mission3Hints;
         public Light[] Lights = new Light[9];
         public DungeonMission missionManager;
 
@@ -44,6 +46,7 @@ namespace Fyp.Game.UI {
             this.MapPlayer1();
             this.MapPlayer2();
             this.MainDoor.SetActive(true);
+            this.Mission3Hints.SetActive(false);
             for(int i = 0; i < Lights.Length; i++){
                 Lights[i].GetComponent<Light>().enabled = false;
                 ButtonArray[i] = false;
@@ -56,6 +59,9 @@ namespace Fyp.Game.UI {
                     if(ButtonArray[i] == true){
                        LightCount++;
                  }
+            }
+            if(HintsCount == 250){
+                Mission3Hints.SetActive(true);
             }
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
@@ -125,7 +131,7 @@ namespace Fyp.Game.UI {
                 }else{
                     // delay -> offlight -> delay -> redlight -> delay -> offlight
                     StartCoroutine(Incomplete(1));
-                    
+                   
                     print("incomplete");
                     LightCount = 0;
                 }
@@ -197,6 +203,7 @@ namespace Fyp.Game.UI {
                         Lights[i].color = Color.green;
                         ButtonArray[i] = false;
                     }
+                HintsCount++;
 
              }
              IEnumerator Complete(float time)
