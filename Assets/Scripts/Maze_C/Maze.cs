@@ -51,6 +51,7 @@ namespace Fyp.Game.RandomMap {
                 newCell = Instantiate (firstCellPrefab) as MazeCell;
             }
             else if (isGoal) {
+                genGoal = true;
                 newCell = Instantiate (goalCellPrefab) as MazeCell;
             }
             else {
@@ -65,14 +66,6 @@ namespace Fyp.Game.RandomMap {
                 //new Vector3 ((coordinates.x) * 5.8f + 0.5f, 0f, (coordinates.z) * 5.8f + 0.5f);
                 new Vector3 ((coordinates.x - size.x * 0.5f) * 5.8f + 0.5f, 0f, (coordinates.z - size.z * 0.5f) * 5.8f + 0.5f);
 
-            Debug.Log (coordinates.x.ToString ());
-            Debug.Log (coordinates.z.ToString ());
-            Debug.Log (size.x.ToString ());
-            Debug.Log (size.z.ToString ());
-
-            Debug.Log (newCell.transform.localPosition.ToString ());
-            Debug.Log (transform.ToString ());
-            //  new Vector3 (coordinates.x - size.x+500, 0, coordinates.z - size.z+500);
             return newCell;
 
         }
@@ -117,8 +110,7 @@ namespace Fyp.Game.RandomMap {
             if (ContainsCoordinates (coordinates)) {
                 MazeCell neighbor = GetCell (coordinates);
                 if (neighbor == null) {
-                    Debug.Log(currentIndex.ToString());
-                    neighbor = CreateCell (coordinates, false, currentIndex % size.x + 3 == 0);
+                    neighbor = CreateCell (coordinates, false, (activeCells.Count == 1 && !genGoal));
                     CreatePassage (currentCell, neighbor, direction);
                     activeCells.Add (neighbor);
                 } else if (currentCell.room.settingsIndex == neighbor.room.settingsIndex) {
