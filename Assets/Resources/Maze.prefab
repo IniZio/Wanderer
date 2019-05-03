@@ -55,7 +55,7 @@ MonoBehaviour:
     type: 3}
   firstCellPrefab: {fileID: 4337791592175270824, guid: 55d60f87e5627d840851ec976dea3484,
     type: 3}
-  goalCellPrefab: {fileID: 7445177515519575001, guid: 88e213d0145f0aa41a91675648474183,
+  goalCellPrefab: {fileID: 2993568220657291483, guid: a1af457b75a42df40bd337a45fc1fdc4,
     type: 3}
   generationStepDelay: 0.01
   size:
@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 2238608067718972795, guid: ef48bfd4d2d884df6a422fe064b7e789, type: 3}
   - {fileID: 7682363826420220860, guid: c9210d2f777934c3cbaccc7c353194ef, type: 3}
   - {fileID: 375682167541005962, guid: 18b397dce8cfb47428f07490bd2cab7d, type: 3}
+  cellArray: []
   doorPrefab: {fileID: 2861819101041428149, guid: 985320b7e0fd04336a51d08cad8fc9f2,
     type: 3}
   doorProbability: 0.1

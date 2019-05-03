@@ -17,7 +17,8 @@ namespace Fyp.Game.RandomMap {
 
         public MazeRoomSettings[] roomSettings;
 
-        public MazeCell cellPrefab, firstCellPrefab, goalCellPrefab;
+        public MazeCell cellPrefab, firstCellPrefab;
+        public GameObject goalCellPrefab;
 
         public float generationStepDelay;
 
@@ -59,10 +60,10 @@ namespace Fyp.Game.RandomMap {
             if (isFirst) {
                 newCell = Instantiate (firstCellPrefab) as MazeCell;
             }
-            else if (isGoal) {
-                genGoal = true;
-                newCell = Instantiate (goalCellPrefab) as MazeCell;
-            }
+            // else if (isGoal) {
+            //     genGoal = true;
+            //     newCell = Instantiate (goalCellPrefab) as MazeCell;
+            // }
             else {
                 newCell = Instantiate (cellPrefab) as MazeCell;
             }
