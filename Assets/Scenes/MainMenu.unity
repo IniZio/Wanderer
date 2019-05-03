@@ -1821,6 +1821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initiallyOpen: {fileID: 1235861152}
+  hideAtStart: 0
 --- !u!114 &679887390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3164,6 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initiallyOpen: {fileID: 0}
+  hideAtStart: 0
 --- !u!4 &1233880542
 Transform:
   m_ObjectHideFlags: 0
@@ -8475,11 +8477,11 @@ MonoBehaviour:
   _templateLayer:
     layerIndex: 0
   _interactionLayer:
-    layerIndex: 9
-  _interactionNoContactLayer:
     layerIndex: 10
-  _contactBoneLayer:
+  _interactionNoContactLayer:
     layerIndex: 11
+  _contactBoneLayer:
+    layerIndex: 12
   _drawControllerRuntimeGizmos: 0
 --- !u!1 &1606905223625766475
 GameObject:

@@ -2788,7 +2788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 
-  maxRange: 50
+  maxRange: 5
   attackRange: 2
   chaseSpeed: 5
   normalSpeed: 2

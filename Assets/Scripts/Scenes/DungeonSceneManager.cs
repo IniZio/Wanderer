@@ -16,7 +16,8 @@ namespace Fyp.Game.UI {
         public GameObject MainDoor;
         public GameObject Mission1Floor;
         public Light[] Lights = new Light[9];
-        
+        public DungeonMission missionManager;
+
 
         public bool[] ButtonArray = {false, false, false, false, false, false, false, false, false};
         public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
@@ -33,6 +34,7 @@ namespace Fyp.Game.UI {
 
         private void Start()
         {
+            missionManager = GetComponent<DungeonMission>();
         }
 
         void Awake() {
@@ -56,15 +58,19 @@ namespace Fyp.Game.UI {
                 Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
                this.ButtonArray[1] = !this.ButtonArray[1];  
                LightCount++;
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha3)) {
                 Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
                this.ButtonArray[2] = !this.ButtonArray[2];
+
                LightCount++;  
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
                 Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
                this.ButtonArray[3] = !this.ButtonArray[3];
+
                LightCount++;  
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
@@ -107,6 +113,7 @@ namespace Fyp.Game.UI {
                     LightCount = 999;
                     }
 
+
                 }else{
                     // delay -> offlight -> delay -> redlight -> delay -> offlight
                     StartCoroutine(Incomplete(1));
@@ -133,7 +140,7 @@ namespace Fyp.Game.UI {
                 this.MainDoor.SetActive(false);
                 print("complete Mission1");
             }
-            
+
 
 
             if (!this.Player1) {
@@ -148,6 +155,14 @@ namespace Fyp.Game.UI {
             }
             if (ButtonArray[1]) {
                 // hihi
+            }
+
+            // check the player y position
+            if (this.Player1.transform.position.y < -16) {
+                Player1.transform.position = this.P1point.transform.position;
+            }
+            if (this.Player2.transform.position.y < -16) {
+                Player2.transform.position = this.P2point.transform.position;
             }
         }
           IEnumerator Incomplete(float time)
@@ -207,6 +222,7 @@ namespace Fyp.Game.UI {
                 }
                 yield return new WaitForSeconds(time);
                 // back to base
+                missionManager.FinishMission(Constants.Mission.Stage1_1F);
 
              }
 
@@ -242,7 +258,7 @@ namespace Fyp.Game.UI {
             Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
-        
+
         public void OnpressButton(int num){
             this.Mission1Array[num] = true;
         }

@@ -27,7 +27,7 @@ namespace Fyp.Game.UI {
 
         void Update() {
             if (!this.resGen.generated) {
-                    resGen.randomGen();
+                resGen.randomGen();
             }
             if (!this.Player1 || !this.P1Script) {
                 this.MapPlayer1();
@@ -38,7 +38,7 @@ namespace Fyp.Game.UI {
             if (this.P1Script.getStandingBaseGate() && this.P2Script.getStandingBaseGate()) {
                 this.P1Script.exitBaseGate();
                 this.P2Script.exitBaseGate();
-                NetworkChangeScene.AllPlayerChangeScene("Dungeon");
+                NetworkChangeScene.AllPlayerChangeScene("RandomMap");
             }
         }
 

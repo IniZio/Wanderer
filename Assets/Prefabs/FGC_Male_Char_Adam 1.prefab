@@ -1799,6 +1799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addItem1: {fileID: 0}
   addItem2: {fileID: 0}
+  addItem3: {fileID: 0}
+  addItem4: {fileID: 0}
 --- !u!1 &879650290496747617
 GameObject:
   m_ObjectHideFlags: 0
