@@ -1,4 +1,5 @@
 ﻿using Fyp.Game.Network;
+using Fyp.Game.PlayerControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -134,6 +135,8 @@ public class DungeonMission : Photon.PunBehaviour
         yield return new WaitForSeconds(3);
 
         NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+        GameObject.Find("Player1Character").GetComponent<ControlScript>().health = 60;
+        GameObject.Find("Player2Character").GetComponent<ControlScript>().health = 60;
         yield break;
     }
 

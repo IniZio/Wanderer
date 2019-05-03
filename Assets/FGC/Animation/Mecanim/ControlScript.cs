@@ -120,7 +120,6 @@ namespace Fyp.Game.PlayerControl
 				// rd.Next(1, 999)
 				randomSeed = rd.Next(1, 999);
 			}
-            Debug.Log("ControlScript update");
             switch (state)
             {
                 case "attacking":
@@ -142,7 +141,9 @@ namespace Fyp.Game.PlayerControl
                         //       }
                         if (/*!animator.GetBool("ToTwoHandAttack") && */isAttacking)
                         {
+                            state = "";
                             isAttacking = false;
+                            myAnimator.SetBool("ToTwoHandedAttack", false);
                             if (weapon.type == "melee")
                             {
                                 RaycastHit hit;
@@ -196,7 +197,7 @@ namespace Fyp.Game.PlayerControl
                     break;
             }
 
-            Debug.Log("ControlScript update isMINE");
+            //Debug.Log("ControlScript update isMINE");
             if (photonView.isMine)
             {
                 // Update HUD
@@ -497,6 +498,7 @@ namespace Fyp.Game.PlayerControl
 
         public void Harmed(int damage = 3)
         {
+            Debug.Log("I did get harmed");
             state = "harmed";
             health -= damage;
         }

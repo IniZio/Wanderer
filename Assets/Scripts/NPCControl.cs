@@ -72,14 +72,17 @@ public class NPCControl : Photon.PunBehaviour
 
         if (state != "harmed")
         {
-            if (Vector3.Distance(transform.position, target.transform.position) - 0.2 < attackRange)
+            if (target != null)
             {
-                animator.SetBool("Run", false);
-                state = "attacking";
-            }
-            else
-            {
-                state = "chasing";
+                if (Vector3.Distance(transform.position, target.transform.position) - 0.2 < attackRange)
+                {
+                    animator.SetBool("Run", false);
+                    state = "attacking";
+                }
+                else
+                {
+                    state = "chasing";
+                }
             }
         }
 
@@ -99,19 +102,24 @@ public class NPCControl : Photon.PunBehaviour
                     return;
                 }
                 transform.LookAt(target.transform);
-                if (!animator.GetBool("Attack(1)") && isSwinging)
+                //if (!animator.GetBool("Attack(1)") && isSwinging)
+                if (isSwinging)
                 {
                     isSwinging = false;
                     RaycastHit hit;
                     Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-                    if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
+                    if (Physics.Raycast(transform.position, fwd, out hit, attackRange + 1))
                     {
+                        Debug.Log("Orc Hit something " + hit.collider.tag);
                         if (hit.collider.tag.StartsWith("Player"))
                         {
+                            Debug.Log("Orc sending harm call");
                             hit.collider.GetComponent<ControlScript>().Harmed(10);
                         }
-                        // TODO: actually deal damage
+                    } else
+                    {
+                        state = "";
                     }
                 }
                 else
@@ -125,6 +133,7 @@ public class NPCControl : Photon.PunBehaviour
                 {
                     return;
                 }
+                animator.SetBool("Attack(1)", false);
                 Vector3 rangeVector = (target.transform.position - transform.position);
                 Vector3 runTo = transform.position + rangeVector.normalized * (rangeVector.magnitude - attackRange);
                 agent.SetDestination(runTo);

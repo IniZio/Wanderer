@@ -2666,19 +2666,19 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: UnarmedHit
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: ToTwoHandedAttack
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: TwoHandedAttack
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: TwoHandedHit
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: SwitchTool
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: UnarmedDie
   m_SynchronizeLayers:
   - SynchronizeType: 0

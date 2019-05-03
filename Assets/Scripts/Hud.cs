@@ -21,7 +21,7 @@ public class Hud : MonoBehaviour
     public void SetHealth(int health)
     {
         int i = 0;
-        Debug.Log("Health?" + health);
+        //Debug.Log("Health?" + health);
         foreach (GameObject block in HealthBlocks)
         {
             block.SetActive(health >= (i * 10));

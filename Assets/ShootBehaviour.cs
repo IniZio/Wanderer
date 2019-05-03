@@ -70,10 +70,10 @@ public class ShootBehaviour : Photon.PunBehaviour
     {
         //gunTrail.gameObject.SetActive(isShooting);
         player = this.gameObject.GetComponent<Fyp.Game.Carmera.PlayerCamera>().player;
-        Debug.Log("UPdate shooting? " + isShooting);
+        //Debug.Log("UPdate shooting? " + isShooting);
         if (player.GetPhotonView().isMine)
         {
-            Debug.Log("Detecting shooting" + player.ToString());
+            //Debug.Log("Detecting shooting" + player.ToString());
             shootTimer += Time.deltaTime;
 
            
@@ -84,7 +84,11 @@ public class ShootBehaviour : Photon.PunBehaviour
                 int selectedFinger = (int)Finger.FingerType.TYPE_INDEX;
                 hand = handModel.GetLeapHand();
 
+            try
+            {
                 targetDirection = selectedDirection(hand.Fingers[selectedFinger].TipPosition.ToVector3());
+
+            } catch { }
                 fingerDirection = hand.Fingers[selectedFinger].Bone(Bone.BoneType.TYPE_PROXIMAL).Direction.ToVector3();
             //float angleTo = Vector3.Angle(fingerDirection, targetDirection);
 
@@ -102,14 +106,16 @@ public class ShootBehaviour : Photon.PunBehaviour
 //                Vector3 lineOrigin = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().ViewportToWorldPoint(hit.point);
  //               Debug.DrawRay(lineOrigin, GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().transform.forward * 1000, Color.green);
 
-//                if (crosshair != null)
-//                {
-//                    crosshair.transform.position = hit.point;
-//                    crosshair.transform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
-//                } else
-//                {
-//                    crosshair = PhotonNetwork.Instantiate("Crosshair", hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal), 0);
-//                }
+                //if (crosshair != null)
+                //{
+                //    crosshair.transform.position = hit.point;
+                //    crosshair.transform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
+                //} else
+                //{
+                //    crosshair = PhotonNetwork.Instantiate("Crosshair", hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal), 0);
+                //}
+
+                //crosshair.transform.position = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(hit.point);
 
                 //      gunTrail.SetPosition(1, hit.point);
                 if (isShooting && shootTimer >= timeBetweenBullets)
