@@ -20,7 +20,7 @@ namespace Fyp.Game.UI {
 			SceneManager.LoadScene("BaseNew");
 		}
 
-		public static void MenuToTut() {
+		public void MenuToTut() {
 			Debug.Log("MenuToTut");
 			SceneManager.LoadScene("Tutorial");
 		}
