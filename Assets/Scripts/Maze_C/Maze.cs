@@ -30,6 +30,8 @@ namespace Fyp.Game.RandomMap {
         public MazePassage passagePrefab;
 
         public MazeWall[] wallPrefabs;
+        public List<MazeCell> cellArray;
+
 
         public MazeCell GetCell (IntVector2 coordinates) {
             return cells[coordinates.x, coordinates.z];
@@ -42,16 +44,11 @@ namespace Fyp.Game.RandomMap {
             DoFirstGenerationStep (activeCells);
             while (activeCells.Count > 0) {
                 DoNextGenerationStep (activeCells);
-                if (activeCells.Count == 1) {
-                    last = activeCells[0];
-                }
             }
-            foreach(Transform child in last.transform) {
-                Debug.Log("fkfkfkfkfkkfkfkfkfkfkfkfkfkfk");
+            foreach(Transform child in cellArray[cellArray.Count - 1].transform) {
+                Debug.Log(child.gameObject.tag);
                 if (child.gameObject.tag == "RandomCell") {
-                    Debug.Log(child);
-                    child.gameObject.SetActive(false);
-                    Instantiate(goalCellPrefab, child.gameObject.transform, false);
+                    Instantiate(this.goalCellPrefab).transform.parent = child.gameObject.transform;
                 }
             }
             gm.isDone();
@@ -77,7 +74,7 @@ namespace Fyp.Game.RandomMap {
                 // new Vector3(coordinates.x - size.x * 5.8f + 0.5f, 0f, coordinates.z - size.z * 5.8f + 0.5f);
                 //new Vector3 ((coordinates.x) * 5.8f + 0.5f, 0f, (coordinates.z) * 5.8f + 0.5f);
                 new Vector3 ((coordinates.x - size.x * 0.5f) * 5.8f + 0.5f, 0f, (coordinates.z - size.z * 0.5f) * 5.8f + 0.5f);
-
+            cellArray.Add(newCell);
             return newCell;
 
         }
