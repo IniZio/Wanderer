@@ -303,17 +303,17 @@ namespace Fyp.Game.PlayerControl
                 //Into the kneeling stand animation, which will get our character back to their feet.  Finally the exit transition for kneeling stand is exit time, so
                 //As soon as they are done standing up they will go the next state ("idle/walk").
 
-                if (Input.GetKeyDown("2"))
-                {
-                    if (myAnimator.GetInteger("CurrentAction") == 0)
-                    {
-                        myAnimator.SetInteger("CurrentAction", 2);
-                    }
-                    else if (myAnimator.GetInteger("CurrentAction") == 2)
-                    {
-                        myAnimator.SetInteger("CurrentAction", 0);
-                    }
-                }
+                // if (Input.GetKeyDown("2"))
+                // {
+                //     if (myAnimator.GetInteger("CurrentAction") == 0)
+                //     {
+                //         myAnimator.SetInteger("CurrentAction", 2);
+                //     }
+                //     else if (myAnimator.GetInteger("CurrentAction") == 2)
+                //     {
+                //         myAnimator.SetInteger("CurrentAction", 0);
+                //     }
+                // }
                 //MauryEND
                 // if (Input.GetKey ("r") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
                 // 	myAnimator.SetBool ("2HandIdle", true);
