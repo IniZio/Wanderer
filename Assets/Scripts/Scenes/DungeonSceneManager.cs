@@ -7,7 +7,8 @@ using Leap.Unity.Interaction;
 
 namespace Fyp.Game.UI {
 
-    public class DungeonSceneManager : Photon.PunBehaviour {
+    public class DungeonSceneManager : Photon.PunBehaviour, IPunObservable
+    {
         int misssion3 = 0;
         int HintsCount = 0;
 
@@ -51,6 +52,7 @@ namespace Fyp.Game.UI {
             missionManager = GetComponent<DungeonMission>();
         }
 
+        
         void Awake() {
             this.MapPlayer1();
             this.MapPlayer2();
@@ -62,6 +64,7 @@ namespace Fyp.Game.UI {
             }
         }
 
+        
         void Update() {
             int LightCount = 0;
             for(int i = 0; i < Lights.Length; i++){
@@ -298,14 +301,17 @@ namespace Fyp.Game.UI {
             }
         }
 
+        
         public void ClickButton(int num) {
             //Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
 
+        
         public void OnpressButton(int num){
             this.Mission1Array[num] = true;
         }
+        
         public void UnpressButton(int num){
             this.Mission1Array[num] = false;
         }

@@ -2505,8 +2505,8 @@ MonoBehaviour:
   - {fileID: 6881934020023096672}
   - {fileID: 883216394016928836}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &6882321748353379382
@@ -2607,6 +2607,7 @@ MonoBehaviour:
   isReady: 0
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
+  isStandingRandomMapGate: 0
   isAttacking: 0
   isMoaning: 0
   footstep: {fileID: 883216394016928836}

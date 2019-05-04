@@ -12,7 +12,7 @@ struct Mission2
     public int nextWave;
 }
 
-public class DungeonMission : Photon.PunBehaviour
+public class DungeonMission : Photon.PunBehaviour, IPunObservable
 {
     public Constants.Mission nextMission = Constants.Mission.Stage1_1F;
 
@@ -39,14 +39,16 @@ public class DungeonMission : Photon.PunBehaviour
 
 
     // Start is called before the first frame update
+    
     void Start()
     {
 
         StartMission();
     }
-    
+
 
     // Update is called once per frame
+    
     void Update()
     {
         if (justFailed)
@@ -82,6 +84,7 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+    
     public void StartMission()
     {
         if (PhotonNetwork.isMasterClient)
@@ -99,6 +102,7 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+    
     public void StopMission()
     {
         switch (nextMission)
@@ -112,6 +116,7 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+    
     public void FinishMission()
     {
         nextMission += 1;
@@ -119,11 +124,13 @@ public class DungeonMission : Photon.PunBehaviour
         //StartMission();
     }
 
+    
     public void FailMission()
     {
         justFailed = true;
     }
 
+    
     IEnumerator _FailMission()
     {
         UnityEngine.UI.Image blackScreen = GameObject.Find("Death").GetComponent<UnityEngine.UI.Image>();
@@ -140,6 +147,7 @@ public class DungeonMission : Photon.PunBehaviour
         yield break;
     }
 
+    
     public void FinishMission(Constants.Mission mission)
     {
         print("base");
@@ -148,6 +156,7 @@ public class DungeonMission : Photon.PunBehaviour
         //StartMission();
     }
 
+    
     void Teleport()
     {
      //   GameObject.FindGameObjectWithTag("Player1Character").transform.position
