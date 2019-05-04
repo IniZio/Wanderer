@@ -54,4 +54,5 @@ MonoBehaviour:
   - StartMission
   - StopMission
   - Teleport
+  - ForceUpdate
   DisableAutoOpenWizard: 1
