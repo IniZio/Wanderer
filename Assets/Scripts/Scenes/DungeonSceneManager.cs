@@ -95,7 +95,15 @@ namespace Fyp.Game.UI {
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
-                Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
+               this.ButtonArray[3] = !this.ButtonArray[3];
+                for(int i = 0; i < Lights.Length; i++){
+                    if(ButtonArray[i] == true){
+                        Lights[i].GetComponent<Light>().enabled = true;
+                        LightCount++;
+
+                    }
+                }
+               // Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
                this.ButtonArray[3] = !this.ButtonArray[3];
 
             }
