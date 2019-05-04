@@ -68,7 +68,7 @@ namespace Fyp.Game.UI {
             missionManager = GetComponent<DungeonMission>();
         }
 
-        
+
         void Awake() {
             this.MapPlayer1();
             this.MapPlayer2();
@@ -80,9 +80,9 @@ namespace Fyp.Game.UI {
             }
         }
 
-        
+
         void Update() {
-            photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
+            // photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
             int LightCount = 0;
             if(HintsCount == 250){
                 Mission3Hints.SetActive(true);
@@ -90,46 +90,46 @@ namespace Fyp.Game.UI {
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
                 //Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
-                this.ButtonArray[0] = !this.ButtonArray[0];
+                photonClickButton(0);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 //Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
-               this.ButtonArray[1] = !this.ButtonArray[1];
+                photonClickButton(1);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha3)) {
                 //Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
-               this.ButtonArray[2] = !this.ButtonArray[2];
+                photonClickButton(2);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
-               this.ButtonArray[3] = !this.ButtonArray[3];
-              
+                photonClickButton(3);
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 //Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
-               this.ButtonArray[4] = !this.ButtonArray[4];
+                photonClickButton(4);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) {
                 //Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
-               this.ButtonArray[5] = !this.ButtonArray[5];
+                photonClickButton(5);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) {
                 //Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
-               this.ButtonArray[6] = !this.ButtonArray[6];
+                photonClickButton(6);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha8)) {
                // Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
-               this.ButtonArray[7] = !this.ButtonArray[7];
+                photonClickButton(7);
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha9)) {
                 //Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
-               this.ButtonArray[8] = !this.ButtonArray[8];
+                photonClickButton(8);
 
             }
              for(int i = 0; i < Lights.Length; i++){
@@ -293,11 +293,15 @@ namespace Fyp.Game.UI {
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
 
-        
+        public void photonClickButton(int num) {
+            photonView.RPC("ClickButton", PhotonTargets.All, num);
+        }
+
+
         public void OnpressButton(int num){
             this.Mission1Array[num] = true;
         }
-        
+
         public void UnpressButton(int num){
             this.Mission1Array[num] = false;
         }
