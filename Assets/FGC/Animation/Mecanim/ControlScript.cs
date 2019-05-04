@@ -24,6 +24,7 @@ namespace Fyp.Game.PlayerControl
         public bool isMoaning = false;
         bool isMe = false;
         public AudioSource footstep;
+        private int count = 0;
 
         private GameObject target;
         public float attackRange = 2;
@@ -37,7 +38,7 @@ namespace Fyp.Game.PlayerControl
 		private float _VSpeed;
 		public bool unarmed;
 		public bool twoHanded;
-		public bool usingAxe;
+        public bool usingAxe, usingGun;
 		public bool arming1;
 		public bool chopTree;
 
@@ -47,8 +48,8 @@ namespace Fyp.Game.PlayerControl
 		public AudioClip[] chopSounds;    
 		Vector3 closestTreePosition = new Vector3 ();
 
-		private Transform toolHandPosistion;
-		private Transform Holster1;
+        private Transform toolHandPosistion, gunHandPosistion, gunHold;
+        private Transform Holster1;
 		private Transform Holster2;
 
 		public List<WeaponInfo> WeaponList = new List<WeaponInfo> ();
@@ -102,11 +103,13 @@ namespace Fyp.Game.PlayerControl
 			toolHandPosistion = GameObject.Find ("toolMountPoint").transform;
 			Holster1 = GameObject.Find ("Holster1").transform;
 			Holster2 = GameObject.Find ("Holster2").transform;
-			// WeaponList[1].weaponTransform.position = Holster2.transform.position;
-			// WeaponList[1].weaponTransform.rotation = Holster2.transform.rotation;
-			// WeaponList[1].weaponTransform.parent = Holster2;
+            gunHandPosistion = GameObject.Find("gunMountPoint").transform;
+            gunHold = GameObject.Find("gunhold").transform;
+            // WeaponList[1].weaponTransform.position = Holster2.transform.position;
+            // WeaponList[1].weaponTransform.rotation = Holster2.transform.rotation;
+            // WeaponList[1].weaponTransform.parent = Holster2;
 
-			WeaponList[0].weaponTransform.position = Holster1.transform.position;
+            WeaponList[0].weaponTransform.position = Holster1.transform.position;
 			WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
 			WeaponList[0].weaponTransform.parent = Holster1;
 		}
@@ -234,7 +237,7 @@ namespace Fyp.Game.PlayerControl
                 }
                 myAnimator.SetFloat("VSpeed", _VSpeed);
 
-                if (Input.GetKey("a") && (myAnimator.GetInteger("CurrentAction") == 0))
+                if (Input.GetKey("a"))
                 {
 
                     //Rotate the character procedurally based on Time.deltaTime.  This will give the illusion of moving
@@ -257,7 +260,7 @@ namespace Fyp.Game.PlayerControl
                 }
 
                 //Same thing for E key, just rotating the other way!
-                if (Input.GetKey("d") && (myAnimator.GetInteger("CurrentAction") == 0))
+                if (Input.GetKey("d"))
                 {
                     transform.Rotate(Vector3.up * Time.deltaTime * 100.0f);
                     if ((Input.GetAxis("Vertical") == 0f) && (Input.GetAxis("Horizontal") == 0))
@@ -273,13 +276,13 @@ namespace Fyp.Game.PlayerControl
 
                 if (Input.GetKey(KeyCode.Alpha1))
                 {
-                    switch (arming1)
+                    switch (myAnimator.GetInteger("CurrentAction"))
                     {
-                        case false:
+                        case 0:
                             StartCoroutine(Arming1());
                             break;
 
-                        case true:
+                        case 1:
                             StartCoroutine(Disarming1());
                             break;
                     }
@@ -302,7 +305,19 @@ namespace Fyp.Game.PlayerControl
                 //From kneeling idle is "currentaction = 0".  This means we'll need to set up a toggle just like in Example #4.  When we toggle from 3 to 0, we'll transition
                 //Into the kneeling stand animation, which will get our character back to their feet.  Finally the exit transition for kneeling stand is exit time, so
                 //As soon as they are done standing up they will go the next state ("idle/walk").
+                if (Input.GetKey(KeyCode.Alpha2))
+                {
+                    switch (myAnimator.GetInteger("CurrentAction"))
+                    {
+                        case 0:
+                            StartCoroutine(Draw2());
+                            break;
 
+                        case 2:
+                            StartCoroutine(Hold2());
+                            break;
+                    }
+                }
                 // if (Input.GetKeyDown("2"))
                 // {
                 //     if (myAnimator.GetInteger("CurrentAction") == 0)
@@ -517,7 +532,7 @@ namespace Fyp.Game.PlayerControl
         IEnumerator Arming1()
         {
             myAnimator.SetBool("SwitchTool", true);
-            arming1 = true;
+          //  arming1 = true;
             usingAxe = true;
             //currentWeapon = WeaponList[0];
             yield return new WaitForSeconds(0.5f);
@@ -525,12 +540,12 @@ namespace Fyp.Game.PlayerControl
             WeaponList[0].weaponTransform.rotation = toolHandPosistion.transform.rotation;
             WeaponList[0].weaponTransform.parent = toolHandPosistion.transform;
             myAnimator.SetBool("SwitchTool", false);
-
+            myAnimator.SetInteger("CurrentAction", 1);
         }
         IEnumerator Disarming1()
         {
             myAnimator.SetBool("SwitchTool", true);
-            arming1 = false;
+            //arming1 = false;
             usingAxe = false;
             //currentWeapon = WeaponList[0];
             yield return new WaitForSeconds(0.5f);
@@ -538,23 +553,64 @@ namespace Fyp.Game.PlayerControl
             WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
             WeaponList[0].weaponTransform.parent = Holster1;
             myAnimator.SetBool("SwitchTool", false);
+            myAnimator.SetInteger("CurrentAction", 0);
+
+        }
+        IEnumerator Draw2()
+        {
+            myAnimator.SetBool("Draw", true);
+            usingGun = true;
+            //currentWeapon = WeaponList[0];
+            yield return new WaitForSeconds(0.5f);
+            WeaponList[0].weaponTransform.position = gunHandPosistion.transform.position;
+            WeaponList[0].weaponTransform.rotation = gunHandPosistion.transform.rotation;
+            WeaponList[0].weaponTransform.parent = gunHandPosistion.transform;
+            myAnimator.SetBool("Draw", false);
+            myAnimator.SetInteger("CurrentAction", 2);
+        }
+        IEnumerator Hold2()
+        {
+            myAnimator.SetBool("Hold", true);
+            usingGun = false;
+            //currentWeapon = WeaponList[0];
+            yield return new WaitForSeconds(0.5f);
+            WeaponList[0].weaponTransform.position = gunHold.transform.position;
+            WeaponList[0].weaponTransform.rotation = gunHold.transform.rotation;
+            WeaponList[0].weaponTransform.parent = gunHold;
+            myAnimator.SetBool("Hold", false);
+            myAnimator.SetInteger("CurrentAction", 0);
         }
 
         IEnumerator ChopItDown(RaycastHit hit, Vector3 closestTreePosition)
         {
-            myAnimator.SetBool("ToTwoHandedAttack", true);
-            yield return new WaitForSeconds(4f);
-            // Remove the tree from the terrain tree list
+            if (count == 0)
+            {
+                myAnimator.SetBool("ToTwoHandedAttack", true);
+                count++;
 
-            hit.collider.gameObject.SetActive(false);
-            // Now refresh the terrain, getting rid of the darn collider
-            // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
-            // terrain.SetHeights (0, 0, heights);
-            // Put a falling tree in its place
+            }
+            else if ((count != 0) && (count <= 5))
+            {
+                myAnimator.SetBool("TwoHandedAttack", true);
+                count++;
 
-            Instantiate(FallingTreePrefab, closestTreePosition, new Quaternion(0, 90, 0, 0));
+            }
+            yield return new WaitForSeconds(1f);
+            // Remove the tree from the terrain tree list		        
+            if (count == 1)
+            {
+                hit.collider.gameObject.SetActive(false);
+                // Now refresh the terrain, getting rid of the darn collider
+                // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
+                // terrain.SetHeights (0, 0, heights);
+                // Put a falling tree in its place	  
+                closestTreePosition.y += 3.1f;
+                Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 80));
+                Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 100));
+
+            }
             myAnimator.SetBool("ToTwoHandedAttack", false);
-
+            myAnimator.SetBool("TwoHandedAttack", false);
         }
         public void treeChopSound()
         {
@@ -565,6 +621,16 @@ namespace Fyp.Game.PlayerControl
             source.clip = chopSounds[Random.Range(0, chopSounds.Length)];
             source.Play();
             Destroy(go, source.clip.length);
+        }
+
+        public void pick(GameObject go)
+        {
+            StartCoroutine(Pick (go));
+        }
+        IEnumerator Pick(GameObject go) {
+            myAnimator.SetTrigger("Pick");
+            yield return new WaitForSeconds(1f);
+           
         }
     }
 }
