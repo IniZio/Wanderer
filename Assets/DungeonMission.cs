@@ -1,4 +1,5 @@
 ﻿using Fyp.Game.Network;
+using Fyp.Game.PlayerControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using UnityEngine;
 [Serializable]
 struct Mission2
 {
+
     public int nextWave;
 }
 
@@ -35,11 +37,14 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         StartMission();
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -110,6 +115,7 @@ public class DungeonMission : Photon.PunBehaviour
     public void FinishMission()
     {
         nextMission += 1;
+        NetworkChangeScene.AllPlayerChangeScene("BaseNew");
         //StartMission();
     }
 
@@ -129,11 +135,14 @@ public class DungeonMission : Photon.PunBehaviour
         yield return new WaitForSeconds(3);
 
         NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+        GameObject.Find("Player1Character").GetComponent<ControlScript>().health = 60;
+        GameObject.Find("Player2Character").GetComponent<ControlScript>().health = 60;
         yield break;
     }
 
     public void FinishMission(Constants.Mission mission)
     {
+        print("base");
         nextMission = mission + 1;
         NetworkChangeScene.AllPlayerChangeScene("BaseNew");
         //StartMission();
@@ -143,4 +152,5 @@ public class DungeonMission : Photon.PunBehaviour
     {
      //   GameObject.FindGameObjectWithTag("Player1Character").transform.position
     }
+    
 }

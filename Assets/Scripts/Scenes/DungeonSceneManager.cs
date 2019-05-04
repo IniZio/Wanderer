@@ -8,12 +8,16 @@ using Leap.Unity.Interaction;
 namespace Fyp.Game.UI {
 
     public class DungeonSceneManager : Photon.PunBehaviour {
+        int misssion3 = 0;
+        int HintsCount = 0;
+
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
         ControlScript P1Script, P2Script;
         public GameObject FollowCamera;
         public GameObject MainDoor;
         public GameObject Mission1Floor;
+        public GameObject Mission3Hints;
         public Light[] Lights = new Light[9];
         public DungeonMission missionManager;
 
@@ -25,14 +29,20 @@ namespace Fyp.Game.UI {
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
 				stream.SendNext(ButtonArray);
+                stream.SendNext(LightArray);
+                stream.SendNext(Mission1Array);
 			}
 			else {
                 ButtonArray = (bool[]) stream.ReceiveNext();
+                LightArray = (bool[]) stream.ReceiveNext();
+                Mission1Array = (bool[]) stream.ReceiveNext();
 			}
 		}
 
         private void Start()
+
         {
+
             missionManager = GetComponent<DungeonMission>();
         }
 
@@ -40,6 +50,7 @@ namespace Fyp.Game.UI {
             this.MapPlayer1();
             this.MapPlayer2();
             this.MainDoor.SetActive(true);
+            this.Mission3Hints.SetActive(false);
             for(int i = 0; i < Lights.Length; i++){
                 Lights[i].GetComponent<Light>().enabled = false;
                 ButtonArray[i] = false;
@@ -47,50 +58,87 @@ namespace Fyp.Game.UI {
         }
 
         void Update() {
+            int LightCount = 0;
+            for(int i = 0; i < Lights.Length; i++){
+                    if(ButtonArray[i] == true){
+                       LightCount++;
+                 }
+            }
+            if(HintsCount == 250){
+                Mission3Hints.SetActive(true);
+            }
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
                Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
                this.ButtonArray[0] = !this.ButtonArray[0];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
                 Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
                this.ButtonArray[1] = !this.ButtonArray[1];
+
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha3)) {
                 Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
                this.ButtonArray[2] = !this.ButtonArray[2];
+
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
                 Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
                this.ButtonArray[3] = !this.ButtonArray[3];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
                this.ButtonArray[4] = !this.ButtonArray[4];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) {
                 Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
                this.ButtonArray[5] = !this.ButtonArray[5];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) {
                 Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
                this.ButtonArray[6] = !this.ButtonArray[6];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha8)) {
                 Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
                this.ButtonArray[7] = !this.ButtonArray[7];
+
             }
             if (Input.GetKeyDown(KeyCode.Alpha9)) {
                 Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
                this.ButtonArray[8] = !this.ButtonArray[8];
-            }
-            if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
-                if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false){
-                //complete mission3 back to base
-                print("complete Mission3");
-                    missionManager.FinishMission(Constants.Mission.Stage1_1F);
-                }
 
+            }
+            if(LightCount == 3){
+                if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
+                    misssion3++;
+                    if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false && misssion3 == 1){
+                    //complete mission3 back to base
+                    //delay -> offlight -> delay -> white light
+                    // for(int i = 0; i < Lights.Length; i++){
+                    //    Lights[i].GetComponent<Light>().enabled = false;
+                    //}
+                     StartCoroutine(Complete(1));
+                    print("complete Mission3");
+
+
+                    LightCount = 999;
+                    }
+
+
+                }else{
+                    // delay -> offlight -> delay -> redlight -> delay -> offlight
+                    StartCoroutine(Incomplete(1));
+
+                    print("incomplete");
+                    LightCount = 0;
+                }
             }
 
             if(Input.GetKeyDown(KeyCode.A)){
@@ -108,6 +156,8 @@ namespace Fyp.Game.UI {
             if(Mission1Array[0] == true && Mission1Array[1] == true){
                 Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);
+                this.Mission1Array[0] = false;
+                this.Mission1Array[1] = false;
                 print("complete Mission1");
             }
 
@@ -129,12 +179,76 @@ namespace Fyp.Game.UI {
 
             // check the player y position
             if (this.Player1.transform.position.y < -16) {
-                Player1.transform.position = this.P1point.transform.position;
+                this.Player1.transform.position = this.P1point.transform.position;
             }
             if (this.Player2.transform.position.y < -16) {
-                Player2.transform.position = this.P2point.transform.position;
+                this.Player2.transform.position = this.P2point.transform.position;
             }
         }
+          IEnumerator Incomplete(float time)
+            {
+                yield return new WaitForSeconds(time);
+
+                 for(int i = 0; i < Lights.Length; i++){
+                        Lights[i].GetComponent<Light>().enabled = false;
+                        Lights[i].color = Color.green;
+                        ButtonArray[i] = false;
+                    }
+
+                yield return new WaitForSeconds(time);
+
+                for(int i = 0; i < Lights.Length; i++){
+                        Lights[i].GetComponent<Light>().enabled = true;
+                        Lights[i].color = Color.red;
+                    }
+
+                yield return new WaitForSeconds(time);
+
+                for(int i = 0; i < Lights.Length; i++){
+                        Lights[i].GetComponent<Light>().enabled = false;
+                        Lights[i].color = Color.green;
+                        ButtonArray[i] = false;
+                    }
+                HintsCount++;
+
+             }
+             IEnumerator Complete(float time)
+            {
+                yield return new WaitForSeconds(time);
+
+                 for(int i = 0; i < Lights.Length; i++){
+                        Lights[i].GetComponent<Light>().enabled = false;
+                    }
+
+                yield return new WaitForSeconds(time);
+
+                for(int i = 0; i < Lights.Length; i++){
+                        Lights[i].color = Color.gray;
+                        Lights[i].GetComponent<Light>().enabled = true;
+                    }
+
+                yield return new WaitForSeconds(time);
+
+                for(int i = 0; i < Lights.Length; i++){
+                        Lights[i].GetComponent<Light>().enabled = false;
+                    }
+
+                yield return new WaitForSeconds(time);
+
+                for(int i = 0; i < Lights.Length; i++){
+                    if(ButtonArray[i] == true){
+                        Lights[i].color = Color.green;
+                        Lights[i].GetComponent<Light>().enabled = true;
+                    }
+                }
+
+                yield return new WaitForSeconds(time);
+
+                missionManager.FinishMission(Constants.Mission.Stage1_1F);
+
+
+             }
+
 
         void MapPlayer1() {
             GameObject Player1 = GameObject.FindWithTag("Player1Character");

@@ -123,7 +123,6 @@ namespace Fyp.Game.PlayerControl
 				// rd.Next(1, 999)
 				randomSeed = rd.Next(1, 999);
 			}
-            Debug.Log("ControlScript update");
             switch (state)
             {
                 case "attacking":
@@ -145,7 +144,9 @@ namespace Fyp.Game.PlayerControl
                         //       }
                         if (/*!animator.GetBool("ToTwoHandAttack") && */isAttacking)
                         {
+                            state = "";
                             isAttacking = false;
+                            myAnimator.SetBool("ToTwoHandedAttack", false);
                             if (weapon.type == "melee")
                             {
                                 RaycastHit hit;
@@ -305,17 +306,17 @@ namespace Fyp.Game.PlayerControl
                 //Into the kneeling stand animation, which will get our character back to their feet.  Finally the exit transition for kneeling stand is exit time, so
                 //As soon as they are done standing up they will go the next state ("idle/walk").
 
-                if (Input.GetKeyDown("2"))
-                {
-                    if (myAnimator.GetInteger("CurrentAction") == 0)
-                    {
-                        myAnimator.SetInteger("CurrentAction", 2);
-                    }
-                    else if (myAnimator.GetInteger("CurrentAction") == 2)
-                    {
-                        myAnimator.SetInteger("CurrentAction", 0);
-                    }
-                }
+                // if (Input.GetKeyDown("2"))
+                // {
+                //     if (myAnimator.GetInteger("CurrentAction") == 0)
+                //     {
+                //         myAnimator.SetInteger("CurrentAction", 2);
+                //     }
+                //     else if (myAnimator.GetInteger("CurrentAction") == 2)
+                //     {
+                //         myAnimator.SetInteger("CurrentAction", 0);
+                //     }
+                // }
                 //MauryEND
                 // if (Input.GetKey ("r") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
                 // 	myAnimator.SetBool ("2HandIdle", true);
@@ -500,6 +501,7 @@ namespace Fyp.Game.PlayerControl
 
         public void Harmed(int damage = 3)
         {
+            Debug.Log("I did get harmed");
             state = "harmed";
             health -= damage;
         }

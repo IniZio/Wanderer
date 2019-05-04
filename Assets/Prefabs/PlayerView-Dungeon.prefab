@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 6672511681636075434}
   - component: {fileID: 6672511681636075433}
   m_Layer: 0
-  m_Name: Cube UI Button (3)
+  m_Name: ChooseGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9023,7 +9023,7 @@ GameObject:
   - component: {fileID: 7003694918848066112}
   - component: {fileID: 7003694918848066115}
   m_Layer: 0
-  m_Name: Cube UI Button (2)
+  m_Name: ChooseMelee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
