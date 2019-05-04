@@ -84,90 +84,69 @@ namespace Fyp.Game.UI {
         void Update() {
             photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
             int LightCount = 0;
-            for(int i = 0; i < Lights.Length; i++){
-                    if(ButtonArray[i] == true){
-                    Lights[i].GetComponent<Light>().enabled = true;
-                    LightCount++;
-                 }
-            }
             if(HintsCount == 250){
                 Mission3Hints.SetActive(true);
             }
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
                 //Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
-                for (int i = 0; i < Lights.Length; i++)
-                {
-                    if (ButtonArray[i] == true)
-                    {
-                        Lights[i].GetComponent<Light>().enabled = true;
-                        LightCount++;
-                    }
-                }
                 this.ButtonArray[0] = !this.ButtonArray[0];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
-                Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
+                //Lights[1].GetComponent<Light>().enabled = !Lights[1].GetComponent<Light>().enabled;
                this.ButtonArray[1] = !this.ButtonArray[1];
-
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha3)) {
-                Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
+                //Lights[2].GetComponent<Light>().enabled = !Lights[2].GetComponent<Light>().enabled;
                this.ButtonArray[2] = !this.ButtonArray[2];
-
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
                this.ButtonArray[3] = !this.ButtonArray[3];
-                //for(int i = 0; i < Lights.Length; i++){
-                //    if(ButtonArray[i] == true){
-                //        Lights[i].GetComponent<Light>().enabled = !Lights[i].GetComponent<Light>().enabled;
-                //        LightCount++;
-
-                //    }
-                //}
-               // Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
+              
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
-                Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
+                //Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
                this.ButtonArray[4] = !this.ButtonArray[4];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha6)) {
-                Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
+                //Lights[5].GetComponent<Light>().enabled = !Lights[5].GetComponent<Light>().enabled;
                this.ButtonArray[5] = !this.ButtonArray[5];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha7)) {
-                Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
+                //Lights[6].GetComponent<Light>().enabled = !Lights[6].GetComponent<Light>().enabled;
                this.ButtonArray[6] = !this.ButtonArray[6];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha8)) {
-                Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
+               // Lights[7].GetComponent<Light>().enabled = !Lights[7].GetComponent<Light>().enabled;
                this.ButtonArray[7] = !this.ButtonArray[7];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha9)) {
-                Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
+                //Lights[8].GetComponent<Light>().enabled = !Lights[8].GetComponent<Light>().enabled;
                this.ButtonArray[8] = !this.ButtonArray[8];
 
+            }
+             for(int i = 0; i < Lights.Length; i++){
+                    if(ButtonArray[i] == true){
+                    this.Lights[i].GetComponent<Light>().enabled = true;
+                    LightCount++;
+                    }
+                    else{
+                    this.Lights[i].GetComponent<Light>().enabled = false;
+                    }
             }
             if(LightCount == 3){
                 if (ButtonArray[2] == true && ButtonArray[3] == true && ButtonArray[7] == true){
                     misssion3++;
                     if(ButtonArray[0] == false && ButtonArray[1] == false && ButtonArray[4] == false && ButtonArray[5] == false && ButtonArray[6] == false && ButtonArray[8] == false && misssion3 == 1){
-                    //complete mission3 back to base
-                    //delay -> offlight -> delay -> white light
-                    // for(int i = 0; i < Lights.Length; i++){
-                    //    Lights[i].GetComponent<Light>().enabled = false;
-                    //}
-                     StartCoroutine(Complete(1));
+                    StartCoroutine(Complete(1));
                     print("complete Mission3");
-
-
                     LightCount = 999;
                     }
 
@@ -175,7 +154,6 @@ namespace Fyp.Game.UI {
                 }else{
                     // delay -> offlight -> delay -> redlight -> delay -> offlight
                     StartCoroutine(Incomplete(1));
-
                     print("incomplete");
                     LightCount = 0;
                 }
@@ -187,18 +165,11 @@ namespace Fyp.Game.UI {
             if(Input.GetKeyDown(KeyCode.S)){
                 this.Mission1Array[1] = true;
             }
-            //if(Input.GetKeyUp(KeyCode.A)){
-            //    this.Mission1Array[0] = false;
-            //}
-            //if(Input.GetKeyUp(KeyCode.S)){
-            //    this.Mission1Array[1] = false;
-            //}
+
             if(Mission1Array[0] == true && Mission1Array[1] == true){
-                Mission1Floor.GetComponent<MeshCollider>().enabled = true;
+                this.Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);
-                //this.Mission1Array[0] = false;
-                //this.Mission1Array[1] = false;
-                //print("complete Mission1");
+
             }
 
 
@@ -230,24 +201,24 @@ namespace Fyp.Game.UI {
                 yield return new WaitForSeconds(time);
 
                  for(int i = 0; i < Lights.Length; i++){
-                        Lights[i].GetComponent<Light>().enabled = false;
-                        Lights[i].color = Color.green;
-                        ButtonArray[i] = false;
+                        this.Lights[i].GetComponent<Light>().enabled = false;
+                        this.Lights[i].color = Color.green;
+                        this.ButtonArray[i] = false;
                     }
 
                 yield return new WaitForSeconds(time);
 
                 for(int i = 0; i < Lights.Length; i++){
-                        Lights[i].GetComponent<Light>().enabled = true;
-                        Lights[i].color = Color.red;
+                        this.Lights[i].GetComponent<Light>().enabled = true;
+                        this.Lights[i].color = Color.red;
                     }
 
                 yield return new WaitForSeconds(time);
 
                 for(int i = 0; i < Lights.Length; i++){
-                        Lights[i].GetComponent<Light>().enabled = false;
-                        Lights[i].color = Color.green;
-                        ButtonArray[i] = false;
+                        this.Lights[i].GetComponent<Light>().enabled = false;
+                        this.Lights[i].color = Color.green;
+                        this.ButtonArray[i] = false;
                     }
                 HintsCount++;
 
