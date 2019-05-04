@@ -37,8 +37,9 @@ namespace Fyp.Game.UI {
                 stream.SendNext(Mission1Array);
                 stream.SendNext(misssion3);
                 stream.SendNext(HintsCount);
+                photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
 
-			}
+            }
 			else {
                 ButtonArray = (bool[]) stream.ReceiveNext();
                 LightArray = (bool[]) stream.ReceiveNext();
@@ -49,6 +50,16 @@ namespace Fyp.Game.UI {
                 Debug.Log("Receive abc" + abc);
             }
 		}
+
+        [PunRPC]
+        public void ForceUpdate(bool[] a, bool[] b, bool[] c, int d, int e)
+        {
+            ButtonArray = a;
+            LightArray = b;
+            Mission1Array = c;
+            misssion3 = d;
+            HintsCount = e;
+        }
 
         private void Start()
 
