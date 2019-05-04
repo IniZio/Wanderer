@@ -146,6 +146,13 @@ namespace Fyp.Game.Network {
             }
         }
 
+        void  SetObjectLayer(GameObject go, int num) {
+            go.layer = num;
+            foreach(Transform child in go.transform) {
+                SetObjectLayer(child.gameObject, num);
+            }
+        }
+
         public override void OnJoinedRoom() {
             this.followCamera.SetActive(true);
             // this.mainCamera.SetActive(false);
@@ -157,13 +164,7 @@ namespace Fyp.Game.Network {
                 point = this.p1SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p1SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p1SpawnPoint.transform.position + new Vector3(1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p1SpawnEffect));
-                player.layer = 9;
-                foreach (Transform child in player.transform) {
-                    if (child == null) {
-                        continue;
-                    }
-                    child.gameObject.layer =  9;
-                }
+                SetObjectLayer(player, 9);
             }
             else {
                 Debug.Log("player2");
@@ -171,13 +172,7 @@ namespace Fyp.Game.Network {
                 point = this.p2SpawnPoint.GetComponent("SpawnPoint") as SpawnPoint;
                 p2SpawnEffect = PhotonNetwork.Instantiate("SpawnEffect", this.p2SpawnPoint.transform.position + new Vector3(-1, 1.6f, 0), this.p1SpawnPoint.transform.rotation, 0);
                 StartCoroutine(SpawnEffect(p2SpawnEffect));
-                player.layer = 9;
-                foreach (Transform child in player.transform) {
-                    if (child == null) {
-                        continue;
-                    }
-                    child.gameObject.layer =  9;
-                }
+                SetObjectLayer(player, 9);
             }
             setPlayerControl(player, PhotonNetwork.isMasterClient);
             PlayerCamera cameraScirpt = followCamera.GetComponent("PlayerCamera") as PlayerCamera;
