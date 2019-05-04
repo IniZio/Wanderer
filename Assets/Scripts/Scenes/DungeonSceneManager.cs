@@ -150,7 +150,6 @@ namespace Fyp.Game.UI {
                     LightCount = 999;
                     }
 
-
                 }else{
                     // delay -> offlight -> delay -> redlight -> delay -> offlight
                     StartCoroutine(Incomplete(1));
@@ -288,7 +287,7 @@ namespace Fyp.Game.UI {
             }
         }
 
-        
+        [PunRPC]
         public void ClickButton(int num) {
             //Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
