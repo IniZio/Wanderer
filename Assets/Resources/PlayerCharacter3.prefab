@@ -1108,6 +1108,7 @@ MonoBehaviour:
   isStandingRandomMapGate: 0
   isAttacking: 0
   isMoaning: 0
+  isTutMode: 0
   footstep: {fileID: 2213780474119995469}
   attackRange: 2
   attackInterval: 1
@@ -1151,8 +1152,8 @@ MonoBehaviour:
   - {fileID: 4373173759498964796}
   - {fileID: 4373173759498964770}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &4373173759498964799
