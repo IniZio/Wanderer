@@ -82,6 +82,7 @@ namespace Fyp.Game.UI {
 
         
         void Update() {
+            photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
             int LightCount = 0;
             for(int i = 0; i < Lights.Length; i++){
                     if(ButtonArray[i] == true){
@@ -195,9 +196,9 @@ namespace Fyp.Game.UI {
             if(Mission1Array[0] == true && Mission1Array[1] == true){
                 Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);
-                this.Mission1Array[0] = false;
-                this.Mission1Array[1] = false;
-                print("complete Mission1");
+                //this.Mission1Array[0] = false;
+                //this.Mission1Array[1] = false;
+                //print("complete Mission1");
             }
 
 

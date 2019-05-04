@@ -25,16 +25,16 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     {
         if (stream.isWriting)
         {
-            stream.SendNext(nextMission);
-            stream.SendNext(mission2);
-            stream.SendNext(justFailed);
+            //stream.SendNext(nextMission);
+            //stream.SendNext(mission2);
+            //stream.SendNext(justFailed);
             photonView.RPC("ForceUpdate", PhotonTargets.All, nextMission, mission2, justFailed);
         }
         else
         {
-            nextMission = (Constants.Mission)stream.ReceiveNext();
-            mission2 = (Mission2)stream.ReceiveNext();
-            justFailed = (bool)stream.ReceiveNext();
+            //nextMission = (Constants.Mission)stream.ReceiveNext();
+            //mission2 = (Mission2)stream.ReceiveNext();
+            //justFailed = (bool)stream.ReceiveNext();
         }
     }
 
@@ -60,6 +60,7 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     
     void Update()
     {
+        photonView.RPC("ForceUpdate", PhotonTargets.All, nextMission, mission2, justFailed);
         if (justFailed)
         {
             justFailed = false;
