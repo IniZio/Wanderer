@@ -432,6 +432,12 @@ namespace Fyp.Game.PlayerControl
             this.isMe = true;
         }
 
+        public void SwitchWeapon(int index)
+        {
+            loadoutIndex = index;
+            StartCoroutine(Arming1());
+        }
+
         public bool getIsMe()
         {
             return this.isMe;

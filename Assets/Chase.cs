@@ -32,7 +32,7 @@ public class Chase : PunBehaviour
             // NOTE: need a better tag...
             if (colli && colli.tag.IndexOf("PlayerButFake") >= 0)
             {
-                Debug.Log("boss got something" + colli.name);
+                // Debug.Log("boss got something" + colli.name);
                 Vector3 runTo = transform.position + ((colli.transform.position - transform.position) * multiplier);
                 float distance = Vector3.Distance(transform.position, colli.transform.position);
 

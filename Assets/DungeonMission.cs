@@ -12,7 +12,7 @@ struct Mission2
     public int nextWave;
 }
 
-public class DungeonMission : Photon.PunBehaviour
+public class DungeonMission : Photon.PunBehaviour, IPunObservable
 {
     public Constants.Mission nextMission = Constants.Mission.Stage1_1F;
 
@@ -21,34 +21,46 @@ public class DungeonMission : Photon.PunBehaviour
     private readonly float alphaFadeValue;
     private bool justFailed = false;
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
-            stream.SendNext(nextMission);
-            stream.SendNext(mission2);
-            stream.SendNext(justFailed);
+            //stream.SendNext(nextMission);
+            //stream.SendNext(mission2);
+            //stream.SendNext(justFailed);
+            photonView.RPC("ForceUpdate", PhotonTargets.All, nextMission, mission2, justFailed);
         }
         else
         {
-            nextMission = (Constants.Mission)stream.ReceiveNext();
-            mission2 = (Mission2)stream.ReceiveNext();
-            justFailed = (bool)stream.ReceiveNext();
+            //nextMission = (Constants.Mission)stream.ReceiveNext();
+            //mission2 = (Mission2)stream.ReceiveNext();
+            //justFailed = (bool)stream.ReceiveNext();
         }
+    }
+
+    [PunRPC]
+    void ForceUpdate(Constants.Mission a, Mission2 b, bool c)
+    {
+        nextMission = a;
+        mission2 = b;
+        justFailed = c;
     }
 
 
     // Start is called before the first frame update
+    
     void Start()
     {
 
         StartMission();
     }
-    
+
 
     // Update is called once per frame
+    
     void Update()
     {
+        photonView.RPC("ForceUpdate", PhotonTargets.All, nextMission, mission2, justFailed);
         if (justFailed)
         {
             justFailed = false;
@@ -82,6 +94,7 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+    
     public void StartMission()
     {
         if (PhotonNetwork.isMasterClient)
@@ -99,6 +112,7 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+    
     public void StopMission()
     {
         switch (nextMission)
@@ -112,6 +126,7 @@ public class DungeonMission : Photon.PunBehaviour
         }
     }
 
+    
     public void FinishMission()
     {
         nextMission += 1;
@@ -119,11 +134,13 @@ public class DungeonMission : Photon.PunBehaviour
         //StartMission();
     }
 
+    
     public void FailMission()
     {
         justFailed = true;
     }
 
+    
     IEnumerator _FailMission()
     {
         UnityEngine.UI.Image blackScreen = GameObject.Find("Death").GetComponent<UnityEngine.UI.Image>();
@@ -140,6 +157,7 @@ public class DungeonMission : Photon.PunBehaviour
         yield break;
     }
 
+    
     public void FinishMission(Constants.Mission mission)
     {
         print("base");
@@ -148,6 +166,7 @@ public class DungeonMission : Photon.PunBehaviour
         //StartMission();
     }
 
+    
     void Teleport()
     {
      //   GameObject.FindGameObjectWithTag("Player1Character").transform.position

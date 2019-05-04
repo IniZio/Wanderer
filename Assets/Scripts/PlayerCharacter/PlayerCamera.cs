@@ -17,8 +17,20 @@ namespace Fyp.Game.Carmera {
             swapToWeapon1Action += this.swapToWeapon1;
             swapToWeapon2Action += this.swapToWeapon2;
 
-            this.transform.Find("ChooseMelee").GetComponent<InteractionButton>().OnPress = swapToWeapon1Action;
-            this.transform.Find("ChooseGun").GetComponent<InteractionButton>().OnPress = swapToWeapon2Action;
+            try {
+                this.transform.Find("ChooseMelee").GetComponent<InteractionButton>().OnPress = swapToWeapon1Action;
+                this.transform.Find("ChooseGun").GetComponent<InteractionButton>().OnPress = swapToWeapon2Action;
+            } catch { }
+        }
+
+        private void Update()
+        {
+            try
+            {
+                this.transform.Find("ChooseMelee").GetComponent<InteractionButton>().OnPress = swapToWeapon1Action;
+                this.transform.Find("ChooseGun").GetComponent<InteractionButton>().OnPress = swapToWeapon2Action;
+            }
+            catch { }
         }
 
         void LateUpdate() {
@@ -35,13 +47,13 @@ namespace Fyp.Game.Carmera {
         private void swapToWeapon1()
         {
             Debug.Log("Gonna switch weapon1");
-            player.GetComponent<ControlScript>().loadoutIndex = 0;
+            player.GetComponent<ControlScript>().SwitchWeapon(0);
         }
 
         private void swapToWeapon2()
         {
-            Debug.Log("Gonna switch weapon1");
-            player.GetComponent<ControlScript>().loadoutIndex = 1;
+            Debug.Log("Gonna switch weapon2");
+            player.GetComponent<ControlScript>().SwitchWeapon(1);
         }
 
         public void isReady() {

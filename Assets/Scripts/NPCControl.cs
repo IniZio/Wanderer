@@ -158,6 +158,9 @@ public class NPCControl : Photon.PunBehaviour
                 }
                 break;
             default:
+                animator.SetBool("Attack(1)", false);
+                animator.SetBool("Run", false);
+                animator.SetBool("Walk", true);
                 agent.speed = normalSpeed;
                 wanderTimer += Time.deltaTime;
                 if (wanderTimer > 10)

@@ -43,4 +43,16 @@ MonoBehaviour:
   - setPlayerControl
   - ReadyToPlay
   - Update
+  - Awake
+  - ClickButton
+  - OnpressButton
+  - UnpressButton
+  - _FailMission
+  - FailMission
+  - FinishMission
+  - Start
+  - StartMission
+  - StopMission
+  - Teleport
+  - ForceUpdate
   DisableAutoOpenWizard: 1

@@ -7,9 +7,11 @@ using Leap.Unity.Interaction;
 
 namespace Fyp.Game.UI {
 
-    public class DungeonSceneManager : Photon.PunBehaviour {
+    public class DungeonSceneManager : Photon.PunBehaviour, IPunObservable
+    {
         int misssion3 = 0;
         int HintsCount = 0;
+        int abc = -1;
 
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
@@ -26,18 +28,38 @@ namespace Fyp.Game.UI {
         public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
         public bool[] Mission1Array = {false, false};
 
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+        void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
+                abc = 3;
+                Debug.Log("Sync button array" + ButtonArray[3]);
 				stream.SendNext(ButtonArray);
                 stream.SendNext(LightArray);
                 stream.SendNext(Mission1Array);
-			}
+                stream.SendNext(misssion3);
+                stream.SendNext(HintsCount);
+                photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
+
+            }
 			else {
                 ButtonArray = (bool[]) stream.ReceiveNext();
                 LightArray = (bool[]) stream.ReceiveNext();
                 Mission1Array = (bool[]) stream.ReceiveNext();
-			}
+                misssion3 = (int) stream.ReceiveNext();
+                HintsCount = (int) stream.ReceiveNext();
+                Debug.Log("Receive button array" + ButtonArray[3]);
+                Debug.Log("Receive abc" + abc);
+            }
 		}
+
+        [PunRPC]
+        public void ForceUpdate(bool[] a, bool[] b, bool[] c, int d, int e)
+        {
+            ButtonArray = a;
+            LightArray = b;
+            Mission1Array = c;
+            misssion3 = d;
+            HintsCount = e;
+        }
 
         private void Start()
 
@@ -46,22 +68,26 @@ namespace Fyp.Game.UI {
             missionManager = GetComponent<DungeonMission>();
         }
 
+        
         void Awake() {
             this.MapPlayer1();
             this.MapPlayer2();
             this.MainDoor.SetActive(true);
             this.Mission3Hints.SetActive(false);
             for(int i = 0; i < Lights.Length; i++){
-                Lights[i].GetComponent<Light>().enabled = false;
-                ButtonArray[i] = false;
+                Lights[i].GetComponent<Light>().enabled = !Lights[i].GetComponent<Light>().enabled;
+                //ButtonArray[i] = false;
             }
         }
 
+        
         void Update() {
+            photonView.RPC("ForceUpdate", PhotonTargets.All, ButtonArray, LightArray, Mission1Array, misssion3, HintsCount);
             int LightCount = 0;
             for(int i = 0; i < Lights.Length; i++){
                     if(ButtonArray[i] == true){
-                       LightCount++;
+                    Lights[i].GetComponent<Light>().enabled = true;
+                    LightCount++;
                  }
             }
             if(HintsCount == 250){
@@ -69,8 +95,16 @@ namespace Fyp.Game.UI {
             }
 
            if (Input.GetKeyDown(KeyCode.Alpha1)) {
-               Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
-               this.ButtonArray[0] = !this.ButtonArray[0];
+                //Lights[0].GetComponent<Light>().enabled = !Lights[0].GetComponent<Light>().enabled;
+                for (int i = 0; i < Lights.Length; i++)
+                {
+                    if (ButtonArray[i] == true)
+                    {
+                        Lights[i].GetComponent<Light>().enabled = true;
+                        LightCount++;
+                    }
+                }
+                this.ButtonArray[0] = !this.ButtonArray[0];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha2)) {
@@ -86,9 +120,15 @@ namespace Fyp.Game.UI {
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
-                Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
                this.ButtonArray[3] = !this.ButtonArray[3];
+                //for(int i = 0; i < Lights.Length; i++){
+                //    if(ButtonArray[i] == true){
+                //        Lights[i].GetComponent<Light>().enabled = !Lights[i].GetComponent<Light>().enabled;
+                //        LightCount++;
 
+                //    }
+                //}
+               // Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;
@@ -147,18 +187,18 @@ namespace Fyp.Game.UI {
             if(Input.GetKeyDown(KeyCode.S)){
                 this.Mission1Array[1] = true;
             }
-            if(Input.GetKeyUp(KeyCode.A)){
-                this.Mission1Array[0] = false;
-            }
-            if(Input.GetKeyUp(KeyCode.S)){
-                this.Mission1Array[1] = false;
-            }
+            //if(Input.GetKeyUp(KeyCode.A)){
+            //    this.Mission1Array[0] = false;
+            //}
+            //if(Input.GetKeyUp(KeyCode.S)){
+            //    this.Mission1Array[1] = false;
+            //}
             if(Mission1Array[0] == true && Mission1Array[1] == true){
                 Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);
-                this.Mission1Array[0] = false;
-                this.Mission1Array[1] = false;
-                print("complete Mission1");
+                //this.Mission1Array[0] = false;
+                //this.Mission1Array[1] = false;
+                //print("complete Mission1");
             }
 
 
@@ -178,10 +218,10 @@ namespace Fyp.Game.UI {
             }
 
             // check the player y position
-            if (this.Player1.transform.position.y < -16) {
+            if (this.Player1 && this.Player1.transform.position.y < -16) {
                 this.Player1.transform.position = this.P1point.transform.position;
             }
-            if (this.Player2.transform.position.y < -16) {
+            if (this.Player2 && this.Player2.transform.position.y < -16) {
                 this.Player2.transform.position = this.P2point.transform.position;
             }
         }
@@ -277,14 +317,17 @@ namespace Fyp.Game.UI {
             }
         }
 
+        
         public void ClickButton(int num) {
-            Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
+            //Lights[num].GetComponent<Light>().enabled = !Lights[num].GetComponent<Light>().enabled;
             this.ButtonArray[num] = !this.ButtonArray[num];
         }
 
+        
         public void OnpressButton(int num){
             this.Mission1Array[num] = true;
         }
+        
         public void UnpressButton(int num){
             this.Mission1Array[num] = false;
         }
