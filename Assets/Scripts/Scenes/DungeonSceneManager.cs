@@ -11,6 +11,7 @@ namespace Fyp.Game.UI {
     {
         int misssion3 = 0;
         int HintsCount = 0;
+        int abc = -1;
 
         public GameObject P1point, P2point;
         public GameObject Player1, Player2;
@@ -29,6 +30,7 @@ namespace Fyp.Game.UI {
 
         void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
+                abc = 3;
                 Debug.Log("Sync button array" + ButtonArray[3]);
 				stream.SendNext(ButtonArray);
                 stream.SendNext(LightArray);
@@ -44,7 +46,8 @@ namespace Fyp.Game.UI {
                 misssion3 = (int) stream.ReceiveNext();
                 HintsCount = (int) stream.ReceiveNext();
                 Debug.Log("Receive button array" + ButtonArray[3]);
-			}
+                Debug.Log("Receive abc" + abc);
+            }
 		}
 
         private void Start()
@@ -203,10 +206,10 @@ namespace Fyp.Game.UI {
             }
 
             // check the player y position
-            if (this.Player1.transform.position.y < -16) {
+            if (this.Player1 && this.Player1.transform.position.y < -16) {
                 this.Player1.transform.position = this.P1point.transform.position;
             }
-            if (this.Player2.transform.position.y < -16) {
+            if (this.Player2 && this.Player2.transform.position.y < -16) {
                 this.Player2.transform.position = this.P2point.transform.position;
             }
         }

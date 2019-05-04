@@ -1044,6 +1044,7 @@ MonoBehaviour:
   isReady: 0
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
+  isStandingRandomMapGate: 0
   isAttacking: 0
   isMoaning: 0
   footstep: {fileID: 2213780474119995469}
@@ -1087,7 +1088,6 @@ MonoBehaviour:
   - {fileID: 4373173759498964799}
   - {fileID: 4373173759498964796}
   - {fileID: 4373173759498964770}
-  - {fileID: 2213780474119995469}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -1147,6 +1147,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: UnarmedDie
+  - Type: 9
+    SynchronizeType: 0
+    Name: Pick
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

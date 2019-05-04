@@ -2503,7 +2503,6 @@ MonoBehaviour:
   - {fileID: 6882321748353379382}
   - {fileID: 6882203447244244238}
   - {fileID: 6881934020023096672}
-  - {fileID: 883216394016928836}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -2681,6 +2680,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: UnarmedDie
+  - Type: 9
+    SynchronizeType: 0
+    Name: Pick
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
