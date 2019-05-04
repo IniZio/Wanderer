@@ -186,12 +186,12 @@ namespace Fyp.Game.UI {
             if(Input.GetKeyDown(KeyCode.S)){
                 this.Mission1Array[1] = true;
             }
-            if(Input.GetKeyUp(KeyCode.A)){
-                this.Mission1Array[0] = false;
-            }
-            if(Input.GetKeyUp(KeyCode.S)){
-                this.Mission1Array[1] = false;
-            }
+            //if(Input.GetKeyUp(KeyCode.A)){
+            //    this.Mission1Array[0] = false;
+            //}
+            //if(Input.GetKeyUp(KeyCode.S)){
+            //    this.Mission1Array[1] = false;
+            //}
             if(Mission1Array[0] == true && Mission1Array[1] == true){
                 Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);

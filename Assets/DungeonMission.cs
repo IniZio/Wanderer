@@ -28,6 +28,7 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
             stream.SendNext(nextMission);
             stream.SendNext(mission2);
             stream.SendNext(justFailed);
+            photonView.RPC("ForceUpdate", PhotonTargets.All, nextMission, mission2, justFailed);
         }
         else
         {
@@ -35,6 +36,14 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
             mission2 = (Mission2)stream.ReceiveNext();
             justFailed = (bool)stream.ReceiveNext();
         }
+    }
+
+    [PunRPC]
+    void ForceUpdate(Constants.Mission a, Mission2 b, bool c)
+    {
+        nextMission = a;
+        mission2 = b;
+        justFailed = c;
     }
 
 
