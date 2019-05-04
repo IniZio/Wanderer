@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour {
 	public bool usingAxe;
 	public bool arming1;
 	public bool chopTree;
+	private int count = 0;
 
 	public GameObject FallingTreePrefab;    
 	public Transform RayOrigin;    
@@ -59,7 +60,6 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 
 		myAnimator.SetFloat ("HSpeed", Input.GetAxis ("Horizontal"));
-
 		//!!!switch run mode
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			_VSpeed = 2 * (Input.GetAxis ("Vertical"));
@@ -68,7 +68,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 		myAnimator.SetFloat ("VSpeed", _VSpeed);
 
-		if (Input.GetKey ("a") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
+		if (Input.GetKey ("a")) {
 
 			//Rotate the character procedurally based on Time.deltaTime.  This will give the illusion of moving
 			//Even though the animations don't have root motion
@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 		//Same thing for E key, just rotating the other way!
-		if (Input.GetKey ("d") && (myAnimator.GetInteger ("CurrentAction") == 0)) {
+		if (Input.GetKey ("d")) {
 			transform.Rotate (Vector3.up * Time.deltaTime * 100.0f);
 			if ((Input.GetAxis ("Vertical") == 0f) && (Input.GetAxis ("Horizontal") == 0)) {
 				myAnimator.SetBool ("TurnRight", true);
@@ -98,12 +98,12 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 		if (Input.GetKey (KeyCode.Alpha1)) {
-			switch (arming1) {
-				case false:
+			switch (myAnimator.GetInteger ("CurrentAction")) {
+				case 0:
 					StartCoroutine (Arming1 ());
 					break;
 
-				case true:
+				case 1:
 					StartCoroutine (Disarming1 ());
 					break;
 			}
@@ -126,10 +126,9 @@ public class PlayerControl : MonoBehaviour {
 		        
 		if (Physics.Raycast (ray, out hit, 1.5f)) {   
 			if (hit.collider.gameObject.tag == "Tree") {  
-				Debug.Log ("hited");          
 				closestTreePosition = hit.transform.position;            
 			}            
-			if (usingAxe && !chopTree && Input.GetKey (KeyCode.E)) {
+			if (usingAxe && Input.GetKeyUp (KeyCode.E)) {
 				choppingPoint = hit.point;                
 				chopTree = true;
 				StartCoroutine (ChopItDown (hit, closestTreePosition));            
@@ -137,9 +136,17 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 	}
+	// void OnCollisionEnter (Collision collision) {
+	// 	var tag = collision.collider.tag;
+	// 	Debug.Log(tag);
+	// 	if (tag == "Wood") {
+	// 	myAnimator.SetTrigger ("Pick");
+	// 	}
+	// 	Destroy(collision.collider);
+	// }
+
 	IEnumerator Arming1 () {
 		myAnimator.SetBool ("SwitchTool", true);
-		arming1 = true;
 		usingAxe = true;
 		//currentWeapon = WeaponList[0];
 		yield return new WaitForSeconds (0.5f);
@@ -147,11 +154,11 @@ public class PlayerControl : MonoBehaviour {
 		WeaponList[0].weaponTransform.rotation = toolHandPosistion.transform.rotation;
 		WeaponList[0].weaponTransform.parent = toolHandPosistion.transform;
 		myAnimator.SetBool ("SwitchTool", false);
+		myAnimator.SetInteger ("CurrentAction", 1);
 
 	}
 	IEnumerator Disarming1 () {
 		myAnimator.SetBool ("SwitchTool", true);
-		arming1 = false;
 		usingAxe = false;
 		//currentWeapon = WeaponList[0];
 		yield return new WaitForSeconds (0.5f);
@@ -159,23 +166,38 @@ public class PlayerControl : MonoBehaviour {
 		WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
 		WeaponList[0].weaponTransform.parent = Holster1;
 		myAnimator.SetBool ("SwitchTool", false);
+		myAnimator.SetInteger ("CurrentAction", 0);
+
 	}
 
 	    
-	IEnumerator ChopItDown (RaycastHit hit, Vector3 closestTreePosition) {   
-						myAnimator.SetBool ("ToTwoHandedAttack", true);                     
-		yield return new WaitForSeconds (4f);        
-		// Remove the tree from the terrain tree list
-		        
-		hit.collider.gameObject.SetActive (false);        
-		// Now refresh the terrain, getting rid of the darn collider
-		         // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
-		         // terrain.SetHeights (0, 0, heights);
-		         // Put a falling tree in its place
-		        
-		Instantiate (FallingTreePrefab, closestTreePosition, new Quaternion (0, 90, 0, 0));  
-						myAnimator.SetBool ("ToTwoHandedAttack", false);                
-  
+	IEnumerator ChopItDown (RaycastHit hit, Vector3 closestTreePosition) {  
+		if (count == 0) { 
+			myAnimator.SetBool ("ToTwoHandedAttack", true);   
+							count++;           
+
+		} else if ((count != 0) && (count <= 5)) {
+			myAnimator.SetBool ("TwoHandedAttack", true); 
+							count++;           
+
+		}       
+		yield return new WaitForSeconds (0.1f);    
+    
+		// Remove the tree from the terrain tree list		        
+		if (count == 5) {
+			hit.collider.gameObject.SetActive (false);        
+			// Now refresh the terrain, getting rid of the darn collider
+			         // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
+			         // terrain.SetHeights (0, 0, heights);
+			         // Put a falling tree in its place	  
+			closestTreePosition.y += 2.1f;
+			Instantiate (FallingTreePrefab, closestTreePosition, Quaternion.Euler (0, 0, 80));
+			Instantiate (FallingTreePrefab, closestTreePosition, Quaternion.Euler (0, 0, 100));
+
+		}
+		myAnimator.SetBool ("ToTwoHandedAttack", false);   
+		myAnimator.SetBool ("TwoHandedAttack", false); 
+		Debug.Log (count);                  
 	}    
 	public void treeChopSound () {        
 		GameObject go = new GameObject ("Audio");        
