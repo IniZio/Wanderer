@@ -29,6 +29,7 @@ namespace Fyp.Game.UI {
 
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
+                Debug.Log("Sync button array" + ButtonArray[3]);
 				stream.SendNext(ButtonArray);
                 stream.SendNext(LightArray);
                 stream.SendNext(Mission1Array);
@@ -42,6 +43,7 @@ namespace Fyp.Game.UI {
                 Mission1Array = (bool[]) stream.ReceiveNext();
                 misssion3 = (int) stream.ReceiveNext();
                 HintsCount = (int) stream.ReceiveNext();
+                Debug.Log("Receive button array" + ButtonArray[3]);
 			}
 		}
 
@@ -112,7 +114,6 @@ namespace Fyp.Game.UI {
                 //    }
                 //}
                // Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
-
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
                 Lights[4].GetComponent<Light>().enabled = !Lights[4].GetComponent<Light>().enabled;

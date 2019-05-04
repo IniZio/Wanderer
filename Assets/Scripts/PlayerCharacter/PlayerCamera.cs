@@ -35,13 +35,13 @@ namespace Fyp.Game.Carmera {
         private void swapToWeapon1()
         {
             Debug.Log("Gonna switch weapon1");
-            player.GetComponent<ControlScript>().loadoutIndex = 0;
+            player.GetComponent<ControlScript>().SwitchWeapon(0);
         }
 
         private void swapToWeapon2()
         {
-            Debug.Log("Gonna switch weapon1");
-            player.GetComponent<ControlScript>().loadoutIndex = 1;
+            Debug.Log("Gonna switch weapon2");
+            player.GetComponent<ControlScript>().SwitchWeapon(1);
         }
 
         public void isReady() {
