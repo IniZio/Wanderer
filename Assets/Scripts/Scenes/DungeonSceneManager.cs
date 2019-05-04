@@ -255,7 +255,7 @@ namespace Fyp.Game.UI {
                 yield return new WaitForSeconds(time);
 
                 missionManager.FinishMission(Constants.Mission.Stage1_1F);
-
+                missionManager.StartMission();
 
              }
 

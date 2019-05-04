@@ -74,21 +74,21 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
                 case Constants.Mission.Stage2_1F:
                     bool waveDone = npcManager.AllDead();
 
-                    if (waveDone && mission2.nextWave == 2)
+                    if (waveDone/* && mission2.nextWave == 2*/)
                     {
                         FinishMission();
                         break;
                     }
 
-                    if (waveDone)
-                    {
-                        mission2.nextWave++;
-                        GameObject[] enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
+                    //if (waveDone)
+                    //{
+                        //mission2.nextWave++;
+                        //GameObject[] enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
 
-                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[2]);
-                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[3]);
-                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[4]);
-                    }
+                        //npcManager.Spawn("Orc_Gnur", enemySpawnPoints[2]);
+                        //npcManager.Spawn("Orc_Gnur", enemySpawnPoints[3]);
+                        //npcManager.Spawn("Orc_Gnur", enemySpawnPoints[4]);
+                    //}
                     break;
             }
         }
