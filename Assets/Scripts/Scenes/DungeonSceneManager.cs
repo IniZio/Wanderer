@@ -31,11 +31,16 @@ namespace Fyp.Game.UI {
 				stream.SendNext(ButtonArray);
                 stream.SendNext(LightArray);
                 stream.SendNext(Mission1Array);
+                stream.SendNext(misssion3);
+                stream.SendNext(HintsCount);
+
 			}
 			else {
                 ButtonArray = (bool[]) stream.ReceiveNext();
                 LightArray = (bool[]) stream.ReceiveNext();
                 Mission1Array = (bool[]) stream.ReceiveNext();
+                misssion3 = (int) stream.ReceiveNext();
+                HintsCount = (int) stream.ReceiveNext();
 			}
 		}
 
