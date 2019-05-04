@@ -57,8 +57,8 @@ namespace Fyp.Game.UI {
             this.MainDoor.SetActive(true);
             this.Mission3Hints.SetActive(false);
             for(int i = 0; i < Lights.Length; i++){
-                Lights[i].GetComponent<Light>().enabled = false;
-                ButtonArray[i] = false;
+                Lights[i].GetComponent<Light>().enabled = !Lights[i].GetComponent<Light>().enabled;
+                //ButtonArray[i] = false;
             }
         }
 
@@ -101,15 +101,14 @@ namespace Fyp.Game.UI {
             }
             if (Input.GetKeyDown(KeyCode.Alpha4)) {
                this.ButtonArray[3] = !this.ButtonArray[3];
-                for(int i = 0; i < Lights.Length; i++){
-                    if(ButtonArray[i] == true){
-                        Lights[i].GetComponent<Light>().enabled = true;
-                        LightCount++;
+                //for(int i = 0; i < Lights.Length; i++){
+                //    if(ButtonArray[i] == true){
+                //        Lights[i].GetComponent<Light>().enabled = !Lights[i].GetComponent<Light>().enabled;
+                //        LightCount++;
 
-                    }
-                }
+                //    }
+                //}
                // Lights[3].GetComponent<Light>().enabled = !Lights[3].GetComponent<Light>().enabled;
-               this.ButtonArray[3] = !this.ButtonArray[3];
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha5)) {
