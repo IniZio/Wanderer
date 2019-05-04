@@ -27,7 +27,7 @@ namespace Fyp.Game.UI {
         public bool[] LightArray = {false, false, false, false, false, false, false, false, false};
         public bool[] Mission1Array = {false, false};
 
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+        void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
                 Debug.Log("Sync button array" + ButtonArray[3]);
 				stream.SendNext(ButtonArray);

@@ -87,8 +87,6 @@ public class ShootBehaviour : Photon.PunBehaviour
             try
             {
                 targetDirection = selectedDirection(hand.Fingers[selectedFinger].TipPosition.ToVector3());
-
-            } catch { }
                 fingerDirection = hand.Fingers[selectedFinger].Bone(Bone.BoneType.TYPE_PROXIMAL).Direction.ToVector3();
             //float angleTo = Vector3.Angle(fingerDirection, targetDirection);
 
@@ -128,6 +126,9 @@ public class ShootBehaviour : Photon.PunBehaviour
 
                 }
             }
+
+            }
+            catch { }
         }
     }
 

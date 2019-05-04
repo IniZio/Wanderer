@@ -21,7 +21,7 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     private readonly float alphaFadeValue;
     private bool justFailed = false;
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
