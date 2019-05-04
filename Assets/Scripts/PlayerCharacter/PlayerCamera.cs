@@ -17,8 +17,20 @@ namespace Fyp.Game.Carmera {
             swapToWeapon1Action += this.swapToWeapon1;
             swapToWeapon2Action += this.swapToWeapon2;
 
-            this.transform.Find("ChooseMelee").GetComponent<InteractionButton>().OnPress = swapToWeapon1Action;
-            this.transform.Find("ChooseGun").GetComponent<InteractionButton>().OnPress = swapToWeapon2Action;
+            try {
+                this.transform.Find("ChooseMelee").GetComponent<InteractionButton>().OnPress = swapToWeapon1Action;
+                this.transform.Find("ChooseGun").GetComponent<InteractionButton>().OnPress = swapToWeapon2Action;
+            } catch { }
+        }
+
+        private void Update()
+        {
+            try
+            {
+                this.transform.Find("ChooseMelee").GetComponent<InteractionButton>().OnPress = swapToWeapon1Action;
+                this.transform.Find("ChooseGun").GetComponent<InteractionButton>().OnPress = swapToWeapon2Action;
+            }
+            catch { }
         }
 
         void LateUpdate() {
