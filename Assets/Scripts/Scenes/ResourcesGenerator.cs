@@ -14,7 +14,7 @@ namespace Fyp.Game.ResourcesGenerator {
         public GameObject[] resourceList;
         public bool generated;
         public bool tutMode;
-        public GameObject Tree, Rock, Metal;
+        public GameObject Tree, Rock, Metal, Ani;
 
         void Awake() {
         }
@@ -33,8 +33,8 @@ namespace Fyp.Game.ResourcesGenerator {
             this.generated = true;
             Random.InitState(System.DateTime.Now.Second);
             foreach (GameObject p in this.resourceList) {
-                int i = Random.Range(0, 3);
-                if (i == 0) {
+                int i = Random.Range(0, 7);
+                if (i == 0 || i == 1) {
                     Debug.Log("-----------tree");
                     GameObject GO;
                     if (!tutMode) {
@@ -48,7 +48,7 @@ namespace Fyp.Game.ResourcesGenerator {
                     res.setType("Tree");
                     GO.transform.parent = p.transform;
                 }
-                else if (i == 1) {
+                else if (i == 2 || i == 3) {
                     Debug.Log("-----------Rock");
                     GameObject GO;
                     if (!tutMode) {
@@ -62,7 +62,25 @@ namespace Fyp.Game.ResourcesGenerator {
                     res.setType("Rock");
                     GO.transform.parent = p.transform;
                 }
-                else {
+                else if (i == 4)
+                {
+                    Debug.Log("-----------Rock");
+                    GameObject GO;
+                    if (!tutMode)
+                    {
+                        GO = PhotonNetwork.Instantiate("Ani", p.transform.position, p.transform.rotation, 0);
+                    }
+                    else
+                    {
+                        GO = Instantiate(Ani, p.transform.position, p.transform.rotation);
+                    }
+                    Resources res = GO.GetComponent("Resources") as Resources;
+                    res.setObj(GO);
+                    res.setType("Ani");
+                    GO.transform.parent = p.transform;
+                }
+                else
+                {
                     Debug.Log("-----------metal");
                     GameObject GO;
                     if (!tutMode) {

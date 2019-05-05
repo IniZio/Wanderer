@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 9f0e1d7103dced749b96769e58e2b4e8, type: 2}
 --- !u!1 &10137166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2440,7 @@ MonoBehaviour:
   gun: {fileID: 0}
   axe: {fileID: 0}
   fadeInOut: {fileID: 0}
+  uiElement: {fileID: 0}
   axeEffect: {fileID: 0}
   treeEffect: {fileID: 8688405014773131296}
   gunEffect: {fileID: 0}
@@ -2540,6 +2541,7 @@ MonoBehaviour:
   Tree: {fileID: 5836503167579071290, guid: fdb9e6c7a352ee548baf1f0a10c9fd81, type: 3}
   Rock: {fileID: 8497807335643255001, guid: 69d6872f68d16e347be39f32b05b307d, type: 3}
   Metal: {fileID: 8497807335643255001, guid: 86ddfb5c73cc104468c0ada850c94616, type: 3}
+  Ani: {fileID: 3321335964697411413, guid: 2319a6a8a12904435b618909ed94a0e8, type: 3}
 --- !u!4 &1456348210
 Transform:
   m_ObjectHideFlags: 0
@@ -2768,8 +2770,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497943564}
-  m_LocalRotation: {x: -0.06282081, y: 0.8705072, z: 0.474316, w: 0.115304746}
-  m_LocalPosition: {x: 47.555878, y: -66.66992, z: 135.32425}
+  m_LocalRotation: {x: 0.10964809, y: 0.8903492, z: 0.3112574, w: -0.31364706}
+  m_LocalPosition: {x: 83.43851, y: -47.48037, z: 83.438484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

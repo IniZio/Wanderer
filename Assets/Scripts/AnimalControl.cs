@@ -64,18 +64,18 @@ public class AnimalControl : Photon.PunBehaviour
         switch(state)
         {
             case "escaping":
-                animator.SetBool("Walk", false);
-                animator.SetBool("Run", true);
+                animator.SetBool("walk", false);
+                animator.SetBool("run", true);
                 agent.speed = escapeSpeed;
                 break;
             case "harmed":
-                if (!animator.GetBool("Get_Hit") && isMoaning)
+                if (!animator.GetBool("hit") && isMoaning)
                 {
                     isMoaning = false;
                     if (health <= 0)
                     {
                         health = 0;
-                        animator.SetBool("Dead", true);
+                        animator.SetBool("die", true);
                         return;
                     }
                     state = "";
@@ -83,12 +83,12 @@ public class AnimalControl : Photon.PunBehaviour
                 else
                 {
                     isMoaning = true;
-                    animator.SetBool("Get_Hit", true);
+                    animator.SetBool("hit", true);
                 }
                 break;
             default:
-                animator.SetBool("Walk", true);
-                animator.SetBool("Run", false);
+                animator.SetBool("walk", true);
+                animator.SetBool("run", false);
                 agent.speed = normalSpeed;
                 wanderTimer += Time.deltaTime;
                 if (wanderTimer > 10)
@@ -102,7 +102,7 @@ public class AnimalControl : Photon.PunBehaviour
 
     public bool Dead()
     {
-        return animator.GetBool("Dead");
+        return animator.GetBool("die");
     }
 
     public void Harmed(int damage = 10)
