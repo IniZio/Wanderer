@@ -1109,7 +1109,7 @@ MonoBehaviour:
   isAttacking: 0
   isMoaning: 0
   footstep: {fileID: 2213780474119995469}
-  attackRange: 2
+  attackRange: 3
   attackInterval: 1
   health: 60
   unarmed: 1
@@ -1151,8 +1151,8 @@ MonoBehaviour:
   - {fileID: 4373173759498964796}
   - {fileID: 4373173759498964770}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &4373173759498964799
@@ -1209,9 +1209,15 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: UnarmedDie
-  - Type: 9
+  - Type: 4
     SynchronizeType: 0
-    Name: Pick
+    Name: Draw
+  - Type: 4
+    SynchronizeType: 0
+    Name: Hold
+  - Type: 4
+    SynchronizeType: 0
+    Name: Arm
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

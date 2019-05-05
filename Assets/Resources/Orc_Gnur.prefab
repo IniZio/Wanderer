@@ -2698,6 +2698,7 @@ GameObject:
   - component: {fileID: 4112881497795717282}
   - component: {fileID: 4528577850820807802}
   - component: {fileID: 3084415549551161485}
+  - component: {fileID: 6996380046369306244}
   m_Layer: 0
   m_Name: Orc_Gnur
   m_TagString: Untagged
@@ -2797,7 +2798,7 @@ MonoBehaviour:
   isSwinging: 0
   isMoaning: 0
   wanderTimer: 0
-  health: 30
+  health: 15
 --- !u!114 &4112881497795717282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2958,6 +2959,20 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+--- !u!136 &6996380046369306244
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823283430407352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1829293077472330
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ namespace Fyp.Game.PlayerControl
         private int count = 0;
 
         private GameObject target;
-        public float attackRange = 2;
+        public float attackRange = 3;
         private float attackTimer = 0;
         public float attackInterval = 1;
         public int health = 60;
@@ -147,14 +147,28 @@ namespace Fyp.Game.PlayerControl
                             state = "";
                             isAttacking = false;
                             myAnimator.SetBool("ToTwoHandedAttack", false);
-                            if (weapon.type == "melee")
+                            if (weapon.type.Contains("melee"))
                             {
                                 RaycastHit hit;
                                 Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
+                                Collider[] collis = Physics.OverlapSphere(transform.position, attackRange);
+
+                                //foreach (Collider colli in collis)
+                                //{
+                                    //Debug.Log("What is collision?" + colli.name);
+                                    //if (DealDamage(colli.gameObject))
+                                    //{
+                                        //Debug.Log("I hit this one " + colli.name);
+                                        //break;
+                                    //}
+                                //}
                                 if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
                                 {
-                                    DealDamage(hit.collider.gameObject);
+                                    Debug.Log("I Hit something " + hit.collider.name);
+                                    if (DealDamage(hit.collider.gameObject)) {
+                                        Debug.Log(hit.collider.gameObject.GetComponent<NPCControl>().health);
+                                    }
                                 }
                             }
                             else
@@ -170,8 +184,10 @@ namespace Fyp.Game.PlayerControl
                         else
                         {
                             isAttacking = true;
+                            Debug.Log("Gonna run melee animation " + weapon.name);
                             if (weapon.type == "melee")
                             {
+                                Debug.Log("Running melee animation");
                                 myAnimator.SetBool("ToTwoHandAttack", true);
                             }
                         }
@@ -455,18 +471,21 @@ namespace Fyp.Game.PlayerControl
             return this.isMe;
         }
 
-        public void DealDamage(GameObject target)
+        public bool DealDamage(GameObject target)
         {
             Weapon weapon = Constants.Weapons[loadouts[loadoutIndex]];
             if (target.GetComponent<NPCControl>() != null)
             {
                 target.GetComponent<NPCControl>().Harmed(weapon.damage);
+                return true;
             }
 
             if (target.GetComponent<AnimalControl>() != null)
             {
                 target.GetComponent<AnimalControl>().Harmed(weapon.damage);
+                return true;
             }
+            return false;
         }
 
         public void Chopping()

@@ -2504,8 +2504,8 @@ MonoBehaviour:
   - {fileID: 6882203447244244238}
   - {fileID: 6881934020023096672}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &6882321748353379382
@@ -2610,12 +2610,13 @@ MonoBehaviour:
   isAttacking: 0
   isMoaning: 0
   footstep: {fileID: 883216394016928836}
-  attackRange: 2
+  attackRange: 4
   attackInterval: 1
   health: 60
   unarmed: 1
   twoHanded: 0
   usingAxe: 0
+  usingGun: 0
   arming1: 0
   chopTree: 0
   FallingTreePrefab: {fileID: 0}
