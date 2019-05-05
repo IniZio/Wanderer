@@ -34,13 +34,14 @@ public class TutManager : MonoBehaviour {
         }
     }
 
-    void showDialog() {
+    public void showDialog() {
         // this.dialog.SetActive(true);
         fadeInOut.FadeIn();
     }
 
-    void hideDialog() {
+    public void hideDialog() {
         // this.dialog.SetActive(false);
+        print("FadeOut");
         fadeInOut.FadeOut();
     }
 }
