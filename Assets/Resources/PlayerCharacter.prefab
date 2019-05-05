@@ -2505,8 +2505,8 @@ MonoBehaviour:
   - {fileID: 6881934020023096672}
   - {fileID: 883216394016928836}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &6882321748353379382
@@ -2599,11 +2599,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e025529ad97e584395a267094b7b2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handModel: {fileID: 0}
+  hookedChop: 0
   state: 
   loadouts: 000000000300000006000000
   loadoutIndex: 0
   hud: {fileID: 0}
   isMaster: 0
+  chopping: 0
   isReady: 0
   isStandingWaitingRmDoor: 0
   isStandingBaseGate: 0
@@ -2612,12 +2615,14 @@ MonoBehaviour:
   isMoaning: 0
   isTutMode: 0
   footstep: {fileID: 883216394016928836}
+  leapchop: 0
   attackRange: 2
   attackInterval: 1
   health: 60
   unarmed: 1
   twoHanded: 0
   usingAxe: 0
+  usingGun: 0
   arming1: 0
   chopTree: 0
   FallingTreePrefab: {fileID: 0}
@@ -2628,6 +2633,7 @@ MonoBehaviour:
   cc: {fileID: 8890816137546318651}
   colObj: {fileID: 0}
   randomSeed: -1
+  isTemp: 0
 --- !u!114 &6882203447244244238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2688,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 0
     Name: UnarmedDie
+  - Type: 9
+    SynchronizeType: 0
+    Name: Pick
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

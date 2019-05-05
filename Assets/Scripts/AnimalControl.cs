@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AnimalControl : Photon.PunBehaviour
+public class AnimalControl : Photon.PunBehaviour, IPunObservable
 {
     public string state = "";
     public float minRange = 10;
