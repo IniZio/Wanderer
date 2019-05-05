@@ -24,6 +24,10 @@ namespace Fyp.Game.UI {
 			Debug.Log("MenuToTut");
 			SceneManager.LoadScene("Tutorial");
 		}
+		public void BackToMenu() {
+			Debug.Log("MenuToTut");
+			SceneManager.LoadScene("MainMenu");
+		}
 	}
 }
 

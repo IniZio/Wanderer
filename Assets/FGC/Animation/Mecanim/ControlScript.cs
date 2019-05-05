@@ -540,7 +540,7 @@ namespace Fyp.Game.PlayerControl
         }
 
         public void OnChopping()
-        {   
+        {
             if (!usingAxe ||chopping ||closestTreePosition == null || !isTemp) {
                 return;
             }
@@ -623,7 +623,7 @@ namespace Fyp.Game.PlayerControl
 
         IEnumerator ChopItDown(RaycastHit hit, Vector3 closestTreePosition)
         {
-   
+
                 myAnimator.SetBool("ToTwoHandedAttack", true);
 
             yield return new WaitForSeconds(1f);
@@ -636,7 +636,7 @@ namespace Fyp.Game.PlayerControl
                 // Put a falling tree in its place	  
                 closestTreePosition.y += 3.1f;
                 Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 80));
-    
+
             myAnimator.SetBool("ToTwoHandedAttack", false);
                         chopTree = false;
 
@@ -662,7 +662,7 @@ namespace Fyp.Game.PlayerControl
             yield return new WaitForSeconds(1f);
         }
 
-                public void equip(GameObject go)
+        public void equip(GameObject go)
         {
             usingAxe = true;
             go.transform.position = toolHandPosistion.transform.position;
@@ -670,7 +670,16 @@ namespace Fyp.Game.PlayerControl
             go.transform.Rotate(0f,-100f,0f, Space.Self);
             usingAxe=true;
             go.transform.parent = toolHandPosistion.transform;
-           
+
+        }
+
+        public void equipGun(GameObject go)
+        {
+            usingAxe = false;
+            go.transform.position = toolHandPosistion.transform.position;
+            go.transform.rotation = toolHandPosistion.transform.rotation;
+            // go.transform.Rotate(0f,-100f,0f, Space.Self);
+            go.transform.parent = toolHandPosistion.transform;
         }
 
          public void pickwood()

@@ -16,6 +16,7 @@ public class AnimalControl : Photon.PunBehaviour
     private NavMeshAgent agent;
     private Vector3 thisPos;
     Animator animator;
+    public bool isTut = false;
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -40,6 +41,10 @@ public class AnimalControl : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isTut) {
+            animator.SetBool("sit", true);
+            return;
+        }
         int multiplier = 1;
         thisPos = transform.position;
 
@@ -113,6 +118,9 @@ public class AnimalControl : Photon.PunBehaviour
 
     public Vector3 RandomNavmeshLocation(float radius)
     {
+        if (isTut) {
+            return new Vector3(0, 0, 0);
+        }
         Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
         NavMeshHit hit;

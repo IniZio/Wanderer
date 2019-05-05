@@ -26,6 +26,8 @@ TagManager:
   - Enemy
   - RoomListManager
   - RandomCell
+  - Wood
+  - TutManager
   layers:
   - Default
   - TransparentFX

@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  col: {fileID: 0}
+  col: {fileID: 1009730396595364296}
   type: wood
+  isTut: 1
 --- !u!135 &1009730396595364296
 SphereCollider:
   m_ObjectHideFlags: 0
