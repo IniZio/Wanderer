@@ -9,6 +9,8 @@ public class TutManager : MonoBehaviour {
     int tutState = 0;
     public ResourcesGenerator resGen;
     public GameObject player, dialog, gun, axe;
+    public FadeInOut fadeInOut;
+    public CanvasGroup uiElement;
     public ParticleSystem axeEffect, treeEffect, gunEffect, animalEffect;
     public Text content;
     public Image image;
@@ -16,6 +18,7 @@ public class TutManager : MonoBehaviour {
     void Start() {
         resGen.randomGen();
         dialog.SetActive(false);
+        fadeInOut.uiElement = uiElement;
         setState(0);
     }
 
@@ -32,10 +35,12 @@ public class TutManager : MonoBehaviour {
     }
 
     void showDialog() {
-        this.dialog.SetActive(true);
+        // this.dialog.SetActive(true);
+        fadeInOut.FadeIn();
     }
 
     void hideDialog() {
-        this.dialog.SetActive(false);
+        // this.dialog.SetActive(false);
+        fadeInOut.FadeOut();
     }
 }
