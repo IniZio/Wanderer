@@ -36,7 +36,7 @@ namespace Fyp.Constant{
             }
             public static string STATE_3 {
                 get {
-                    return "Nice! You have learnt how to collect Resources. \nNow we will move on to Gun usage. Find and pickup a Gun nearby";
+                    return "Nice! You have learnt how to collect Resources. \nNow we will move on to Attacking. Try to attcking the Animals.";
                     //return "";
                 }
             }

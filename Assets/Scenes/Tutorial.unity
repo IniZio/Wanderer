@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.57155573, g: 0.7169812, b: 0.7057269, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1618,6 +1618,7 @@ MonoBehaviour:
   axe: {fileID: 6970612705579036798}
   wood: {fileID: 0}
   axePoint: {fileID: 1442269613}
+  gunPoint: {fileID: 1830287955}
   fadeInOut: {fileID: 1399972992}
   uiElement: {fileID: 1535247938}
   axeEffect: {fileID: 1728126555}
@@ -6603,8 +6604,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497943564}
-  m_LocalRotation: {x: 0.067131676, y: 0.9307951, z: 0.21980187, w: -0.28425524}
-  m_LocalPosition: {x: 73.94288, y: -7.5478144, z: 98.53653}
+  m_LocalRotation: {x: 0.07355061, y: 0.92170614, z: 0.2161969, w: -0.31353962}
+  m_LocalPosition: {x: 71.68198, y: -3.2261286, z: 95.31398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11726,7 +11727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1830287956
 Transform:
   m_ObjectHideFlags: 0
@@ -12349,7 +12350,7 @@ MonoBehaviour:
   maxHp: 0
   isGen: 0
   collected: 0
-  type: 
+  type: Ani
   obj: {fileID: 0}
 --- !u!4 &153049782150612810
 Transform:
@@ -19489,13 +19490,28 @@ GameObject:
   - component: {fileID: 8140408164761497216}
   - component: {fileID: 743626840482258749}
   - component: {fileID: 126932649509627267}
+  - component: {fileID: 5666548190956280462}
   m_Layer: 0
   m_Name: Ani (1)
-  m_TagString: Untagged
+  m_TagString: Ani
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &5666548190956280462
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666548190956280461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &5666548190956280481
 GameObject:
   m_ObjectHideFlags: 0

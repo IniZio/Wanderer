@@ -28,6 +28,7 @@ TagManager:
   - RandomCell
   - Wood
   - TutManager
+  - Ani
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class TutManager : MonoBehaviour {
     public Image image;
     public GameObject ani;
     public AnimalControl ac;
+    bool end = false;
 
     void Start() {
         resGen.randomGen();
@@ -34,6 +35,10 @@ public class TutManager : MonoBehaviour {
     }
 
     void Update() {
+        if (ac.GetState() == "dead" && !end) {
+            setState(6);
+            end = true;
+        }
     }
 
     public void setState(int num) {
@@ -52,21 +57,22 @@ public class TutManager : MonoBehaviour {
                 content.text = GameConstant.DialogContent.STATE_2;
                 showDialog();
                 axeEffect.Stop();
+                axePoint.SetActive(false);
                 treeEffect.Play();
                 break;
             case 3:
                 content.text = GameConstant.DialogContent.STATE_3;
                 showDialog();
                 treeEffect.Stop();
-                gunEffect.Play();
-                axePoint.SetActive(false);
-                gun.SetActive(true);
+                ani.SetActive(true);
+                // gunEffect.Play();
+                // gun.SetActive(true);
                 // woodEffect.Play();
                 break;
             case 4:
                 content.text = GameConstant.DialogContent.STATE_4;
                 showDialog();
-                gunEffect.Stop();
+                // gunEffect.Stop();
                 // woodEffect.Play();
                 break;
             case 5:
@@ -88,17 +94,17 @@ public class TutManager : MonoBehaviour {
 
     public void hideDialog() {
         print("Fade Out");
-        this.dialog.SetActive(false);
         fadeInOut.FadeOut();
+        this.dialog.SetActive(false);
         if (this.tutState == 0)
         {
             this.tutState += 1;
             this.setState(1);
         }
-        if (this.tutState == 3)
-        {
-            this.tutState += 1;
-            this.setState(4);
-        }
+        // if (this.tutState == 3)
+        // {
+        //     this.tutState += 1;
+        //     this.setState(4);
+        // }
     }
 }

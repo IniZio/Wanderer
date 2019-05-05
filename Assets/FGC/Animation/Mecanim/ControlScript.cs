@@ -389,6 +389,9 @@ namespace Fyp.Game.PlayerControl
                                 Debug.Log("Metalasdfasdfasdf");
                                 closestTreePosition = hit2.transform.position;
                                 break;
+                            case "Ani":
+                                closestTreePosition = hit2.transform.position;
+                                break;
                         }
                     }
                                             this.temp = hit2;
@@ -627,15 +630,20 @@ namespace Fyp.Game.PlayerControl
                 myAnimator.SetBool("ToTwoHandedAttack", true);
 
             yield return new WaitForSeconds(1f);
-            // Remove the tree from the terrain tree list		        
-
-                hit.collider.gameObject.SetActive(false);
-                // Now refresh the terrain, getting rid of the darn collider
-                // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
-                // terrain.SetHeights (0, 0, heights);
-                // Put a falling tree in its place	  
-                closestTreePosition.y += 3.1f;
-                Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 80));
+            // Remove the tree from the terrain tree list
+                if (hit.collider.gameObject.tag == "Ani") {
+                    AnimalControl temp = hit.collider.gameObject.GetComponent("AnimalControl") as AnimalControl;
+                    temp.Harmed();
+                }
+                else {
+                    hit.collider.gameObject.SetActive(false);
+                    // Now refresh the terrain, getting rid of the darn collider
+                    // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
+                    // terrain.SetHeights (0, 0, heights);
+                    // Put a falling tree in its place	  
+                    closestTreePosition.y += 3.1f;
+                    Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 80));
+                }
 
             myAnimator.SetBool("ToTwoHandedAttack", false);
                         chopTree = false;

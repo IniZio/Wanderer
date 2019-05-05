@@ -41,8 +41,16 @@ public class AnimalControl : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTut) {
+        if (isTut && health > 0) {
             animator.SetBool("sit", true);
+            return;
+        }
+        if (health <= 0) {
+            animator.SetBool("walk", false);
+            animator.SetBool("run", false);
+            animator.SetBool("hit", false);
+            animator.SetBool("die", true);
+            state = "dead";
             return;
         }
         int multiplier = 1;
@@ -114,6 +122,12 @@ public class AnimalControl : Photon.PunBehaviour
     {
         state = "harmed";
         health -= damage;
+        animator.SetBool("sit", false);
+        animator.SetBool("up", true);
+    }
+
+    public string GetState() {
+        return state;
     }
 
     public Vector3 RandomNavmeshLocation(float radius)
