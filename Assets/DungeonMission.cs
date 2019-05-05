@@ -52,7 +52,7 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     void Start()
     {
 
-        StartMission();
+        //StartMission();
     }
 
 
@@ -64,7 +64,10 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
         if (justFailed)
         {
             justFailed = false;
-            StartCoroutine(_FailMission());
+            //StartCoroutine(_FailMission());
+            NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+            GameObject.Find("Player1Character").GetComponent<ControlScript>().health = 60;
+            GameObject.Find("Player2Character").GetComponent<ControlScript>().health = 60;
         }
 
         if (PhotonNetwork.isMasterClient)
@@ -74,21 +77,21 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
                 case Constants.Mission.Stage2_1F:
                     bool waveDone = npcManager.AllDead();
 
-                    if (waveDone && mission2.nextWave == 2)
+                    if (waveDone/* && mission2.nextWave == 2*/)
                     {
                         FinishMission();
                         break;
                     }
 
-                    if (waveDone)
-                    {
-                        mission2.nextWave++;
-                        GameObject[] enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
+                    //if (waveDone)
+                    //{
+                        //mission2.nextWave++;
+                        //GameObject[] enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
 
-                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[2]);
-                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[3]);
-                        npcManager.Spawn("Orc_Gnur", enemySpawnPoints[4]);
-                    }
+                        //npcManager.Spawn("Orc_Gnur", enemySpawnPoints[2]);
+                        //npcManager.Spawn("Orc_Gnur", enemySpawnPoints[3]);
+                        //npcManager.Spawn("Orc_Gnur", enemySpawnPoints[4]);
+                    //}
                     break;
             }
         }
@@ -137,7 +140,11 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     
     public void FailMission()
     {
+        Debug.Log("Just failed mission " + nextMission);
         justFailed = true;
+        NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+        GameObject.Find("Player1Character").GetComponent<ControlScript>().health = 60;
+        GameObject.Find("Player2Character").GetComponent<ControlScript>().health = 60;
     }
 
     
@@ -160,9 +167,11 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     
     public void FinishMission(Constants.Mission mission)
     {
-        print("base");
         nextMission = mission + 1;
-        NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+        if (nextMission >= Constants.Mission.Mission1_2F)
+        {
+            NetworkChangeScene.AllPlayerChangeScene("BaseNew");
+        }
         //StartMission();
     }
 
