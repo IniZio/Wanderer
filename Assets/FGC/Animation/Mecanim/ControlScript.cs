@@ -360,8 +360,12 @@ namespace Fyp.Game.PlayerControl
                                 closestTreePosition = hit2.transform.position;
                                 break;
                             case "Rock":
+                                Debug.Log("Rockasdfasdfasdf");
+                                closestTreePosition = hit2.transform.position;
                                 break;
                             case "Metal":
+                                Debug.Log("Metalasdfasdfasdf");
+                                closestTreePosition = hit2.transform.position;
                                 break;
                         }
                     }
@@ -633,7 +637,7 @@ namespace Fyp.Game.PlayerControl
         IEnumerator Pick(GameObject go) {
             myAnimator.SetTrigger("Pick");
             yield return new WaitForSeconds(1f);
-           
+
         }
     }
 }

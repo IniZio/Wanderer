@@ -2235,7 +2235,7 @@ MonoBehaviour:
   P1Script: {fileID: 0}
   P2Script: {fileID: 0}
   FollowCamera: {fileID: 188696884}
-  resGen: {fileID: 0}
+  resGen: {fileID: 905165627}
 --- !u!4 &1414893871
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,8 +2593,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818415328}
-  m_LocalRotation: {x: -0.49786922, y: 0.026008647, z: 0.014939447, w: 0.8667333}
-  m_LocalPosition: {x: 46.053745, y: -31.372768, z: 65.18296}
+  m_LocalRotation: {x: -0.18891725, y: 0.3941425, z: 0.08314207, w: 0.8955721}
+  m_LocalPosition: {x: 25.46495, y: -20.857456, z: 38.673725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

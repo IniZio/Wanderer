@@ -13,6 +13,8 @@ namespace Fyp.Game.ResourcesGenerator {
 
         public GameObject[] resourceList;
         public bool generated;
+        public bool tutMode;
+        public GameObject Tree, Rock, Metal;
 
         void Awake() {
         }
@@ -25,7 +27,7 @@ namespace Fyp.Game.ResourcesGenerator {
         }
 
         public void randomGen() {
-            if (!PhotonNetwork.isMasterClient) {
+            if (!PhotonNetwork.isMasterClient && !tutMode) {
                 return;
             }
             this.generated = true;
@@ -34,7 +36,13 @@ namespace Fyp.Game.ResourcesGenerator {
                 int i = Random.Range(0, 3);
                 if (i == 0) {
                     Debug.Log("-----------tree");
-                    GameObject GO = PhotonNetwork.Instantiate("Tree", p.transform.position, p.transform.rotation, 0);
+                    GameObject GO;
+                    if (!tutMode) {
+                        GO = PhotonNetwork.Instantiate("Tree", p.transform.position, p.transform.rotation, 0);
+                    }
+                    else {
+                        GO = Instantiate(Tree, p.transform.position, p.transform.rotation);
+                    }
                     Resources res = GO.GetComponent("Resources") as Resources;
                     res.setObj(GO);
                     res.setType("Tree");
@@ -42,7 +50,13 @@ namespace Fyp.Game.ResourcesGenerator {
                 }
                 else if (i == 1) {
                     Debug.Log("-----------Rock");
-                    GameObject GO = PhotonNetwork.Instantiate("Rock", p.transform.position, p.transform.rotation, 0);
+                    GameObject GO;
+                    if (!tutMode) {
+                        GO = PhotonNetwork.Instantiate("Rock", p.transform.position, p.transform.rotation, 0);
+                    }
+                    else {
+                        GO = Instantiate(Rock, p.transform.position, p.transform.rotation);
+                    }
                     Resources res = GO.GetComponent("Resources") as Resources;
                     res.setObj(GO);
                     res.setType("Rock");
@@ -50,7 +64,13 @@ namespace Fyp.Game.ResourcesGenerator {
                 }
                 else {
                     Debug.Log("-----------metal");
-                    GameObject GO = PhotonNetwork.Instantiate("Metal", p.transform.position, p.transform.rotation, 0);
+                    GameObject GO;
+                    if (!tutMode) {
+                        GO = PhotonNetwork.Instantiate("Metal", p.transform.position, p.transform.rotation, 0);
+                    }
+                    else {
+                        GO = Instantiate(Metal, p.transform.position, p.transform.rotation);
+                    }
                     Resources res = GO.GetComponent("Resources") as Resources;
                     res.setObj(GO);
                     res.setType("Metal");
