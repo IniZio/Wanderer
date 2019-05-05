@@ -168,7 +168,11 @@ namespace Fyp.Game.UI {
             if(Mission1Array[0] == true && Mission1Array[1] == true){
                 this.Mission1Floor.GetComponent<MeshCollider>().enabled = true;
                 this.MainDoor.SetActive(false);
-
+                if (missionManager.nextMission != Constants.Mission.Stage2_1F)
+                {
+                    missionManager.nextMission = Constants.Mission.Stage2_1F;
+                    missionManager.StartMission();
+                }
             }
 
 
@@ -254,8 +258,7 @@ namespace Fyp.Game.UI {
 
                 yield return new WaitForSeconds(time);
 
-                missionManager.FinishMission(Constants.Mission.Stage1_1F);
-                missionManager.StartMission();
+                missionManager.FinishMission(Constants.Mission.Stage3_1F);
 
              }
 

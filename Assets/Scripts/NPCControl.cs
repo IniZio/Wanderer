@@ -16,7 +16,8 @@ public class NPCControl : Photon.PunBehaviour
     public bool isSwinging = false;
     public bool isMoaning = false;
     public float wanderTimer = 0;
-    public int health = 30;
+    public int health = 15;
+    private float deathTimer = 0;
 
     private GameObject target;
     private NavMeshAgent agent;
@@ -44,6 +45,28 @@ public class NPCControl : Photon.PunBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            health = 0;
+            if (animator.GetBool("Dead"))
+            {
+                if (deathTimer < 3)
+                {
+                    deathTimer += Time.deltaTime;
+                } else
+                {
+                    //this.enabled = false;
+                }
+                return;
+            }
+            animator.SetBool("Dead", true);
+            animator.SetBool("Walk", false);
+            animator.SetBool("Run", false);
+            animator.SetBool("Get_Hit", false);
+            animator.SetBool("Attack(1)", false);
+            return;
+        }
+
         // Re-validate target
         if (target != null)
         {
@@ -59,7 +82,7 @@ public class NPCControl : Photon.PunBehaviour
             Collider[] collis = Physics.OverlapSphere(transform.position, maxRange);
             foreach (Collider colli in collis)
             {
-                if (colli && colli.tag.IndexOf("Player") >= 0)
+                if (colli && (colli.tag.StartsWith("Player1Character") || colli.tag.StartsWith("Player2Character")))
                 {
                     // a bit more random in target choosing
                     if (new System.Random().Next(2) == 0) {
@@ -90,6 +113,7 @@ public class NPCControl : Photon.PunBehaviour
         {
             case "attacking":
                 animator.SetBool("Run", false);
+                animator.SetBool("Walk", false);
                 agent.enabled = false;
                 if (swingTimer < swingInterval)
                 {
@@ -112,7 +136,7 @@ public class NPCControl : Photon.PunBehaviour
                     if (Physics.Raycast(transform.position, fwd, out hit, attackRange + 1))
                     {
                         Debug.Log("Orc Hit something " + hit.collider.tag);
-                        if (hit.collider.tag.StartsWith("Player"))
+                        if (hit.collider.tag.StartsWith("Player1Character") || hit.collider.tag.StartsWith("Player2Character"))
                         {
                             Debug.Log("Orc sending harm call");
                             hit.collider.GetComponent<ControlScript>().Harmed(10);
@@ -133,6 +157,7 @@ public class NPCControl : Photon.PunBehaviour
                 {
                     return;
                 }
+                animator.SetBool("Walk", false);
                 animator.SetBool("Attack(1)", false);
                 Vector3 rangeVector = (target.transform.position - transform.position);
                 Vector3 runTo = transform.position + rangeVector.normalized * (rangeVector.magnitude - attackRange);
@@ -154,6 +179,9 @@ public class NPCControl : Photon.PunBehaviour
                 } else
                 {
                     isMoaning = true;
+                    animator.SetBool("Walk", false);
+                    animator.SetBool("Run", false);
+                    animator.SetBool("Attack(1)", false);
                     animator.SetBool("Get_Hit", true);
                 }
                 break;
