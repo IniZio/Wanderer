@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPCControl : Photon.PunBehaviour
+public class NPCControl : Photon.PunBehaviour, IPunObservable
 {
     public string state = "";
     public float maxRange = 5;

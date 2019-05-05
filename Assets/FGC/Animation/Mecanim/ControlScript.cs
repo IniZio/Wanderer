@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fyp.Game.ResourcesGenerator;
 using Leap.Unity.Interaction;
+using Leap.Unity;
+using UnityEngine.Events;
 //using System.Collections;
 
 namespace Fyp.Game.PlayerControl
 {
     public class ControlScript : Photon.PunBehaviour, IPunObservable
     {
+        public GameObject handModel;
+        private Leap.Unity.ExtendedFingerDetector chopDetector;
+        private UnityAction chopAction;
+        public bool hookedChop = false;
 
         public string state = "";
         public int[] loadouts = { 0, 3, 6 };
@@ -112,7 +118,9 @@ namespace Fyp.Game.PlayerControl
 			toolHandPosistion = GameObject.Find ("toolMountPoint").transform;
 			Holster1 = GameObject.Find ("Holster1").transform;
 			Holster2 = GameObject.Find ("Holster2").transform;
-            gunHandPosistion = GameObject.Find("gunMountPoint").transform;
+            try
+            {
+                gunHandPosistion = GameObject.Find("gunMountPoint").transform;
             gunHold = GameObject.Find("gunhold").transform;
             // WeaponList[1].weaponTransform.position = Holster2.transform.position;
             // WeaponList[1].weaponTransform.rotation = Holster2.transform.rotation;
@@ -121,13 +129,26 @@ namespace Fyp.Game.PlayerControl
             WeaponList[0].weaponTransform.position = Holster1.transform.position;
 			WeaponList[0].weaponTransform.rotation = Holster1.transform.rotation;
 			WeaponList[0].weaponTransform.parent = Holster1;
-		}
+            } catch { }
+        }
 
 		// Update is called once per frame so this is a great place to listen for input from the player to see if they have
 		//interacted with the game since the LAST frame (such as a button press or mouse click).
 		 [PunRPC]
 		void Update () {
-			if (PhotonNetwork.isMasterClient && randomSeed == -1) {
+            try
+            {
+                if (!hookedChop)
+                {
+                    handModel = GameObject.Find("LoPoly Rigged Hand Right");
+                    chopDetector = handModel.GetComponents<Leap.Unity.ExtendedFingerDetector>()[handModel.GetComponents<Leap.Unity.ExtendedFingerDetector>().Length - 2];
+                    chopAction += this.Chopping;
+                    chopDetector.OnActivate.AddListener(chopAction);
+                    hookedChop = true;
+                }
+            } catch { }
+
+            if (PhotonNetwork.isMasterClient && randomSeed == -1) {
 				System.Random rd = new System.Random();
 				// rd.Next(1, 999)
 				randomSeed = rd.Next(1, 999);
@@ -137,6 +158,7 @@ namespace Fyp.Game.PlayerControl
                 case "attacking":
                     Weapon weapon = Constants.Weapons[loadouts[loadoutIndex]];
                     myAnimator.SetBool("Run", false);
+                    myAnimator.SetBool("Walk", false);
 
                     if (photonView.isMine)
                     {
@@ -150,6 +172,7 @@ namespace Fyp.Game.PlayerControl
                             break;
                         }
                         attackTimer = 0;
+                        Debug.Log("Gonna attack");
                         //       }
                         if (/*!animator.GetBool("ToTwoHandAttack") && */isAttacking)
                         {
@@ -193,22 +216,28 @@ namespace Fyp.Game.PlayerControl
                         else
                         {
                             isAttacking = true;
-                            Debug.Log("Gonna run melee animation " + weapon.name);
                             if (weapon.type == "melee")
                             {
                                 Debug.Log("Running melee animation");
-                                myAnimator.SetBool("ToTwoHandAttack", true);
+                                myAnimator.SetBool("ToTwoHandedAttack", true);
+                                StartCoroutine(StopSwingingLater());
                             }
                         }
                     }
                     break;
                 case "harmed":
+                    myAnimator.SetBool("Run", false);
+                    myAnimator.SetBool("Walk", false);
+                    myAnimator.SetBool("ToTwoHandAttack", false);
                     if (!myAnimator.GetBool("Get_Hit") && isMoaning)
                     {
                         isMoaning = false;
                         if (health <= 0)
                         {
                             health = 0;
+                            myAnimator.SetBool("Run", false);
+                            myAnimator.SetBool("Walk", false);
+                            myAnimator.SetBool("ToTwoHandAttack", false);
                             myAnimator.SetBool("Dead", true);
                             GameObject.Find("SceneManager").GetComponent<DungeonMission>().FailMission();
                             return;
@@ -622,6 +651,15 @@ namespace Fyp.Game.PlayerControl
             WeaponList[0].weaponTransform.parent = gunHold;
             myAnimator.SetBool("Hold", false);
             myAnimator.SetInteger("CurrentAction", 0);
+        }
+
+        IEnumerator StopSwingingLater()
+        {
+            Debug.Log("Will stop swinging later");
+            yield return new WaitForSeconds(1f);
+            myAnimator.SetBool("ToTwoHandedAttack", false);
+            this.gameObject.GetComponent<Rigidbody>().velocity += transform.forward;
+            Debug.Log("Not swinging anymore");
         }
 
         IEnumerator ChopItDown(RaycastHit hit, Vector3 closestTreePosition)
