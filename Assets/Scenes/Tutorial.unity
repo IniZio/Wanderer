@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.25251827, g: 0.23214902, b: 0.20585245, a: 1}
+  m_IndirectSpecularColor: {r: 0.25248924, g: 0.23212636, b: 0.20584852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   gun: {fileID: 0}
   axe: {fileID: 0}
   fadeInOut: {fileID: 0}
-  uiElement: {fileID: 0}
+  uiElement: {fileID: 1535247938}
   axeEffect: {fileID: 0}
   treeEffect: {fileID: 8688405014773131296}
   gunEffect: {fileID: 0}
@@ -1877,8 +1877,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497943564}
-  m_LocalRotation: {x: -0.06282081, y: 0.8705072, z: 0.474316, w: 0.115304746}
-  m_LocalPosition: {x: 47.555878, y: -66.66992, z: 135.32425}
+  m_LocalRotation: {x: -0.088188656, y: 0.8225492, z: 0.54586995, w: 0.13289689}
+  m_LocalPosition: {x: 70.07605, y: 0.4545126, z: 85.42209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8824,12 +8824,12 @@ MonoBehaviour:
   OnDeactivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1399972989}
-        m_MethodName: 
+      - m_Target: {fileID: 1399972991}
+        m_MethodName: hideDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8844,7 +8844,7 @@ MonoBehaviour:
   PointingDirection: {x: 0, y: 1, z: 1}
   TargetObject: {fileID: 0}
   OnAngle: 18
-  OffAngle: 30
+  OffAngle: 42
   ShowGizmos: 1
 --- !u!1 &4735289359919990728
 GameObject:
@@ -11632,9 +11632,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7490173473924121712}
-  - {fileID: 1753132592}
   - {fileID: 8463473465798148832}
+  - {fileID: 1753132592}
+  - {fileID: 7490173473924121712}
   m_Father: {fileID: 8105037927345179602}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12158,7 +12158,7 @@ Transform:
   - {fileID: 663711749}
   - {fileID: 4776464892626437747}
   m_Father: {fileID: 7154927045111293117}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7503850619837083468
 Transform:
@@ -13082,7 +13082,7 @@ Transform:
   - {fileID: 2105114399}
   - {fileID: 5600626110974778520}
   m_Father: {fileID: 7154927045111293117}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8463907276857216057
 Transform:
