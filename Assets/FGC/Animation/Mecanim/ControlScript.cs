@@ -16,6 +16,7 @@ namespace Fyp.Game.PlayerControl
         PlayerStatus playerStatus;
         public Hud hud;
         public bool isMaster;
+        public bool chopping=false;
         public bool isReady = false;
         public bool isStandingWaitingRmDoor = false;
         public bool isStandingBaseGate = false;
@@ -26,6 +27,8 @@ namespace Fyp.Game.PlayerControl
         public bool isTutMode = false;
         public AudioSource footstep;
         private int count = 0;
+
+        public bool leapchop= false;
 
         private GameObject target;
         public float attackRange = 2;
@@ -47,7 +50,7 @@ namespace Fyp.Game.PlayerControl
 		public Transform RayOrigin;    
 		private Vector3 choppingPoint;    
 		public AudioClip[] chopSounds;    
-		Vector3 closestTreePosition = new Vector3 ();
+		Vector3 closestTreePosition;
 
         private Transform toolHandPosistion, gunHandPosistion, gunHold;
         private Transform Holster1;
@@ -70,6 +73,9 @@ namespace Fyp.Game.PlayerControl
 		public GameObject colObj;
 
 		public int randomSeed = -1;
+
+        public RaycastHit temp;
+        public bool isTemp = false;
 
 		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 			if (stream.isWriting) {
@@ -369,11 +375,13 @@ namespace Fyp.Game.PlayerControl
                                 break;
                         }
                     }
-                    if (usingAxe && !chopTree && Input.GetKey(KeyCode.E))
+                                            this.temp = hit2;
+                                            isTemp = true;
+
+                    if (usingAxe && (Input.GetKey(KeyCode.E)||leapchop))
                     {
-                        choppingPoint = hit2.point;
-                        chopTree = true;
-                        StartCoroutine(ChopItDown(hit2, closestTreePosition));
+                        this.temp = hit2;
+                        this.OnChopping();
                     }
                 }
             }
@@ -512,9 +520,15 @@ namespace Fyp.Game.PlayerControl
             }
         }
 
-        void OnChopping()
-        {
-
+        public void OnChopping()
+        {   
+            if (!usingAxe ||chopping ||closestTreePosition == null || !isTemp) {
+                return;
+            }
+            choppingPoint = this.temp.point;
+            chopTree = true;
+            StartCoroutine(ChopItDown(this.temp, closestTreePosition));
+            this.isTemp = false;
         }
 
         //We've added some simple GUI labels for our controls to make it easier for you to test out.
@@ -590,22 +604,12 @@ namespace Fyp.Game.PlayerControl
 
         IEnumerator ChopItDown(RaycastHit hit, Vector3 closestTreePosition)
         {
-            if (count == 0)
-            {
+   
                 myAnimator.SetBool("ToTwoHandedAttack", true);
-                count++;
 
-            }
-            else if ((count != 0) && (count <= 5))
-            {
-                myAnimator.SetBool("TwoHandedAttack", true);
-                count++;
-
-            }
             yield return new WaitForSeconds(1f);
             // Remove the tree from the terrain tree list		        
-            if (count == 1)
-            {
+
                 hit.collider.gameObject.SetActive(false);
                 // Now refresh the terrain, getting rid of the darn collider
                 // float[, ] heights = terrain.GetHeights (0, 0, 0, 0);
@@ -613,11 +617,10 @@ namespace Fyp.Game.PlayerControl
                 // Put a falling tree in its place	  
                 closestTreePosition.y += 3.1f;
                 Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 80));
-                Instantiate(FallingTreePrefab, closestTreePosition, Quaternion.Euler(0, 0, 100));
-
-            }
+    
             myAnimator.SetBool("ToTwoHandedAttack", false);
-            myAnimator.SetBool("TwoHandedAttack", false);
+                        chopTree = false;
+
         }
         public void treeChopSound()
         {
@@ -630,14 +633,35 @@ namespace Fyp.Game.PlayerControl
             Destroy(go, source.clip.length);
         }
 
-        public void pick(GameObject go)
+        public void pick(GameObject go,Collider col)
         {
+            col.enabled=false;
             StartCoroutine(Pick (go));
         }
         IEnumerator Pick(GameObject go) {
             myAnimator.SetTrigger("Pick");
             yield return new WaitForSeconds(1f);
-
         }
+
+                public void equip(GameObject go)
+        {
+            usingAxe = true;
+            go.transform.position = toolHandPosistion.transform.position;
+            go.transform.rotation = toolHandPosistion.transform.rotation;
+            go.transform.Rotate(0f,-100f,0f, Space.Self);
+            usingAxe=true;
+            go.transform.parent = toolHandPosistion.transform;
+           
+        }
+
+         public void pickwood()
+        {
+            StartCoroutine(Pickwood());
+        }
+        IEnumerator Pickwood() {
+            myAnimator.SetTrigger("Pick");
+            yield return new WaitForSeconds(1f);
+        }
+
     }
 }
