@@ -308,5 +308,8 @@ namespace Fyp.Game.UI {
         public void UnpressButton(int num){
             this.Mission1Array[num] = false;
         }
+        public void Test(){
+            print("trigger");
+        }
     }
 }
