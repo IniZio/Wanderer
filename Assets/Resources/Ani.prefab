@@ -698,7 +698,7 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: eat
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: run
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -728,8 +728,8 @@ MonoBehaviour:
   - {fileID: 719147899233591929}
   - {fileID: 2871903231507816531}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &1174547663259700056
@@ -751,6 +751,7 @@ MonoBehaviour:
   wanderTimer: 0
   isMoaning: 0
   health: 20
+  isTut: 0
 --- !u!195 &7702767603390118629
 NavMeshAgent:
   m_ObjectHideFlags: 0

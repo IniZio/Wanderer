@@ -64,7 +64,7 @@ namespace Fyp.Game.ResourcesGenerator {
                 }
                 else if (i == 4)
                 {
-                    Debug.Log("-----------Rock");
+                    Debug.Log("-----------Ani");
                     GameObject GO;
                     if (!tutMode)
                     {
