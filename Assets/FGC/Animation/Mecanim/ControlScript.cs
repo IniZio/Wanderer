@@ -186,22 +186,22 @@ namespace Fyp.Game.PlayerControl
 
                                 Collider[] collis = Physics.OverlapSphere(transform.position, attackRange);
 
-                                //foreach (Collider colli in collis)
-                                //{
-                                    //Debug.Log("What is collision?" + colli.name);
-                                    //if (DealDamage(colli.gameObject))
-                                    //{
-                                        //Debug.Log("I hit this one " + colli.name);
-                                        //break;
-                                    //}
-                                //}
-                                if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
+                                foreach (Collider colli in collis)
                                 {
-                                    Debug.Log("I Hit something " + hit.collider.name);
-                                    if (DealDamage(hit.collider.gameObject)) {
-                                        Debug.Log(hit.collider.gameObject.GetComponent<NPCControl>().health);
+                                    //Debug.Log("What is collision?" + colli.name);
+                                    if (DealDamage(colli.gameObject))
+                                    {
+                                        //Debug.Log("I hit this one " + colli.name);
+                                        break;
                                     }
                                 }
+                                //if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
+                                //{
+                                //    Debug.Log("I Hit something " + hit.collider.name);
+                                    //if (DealDamage(hit.collider.gameObject)) {
+                                      //  Debug.Log(hit.collider.gameObject.GetComponent<NPCControl>().health);
+                                    //}
+                                //}
                             }
                             else
                             {
@@ -221,6 +221,17 @@ namespace Fyp.Game.PlayerControl
                                 Debug.Log("Running melee animation");
                                 myAnimator.SetBool("ToTwoHandedAttack", true);
                                 StartCoroutine(StopSwingingLater());
+                                Collider[] collis = Physics.OverlapSphere(transform.position, attackRange);
+
+                                foreach (Collider colli in collis)
+                                {
+                                    //Debug.Log("What is collision?" + colli.name);
+                                    if (DealDamage(colli.gameObject))
+                                    {
+                                        //Debug.Log("I hit this one " + colli.name);
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
