@@ -147,6 +147,7 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     {
         Debug.Log("Just failed mission " + nextMission);
         justFailed = true;
+        StopMission();
         NetworkChangeScene.AllPlayerChangeScene("BaseNew");
         GameObject.Find("Player1Character").GetComponent<ControlScript>().health = 60;
         GameObject.Find("Player2Character").GetComponent<ControlScript>().health = 60;

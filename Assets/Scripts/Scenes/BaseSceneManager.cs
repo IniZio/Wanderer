@@ -53,6 +53,8 @@ namespace Fyp.Game.UI {
                     cameraScirpt.setCamera(this.Player1);
                 }
                 this.P1Script = script;
+                Player1.GetComponent<ControlScript>().health = 60;
+
             }
         }
         void MapPlayer2() {
@@ -66,6 +68,7 @@ namespace Fyp.Game.UI {
                     cameraScirpt.setCamera(this.Player2);
                 }
                 this.P2Script = script;
+                Player2.GetComponent<ControlScript>().health = 60;
             }
         }
 
