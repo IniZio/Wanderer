@@ -20,10 +20,10 @@ private bool _sit=false;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.A)){
-            animator.SetBool("walk", true);
+            animator.SetBool("eat", true);
         }
         if(Input.GetKeyUp(KeyCode.A)){
-            animator.SetBool("walk", false);
+            animator.SetBool("eat", false);
         }
         if(Input.GetKeyDown(KeyCode.S)){
             animator.SetBool("attack", true);

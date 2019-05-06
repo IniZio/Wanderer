@@ -2266,6 +2266,7 @@ GameObject:
   - component: {fileID: 5301462303502416003}
   - component: {fileID: 5301462303502416004}
   - component: {fileID: 5301462303502416005}
+  - component: {fileID: 9132702572015701263}
   m_Layer: 0
   m_Name: FGC_Fem_Char_Eva 1
   m_TagString: Untagged
@@ -2327,6 +2328,29 @@ CharacterController:
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.86, z: 0}
+--- !u!114 &9132702572015701263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301462303502416024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6786df675dc454c2e877ad30e608980c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unarmed: 0
+  twoHanded: 0
+  usingAxe: 0
+  arming1: 0
+  chopTree: 0
+  FallingTreePrefab: {fileID: 0}
+  Tool: {fileID: 0}
+  tool: {fileID: 0}
+  RayOrigin: {fileID: 0}
+  chopSounds: []
+  WeaponList: []
 --- !u!1 &5301462303524286174
 GameObject:
   m_ObjectHideFlags: 0

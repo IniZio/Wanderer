@@ -2,24 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pick : MonoBehaviour {
+public class pick : MonoBehaviour
+{
 
+    private bool picking = false;
 
-	void Start () {
-		
-	}
+    void Start()
+    {
 
-	void Update () {
+    }
 
-	}
-	void OnCollisionEnter(Collision collision){
-		// var tag=collision.collider.tag;
-		// if(tag=="Player"){
-		// 	Destroy(this);
-		// }
-	}
+    void Update()
+    {
 
-	void OnCollisionExit(Collision collision){}
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        var tag = col.gameObject.tag;
+        Debug.Log("col");
+        if (tag == "Player")
+        {
+            PlayerControl3 script = col.gameObject.GetComponent("PlayerControl3") as PlayerControl3;
+            Debug.Log("player");
+            if (!picking)
+            {
+                picking = true;
+                script.pick(this.gameObject);
+            }
+        }
+    }
 
-	void OnCollisionStay(Collision collision){}
+    void OnCollisionExit(Collision collision) { }
+
+    void OnCollisionStay(Collision collision) { }
 }

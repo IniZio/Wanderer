@@ -9,7 +9,7 @@ public class Orc_Gnur_Controller : MonoBehaviour
 
 private UnityEngine.AI.NavMeshAgent navMeshAgent;
 private Animator animator;
-public AudioClip[] chopSounds;
+//public AudioClip[] chopSounds;
 GameObject go;
 AudioSource source;
 
@@ -93,8 +93,8 @@ public void JumpStart(){
     animator.SetBool("Jump", true);
 	go = new GameObject("Audio");
 	source = go.AddComponent<AudioSource>();
-	source.clip = chopSounds[Random.Range(0,chopSounds.Length)];
-    source.PlayDelayed(0.6f);
+	//source.clip = chopSounds[Random.Range(0,chopSounds.Length)];
+   // source.PlayDelayed(0.6f);
     
 
 }

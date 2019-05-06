@@ -28,6 +28,10 @@ public class SimpleShoot : MonoBehaviour
         }
     }
 
+    public void user(){
+                    GetComponent<Animator>().SetTrigger("Fire");
+    }
+
     void Shoot()
     {
         //  GameObject bullet;
