@@ -55,4 +55,5 @@ MonoBehaviour:
   - StopMission
   - Teleport
   - ForceUpdate
+  - MapRes
   DisableAutoOpenWizard: 1

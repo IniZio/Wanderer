@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Fyp.Game.ResourcesGenerator {
-    public class ResourcesGenerator : MonoBehaviour {
+    public class ResourcesGenerator : Photon.PunBehaviour {
         #region Singleton Code
         static readonly ResourcesGenerator _instance = new ResourcesGenerator();
         public static ResourcesGenerator Instance {
@@ -43,10 +43,11 @@ namespace Fyp.Game.ResourcesGenerator {
                     else {
                         GO = Instantiate(Tree, p.transform.position, p.transform.rotation);
                     }
-                    Resources res = GO.GetComponent("Resources") as Resources;
-                    res.setObj(GO);
-                    res.setType("Tree");
-                    GO.transform.parent = p.transform;
+                    // Resources res = GO.GetComponent("Resources") as Resources;
+                    // res.setObj(GO);
+                    // res.setType("Tree");
+                    // GO.transform.parent = p.transform;
+                    photonView.RPC("MapRes", PhotonTargets.All, GO, p, "Tree");
                 }
                 else if (i == 2 || i == 3) {
                     Debug.Log("-----------Rock");
@@ -57,10 +58,11 @@ namespace Fyp.Game.ResourcesGenerator {
                     else {
                         GO = Instantiate(Rock, p.transform.position, p.transform.rotation);
                     }
-                    Resources res = GO.GetComponent("Resources") as Resources;
-                    res.setObj(GO);
-                    res.setType("Rock");
-                    GO.transform.parent = p.transform;
+                    // Resources res = GO.GetComponent("Resources") as Resources;
+                    // res.setObj(GO);
+                    // res.setType("Rock");
+                    // GO.transform.parent = p.transform;
+                    photonView.RPC("MapRes", PhotonTargets.All, GO, p, "Rock");
                 }
                 else if (i == 4)
                 {
@@ -74,10 +76,11 @@ namespace Fyp.Game.ResourcesGenerator {
                     {
                         GO = Instantiate(Ani, p.transform.position, p.transform.rotation);
                     }
-                    Resources res = GO.GetComponent("Resources") as Resources;
-                    res.setObj(GO);
-                    res.setType("Ani");
-                    GO.transform.parent = p.transform;
+                    // Resources res = GO.GetComponent("Resources") as Resources;
+                    // res.setObj(GO);
+                    // res.setType("Ani");
+                    // GO.transform.parent = p.transform;
+                    photonView.RPC("MapRes", PhotonTargets.All, GO, p, "Ani");
                 }
                 else
                 {
@@ -89,12 +92,21 @@ namespace Fyp.Game.ResourcesGenerator {
                     else {
                         GO = Instantiate(Metal, p.transform.position, p.transform.rotation);
                     }
-                    Resources res = GO.GetComponent("Resources") as Resources;
-                    res.setObj(GO);
-                    res.setType("Metal");
-                    GO.transform.parent = p.transform;
+                    // Resources res = GO.GetComponent("Resources") as Resources;
+                    // res.setObj(GO);
+                    // res.setType("Metal");
+                    // GO.transform.parent = p.transform;
+                    photonView.RPC("MapRes", PhotonTargets.All, GO, p, "Metal");
                 }
             }
+        }
+
+        [PunRPC]
+        void MapRes(GameObject go, GameObject point, string type) {
+            Resources res = go.GetComponent("Resources") as Resources;
+            res.setObj(go);
+            res.setType(type);
+            go.transform.parent = point.transform;
         }
 
         public void reGen() {
