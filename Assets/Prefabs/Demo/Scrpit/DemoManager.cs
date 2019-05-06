@@ -11,10 +11,7 @@ public class DemoManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cameraList[0].SetActive(true);
-        cameraList[1].SetActive(false);
-        tree.SetActive(false);
-        playerList[2].SetActive(false);
+
 
         // position1=GetComponent<>
         for (int i = 0; i < animalList.Length; i++)
@@ -32,6 +29,10 @@ public class DemoManager : MonoBehaviour
             playerList[i].transform.position = positionList[i].position;
             playerList[i].SetActive(false);
         }
+        cameraList[0].SetActive(true);
+        cameraList[1].SetActive(false);
+        tree.SetActive(false);
+        playerList[2].SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,7 +84,7 @@ public class DemoManager : MonoBehaviour
             {
                 obj.SetActive(false);
             }
-            foreach (GameObject obj in enemyList)
+            foreach (GameObject obj in playerList)
             {
                 obj.SetActive(false);
             }
@@ -107,7 +108,7 @@ public class DemoManager : MonoBehaviour
             {
                 obj.SetActive(false);
             }
-            foreach (GameObject obj in enemyList)
+            foreach (GameObject obj in playerList)
             {
                 obj.SetActive(false);
             }
