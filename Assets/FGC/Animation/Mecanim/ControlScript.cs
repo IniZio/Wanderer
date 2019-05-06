@@ -192,16 +192,16 @@ namespace Fyp.Game.PlayerControl
                                     if (DealDamage(colli.gameObject))
                                     {
                                         //Debug.Log("I hit this one " + colli.name);
-                                        break;
+                                        //break;
                                     }
                                 }
-                                //if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
-                                //{
+                                if (Physics.Raycast(transform.position, fwd, out hit, attackRange))
+                                {
                                 //    Debug.Log("I Hit something " + hit.collider.name);
-                                    //if (DealDamage(hit.collider.gameObject)) {
-                                      //  Debug.Log(hit.collider.gameObject.GetComponent<NPCControl>().health);
-                                    //}
-                                //}
+                                    if (DealDamage(hit.collider.gameObject)) {
+                                        Debug.Log(hit.collider.gameObject.GetComponent<NPCControl>().health);
+                                    }
+                                }
                             }
                             else
                             {
@@ -221,11 +221,11 @@ namespace Fyp.Game.PlayerControl
                                 Debug.Log("Running melee animation");
                                 myAnimator.SetBool("ToTwoHandedAttack", true);
                                 StartCoroutine(StopSwingingLater());
-                                Collider[] collis = Physics.OverlapSphere(transform.position, attackRange);
+                                Collider[] collis = Physics.OverlapSphere(transform.position, 4);
 
                                 foreach (Collider colli in collis)
                                 {
-                                    //Debug.Log("What is collision?" + colli.name);
+                                    Debug.Log("What is collision?" + colli.name);
                                     if (DealDamage(colli.gameObject))
                                     {
                                         //Debug.Log("I hit this one " + colli.name);
@@ -669,7 +669,7 @@ namespace Fyp.Game.PlayerControl
             Debug.Log("Will stop swinging later");
             yield return new WaitForSeconds(1f);
             myAnimator.SetBool("ToTwoHandedAttack", false);
-            this.gameObject.GetComponent<Rigidbody>().velocity += transform.forward;
+            //this.gameObject.GetComponent<Rigidbody>().velocity += transform.forward;
             Debug.Log("Not swinging anymore");
         }
 
