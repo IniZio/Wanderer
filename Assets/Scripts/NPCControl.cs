@@ -49,17 +49,6 @@ public class NPCControl : Photon.PunBehaviour, IPunObservable
         if (health <= 0)
         {
             health = 0;
-            if (animator.GetBool("Dead"))
-            {
-                if (deathTimer < 3)
-                {
-                    deathTimer += Time.deltaTime;
-                } else
-                {
-                    //this.enabled = false;
-                }
-                return;
-            }
             animator.SetBool("Dead", true);
             animator.SetBool("Walk", false);
             animator.SetBool("Run", false);
