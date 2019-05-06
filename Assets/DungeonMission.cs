@@ -61,9 +61,10 @@ public class DungeonMission : Photon.PunBehaviour, IPunObservable
     
     void Update()
     {
-        if (Input.GetKey("p") && PhotonNetwork.isMasterClient)
+        if (!finalBoss && nextMission >= Constants.Mission.Stage2_1F)
         {
             npcManager.Spawn("Orc_Gnur_Boss", GameObject.FindGameObjectWithTag("BossSpawnPoint"));
+            finalBoss = true;
         }
         photonView.RPC("ForceUpdate", PhotonTargets.All, nextMission, mission2, justFailed);
         if (justFailed)
