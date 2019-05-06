@@ -29,6 +29,7 @@ TagManager:
   - Wood
   - TutManager
   - Ani
+  - BossSpawnPoint
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class NPCControl : Photon.PunBehaviour, IPunObservable
     public float swingTimer = 0;
     public bool isSwinging = false;
     public bool isMoaning = false;
+    public float moanTimer = 0;
     public float wanderTimer = 0;
     public int health = 15;
     private float deathTimer = 0;
@@ -166,16 +167,17 @@ public class NPCControl : Photon.PunBehaviour, IPunObservable
                 agent.enabled = true;
                 break;
             case "harmed":
-                if (!animator.GetBool("Get_Hit") && isMoaning)
+                moanTimer += Time.deltaTime;
+                if (moanTimer >= 1 && isMoaning)
                 {
                     isMoaning = false;
-                    if (health <= 0)
-                    {
-                        health = 0;
-                        animator.SetBool("Dead", true);
-                        return;
-                    }
+                    animator.SetBool("Walk", false);
+                    animator.SetBool("Run", false);
+                    animator.SetBool("Attack(1)", false);
+                    animator.SetBool("Get_Hit", false);
+                    animator.SetBool("Dead", true);
                     state = "";
+                    return;
                 } else
                 {
                     isMoaning = true;
